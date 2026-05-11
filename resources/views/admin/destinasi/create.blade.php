@@ -20,7 +20,7 @@
                 <div class="col-md-8">
                     <label class="form-label fw-semibold">Nama Destinasi <span class="text-danger">*</span></label>
                     <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror"
-                           value="{{ old('nama') }}" placeholder="Contoh: Bukit Beta Tuktuk" required>
+                           value="{{ old('nama', 'Batu Hoda') }}" placeholder="Contoh: Batu Hoda" required>
                     @error('nama') <div class="invalid-feedback">{{ $message }}</div> @enderror
                 </div>
 
@@ -42,7 +42,7 @@
                 <div class="col-md-8">
                     <label class="form-label fw-semibold">Lokasi <span class="text-danger">*</span></label>
                     <input type="text" name="lokasi" class="form-control @error('lokasi') is-invalid @enderror"
-                           value="{{ old('lokasi') }}" placeholder="Contoh: Tuktuk , Danau Toba" required>
+                           value="{{ old('lokasi', 'Simanindo, Samosir') }}" placeholder="Contoh: Simanindo, Samosir" required>
                     @error('lokasi') <div class="invalid-feedback">{{ $message }}</div> @enderror
                 </div>
 
@@ -50,7 +50,7 @@
                 <div class="col-md-4">
                     <label class="form-label fw-semibold">URL Detail</label>
                     <input type="text" name="url" class="form-control @error('url') is-invalid @enderror"
-                           value="{{ old('url') }}" placeholder="Contoh: /geosite/Tomok">
+                           value="{{ old('url', '/destinasi/batu-hoda') }}" placeholder="Contoh: /destinasi/batu-hoda">
                     @error('url') <div class="invalid-feedback">{{ $message }}</div> @enderror
                 </div>
 
@@ -59,7 +59,7 @@
                     <label class="form-label fw-semibold">Deskripsi <span class="text-danger">*</span></label>
                     <textarea name="deskripsi" rows="4"
                               class="form-control @error('deskripsi') is-invalid @enderror"
-                              placeholder="Deskripsi singkat destinasi..." required>{{ old('deskripsi') }}</textarea>
+                              placeholder="Deskripsi singkat destinasi..." required>{{ old('deskripsi', 'Batu Hoda merupakan salah satu destinasi wisata alam yang berada di Simanindo, Kabupaten Samosir. Tempat ini terkenal dengan batu unik berbentuk kuda serta pemandangan indah Danau Toba yang menarik wisatawan.') }}</textarea>
                     @error('deskripsi') <div class="invalid-feedback">{{ $message }}</div> @enderror
                 </div>
 
@@ -67,8 +67,8 @@
                 <div class="col-md-8">
                     <label class="form-label fw-semibold">Tags</label>
                     <input type="text" name="tags" class="form-control @error('tags') is-invalid @enderror"
-                           value="{{ old('tags') }}"
-                           placeholder="Pisahkan dengan koma, misal: Goa Alami, Caving, Geologi">
+                           value="{{ old('tags', 'Batu Hoda, Simanindo, Danau Toba, Wisata Alam') }}"
+                           placeholder="Pisahkan dengan koma, misal: Batu Hoda, Simanindo, Danau Toba">
                     <div class="form-text">Pisahkan setiap tag dengan tanda koma (,)</div>
                     @error('tags') <div class="invalid-feedback">{{ $message }}</div> @enderror
                 </div>
