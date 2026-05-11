@@ -421,13 +421,7 @@
                             <p>Situs batu bersejarah dengan pemandangan indah</p>
                         </div>
                     </div>
-                    <div class="dest-item" onclick="window.location.href='{{ url('/geosite/liang-sipege') }}'">
-                        <div class="dest-icon"><i class="fas fa-cave"></i></div>
-                        <div class="dest-info">
-                            <h4>Liang Sipege</h4>
-                            <p>Gua alami dengan stalaktit dan stalakmit</p>
-                        </div>
-                    </div>
+                    
                     <div class="dest-item" onclick="window.location.href='{{ url('/galeri') }}'">
                         <div class="dest-icon"><i class="fas fa-camera"></i></div>
                         <div class="dest-info">
