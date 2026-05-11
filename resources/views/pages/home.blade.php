@@ -150,11 +150,11 @@
         animation: shimmer 3s infinite;
     }
     
-    .slide-1 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/tuktuk/slide1.jpg'); }
-    .slide-2 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/tuktuk/slide2.jpg'); }
-    .slide-3 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/tuktuk/slide3.jpg'); }
-    .slide-4 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/tuktuk/slide4.jpg'); }
-    .slide-5 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/tuktuk/slide5.jpg'); }
+    .slide-1 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/batuhoda/batuhoda2.jpeg'); }
+    .slide-2 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/batu passa/passa1.jpeg'); }
+    .slide-3 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/hutabolon/bolon2.jpg'); }
+    .slide-4 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/rumahkaca/kaca2.jpg'); }
+    .slide-5 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/hutabolon/bolon3.jpg'); }
     
     .hero-content {
         position: absolute;
@@ -626,14 +626,14 @@
     
     .destinasi-image:hover { 
         transform: scale(1.05) translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0, 51, 102, 0.25);
+        box-shadow: (0, 51, 102, 0.25);
         animation: pulse 0.5s ease;
     }
     
     .destinasi-image img { 
         width: 100%; 
         height: auto; 
-        display: block; 
+        display: block; 0 20px 40px rgba
         transition: transform 0.5s ease;
     }
     
@@ -1132,7 +1132,7 @@
                 <p>Kawasan ini menyimpan nilai geologi luar biasa, keanekaragaman hayati, dan warisan budaya Batak yang autentik. </p>
             </div>
             <div class="about-image" data-aos="fade-left" data-aos-duration="1000">
-                <img src="/image/Ambarita/Ambarita3.jpg" alt="Danau Toba">
+                <img src="/image/danau toba/danau toba.jpeg" alt="Danau Toba">
             </div>
         </div>
     </div>
@@ -1155,7 +1155,7 @@
                 </div>
                 <div class="destinasi-content">
                     <div class="destinasi-number">01 — GEOSITE</div>
-                    <h3>Batu hoda</h3>
+                    <h3>Batu Hoda</h3>
                     <div class="destinasi-location">Desa Cinta Dame, Kecamatan Simanindo, Kabupaten Samosir, Sumatera Utara</div>
                     <p class="destinasi-desc">Tuktuk adalah kawasan wisata terkenal di Pulau Samosir yang berada di tepi Danau Toba. Tempat ini banyak dikunjungi wisatawan 
                         karena memiliki pemandangan danau yang indah, penginapan, restoran, serta suasana yang tenang dan nyaman untuk berlibur</p>
@@ -1170,7 +1170,7 @@
                 </div>
                 <div class="destinasi-content">
                     <div class="destinasi-number">02 — GEOSITE</div>
-                    <h3>Batu passa</h3>
+                    <h3>Batu Passa</h3>
                     <div class="destinasi-location">Desa Sangkal, Kecamatan Simanindo, Kabupaten Samosir.</div>
                     <p class="destinasi-desc">Batu Passa merupakan destinasi wisata alam yang terletak di kawasan Simanindo, Kabupaten Samosir. Tempat ini terkenal dengan keunikan formasi batu alamnya,
                         panorama indah yang menghadap ke Danau Toba, serta suasana alam yang masih asri dan menenangkan.</p>
@@ -1203,7 +1203,7 @@
         <div class="section-title" data-aos="fade-up" data-aos-duration="800">
             <h2>Lokasi 3 Geosite</h2>
             <div class="divider"></div>
-            <p>Tuktuk · Ambarita · Tomok</p>
+            <p>Batu Hoda · Batu Passa · Huta Bolon</p>
         </div>
         
         <div class="maps-container" data-aos="zoom-in" data-aos-duration="1000">
@@ -1221,28 +1221,26 @@
             <div class="maps-info">
                 <div class="maps-locations">
     
-                    <!-- TUKTUK -->
-                    <div class="maps-location-item" 
-                         onclick="window.open('https://www.google.com/maps/search/?api=1&query=Tuktuk+Siadong+Samosir', '_blank')">
-                        <i class="fas fa-location-dot"></i>
-                        <span>Tuktuk</span>
-                    </div>
+                    <!-- BATU HODA -->
+<div class="maps-location-item" 
+     onclick="window.open('https://www.google.com/maps/search/?api=1&query=Batu+Hoda+Samosir', '_blank')">
+    <i class="fas fa-location-dot"></i>
+    <span>Batu Hoda</span>
+</div>
 
-                    <!-- AMBARITA -->
-                    <div class="maps-location-item" 
-                         onclick="window.open('https://www.google.com/maps/search/?api=1&query=Ambarita+Samosir', '_blank')">
-                        <i class="fas fa-location-dot"></i>
-                        <span>Ambarita</span>
-                    </div>
+<!-- BATU PASSA -->
+<div class="maps-location-item" 
+     onclick="window.open('https://www.google.com/maps/search/?api=1&query=Batu+Passa+Samosir', '_blank')">
+    <i class="fas fa-location-dot"></i>
+    <span>Batu Passa</span>
+</div>
 
-                    <!-- TOMOK -->
-                    <div class="maps-location-item" 
-                         onclick="window.open('https://www.google.com/maps/search/?api=1&query=Tomok+Samosir', '_blank')">
-                        <i class="fas fa-location-dot"></i>
-                        <span>Tomok</span>
-                    </div>
-
-                </div>
+<!-- HUTA BOLON -->
+<div class="maps-location-item" 
+     onclick="window.open('https://www.google.com/maps/search/?api=1&query=Huta+Bolon+Samosir', '_blank')">
+    <i class="fas fa-location-dot"></i>
+    <span>Huta Bolon</span>
+</div>
 
                 <div class="maps-note">
                     <i class="fas fa-map-marker-alt"></i>
