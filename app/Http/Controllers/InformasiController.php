@@ -9,7 +9,7 @@ class InformasiController extends Controller
     public function index()
     {
         $sejarahList = Informasi::where('status', 1)
-            ->orderBy('id', 'asc')
+            ->orderBy('urutan', 'asc')
             ->get();
         
         return view('pages.informasi', compact('sejarahList'));
