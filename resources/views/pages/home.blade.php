@@ -1148,47 +1148,48 @@
         </div>
         <div class="destinasi-list">
             
-            <!-- tuktuk -->
+            <!-- batuhoda -->
             <div class="destinasi-item" data-aos="fade-up" data-aos-duration="1000">
                 <div class="destinasi-image">
-                    <img src="/image/Tuktuk/Tuktuk3.jpg" alt="tuktuk">
+                    <img src="/image/batuhoda/batuhoda1.jpeg" alt="batuhoda">
                 </div>
                 <div class="destinasi-content">
                     <div class="destinasi-number">01 — GEOSITE</div>
-                    <h3>Tuktuk</h3>
-                    <div class="destinasi-location">Desa Tuktuk Siadong, Kecamatan Simanindo, Kabupaten Samosir.</div>
+                    <h3>Batu hoda</h3>
+                    <div class="destinasi-location">Desa Cinta Dame, Kecamatan Simanindo, Kabupaten Samosir, Sumatera Utara</div>
                     <p class="destinasi-desc">Tuktuk adalah kawasan wisata terkenal di Pulau Samosir yang berada di tepi Danau Toba. Tempat ini banyak dikunjungi wisatawan 
                         karena memiliki pemandangan danau yang indah, penginapan, restoran, serta suasana yang tenang dan nyaman untuk berlibur</p>
                     <a href="{{ url('/geosite/tuktuk') }}" class="destinasi-link">Jelajahi Lebih Lanjut →</a>
                 </div>
             </div>
             
-            <!-- Ambarita -->
+            <!-- Batu passa -->
             <div class="destinasi-item reverse" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                 <div class="destinasi-image">
-                    <img src="/image/Ambarita/Ambarita1.jpg" alt="Ambarita">
+                    <img src="/image/batu passa/passa1.jpeg" alt="batupassa">
                 </div>
                 <div class="destinasi-content">
                     <div class="destinasi-number">02 — GEOSITE</div>
-                    <h3>Ambarita</h3>
-                    <div class="destinasi-location">Desa Ambarita, Kecamatan Simanindo, Kabupaten Samosir.</div>
-                    <p class="destinasi-desc">Ambarita adalah desa wisata budaya Batak yang terkenal dengan Batu Kursi Persidangan Raja Siallagan dan rumah adat Batak Toba.
-                         Tempat ini menjadi salah satu tujuan wisata sejarah dan budaya di Pulau Samosir.</p>
+                    <h3>Batu passa</h3>
+                    <div class="destinasi-location">Desa Sangkal, Kecamatan Simanindo, Kabupaten Samosir.</div>
+                    <p class="destinasi-desc">Batu Passa merupakan destinasi wisata alam yang terletak di kawasan Simanindo, Kabupaten Samosir. Tempat ini terkenal dengan keunikan formasi batu alamnya,
+                        panorama indah yang menghadap ke Danau Toba, serta suasana alam yang masih asri dan menenangkan.</p>
                     <a href="{{ url('/geosite/Ambarita') }}" class="destinasi-link">Jelajahi Lebih Lanjut →</a>
                 </div>
             </div>
             
-            <!-- Tomok -->
+            <!-- Huta Bolon -->
             <div class="destinasi-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                 <div class="destinasi-image">
-                    <img src="/image/Tomok/Tomok3.jpg" alt="Tomok">
+                    <img src="/image/hutabolon/bolon1.jpg" alt="hutabolon">
                 </div>
                 <div class="destinasi-content">
                     <div class="destinasi-number">03 — GEOSITE</div>
-                    <h3>Tomok</h3>
-                    <div class="destinasi-location">Desa Tomok, Kecamatan Simanindo, Kabupaten Samosir.</div>
-                    <p class="destinasi-desc">Tomok merupakan desa wisata yang menjadi pintu masuk utama menuju Pulau Samosir melalui kapal feri dari Parapat. 
-                        Desa ini terkenal dengan makam Raja Sidabutar, pertunjukan budaya Batak, serta pusat penjualan suvenir dan ulos khas Batak.</p>
+                    <h3>Huta Bolon</h3>
+                    <div class="destinasi-location">Desa Simanindo, Kecamatan Simanindo, Kabupaten Samosir, Sumatera Utara.</div>
+                    <p class="destinasi-desc">Huta Bolon merupakan destinasi wisata budaya yang terletak di Desa Simanindo, Kecamatan Simanindo, Kabupaten Samosir.
+                        Tempat ini terkenal dengan rumah adat Batak Toba, koleksi benda bersejarah, 
+                        serta pertunjukan seni budaya tradisional seperti Tari Tor-Tor. Huta Bolon menjadi salah satu tujuan wisata budaya di Pulau Samosir yang memperkenalkan sejarah dan warisan budaya Batak kepada wisatawan.</p>
                     <a href="{{ url('/geosite/Tomok') }}" class="destinasi-link">Jelajahi Lebih Lanjut →</a>
                 </div>
             </div>
