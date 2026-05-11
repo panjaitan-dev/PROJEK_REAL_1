@@ -317,8 +317,7 @@
                     <h3>Destinasi Alam</h3>
 
                     <p>
-                        Goa alami, formasi batuan unik, air terjun,
-                        dan keindahan alam Danau Toba
+                        Batu Hoda unik dan bagus
                     </p>
                 </div>
             </a>
