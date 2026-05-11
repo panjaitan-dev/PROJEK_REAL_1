@@ -291,7 +291,7 @@
 </section>
 
 <!-- CATEGORY SECTION -->
-<section class="category-section">
+    <section class="category-section">
     <div class="container">
         <div class="section-header" data-aos="fade-up">
             <span class="subtitle">PILIH KATEGORI</span>
