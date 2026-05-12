@@ -32,15 +32,16 @@ class GaleriController extends Controller
 
         if ($request->hasFile('gambar')) {
             $file = $request->file('gambar');
-            // MENGAMBIL ISI BINARY GAMBAR (Agar tersimpan jadi LONGBLOB yang benar)
             $imageData = file_get_contents($file->getRealPath());
+            $base64    = base64_encode($imageData);
+            $mimeType  = $file->getMimeType();
 
             Galeri::create([
-                'judul' => $request->judul,
-                'kategori' => $request->kategori,
-                'deskripsi' => $request->deskripsi,
-                'gambar' => $imageData, // Simpan biner asli
-                'status' => true,
+                'judul'        => $request->judul,
+                'kategori'     => $request->kategori,
+                'deskripsi'    => $request->deskripsi,
+                'gambar'       => 'data:' . $mimeType . ';base64,' . $base64,
+                'status'       => true,
                 'tanggal_foto' => now(),
             ]);
         }

@@ -445,10 +445,15 @@
             @foreach($galeriByKategori as $kategori => $items)
                 @foreach($items as $item)
                     @php
-                        if (strlen($item->gambar) > 500) {
-                            $src = 'data:image/jpeg;base64,' . base64_encode($item->gambar);
+                        $gambar = $item->gambar;
+                        // Jika sudah berupa data URL (base64), gunakan langsung
+                        if (str_starts_with($gambar, 'data:')) {
+                            $src = $gambar;
+                        } elseif (!empty($gambar)) {
+                            // Jika berupa path file di storage
+                            $src = asset('storage/' . $gambar);
                         } else {
-                            $src = asset('storage/' . $item->gambar);
+                            $src = 'https://via.placeholder.com/400x500?text=No+Image';
                         }
                     @endphp
                     
