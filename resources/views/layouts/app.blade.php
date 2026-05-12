@@ -31,16 +31,16 @@
         .navbar {
             transition: all 0.4s ease;
             padding: 0.8rem 0;
-            background: rgba(0, 51, 102, 0.92);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(198, 164, 59, 0.25);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid rgba(0, 51, 102, 0.1);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
         }
         
         .navbar.scrolled {
-            background: rgba(0, 51, 102, 0.96);
+            background: rgba(255, 255, 255, 0.98);
             padding: 0.4rem 0;
-            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
         }
         
         .navbar .container {
@@ -78,24 +78,27 @@
         .logo-divider {
             width: 1.5px;
             height: 42px;
-            background: linear-gradient(145deg, rgba(255,255,255,0.5), rgba(255,255,255,0.1));
+            background: linear-gradient(145deg, rgba(0,51,102,0.3), rgba(0,51,102,0.05));
             border-radius: 2px;
         }
         
         .navbar-brand {
             font-size: 1.65rem;
             font-weight: 800;
-            color: white !important;
+            color: #003366 !important;
             margin: 0;
             padding: 0 0 0 6px;
             letter-spacing: -0.3px;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
         }
         
-        .navbar-brand span { color: var(--gold); font-weight: 800; }
+        .navbar-brand span { 
+            color: var(--gold); 
+            font-weight: 800; 
+        }
         
         .nav-link {
-            color: white !important;
+            color: #2c3e50 !important;
             font-weight: 500;
             margin: 0 0.2rem;
             transition: all 0.25s ease;
@@ -106,27 +109,27 @@
         
         .nav-link:hover {
             color: var(--gold) !important;
-            background: rgba(255, 255, 255, 0.12);
+            background: rgba(0, 51, 102, 0.08);
             transform: translateY(-2px);
         }
         
         .nav-link.active {
             color: var(--gold) !important;
-            background: rgba(198, 164, 59, 0.2);
+            background: rgba(198, 164, 59, 0.15);
         }
         
         .dropdown-menu {
-            background: rgba(0, 51, 102, 0.96);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(0, 51, 102, 0.15);
             border-radius: 24px;
             padding: 0.6rem 0;
             margin-top: 0.7rem;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15);
         }
         
         .dropdown-item {
-            color: white;
+            color: #2c3e50;
             padding: 10px 24px;
             font-size: 0.85rem;
             transition: all 0.25s ease;
@@ -135,7 +138,7 @@
         }
         
         .dropdown-item:hover {
-            background: rgba(198, 164, 59, 0.2);
+            background: rgba(198, 164, 59, 0.15);
             color: var(--gold);
             transform: translateX(5px);
         }
@@ -148,15 +151,19 @@
             letter-spacing: 1px;
         }
         
+        .dropdown-divider {
+            border-color: rgba(0, 51, 102, 0.1);
+        }
+        
         .navbar-toggler {
             border: none;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(0, 51, 102, 0.08);
             padding: 8px 12px;
             border-radius: 14px;
         }
         
         .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 51, 102, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
         
         @media (max-width: 991px) {
@@ -164,13 +171,17 @@
             .logo-divider { height: 36px; }
             .navbar-brand { font-size: 1.5rem; }
             .navbar-collapse {
-                background: rgba(0, 51, 102, 0.96);
+                background: rgba(255, 255, 255, 0.98);
                 backdrop-filter: blur(20px);
                 padding: 1.2rem;
                 border-radius: 28px;
                 margin-top: 1rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             }
-            .nav-link { text-align: center; }
+            .nav-link { 
+                text-align: center;
+                color: #003366 !important;
+            }
         }
         
         @media (max-width: 768px) {

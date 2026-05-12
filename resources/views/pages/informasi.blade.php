@@ -6,9 +6,10 @@
 
 <style>
     .sejarah-hero {
-        height: 55vh;
-        min-height: 360px;
-        background: linear-gradient(rgba(0, 51, 102, 0.6), rgba(0, 102, 153, 0.4)), url('/image/Tomok/Tomok1.jpg') center/cover no-repeat;
+        height: 45vh;
+        background: linear-gradient(rgba(0, 51, 102, 0.6), rgba(0, 102, 153, 0.4)), url('/image/SBH/sejarah.png');
+        background-size: cover;
+        background-position: center;
         display: flex;
         align-items: center;
         justify-content: center;
