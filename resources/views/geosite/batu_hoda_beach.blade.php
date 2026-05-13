@@ -234,8 +234,7 @@
         <div class="maps-section">
             <div class="maps-container">
                 <iframe
-                    src="https://maps.google.com/maps?q=batu_hoda_beach%20Siadong,%20Samosir,%20Sumatera%20Utara&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                    width="100%"
+                    src="https://www.google.com/maps/place/Batu+Passa+Liang+sipogu/@2.743212,98.7637079,17z/data=!3m1!4b1!4m6!3m5!1s0x3031c1000ee6f31f:0x6ee7c8a134f162fd!8m2!3d2.7432066!4d98.7662828!16s%2Fg%2F11vqwvkk66?entry=ttu&g_ep=EgoyMDI2MDUxMC4wIKXMDSoASAFQAw%3D%3D"
                     height="450"
                     style="border:0;"
                     allowfullscreen=""

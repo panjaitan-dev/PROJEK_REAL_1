@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>museum_huta_bolon - Geosite Danau Toba</title>
+    <title>batu_pasa_pantai - Geosite Danau Toba</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="/css/batu_hoda_beach.css">
+    <link rel="stylesheet" href="/css/batu_hoda_beach.css">
 </head>
 <body>
 
@@ -49,9 +49,9 @@
 </div>
 
 <!-- HERO -->
-<section class="hero" style="background-image: url('/image/museum_huta_bolon/museum_huta_bolon1.jpg');">
+<section class="hero" style="background-image: url('/image/batu_pasa_pantai/batu_pasa_pantai3.jpg');">
     <div>
-        <h1 class="hero-title">A M B A R I T A</h1>
+        <h1 class="hero-title">T O M O K</h1>
         <p class="hero-subtitle">Pulau Samosir · Danau Toba</p>
     </div>
 </section>
@@ -65,31 +65,29 @@
             <p>Warisan budaya Batak yang autentik dan masih hidup</p>
         </div>
         <div class="sejarah-item">
-            <div class="sejarah-image"><img src="/image/museum_huta_bolon/museum_huta_bolon7.jpg" alt="Desa museum_huta_bolon"></div>
+            <div class="sejarah-image"><img src="/image/batu_pasa_pantai/batu_pasa_pantai3.jpg" alt="Desa batu_pasa_pantai"></div>
             <div class="sejarah-text">
-                <h3>Sejarah museum_huta_bolon</h3>
-                <p>museum_huta_bolon merupakan desa tua yang terkenal sebagai pusat pemerintahan Raja
-                 Siallagan pada masa lalu. Desa ini dikenal karena adanya kursi batu dan meja persidangan batu yang digunakan 
-                 sebagai tempat pengadilan adat masyarakat Batak Toba.</p>
+                <h3>Sejarah batu_pasa_pantai</h3>
+                <p>batu_pasa_pantai dikenal sebagai desa bersejarah yang pernah menjadi pusat kekuasaan Raja Sidabutar. 
+                    Desa ini memiliki banyak peninggalan sejarah Batak Toba, termasuk makam batu Raja Sidabutar
+                     yang masih terawat hingga sekarang</p>
             </div>
         </div>
         <div class="sejarah-item reverse">
-            <div class="sejarah-image"><img src="/image/museum_huta_bolon/museum_huta_bolon4.jpg" alt="Tradisi Batak"></div>
+            <div class="sejarah-image"><img src="/image/batu_pasa_pantai/batu_pasa_pantai1.jpg" alt="Tradisi Batak"></div>
             <div class="sejarah-text">
-                <h3>Budaya museum_huta_bolon</h3>
-                <p>Budaya di museum_huta_bolon masih sangat kental dengan tradisi Batak Toba. Rumah adat tradisional, tarian tortor, dan penggunaan ulos
-                     masih dijaga oleh masyarakat setempat. 
-                    Cerita rakyat dan sejarah kerajaan Batak juga diwariskan secara turun-temurun.</p>
+                <h3>Budaya batu_pasa_pantai</h3>
+                <p>Budaya Batak Toba sangat terasa di batu_pasa_pantai. Masyarakatnya masih menjaga tradisi adat, tarian tortor, 
+                    serta pertunjukan sigale-gale yang menjadi ikon budaya daerah tersebut. Kerajinan ulos dan 
+                    ukiran kayu khas Batak juga banyak ditemukan di desa ini.</p>
             </div>
         </div>
         <div class="sejarah-item">
-            <div class="sejarah-image"><img src="/image/museum_huta_bolon/museum_huta_bolon5.jpg" alt="Wisata Budaya"></div>
+            <div class="sejarah-image"><img src="/image/batu_pasa_pantai/batu_pasa_pantai2.jpg" alt="Wisata Budaya"></div>
             <div class="sejarah-text">
-                <h3>Daya Tarik Wisata museum_huta_bolon</h3>
-                <p>museum_huta_bolon terkenal dengan situs Batu Persidangan 
-                    Raja Siallagan yang menjadi daya tarik utama wisatawan.
-                     Selain melihat peninggalan sejarah, pengunjung juga dapat menikmati suasana
-                      desa tradisional Batak dan menyaksikan pertunjukan budaya khas Batak Toba.</p>
+                <h3>Daya Tarik Wisata batu_pasa_pantai</h3>
+                <p>batu_pasa_pantai menjadi salah satu tujuan wisata favorit di Pulau Samosir karena memiliki situs sejarah dan pusat oleh-oleh khas Batak. Wisatawan dapat mengunjungi makam Raja Sidabutar,
+                     melihat pertunjukan sigale-gale, serta membeli kain ulos dan suvenir tradisional.</p>
             </div>
         </div>
     </div>
@@ -101,7 +99,7 @@
         <div class="section-title">
             <h2>UMKM Lokal</h2>
             <div class="divider"></div>
-            <p>Produk autentik dan berkualitas dari pengrajin lokal museum_huta_bolon</p>
+            <p>Produk autentik dan berkualitas dari pengrajin lokal batu_pasa_pantai</p>
         </div>
         <div class="grid-3">
             @forelse($umkm as $item)
@@ -198,9 +196,9 @@
 <section id="galeri" class="section">
     <div class="container">
         <div class="section-title">
-            <h2>Galeri museum_huta_bolon</h2>
+            <h2>Galeri batu_pasa_pantai</h2>
             <div class="divider"></div>
-            <p>Keindahan alam museum_huta_bolon yang memukau dalam setiap musim</p>
+            <p>Keindahan alam batu_pasa_pantai yang memukau dalam setiap musim</p>
         </div>
         @if($galeriGeosite->count() > 0)
         <div class="galeri-tabs">
@@ -228,16 +226,15 @@
 <section id="lokasi" class="section bg-light">
     <div class="container">
         <div class="section-title">
-            <h2>Lokasi & Cara Mencapai</h2>
+            <h2>Lokasi batu_pasa_pantai</h2>
             <div class="divider"></div>
-            <p></p>
+            <p>Desa bersejarah di Pulau Samosir, Danau Toba</p>
         </div>
 
         <div class="maps-section">
             <div class="maps-container">
-                <!-- Google Maps dengan marker lokasi museum_huta_bolon -->
                 <iframe
-                    src="https://maps.google.com/maps?q=museum_huta_bolon,%20Simanindo,%20Samosir,%20Sumatera%20Utara&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    src="https://maps.google.com/maps?q=batu_pasa_pantai,%20Simanindo,%20Samosir,%20Sumatera%20Utara&t=&z=14&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="450"
                     style="border:0;"
@@ -248,21 +245,19 @@
 
             <div class="rute-info">
                 <div class="rute-item">
-                    <h4>🏍️ Dengan Motor</h4>
-                    <p>Balige → Ajibata (30m) → Ferry (20m) → museum_huta_bolon (15m)</p>
-                    <span class="rute-time">± 1.5 jam</span>
+                    <h4>🚢 Dari Parapat</h4>
+                    <p>Naik ferry dari Pelabuhan Parapat menuju Pelabuhan batu_pasa_pantai (± 45 menit).</p>
+                    <span class="rute-time">Ferry tersedia setiap hari</span>
                 </div>
-
                 <div class="rute-item">
-                    <h4>🚗 Dengan Mobil</h4>
-                    <p>Balige → Ajibata (30m) → Parkir → Ferry → Transportasi lokal</p>
-                    <span class="rute-time">± 2 jam</span>
+                    <h4>🏍️ Dari batu_hoda_beach Siadong</h4>
+                    <p>Berkendara ke arah selatan sekitar 5 km dari pusat batu_hoda_beach.</p>
+                    <span class="rute-time">± 10 menit</span>
                 </div>
-
                 <div class="rute-item">
-                    <h4>⛴️ Ferry Schedule</h4>
-                    <p>Operasional setiap hari 06:00 - 17:00 WIB</p>
-                    <span class="rute-time">Kapasitas penuh</span>
+                    <h4>📍 Daya Tarik Utama</h4>
+                    <p>Makam Raja Sidabutar, pertunjukan Sigale-gale, dan pusat oleh-oleh khas Batak.</p>
+                    <span class="rute-time">Buka setiap hari</span>
                 </div>
             </div>
         </div>
@@ -272,9 +267,9 @@
 <!-- CTA -->
 <section class="cta">
     <div class="container">
-        <h3>Jangan Lewatkan Keindahan museum_huta_bolon</h3>
+        <h3>Jangan Lewatkan Keindahan batu_pasa_pantai</h3>
         <div class="divider"></div>
-        <p>Rasakan pengalaman wisata budaya Batak yang autentik, nikmati keindahan alam Danau Toba yang memukau, dan ciptakan kenangan indah bersama keluarga tercinta di museum_huta_bolon</p>
+        <p>Rasakan pengalaman wisata budaya Batak yang autentik, nikmati keindahan alam Danau Toba yang memukau, dan ciptakan kenangan indah bersama keluarga tercinta di batu_pasa_pantai</p>
         <div class="cta-buttons">
             <a href="{{ url('/') }}" class="cta-btn">Kembali ke Beranda</a>
             <a href="#penginapan" class="cta-btn cta-btn-secondary">Pesan Penginapan</a>
