@@ -96,34 +96,106 @@
             <div class="sejarah-image morphing-image">
                 <div class="morphing-container">
                     <div class="morphing-horse">
-                        <svg viewBox="0 0 200 200" class="horse-svg">
-                            <path d="M140,60 C145,50 155,45 160,50 C165,55 162,65 155,70 C150,73 145,70 140,68 
-                                     C135,66 130,60 130,55 C130,50 135,55 140,60Z" fill="#8B5A2B"/>
-                            <ellipse cx="130" cy="75" rx="30" ry="20" fill="#A0522D"/>
-                            <rect x="100" y="70" width="35" height="50" rx="8" fill="#8B5A2B"/>
-                            <rect x="95" y="75" width="15" height="45" rx="6" fill="#A0522D"/>
-                            <rect x="135" y="75" width="15" height="45" rx="6" fill="#A0522D"/>
-                            <ellipse cx="120" cy="55" rx="12" ry="8" fill="#6B3E1A"/>
-                            <circle cx="125" cy="52" r="2" fill="black"/>
-                            <path d="M115,95 L110,115 L120,110 L130,115 L125,95Z" fill="#6B3E1A"/>
-                            <rect x="100" y="115" width="10" height="30" rx="3" fill="#5C3317"/>
-                            <rect x="130" y="115" width="10" height="30" rx="3" fill="#5C3317"/>
-                            <path d="M145,70 Q160,60 170,70 Q165,80 150,78Z" fill="#8B5A2B"/>
+                        <svg viewBox="0 0 500 400" class="horse-svg">
+                            <!-- Badan kuda -->
+                            <ellipse cx="250" cy="220" rx="90" ry="55" fill="#C68642"/>
+                            <!-- Leher -->
+                            <path d="M180,190 Q160,140 140,110 Q130,95 145,90 L160,100 Q170,130 195,180Z" fill="#C68642"/>
+                            <!-- Kepala -->
+                            <ellipse cx="125" cy="100" rx="40" ry="35" fill="#C68642" transform="rotate(-15 125 100)"/>
+                            <!-- Moncong -->
+                            <ellipse cx="85" cy="115" rx="30" ry="22" fill="#D4944A" transform="rotate(-25 85 115)"/>
+                            <!-- Hidung -->
+                            <circle cx="70" cy="120" r="5" fill="#4A2A10"/>
+                            <circle cx="82" cy="125" r="5" fill="#4A2A10"/>
+                            <!-- Mata -->
+                            <circle cx="120" cy="85" r="10" fill="white"/>
+                            <circle cx="117" cy="85" r="6" fill="#2C1810"/>
+                            <circle cx="115" cy="83" r="2.5" fill="white"/>
+                            <!-- Telinga -->
+                            <path d="M140,65 L150,30 L165,60Z" fill="#B87333"/>
+                            <path d="M160,62 L175,32 L185,65Z" fill="#B87333"/>
+                            <path d="M145,60 L152,40 L160,55Z" fill="#D4944A"/>
+                            <path d="M165,58 L175,42 L180,60Z" fill="#D4944A"/>
+                            <!-- Surai -->
+                            <path d="M145,70 Q160,55 170,80 Q175,65 185,85 Q180,80 175,95 Q170,90 165,100" 
+                                  fill="none" stroke="#4A2A10" stroke-width="7" stroke-linecap="round"/>
+                            <path d="M150,75 Q155,60 165,70" fill="none" stroke="#5C3317" stroke-width="5" stroke-linecap="round"/>
+                            <!-- Kaki depan 1 -->
+                            <rect x="195" y="260" width="22" height="85" rx="8" fill="#B87333"/>
+                            <path d="M190,340 L200,360 L210,340Z" fill="#4A2A10"/>
+                            <!-- Kaki depan 2 -->
+                            <rect x="225" y="260" width="22" height="85" rx="8" fill="#C68642"/>
+                            <path d="M220,340 L230,360 L240,340Z" fill="#4A2A10"/>
+                            <!-- Kaki belakang 1 -->
+                            <rect x="290" y="260" width="22" height="85" rx="8" fill="#B87333"/>
+                            <path d="M285,340 L295,360 L305,340Z" fill="#4A2A10"/>
+                            <!-- Kaki belakang 2 -->
+                            <rect x="320" y="260" width="22" height="85" rx="8" fill="#C68642"/>
+                            <path d="M315,340 L325,360 L335,340Z" fill="#4A2A10"/>
+                            <!-- Ekor -->
+                            <path d="M335,200 Q375,190 380,220 Q385,200 395,230 Q385,235 375,225 Q370,220 365,215" 
+                                  fill="none" stroke="#4A2A10" stroke-width="10" stroke-linecap="round"/>
+                            <path d="M340,210 Q370,200 375,225" fill="none" stroke="#5C3317" stroke-width="6" stroke-linecap="round"/>
+                            <!-- Perut -->
+                            <path d="M185,245 Q250,285 315,245" fill="none" stroke="#A0622E" stroke-width="3"/>
+                            <!-- Detail otot -->
+                            <path d="M200,200 Q250,190 300,200" fill="none" stroke="#A0622E" stroke-width="2"/>
                         </svg>
                     </div>
                     <div class="morphing-stone">
-                        <svg viewBox="0 0 200 200" class="stone-svg">
-                            <path d="M100,40 C120,38 145,45 150,70 C155,95 145,125 130,140 
-                                     C115,155 95,160 75,150 C55,140 45,115 50,90 C55,65 75,42 100,40Z" 
-                                  fill="#808080" stroke="#606060" stroke-width="2"/>
-                            <path d="M110,60 C120,58 135,65 138,80 C141,95 135,110 125,118" 
-                                  fill="none" stroke="#707070" stroke-width="3"/>
-                            <path d="M70,100 C75,95 85,92 90,98" 
-                                  fill="none" stroke="#707070" stroke-width="2"/>
-                            <circle cx="120" cy="95" r="3" fill="#606060"/>
-                            <circle cx="130" cy="105" r="2" fill="#606060"/>
-                            <path d="M80,130 L95,140 L90,150 L75,145Z" fill="#707070"/>
-                            <path d="M140,85 L155,90 L150,105 L135,100Z" fill="#757575"/>
+                        <svg viewBox="0 0 500 400" class="stone-svg">
+                            <!-- BATU BENTUK KUDA - sama persis dengan bentuk kuda di atas, tapi warna batu -->
+                            <!-- Badan batu -->
+                            <ellipse cx="250" cy="220" rx="90" ry="55" fill="#7A8A7A"/>
+                            <!-- Leher batu -->
+                            <path d="M180,190 Q160,140 140,110 Q130,95 145,90 L160,100 Q170,130 195,180Z" fill="#7A8A7A"/>
+                            <!-- Kepala batu -->
+                            <ellipse cx="125" cy="100" rx="40" ry="35" fill="#7A8A7A" transform="rotate(-15 125 100)"/>
+                            <!-- Moncong batu -->
+                            <ellipse cx="85" cy="115" rx="30" ry="22" fill="#8A9A8A" transform="rotate(-25 85 115)"/>
+                            <!-- Lubang hidung batu -->
+                            <circle cx="70" cy="120" r="5" fill="#5A6A5A"/>
+                            <circle cx="82" cy="125" r="5" fill="#5A6A5A"/>
+                            <!-- Mata batu -->
+                            <circle cx="120" cy="85" r="10" fill="#6A7A6A"/>
+                            <circle cx="117" cy="85" r="6" fill="#4A5A4A"/>
+                            <!-- Telinga batu -->
+                            <path d="M140,65 L150,30 L165,60Z" fill="#6A7A6A"/>
+                            <path d="M160,62 L175,32 L185,65Z" fill="#6A7A6A"/>
+                            <path d="M145,60 L152,40 L160,55Z" fill="#8A9A8A"/>
+                            <path d="M165,58 L175,42 L180,60Z" fill="#8A9A8A"/>
+                            <!-- Surai batu (retak seperti rambut) -->
+                            <path d="M145,70 Q160,55 170,80 Q175,65 185,85 Q180,80 175,95 Q170,90 165,100" 
+                                  fill="none" stroke="#5A6A5A" stroke-width="7" stroke-linecap="round"/>
+                            <path d="M150,75 Q155,60 165,70" fill="none" stroke="#4A5A4A" stroke-width="5" stroke-linecap="round"/>
+                            <!-- Kaki depan batu -->
+                            <rect x="195" y="260" width="22" height="85" rx="8" fill="#6A7A6A"/>
+                            <path d="M190,340 L200,360 L210,340Z" fill="#4A5A4A"/>
+                            <rect x="225" y="260" width="22" height="85" rx="8" fill="#7A8A7A"/>
+                            <path d="M220,340 L230,360 L240,340Z" fill="#4A5A4A"/>
+                            <!-- Kaki belakang batu -->
+                            <rect x="290" y="260" width="22" height="85" rx="8" fill="#6A7A6A"/>
+                            <path d="M285,340 L295,360 L305,340Z" fill="#4A5A4A"/>
+                            <rect x="320" y="260" width="22" height="85" rx="8" fill="#7A8A7A"/>
+                            <path d="M315,340 L325,360 L335,340Z" fill="#4A5A4A"/>
+                            <!-- Ekor batu -->
+                            <path d="M335,200 Q375,190 380,220 Q385,200 395,230 Q385,235 375,225 Q370,220 365,215" 
+                                  fill="none" stroke="#5A6A5A" stroke-width="10" stroke-linecap="round"/>
+                            <path d="M340,210 Q370,200 375,225" fill="none" stroke="#4A5A4A" stroke-width="6" stroke-linecap="round"/>
+                            <!-- Retak batu di badan -->
+                            <path d="M220,195 L240,210 L235,230" fill="none" stroke="#5A6A5A" stroke-width="2.5"/>
+                            <path d="M280,200 L295,220 L290,240" fill="none" stroke="#5A6A5A" stroke-width="2"/>
+                            <path d="M250,245 L260,265 L255,280" fill="none" stroke="#5A6A5A" stroke-width="2"/>
+                            <!-- Retak di kepala -->
+                            <path d="M130,90 L145,100 L140,115" fill="none" stroke="#5A6A5A" stroke-width="2"/>
+                            <!-- Retak di kaki -->
+                            <path d="M205,290 L215,305" fill="none" stroke="#5A6A5A" stroke-width="1.5"/>
+                            <path d="M305,290 L315,305" fill="none" stroke="#5A6A5A" stroke-width="1.5"/>
+                            <!-- Lumut kecil -->
+                            <ellipse cx="230" cy="270" rx="12" ry="5" fill="#4A6A4A" opacity="0.6"/>
+                            <ellipse cx="270" cy="185" rx="10" ry="4" fill="#4A6A4A" opacity="0.5"/>
+                            <ellipse cx="140" cy="130" rx="8" ry="3" fill="#4A6A4A" opacity="0.5"/>
                         </svg>
                     </div>
                 </div>
@@ -137,16 +209,15 @@
 </section>
 
 <style>
-/* CSS untuk efek morphing kuda menjadi batu */
+/* CSS untuk efek morphing - SEDERHANA & HALUS */
 .morphing-container {
     position: relative;
     width: 100%;
-    height: 250px;
+    height: 350px;
     overflow: hidden;
     border-radius: 12px;
     background: linear-gradient(145deg, #2c3e2f, #1e2a20);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -159,57 +230,40 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.8s ease-in-out, transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: opacity 0.8s ease-in-out;
 }
 
 .horse-svg, .stone-svg {
-    width: 180px;
-    height: 180px;
-    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
+    width: 95%;
+    height: 95%;
+    filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));
 }
 
 .morphing-horse {
     opacity: 1;
-    transform: scale(1) rotate(0deg);
 }
 
 .morphing-stone {
     opacity: 0;
-    transform: scale(1.3) rotate(10deg);
 }
 
+/* Hover - berubah jadi batu */
 .morphing-container:hover .morphing-horse {
     opacity: 0;
-    transform: scale(0.7) rotate(-15deg);
 }
 
 .morphing-container:hover .morphing-stone {
     opacity: 1;
-    transform: scale(1) rotate(0deg);
 }
 
-/* Animasi tambahan untuk efek gerakan */
-@keyframes horseGallop {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-5px); }
-}
-
-.morphing-container:hover .horse-svg {
-    animation: horseGallop 0.3s ease-in-out 2;
-}
-
-/* Untuk tampilan responsif */
+/* Responsif */
 @media (max-width: 768px) {
     .morphing-container {
-        height: 200px;
-    }
-    .horse-svg, .stone-svg {
-        width: 140px;
-        height: 140px;
+        height: 250px;
     }
 }
 
-/* Gaya dasar section jika belum ada */
+/* Gaya dasar section */
 .section {
     padding: 80px 0;
     background: #f9f9f9;
@@ -242,7 +296,7 @@
 }
 .sejarah-image {
     flex: 1;
-    min-width: 250px;
+    min-width: 280px;
 }
 .sejarah-image img {
     width: 100%;
@@ -266,7 +320,6 @@
     }
 }
 </style>
-
 
 <!-- UMKM -->
 <section id="umkm" class="section bg-light">
