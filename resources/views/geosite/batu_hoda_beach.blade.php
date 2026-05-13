@@ -51,8 +51,8 @@
 <!-- HERO -->
 <section class="hero" style="background-image: url('/image/batu_hoda_beach/batu_hoda_beach3.jpg');">
     <div>
-        <h1 class="hero-title">T U K T U K</h1>
-        <p class="hero-subtitle">Pulau Samosir · Danau Toba</p>
+        <h1 class="hero-title">Batu Hoda Beach</h1>
+        <p class="hero-subtitle"></p>
     </div>
 </section>
 
@@ -90,8 +90,183 @@
                      kegiatan seperti bersepeda, berenang, berkeliling danau, hingga menikmati matahari terbenam.</p>
             </div>
         </div>
+
+        <!-- LEGENDA KUDA JADI BATU DENGAN EFEK MORPHING -->
+        <div class="sejarah-item morphing-item">
+            <div class="sejarah-image morphing-image">
+                <div class="morphing-container">
+                    <div class="morphing-horse">
+                        <svg viewBox="0 0 200 200" class="horse-svg">
+                            <path d="M140,60 C145,50 155,45 160,50 C165,55 162,65 155,70 C150,73 145,70 140,68 
+                                     C135,66 130,60 130,55 C130,50 135,55 140,60Z" fill="#8B5A2B"/>
+                            <ellipse cx="130" cy="75" rx="30" ry="20" fill="#A0522D"/>
+                            <rect x="100" y="70" width="35" height="50" rx="8" fill="#8B5A2B"/>
+                            <rect x="95" y="75" width="15" height="45" rx="6" fill="#A0522D"/>
+                            <rect x="135" y="75" width="15" height="45" rx="6" fill="#A0522D"/>
+                            <ellipse cx="120" cy="55" rx="12" ry="8" fill="#6B3E1A"/>
+                            <circle cx="125" cy="52" r="2" fill="black"/>
+                            <path d="M115,95 L110,115 L120,110 L130,115 L125,95Z" fill="#6B3E1A"/>
+                            <rect x="100" y="115" width="10" height="30" rx="3" fill="#5C3317"/>
+                            <rect x="130" y="115" width="10" height="30" rx="3" fill="#5C3317"/>
+                            <path d="M145,70 Q160,60 170,70 Q165,80 150,78Z" fill="#8B5A2B"/>
+                        </svg>
+                    </div>
+                    <div class="morphing-stone">
+                        <svg viewBox="0 0 200 200" class="stone-svg">
+                            <path d="M100,40 C120,38 145,45 150,70 C155,95 145,125 130,140 
+                                     C115,155 95,160 75,150 C55,140 45,115 50,90 C55,65 75,42 100,40Z" 
+                                  fill="#808080" stroke="#606060" stroke-width="2"/>
+                            <path d="M110,60 C120,58 135,65 138,80 C141,95 135,110 125,118" 
+                                  fill="none" stroke="#707070" stroke-width="3"/>
+                            <path d="M70,100 C75,95 85,92 90,98" 
+                                  fill="none" stroke="#707070" stroke-width="2"/>
+                            <circle cx="120" cy="95" r="3" fill="#606060"/>
+                            <circle cx="130" cy="105" r="2" fill="#606060"/>
+                            <path d="M80,130 L95,140 L90,150 L75,145Z" fill="#707070"/>
+                            <path d="M140,85 L155,90 L150,105 L135,100Z" fill="#757575"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="sejarah-text">
+                <h3>Legenda Kuda Jadi Batu</h3>
+                <p>Konon di kawasan batu_hoda_beach dahulu terdapat seekor kuda putih kepunyaan seorang datu sakti. Karena durhaka, kuda tersebut dikutuk menjadi batu. Hingga kini, di tepi pantai danau terdapat batu besar menyerupai kuda yang sedang menunduk. Warga setempat menyebutnya <strong>Batu Hoda Si Kuda</strong>, dan diyakini sebagai pengingat akan kesetiaan serta konsekuensi dari kesombongan.</p>
+            </div>
+        </div>
     </div>
 </section>
+
+<style>
+/* CSS untuk efek morphing kuda menjadi batu */
+.morphing-container {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #2c3e2f, #1e2a20);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.morphing-horse, .morphing-stone {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s ease-in-out, transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.horse-svg, .stone-svg {
+    width: 180px;
+    height: 180px;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
+}
+
+.morphing-horse {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.morphing-stone {
+    opacity: 0;
+    transform: scale(1.3) rotate(10deg);
+}
+
+.morphing-container:hover .morphing-horse {
+    opacity: 0;
+    transform: scale(0.7) rotate(-15deg);
+}
+
+.morphing-container:hover .morphing-stone {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+/* Animasi tambahan untuk efek gerakan */
+@keyframes horseGallop {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+.morphing-container:hover .horse-svg {
+    animation: horseGallop 0.3s ease-in-out 2;
+}
+
+/* Untuk tampilan responsif */
+@media (max-width: 768px) {
+    .morphing-container {
+        height: 200px;
+    }
+    .horse-svg, .stone-svg {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+/* Gaya dasar section jika belum ada */
+.section {
+    padding: 80px 0;
+    background: #f9f9f9;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.section-title h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+.divider {
+    width: 60px;
+    height: 3px;
+    background: #e74c3c;
+    margin: 15px auto;
+}
+.sejarah-item {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 60px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.sejarah-image {
+    flex: 1;
+    min-width: 250px;
+}
+.sejarah-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.sejarah-text {
+    flex: 1;
+}
+.sejarah-text h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+.reverse {
+    flex-direction: row-reverse;
+}
+@media (max-width: 768px) {
+    .sejarah-item, .reverse {
+        flex-direction: column;
+    }
+}
+</style>
+
 
 <!-- UMKM -->
 <section id="umkm" class="section bg-light">
@@ -234,8 +409,7 @@
         <div class="maps-section">
             <div class="maps-container">
                 <iframe
-                    src="https://maps.google.com/maps?q=batu_hoda_beach%20Siadong,%20Samosir,%20Sumatera%20Utara&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                    width="100%"
+                    src="https://www.google.com/maps/place/Batu+Passa+Liang+sipogu/@2.743212,98.7637079,17z/data=!3m1!4b1!4m6!3m5!1s0x3031c1000ee6f31f:0x6ee7c8a134f162fd!8m2!3d2.7432066!4d98.7662828!16s%2Fg%2F11vqwvkk66?entry=ttu&g_ep=EgoyMDI2MDUxMC4wIKXMDSoASAFQAw%3D%3D"
                     height="450"
                     style="border:0;"
                     allowfullscreen=""
