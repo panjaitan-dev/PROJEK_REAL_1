@@ -171,31 +171,6 @@
         border-color: #003366;
     }
 
-    /* Empty State */
-    .empty-state {
-        grid-column: 1 / -1;
-        text-align: center;
-        padding: 60px 20px;
-        background: white;
-        border-radius: 16px;
-    }
-
-    .empty-state i {
-        font-size: 3rem;
-        color: #ccc;
-        margin-bottom: 15px;
-    }
-
-    .empty-state h3 {
-        font-size: 1.3rem;
-        color: #666;
-        margin-bottom: 8px;
-    }
-
-    .empty-state p {
-        color: #999;
-    }
-
     /* Responsive */
     @media (max-width: 992px) {
         .destinasi-grid {
@@ -243,6 +218,7 @@
 
             @forelse($destinasi as $item)
 
+            <!-- DATA DARI DATABASE -->
             <div class="dest-card"
                  data-aos="fade-up"
                  data-aos-delay="{{ $loop->index * 100 }}">
@@ -276,7 +252,8 @@
                         @endif
                     </div>
 
-                    <a href="{{ route('destinasi.detail', $item->slug) }}" class="card-link">
+                    <!-- LINK AMAN -->
+                    <a href="{{ url('/destinasi') }}" class="card-link">
                         Jelajahi →
                     </a>
 
@@ -285,10 +262,43 @@
 
             @empty
 
-            <div class="empty-state">
-                <i class="fas fa-mountain"></i>
-                <h3>Belum Ada Destinasi</h3>
-                <p>Destinasi pada kategori ini akan segera ditambahkan.</p>
+            <!-- DATA MANUAL JIKA DATABASE KOSONG -->
+            <div class="dest-card" data-aos="fade-up">
+
+                <div class="card-image">
+                    <img src="{{ asset('image/tuktuk/destinasi-alam.jpg') }}"
+                         alt="Danau Toba">
+                </div>
+
+                <div class="card-content">
+
+                    <h3 class="card-title">
+                        Danau Toba
+                    </h3>
+
+                    <div class="card-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Sumatera Utara
+                    </div>
+
+                    <p class="card-desc">
+                        Danau vulkanik terbesar di Asia Tenggara
+                        dengan panorama alam yang sangat indah
+                        dan udara yang sejuk.
+                    </p>
+
+                    <div class="card-tags">
+                        <span>#Danau</span>
+                        <span>#WisataAlam</span>
+                        <span>#Geosite</span>
+                    </div>
+
+                    <!-- LINK AMAN -->
+                    <a href="{{ url('/destinasi') }}" class="card-link">
+                        Jelajahi →
+                    </a>
+
+                </div>
             </div>
 
             @endforelse
