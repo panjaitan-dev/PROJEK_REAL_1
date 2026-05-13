@@ -12,91 +12,91 @@ class GaleriGeositeSeeder extends Seeder
         DB::table('galeri_geosite')->truncate();
 
         $data = [
-            // TUKTUK
+            // batu_hoda_beach
             [
-                'judul'    => 'Sunrise di Tuk-Tuk',
+                'judul'    => 'Sunrise di batu_hoda_beach',
                 'kategori' => 'landscape',
                 'gambar'   => 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
-                'geosite'  => 'tuktuk',
+                'geosite'  => 'batu_hoda_beach',
                 'status'   => true,
             ],
             [
-                'judul'    => 'Perahu Tradisional Tuk-Tuk',
+                'judul'    => 'Perahu Tradisional batu_hoda_beach',
                 'kategori' => 'aktivitas',
                 'gambar'   => 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80',
-                'geosite'  => 'tuktuk',
+                'geosite'  => 'batu_hoda_beach',
                 'status'   => true,
             ],
             [
-                'judul'    => 'Kehidupan Lokal Tuk-Tuk',
+                'judul'    => 'Kehidupan Lokal batu_hoda_beach',
                 'kategori' => 'budaya',
                 'gambar'   => 'https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800&q=80',
-                'geosite'  => 'tuktuk',
+                'geosite'  => 'batu_hoda_beach',
                 'status'   => true,
             ],
             [
-                'judul'    => 'Danau Toba dari Tuk-Tuk',
+                'judul'    => 'Danau Toba dari batu_hoda_beach',
                 'kategori' => 'landscape',
                 'gambar'   => 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80',
-                'geosite'  => 'tuktuk',
+                'geosite'  => 'batu_hoda_beach',
                 'status'   => true,
             ],
-            // TOMOK
+            // batu_pasa_pantai
             [
                 'judul'    => 'Makam Raja Sidabutar',
                 'kategori' => 'heritage',
                 'gambar'   => 'https://images.unsplash.com/photo-1568454537842-d933259bb258?w=800&q=80',
-                'geosite'  => 'tomok',
+                'geosite'  => 'batu_pasa_pantai',
                 'status'   => true,
             ],
             [
-                'judul'    => 'Pertunjukan Sigale-Gale Tomok',
+                'judul'    => 'Pertunjukan Sigale-Gale batu_pasa_pantai',
                 'kategori' => 'budaya',
                 'gambar'   => 'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80',
-                'geosite'  => 'tomok',
+                'geosite'  => 'batu_pasa_pantai',
                 'status'   => true,
             ],
             [
-                'judul'    => 'Pasar Suvenir Tomok',
+                'judul'    => 'Pasar Suvenir batu_pasa_pantai',
                 'kategori' => 'aktivitas',
                 'gambar'   => 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800&q=80',
-                'geosite'  => 'tomok',
+                'geosite'  => 'batu_pasa_pantai',
                 'status'   => true,
             ],
             [
-                'judul'    => 'Pemandangan Danau dari Tomok',
+                'judul'    => 'Pemandangan Danau dari batu_pasa_pantai',
                 'kategori' => 'landscape',
                 'gambar'   => 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80',
-                'geosite'  => 'tomok',
+                'geosite'  => 'batu_pasa_pantai',
                 'status'   => true,
             ],
-            // AMBARITA
+            // museum_huta_bolon
             [
-                'judul'    => 'Situs Megalitik Ambarita',
+                'judul'    => 'Situs Megalitik museum_huta_bolon',
                 'kategori' => 'heritage',
                 'gambar'   => 'https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80',
-                'geosite'  => 'ambarita',
+                'geosite'  => 'museum_huta_bolon',
                 'status'   => true,
             ],
             [
-                'judul'    => 'Tenun Ulos Ambarita',
+                'judul'    => 'Tenun Ulos museum_huta_bolon',
                 'kategori' => 'budaya',
                 'gambar'   => 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800&q=80',
-                'geosite'  => 'ambarita',
+                'geosite'  => 'museum_huta_bolon',
                 'status'   => true,
             ],
             [
-                'judul'    => 'Tepi Danau Ambarita',
+                'judul'    => 'Tepi Danau museum_huta_bolon',
                 'kategori' => 'landscape',
                 'gambar'   => 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80',
-                'geosite'  => 'ambarita',
+                'geosite'  => 'museum_huta_bolon',
                 'status'   => true,
             ],
             [
-                'judul'    => 'Nelayan Danau Toba Ambarita',
+                'judul'    => 'Nelayan Danau Toba museum_huta_bolon',
                 'kategori' => 'aktivitas',
                 'gambar'   => 'https://images.unsplash.com/photo-1534482421-64566f976cfa?w=800&q=80',
-                'geosite'  => 'ambarita',
+                'geosite'  => 'museum_huta_bolon',
                 'status'   => true,
             ],
         ];

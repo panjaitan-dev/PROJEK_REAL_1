@@ -33,7 +33,7 @@
         position: relative;
         height: 55vh;
         min-height: 360px;
-       background: url('{{ asset("image/tuktuk/Tuktuk1.jpg") }}') center/cover no-repeat;
+       background: url('{{ asset("image/batu_hoda_beach/batu_hoda_beach1.jpg") }}') center/cover no-repeat;
         display: flex;
         align-items: center;
         justify-content: center;

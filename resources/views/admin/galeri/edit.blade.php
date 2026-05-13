@@ -28,11 +28,8 @@
                 <div class="col-md-6 mb-3">
                     <label>Kategori</label>
                     <select name="kategori" class="form-control">
-                        <option value="Balige" {{ $galeri->kategori=='Balige'?'selected':'' }}>Balige</option>
-                        <option value="tuktuk" {{ $galeri->kategori=='tuktuk'?'selected':'' }}>tuktuk</option>
-                        <option value="Ambarita" {{ $galeri->kategori=='Ambarita'?'selected':'' }}>Ambarita</option>
-                        <option value="Tomok" {{ $galeri->kategori=='Tomok'?'selected':'' }}>Tomok</option>
-                    </select>
+                        <option value="Simanindo" {{ $galeri->kategori=='Simanindo'?'selected':'' }}>Simanindo</option>
+                           </select>
                 </div>
 
                 <div class="col-md-12 mb-3">

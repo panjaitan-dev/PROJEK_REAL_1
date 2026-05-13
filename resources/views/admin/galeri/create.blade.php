@@ -45,11 +45,8 @@
                     <label class="form-label required">Kategori</label>
                     <select name="kategori" class="form-control @error('kategori') is-invalid @enderror" required>
                         <option value="">-- Pilih Kategori --</option>
-                        <option value="Balige" {{ old('kategori') == 'Balige' ? 'selected' : '' }}> Balige</option>
-                        <option value="tuktuk" {{ old('kategori') == 'tuktuk' ? 'selected' : '' }}> tuktuk</option>
-                        <option value="Ambarita" {{ old('kategori') == 'Ambarita' ? 'selected' : '' }}> Ambarita</option>
-                        <option value="Tomok" {{ old('kategori') == 'Tomok' ? 'selected' : '' }}> Tomok</option>
-                    </select>
+                        <option value="Balige" {{ old('kategori') == 'Simanindo' ? 'selected' : '' }}> Simanindo</option>
+                         </select>
                     <small class="text-muted">Pilih kategori untuk menentukan folder penyimpanan gambar</small>
                     @error('kategori')
                         <div class="invalid-feedback">{{ $message }}</div>

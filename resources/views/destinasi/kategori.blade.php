@@ -12,7 +12,7 @@
 
         background:
             linear-gradient(rgba(0,51,102,0.45), rgba(0,51,102,0.45)),
-            url('{{ asset("image/tuktuk/destinasi-" . strtolower($kategori) . ".jpg") }}');
+            url('{{ asset("image/batu_hoda_beach/destinasi-" . strtolower($kategori) . ".jpg") }}');
 
         background-size: cover;
         background-position: center;

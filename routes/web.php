@@ -67,9 +67,9 @@ Route::get('/kontak', function () {
 })->name('kontak');
 
 // ==================== GEOSITE ROUTES ====================
-Route::get('/geosite/tuktuk', [GeositeController::class, 'tuktuk'])->name('geosite.tuktuk');
-Route::get('/geosite/Ambarita', [GeositeController::class, 'Ambarita'])->name('geosite.Ambarita');
-Route::get('/geosite/Tomok', [GeositeController::class, 'Tomok'])->name('geosite.Tomok');
+Route::get('/geosite/batu_hoda_beach', [GeositeController::class, 'batu_hoda_beach'])->name('geosite.batu_hoda_beach');
+Route::get('/geosite/museum_huta_bolon', [GeositeController::class, 'museum_huta_bolon'])->name('geosite.museum_huta_bolon');
+Route::get('/geosite/batu_pasa_pantai', [GeositeController::class, 'batu_pasa_pantai'])->name('geosite.batu_pasa_pantai');
 
 // ==================== AUTH ROUTES ====================
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');

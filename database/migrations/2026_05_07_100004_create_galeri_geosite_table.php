@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('judul', 255);
             $table->string('kategori', 100); // pantai1, pantai2, pantai3, dll
             $table->longText('gambar')->nullable();
-            $table->string('geosite', 50); // ambarita, tuktuk, tomok
+            $table->string('geosite', 50); // museum_huta_bolon, batu_hoda_beach, batu_pasa_pantai
             $table->boolean('status')->default(true);
             $table->timestamps();
             $table->foreignId('admin_id')->nullable() ->default(1) ->constrained('admin');

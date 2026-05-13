@@ -150,11 +150,11 @@
         animation: shimmer 3s infinite;
     }
     
-    .slide-1 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/batuhoda/batuhoda2.jpeg'); }
-    .slide-2 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/batu passa/passa1.jpeg'); }
-    .slide-3 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/hutabolon/bolon2.jpg'); }
-    .slide-4 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/rumahkaca/kaca2.jpg'); }
-    .slide-5 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/hutabolon/bolon3.jpg'); }
+    .slide-1 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/SBH/BatuHoda.png'); }
+    .slide-2 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/SBH/HutaBolon.png'); }
+    .slide-3 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/SBH/RumahKaca.png'); }
+    .slide-4 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/SBH/batu_pasa_pantai.jpg'); }
+    .slide-5 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/SBH/mix.jpg'); }
     
     .hero-content {
         position: absolute;
@@ -626,14 +626,14 @@
     
     .destinasi-image:hover { 
         transform: scale(1.05) translateY(-10px);
-        box-shadow: (0, 51, 102, 0.25);
+        box-shadow: 0 20px 40px rgba(0, 51, 102, 0.25);
         animation: pulse 0.5s ease;
     }
     
     .destinasi-image img { 
         width: 100%; 
         height: auto; 
-        display: block; 0 20px 40px rgba
+        display: block; 
         transition: transform 0.5s ease;
     }
     
@@ -714,48 +714,6 @@
     
     .destinasi-item:hover .destinasi-desc {
         transform: translateX(10px);
-    }
-    
-    .destinasi-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-bottom: 30px;
-    }
-    
-    .destinasi-tags span {
-        background: rgba(0, 51, 102, 0.1);
-        padding: 5px 16px;
-        font-size: 0.7rem;
-        color: #003366;
-        border-radius: 30px;
-        transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        cursor: pointer;
-        font-weight: 500;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .destinasi-tags span::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(198,164,59,0.3), transparent);
-        transition: left 0.4s ease;
-    }
-    
-    .destinasi-tags span:hover::before {
-        left: 100%;
-    }
-    
-    .destinasi-tags span:hover {
-        background: #c6a43b;
-        color: #003366;
-        transform: translateY(-5px) scale(1.05);
-        box-shadow: 0 5px 15px rgba(198,164,59,0.3);
     }
     
     .destinasi-link {
@@ -1086,7 +1044,7 @@
     <div class="hero-content">
         <div>
             <div class="hero-subtitle">Global Geopark</div>
-            <h1 class="hero-title"> Simanindo - Batu Hoda</h1>
+            <h1 class="hero-title">Simanindo - Batu Hoda</h1>
             <div class="hero-divider"></div>
             <a href="#destinasi" class="hero-btn">Jelajahi Sekarang</a>
         </div>
@@ -1103,7 +1061,7 @@
     <div class="container">
         <div class="stats-grid">
             <div class="stat-item" data-aos="zoom-in" data-aos-duration="800">
-                <div class="stat-number">3</div>
+                <div class="stat-number">16</div>
                 <div class="stat-label">GEOSITES</div>
             </div>
             <div class="stat-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
@@ -1129,125 +1087,105 @@
             <div class="about-content" data-aos="fade-right" data-aos-duration="1000">
                 <h3>Warisan Geologi Kelas Dunia</h3>
                 <p>Danau Toba, terbentuk dari letusan supervolcano 74.000 tahun lalu, adalah danau vulkanik terbesar di dunia. Diakui UNESCO sebagai Global Geopark pada tahun 2020.</p>
-                <p>Kawasan ini menyimpan nilai geologi luar biasa, keanekaragaman hayati, dan warisan budaya Batak yang autentik. </p>
+                <p>Kawasan Simanindo - Batu Hoda menyimpan pesona pantai eksotis, museum budaya Batak, serta formasi batu unik yang menjadi ikon geopark Danau Toba.</p>
             </div>
             <div class="about-image" data-aos="fade-left" data-aos-duration="1000">
-                <img src="/image/danau toba/danau toba.jpeg" alt="Danau Toba">
+                <img src="/image/SBH/DanauToba.png" alt="Danau Toba">
             </div>
         </div>
     </div>
 </section>
 
-<!-- ==================== DESTINASI ==================== -->
+<!-- ==================== DESTINASI UNGGULAN ==================== -->
 <section id="destinasi" class="section section-white">
     <div class="container">
         <div class="section-title" data-aos="fade-up" data-aos-duration="800">
             <h2>Destinasi Unggulan</h2>
             <div class="divider"></div>
-            <p> Caldera Danau Toba</p>
+            <p>Wisata eksotis di kawasan Simanindo - Batu Hoda, Pulau Samosir</p>
         </div>
         <div class="destinasi-list">
             
-            <!-- batuhoda -->
+            <!-- BATU HODA BEACH -->
             <div class="destinasi-item" data-aos="fade-up" data-aos-duration="1000">
                 <div class="destinasi-image">
-                    <img src="/image/batuhoda/batuhoda1.jpeg" alt="batuhoda">
+                    <img src="/image/SBH/BatuHoda.png" alt="Batu Hoda Beach">
                 </div>
                 <div class="destinasi-content">
-                    <div class="destinasi-number">01 — GEOSITE</div>
-                    <h3>Batu Hoda</h3>
-                    <div class="destinasi-location">Desa Cinta Dame, Kecamatan Simanindo, Kabupaten Samosir, Sumatera Utara</div>
-                    <p class="destinasi-desc">Tuktuk adalah kawasan wisata terkenal di Pulau Samosir yang berada di tepi Danau Toba. Tempat ini banyak dikunjungi wisatawan 
-                        karena memiliki pemandangan danau yang indah, penginapan, restoran, serta suasana yang tenang dan nyaman untuk berlibur</p>
-                    <a href="{{ url('/geosite/tuktuk') }}" class="destinasi-link">Jelajahi Lebih Lanjut →</a>
+                    <div class="destinasi-number">01 — DESTINASI ALAM</div>
+                    <h3>Batu Hoda Beach</h3>
+                    <div class="destinasi-location">Desa Cinta Dame, Kecamatan Simanindo, Kabupaten Samosir</div>
+                    <p class="destinasi-desc">Pantai Batu Hoda menawarkan pemandangan Danau Toba yang spektakuler dengan air berwarna biru kehijauan. Terdapat batu besar berbentuk unik yang konon menyerupai kuda. Tempat ini menjadi spot favorit untuk menikmati matahari terbenam terindah di Pulau Samosir.</p>
+                    <a href="{{ url('/geosite/batu_hoda_beach') }}" class="destinasi-link">Jelajahi Lebih Lanjut →</a>
                 </div>
             </div>
             
-            <!-- Batu passa -->
+            <!-- MUSEUM HUTA BOLON -->
             <div class="destinasi-item reverse" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                 <div class="destinasi-image">
-                    <img src="/image/batu passa/passa1.jpeg" alt="batupassa">
+                    <img src="/image/SBH/HutaBolon.png" alt="Museum Huta Bolon">
                 </div>
                 <div class="destinasi-content">
-                    <div class="destinasi-number">02 — GEOSITE</div>
-                    <h3>Batu Passa</h3>
-                    <div class="destinasi-location">Desa Sangkal, Kecamatan Simanindo, Kabupaten Samosir.</div>
-                    <p class="destinasi-desc">Batu Passa merupakan destinasi wisata alam yang terletak di kawasan Simanindo, Kabupaten Samosir. Tempat ini terkenal dengan keunikan formasi batu alamnya,
-                        panorama indah yang menghadap ke Danau Toba, serta suasana alam yang masih asri dan menenangkan.</p>
-                    <a href="{{ url('/geosite/Ambarita') }}" class="destinasi-link">Jelajahi Lebih Lanjut →</a>
+                    <div class="destinasi-number">02 — DESTINASI BUDAYA</div>
+                    <h3>Museum Huta Bolon</h3>
+                    <div class="destinasi-location">Desa Simanindo, Kecamatan Simanindo, Kabupaten Samosir</div>
+                    <p class="destinasi-desc">Museum Huta Bolon adalah museum terbuka yang menyajikan rumah adat Batak Toba yang megah dengan arsitektur tradisional. Di sini pengunjung dapat menyaksikan pertunjukan tarian tortor, mendengarkan musik gondang, dan belajar tentang sejarah serta filosofi masyarakat Batak.</p>
+                    <a href="{{ url('/geosite/museum_huta_bolon') }}" class="destinasi-link">Jelajahi Lebih Lanjut →</a>
                 </div>
             </div>
             
-            <!-- Huta Bolon -->
+            <!-- BATU PASA PANTAI -->
             <div class="destinasi-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                 <div class="destinasi-image">
-                    <img src="/image/hutabolon/bolon1.jpg" alt="hutabolon">
+                    <img src="/image/SBH/BatuPasa.png" alt="Batu Pasa Pantai">
                 </div>
                 <div class="destinasi-content">
-                    <div class="destinasi-number">03 — GEOSITE</div>
-                    <h3>Huta Bolon</h3>
-                    <div class="destinasi-location">Desa Simanindo, Kecamatan Simanindo, Kabupaten Samosir, Sumatera Utara.</div>
-                    <p class="destinasi-desc">Huta Bolon merupakan destinasi wisata budaya yang terletak di Desa Simanindo, Kecamatan Simanindo, Kabupaten Samosir.
-                        Tempat ini terkenal dengan rumah adat Batak Toba, koleksi benda bersejarah, 
-                        serta pertunjukan seni budaya tradisional seperti Tari Tor-Tor. Huta Bolon menjadi salah satu tujuan wisata budaya di Pulau Samosir yang memperkenalkan sejarah dan warisan budaya Batak kepada wisatawan.</p>
-                    <a href="{{ url('/geosite/Tomok') }}" class="destinasi-link">Jelajahi Lebih Lanjut →</a>
+                    <div class="destinasi-number">03 — DESTINASI ALAM</div>
+                    <h3>Batu Pasa Pantai</h3>
+                    <div class="destinasi-location">Kawasan Batu Hoda, Kecamatan Simanindo, Kabupaten Samosir</div>
+                    <p class="destinasi-desc">Batu Pasa Pantai menyuguhkan formasi batu alam yang menakjubkan di tepian Danau Toba. Pengunjung dapat berenang di air danau yang jernih, berjemur di bebatuan besar, atau sekadar bersantai menikmati angin sepoi-sepoi. Spot foto yang instagramable dengan latar perbukitan hijau.</p>
+                    <a href="{{ url('/geosite/batu_pasa_pantai') }}" class="destinasi-link">Jelajahi Lebih Lanjut →</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ==================== PETA LOKASI 3 DESA ==================== -->
+<!-- ==================== PETA LOKASI ==================== -->
 <section class="section section-light">
     <div class="container">
         <div class="section-title" data-aos="fade-up" data-aos-duration="800">
-            <h2>Lokasi 3 Geosite</h2>
+            <h2>Lokasi Wisata</h2>
             <div class="divider"></div>
-            <p>Batu Hoda · Batu Passa · Huta Bolon</p>
+            <p>Pantai Batu Hoda - Museum Huta Bolon - Batu Pasa Pantai, Simanindo Samosir</p>
         </div>
         
         <div class="maps-container" data-aos="zoom-in" data-aos-duration="1000">
-
-            <!-- MAP UTAMA -->
-   <iframe
-                    src="https://maps.google.com/maps?q=Pulau+Samosir,+Sumatera+Utara&t=&z=12&ie=UTF8&iwloc=&output=embed"
-                    width="100%"
-                    height="450"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy">
-                </iframe>
-
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255146.3323067858!2d98.6015525546252!3d2.6173426176378544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031d2590212727b%3A0x6335133649692f8d!2sPulau%20Samosir!5e0!3m2!1sid!2sid!4v1714980000000!5m2!1sid!2sid"
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
             <div class="maps-info">
                 <div class="maps-locations">
-    
-                    <!-- BATU HODA -->
-<div class="maps-location-item" 
-     onclick="window.open('https://www.google.com/maps/search/?api=1&query=Batu+Hoda+Samosir', '_blank')">
-    <i class="fas fa-location-dot"></i>
-    <span>Batu Hoda</span>
-</div>
-
-<!-- BATU PASSA -->
-<div class="maps-location-item" 
-     onclick="window.open('https://www.google.com/maps/search/?api=1&query=Batu+Passa+Samosir', '_blank')">
-    <i class="fas fa-location-dot"></i>
-    <span>Batu Passa</span>
-</div>
-
-<!-- HUTA BOLON -->
-<div class="maps-location-item" 
-     onclick="window.open('https://www.google.com/maps/search/?api=1&query=Huta+Bolon+Samosir', '_blank')">
-    <i class="fas fa-location-dot"></i>
-    <span>Huta Bolon</span>
-</div>
-
+                    <div class="maps-location-item" onclick="window.open('https://maps.app.goo.gl/YVZvcTjvMEK78QFp7?g_st=iwb', '_blank')">
+                        <i class="fas fa-location-dot"></i>
+                        <span>#BatuHodaBeach</span>
+                    </div>
+                    <div class="maps-location-item" onclick="window.open('https://maps.app.goo.gl/u3QiSj4zg47978fu6?g_st=iwb', '_blank')">
+                        <i class="fas fa-location-dot"></i>
+                        <span>#MuseumHutaBolon</span>
+                    </div>
+                    <div class="maps-location-item" onclick="window.open('https://maps.app.goo.gl/J7nhMKXPjTRrL6jh9?g_st=iwb', '_blank')">
+                        <i class="fas fa-location-dot"></i>
+                        <span>#BatuPasa</span>
+                    </div>
+                </div>
                 <div class="maps-note">
                     <i class="fas fa-map-marker-alt"></i>
                     <span>Klik lokasi untuk melihat peta detail</span>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
@@ -1258,7 +1196,7 @@
         <div class="cta-content" data-aos="fade-up" data-aos-duration="800">
             <h3>Mulai Petualangan Anda</h3>
             <div class="divider"></div>
-            <p>Temukan keajaiban geologi dan kekayaan budaya Batak di Geopark Toba, warisan dunia yang diakui UNESCO.</p>
+            <p>Temukan keindahan Pantai Batu Hoda, belajar budaya Batak di Museum Huta Bolon, dan abadikan momen di Batu Pasa Pantai.</p>
             <a href="#destinasi" class="cta-btn">Jelajahi Sekarang</a>
         </div>
     </div>

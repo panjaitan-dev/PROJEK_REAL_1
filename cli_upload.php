@@ -15,7 +15,7 @@ echo "     UPLOAD FOTO KE DATABASE (CLI)\n";
 echo "========================================\n\n";
 
 // Folder tempat foto
-$folder = __DIR__ . '/public/image/tuktuk/';
+$folder = __DIR__ . '/public/image/batu_hoda_beach/';
 
 // Buat folder jika belum ada
 if (!File::exists($folder)) {
@@ -30,7 +30,7 @@ $files = [
     'slide3.jpg',
     'slide4.jpg',
     'slide5.jpg',
-    'tuktuk-detail.jpg',
+    'batu_hoda_beach-detail.jpg',
     'batu-detail.jpg',
     'liang-detail.jpg',
     'berita.jpg',
@@ -50,7 +50,7 @@ $files = [
         'gallery3.jpg',
         'gallery4.jpg',
         'logobankindonesia.jpg',
-        'tuktuk-hero.jpg'
+        'batu_hoda_beach-hero.jpg'
 ];
 
 echo "📁 Folder: $folder\n\n";
