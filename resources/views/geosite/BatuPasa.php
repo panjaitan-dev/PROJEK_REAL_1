@@ -51,8 +51,8 @@
 <!-- HERO -->
 <section class="hero" style="background-image: url('/image/museum_huta_bolon/museum_huta_bolon1.jpg');">
     <div>
-        <h1 class="hero-title">A M B A R I T A</h1>
-        <p class="hero-subtitle">Pulau Samosir · Danau Toba</p>
+        <h1 class="hero-title">Museum Huta Bolon</h1>
+        <p class="hero-subtitle"></p>
     </div>
 </section>
 

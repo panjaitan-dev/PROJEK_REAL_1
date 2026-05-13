@@ -694,7 +694,17 @@
             <i class="fas fa-info-circle"></i> Informasi
         </a>
         
-        <div class="menu-title">Desa Meat</div>
+        <div class="menu-title">HutaBolon</div>
+        <a href="{{ route('admin.umkm.index') }}" class="{{ request()->routeIs('admin.umkm.*') ? 'active' : '' }}">
+            <i class="fas fa-store"></i> UMKM
+        </a>
+        <a href="{{ route('admin.fasilitas.index') }}" class="{{ request()->routeIs('admin.fasilitas.*') ? 'active' : '' }}">
+            <i class="fas fa-tools"></i> Fasilitas
+        </a>
+        <a href="{{ route('admin.penginapan.index') }}" class="{{ request()->routeIs('admin.penginapan.*') ? 'active' : '' }}">
+            <i class="fas fa-hotel"></i> Penginapan
+
+            <div class="menu-title">BatuHoda</div>
         <a href="{{ route('admin.umkm.index') }}" class="{{ request()->routeIs('admin.umkm.*') ? 'active' : '' }}">
             <i class="fas fa-store"></i> UMKM
         </a>
