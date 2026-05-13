@@ -12,7 +12,7 @@
 
         background:
             linear-gradient(rgba(0, 51, 102, 0.45), rgba(0, 51, 102, 0.45)),
-            url('{{ asset("image/tuktuk/slide1.jpg") }}');
+            url('{{ asset("image/batu_hoda_beach/slide1.jpg") }}');
 
         background-size: cover;
         background-position: center;
@@ -305,7 +305,7 @@
             <!-- Destinasi Alam -->
             <a href="{{ url('/destinasi/alam') }}" class="category-card" data-aos="fade-up">
                 <div class="card-image">
-                    <img src="{{ asset('image/tuktuk/destinasi-alam.jpg') }}" alt="Destinasi Alam">
+                    <img src="{{ asset('image/batu_hoda_beach/destinasi-alam.jpg') }}" alt="Destinasi Alam">
                     <div class="card-overlay"></div>
                 </div>
 
@@ -325,7 +325,7 @@
             <!-- Destinasi Buatan -->
             <a href="{{ url('/destinasi/buatan') }}" class="category-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="card-image">
-                    <img src="{{ asset('/image/Tomok/tomok1.jpg') }}" alt="Destinasi Buatan">
+                    <img src="{{ asset('/image/batu_pasa_pantai/batu_pasa_pantai1.jpg') }}" alt="Destinasi Buatan">
                     <div class="card-overlay"></div>
                 </div>
 
@@ -346,7 +346,7 @@
             <!-- Destinasi Budaya -->
             <a href="{{ url('/destinasi/budaya') }}" class="category-card" data-aos="fade-up" data-aos-delay="200">
                 <div class="card-image">
-                    <img src="{{ asset('image/tuktuk/destinasi-budaya.jpg') }}" alt="Destinasi Budaya">
+                    <img src="{{ asset('image/batu_hoda_beach/destinasi-budaya.jpg') }}" alt="Destinasi Budaya">
                     <div class="card-overlay"></div>
                 </div>
 

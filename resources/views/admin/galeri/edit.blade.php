@@ -29,9 +29,9 @@
                     <label>Kategori</label>
                     <select name="kategori" class="form-control">
                         <option value="Balige" {{ $galeri->kategori=='Balige'?'selected':'' }}>Balige</option>
-                        <option value="tuktuk" {{ $galeri->kategori=='tuktuk'?'selected':'' }}>tuktuk</option>
-                        <option value="Ambarita" {{ $galeri->kategori=='Ambarita'?'selected':'' }}>Ambarita</option>
-                        <option value="Tomok" {{ $galeri->kategori=='Tomok'?'selected':'' }}>Tomok</option>
+                        <option value="batu_hoda_beach" {{ $galeri->kategori=='batu_hoda_beach'?'selected':'' }}>batu_hoda_beach</option>
+                        <option value="museum_huta_bolon" {{ $galeri->kategori=='museum_huta_bolon'?'selected':'' }}>museum_huta_bolon</option>
+                        <option value="batu_pasa_pantai" {{ $galeri->kategori=='batu_pasa_pantai'?'selected':'' }}>batu_pasa_pantai</option>
                     </select>
                 </div>
 

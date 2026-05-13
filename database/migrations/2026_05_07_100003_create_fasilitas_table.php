@@ -14,7 +14,7 @@ return new class extends Migration
             $table->text('deskripsi');
             $table->longText('gambar')->nullable();
             $table->string('harga', 100)->nullable();
-            $table->string('geosite', 50); // ambarita, tuktuk, tomok
+            $table->string('geosite', 50); // museum_huta_bolon, batu_hoda_beach, batu_pasa_pantai
             $table->boolean('status')->default(true);
             $table->timestamps();
             $table->foreignId('admin_id')->nullable() ->default(1) ->constrained('admin');

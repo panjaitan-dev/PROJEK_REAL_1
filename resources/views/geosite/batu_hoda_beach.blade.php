@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tuktuk - Geosite Danau Toba</title>
+    <title>batu_hoda_beach - Geosite Danau Toba</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/tuktuk.css">
+    <link rel="stylesheet" href="/css/batu_hoda_beach.css">
 </head>
 <body>
 
@@ -49,7 +49,7 @@
 </div>
 
 <!-- HERO -->
-<section class="hero" style="background-image: url('/image/tuktuk/Tuktuk3.jpg');">
+<section class="hero" style="background-image: url('/image/batu_hoda_beach/batu_hoda_beach3.jpg');">
     <div>
         <h1 class="hero-title">T U K T U K</h1>
         <p class="hero-subtitle">Pulau Samosir · Danau Toba</p>
@@ -65,27 +65,27 @@
             <p>Warisan budaya Batak yang autentik dan masih hidup</p>
         </div>
         <div class="sejarah-item">
-            <div class="sejarah-image"><img src="/image/tuktuk/slide2.jpg" alt="Desa tuktuk"></div>
+            <div class="sejarah-image"><img src="/image/batu_hoda_beach/slide2.jpg" alt="Desa batu_hoda_beach"></div>
             <div class="sejarah-text">
-                <h3>Sejarah Tuktuk</h3>
-                <p>Tuktuk Siadong merupakan kawasan wisata yang berada di Pulau Samosir, di tengah Danau Toba. Dahulu daerah ini merupakan perkampungan masyarakat Batak Toba yang 
-                    hidup dari pertanian dan perikanan. Seiring berkembangnya pariwisata Danau Toba, Tuktuk mulai dikenal sebagai pusat wisata dan penginapan yang ramai dikunjungi wisatawan.</p>
+                <h3>Sejarah batu_hoda_beach</h3>
+                <p>batu_hoda_beach Siadong merupakan kawasan wisata yang berada di Pulau Samosir, di tengah Danau Toba. Dahulu daerah ini merupakan perkampungan masyarakat Batak Toba yang 
+                    hidup dari pertanian dan perikanan. Seiring berkembangnya pariwisata Danau Toba, batu_hoda_beach mulai dikenal sebagai pusat wisata dan penginapan yang ramai dikunjungi wisatawan.</p>
             </div>
         </div>
         <div class="sejarah-item reverse">
-            <div class="sejarah-image"><img src="/image/tuktuk/Tuktuk8.jpg" alt="Tradisi Batak"></div>
+            <div class="sejarah-image"><img src="/image/batu_hoda_beach/batu_hoda_beach8.jpg" alt="Tradisi Batak"></div>
             <div class="sejarah-text">
-                <h3>Budaya Tuktuk</h3>
-                <p>Budaya di Tuktuk Siadong masih kental dengan tradisi Batak Toba, seperti tarian tortor, musik gondang, serta penggunaan kain ulos dalam acara adat.
+                <h3>Budaya batu_hoda_beach</h3>
+                <p>Budaya di batu_hoda_beach Siadong masih kental dengan tradisi Batak Toba, seperti tarian tortor, musik gondang, serta penggunaan kain ulos dalam acara adat.
                      Kawasan ini juga dikenal dengan rumah adat Batak berukiran gorga dan berbagai kerajinan tradisional seperti ukiran kayu, patung, serta topeng budaya yang banyak dijumpai di galeri seni dan tempat wisata budaya. 
                     Kehidupan masyarakat yang ramah membuat budaya lokal tetap hidup berdampingan dengan perkembangan pariwisata</p>
             </div>
         </div>
         <div class="sejarah-item">
-            <div class="sejarah-image"><img src="/image/tuktuk/slide1.jpg" alt="Wisata Budaya"></div>
+            <div class="sejarah-image"><img src="/image/batu_hoda_beach/slide1.jpg" alt="Wisata Budaya"></div>
             <div class="sejarah-text">
-                <h3>Daya Tarik Wisata Tuktuk</h3>
-                <p>Tuktuk terkenal dengan pemandangan Danau Toba yang indah dan suasana yang tenang. Di kawasan ini 
+                <h3>Daya Tarik Wisata batu_hoda_beach</h3>
+                <p>batu_hoda_beach terkenal dengan pemandangan Danau Toba yang indah dan suasana yang tenang. Di kawasan ini 
                     terdapat berbagai penginapan, restoran, dan tempat bersantai di tepi danau. Wisatawan juga dapat menikmati
                      kegiatan seperti bersepeda, berenang, berkeliling danau, hingga menikmati matahari terbenam.</p>
             </div>
@@ -99,7 +99,7 @@
         <div class="section-title">
             <h2>UMKM Lokal</h2>
             <div class="divider"></div>
-            <p>Produk autentik dan berkualitas dari pengrajin lokal tuktuk</p>
+            <p>Produk autentik dan berkualitas dari pengrajin lokal batu_hoda_beach</p>
         </div>
         <div class="grid-3">
             @forelse($umkm as $item)
@@ -196,9 +196,9 @@
 <section id="galeri" class="section">
     <div class="container">
         <div class="section-title">
-            <h2>Galeri Tuktuk</h2>
+            <h2>Galeri batu_hoda_beach</h2>
             <div class="divider"></div>
-            <p>Keindahan alam tuktuk yang memukau dalam setiap musim</p>
+            <p>Keindahan alam batu_hoda_beach yang memukau dalam setiap musim</p>
         </div>
         @if($galeriGeosite->count() > 0)
         <div class="galeri-tabs">
@@ -226,7 +226,7 @@
 <section id="lokasi" class="section bg-light">
     <div class="container">
         <div class="section-title">
-            <h2>Lokasi Tuktuk</h2>
+            <h2>Lokasi batu_hoda_beach</h2>
             <div class="divider"></div>
             <p>Pusat wisata dan penginapan di Samosir</p>
         </div>
@@ -234,7 +234,7 @@
         <div class="maps-section">
             <div class="maps-container">
                 <iframe
-                    src="https://maps.google.com/maps?q=Tuktuk%20Siadong,%20Samosir,%20Sumatera%20Utara&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    src="https://maps.google.com/maps?q=batu_hoda_beach%20Siadong,%20Samosir,%20Sumatera%20Utara&t=&z=13&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="450"
                     style="border:0;"
@@ -245,7 +245,7 @@
 
             <div class="rute-info">
                 <div class="rute-item">
-                    <h4>📍 Tuktuk</h4>
+                    <h4>📍 batu_hoda_beach</h4>
                     <p>Area favorit wisatawan dengan hotel, cafe, dan restoran.</p>
                     <span class="rute-time">Pusat wisata Samosir</span>
                 </div>
@@ -257,9 +257,9 @@
 <!-- CTA -->
 <section class="cta">
     <div class="container">
-        <h3>Jangan Lewatkan Keindahan tuktuk</h3>
+        <h3>Jangan Lewatkan Keindahan batu_hoda_beach</h3>
         <div class="divider"></div>
-        <p>Rasakan pengalaman wisata budaya Batak yang autentik, nikmati keindahan alam Danau Toba yang memukau, dan ciptakan kenangan indah bersama keluarga tercinta di tuktuk</p>
+        <p>Rasakan pengalaman wisata budaya Batak yang autentik, nikmati keindahan alam Danau Toba yang memukau, dan ciptakan kenangan indah bersama keluarga tercinta di batu_hoda_beach</p>
         <div class="cta-buttons">
             <a href="{{ url('/') }}" class="cta-btn">Kembali ke Beranda</a>
             <a href="#penginapan" class="cta-btn cta-btn-secondary">Pesan Penginapan</a>

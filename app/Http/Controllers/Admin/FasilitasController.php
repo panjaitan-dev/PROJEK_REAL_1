@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class FasilitasController extends Controller
 {
-    private array $geositeList = ['ambarita', 'tuktuk', 'tomok'];
+    private array $geositeList = ['museum_huta_bolon', 'batu_hoda_beach', 'batu_pasa_pantai'];
 
     public function index()
     {
@@ -29,7 +29,7 @@ class FasilitasController extends Controller
             'deskripsi' => 'required|string',
             'gambar'    => 'nullable|image|mimes:jpeg,png,jpg,webp|max:6144', // Max 6MB
             'harga'     => 'nullable|string|max:100',
-            'geosite'   => 'required|in:ambarita,tuktuk,tomok',
+            'geosite'   => 'required|in:museum_huta_bolon,batu_hoda_beach,batu_pasa_pantai',
             'status'    => 'nullable|boolean',
         ]);
 
@@ -67,7 +67,7 @@ class FasilitasController extends Controller
             'deskripsi' => 'required|string',
             'gambar'    => 'nullable|image|mimes:jpeg,png,jpg,webp|max:6144', // Max 6MB
             'harga'     => 'nullable|string|max:100',
-            'geosite'   => 'required|in:ambarita,tuktuk,tomok',
+            'geosite'   => 'required|in:museum_huta_bolon,batu_hoda_beach,batu_pasa_pantai',
             'status'    => 'nullable|boolean',
         ]);
 

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class UmkmController extends Controller
 {
-    private array $geositeList = ['ambarita', 'tuktuk', 'tomok'];
+    private array $geositeList = ['museum_huta_bolon', 'batu_hoda_beach', 'batu_pasa_pantai'];
 
     public function index()
     {
@@ -30,7 +30,7 @@ class UmkmController extends Controller
             'gambar'    => 'nullable|image|mimes:jpeg,png,jpg,webp|max:6144', // Max 6MB
             'lokasi'    => 'nullable|string|max:255',
             'kontak'    => 'nullable|string|max:255',
-            'geosite'   => 'required|in:ambarita,tuktuk,tomok',
+            'geosite'   => 'required|in:museum_huta_bolon,batu_hoda_beach,batu_pasa_pantai',
             'status'    => 'nullable|boolean',
         ]);
 
@@ -70,7 +70,7 @@ class UmkmController extends Controller
             'gambar'    => 'nullable|image|mimes:jpeg,png,jpg,webp|max:6144', // Max 6MB
             'lokasi'    => 'nullable|string|max:255',
             'kontak'    => 'nullable|string|max:255',
-            'geosite'   => 'required|in:ambarita,tuktuk,tomok',
+            'geosite'   => 'required|in:museum_huta_bolon,batu_hoda_beach,batu_pasa_pantai',
             'status'    => 'nullable|boolean',
         ]);
 

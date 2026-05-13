@@ -16,7 +16,7 @@ class DestinasiSeeder extends Seeder
             // ─── KATEGORI ALAM ────────────────────────────────────────────
             [
                 'nama'        => 'Goa Marlakkop',
-                'lokasi'      => 'Tomok, Samosir',
+                'lokasi'      => 'batu_pasa_pantai, Samosir',
                 'deskripsi'   => 'Goa Marlakkop adalah goa batu alam yang tersembunyi di balik pepohonan tropis Pulau Samosir. Di dalamnya terdapat stalaktit dan stalagmit yang terbentuk selama ribuan tahun, dengan lorong-lorong alami yang menakjubkan. Goa ini menjadi salah satu fenomena geologi penting di Geosite Danau Toba dan menarik perhatian para peneliti serta wisatawan petualang.',
                 'gambar_utama'=> 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Goa_Belanda_Bandung.jpg/1280px-Goa_Belanda_Bandung.jpg',
                 'tags'        => json_encode(['geologi', 'petualangan', 'alam']),
@@ -45,8 +45,8 @@ class DestinasiSeeder extends Seeder
             // ─── KATEGORI BUATAN ──────────────────────────────────────────
             [
                 'nama'        => 'Patung Sigale-Gale',
-                'lokasi'      => 'Tomok, Samosir',
-                'deskripsi'   => 'Patung Sigale-Gale adalah patung kayu berukuran manusia yang dapat digerakkan dan digunakan dalam upacara adat Batak. Patung ini memiliki nilai budaya dan historis yang tinggi, dan menjadi daya tarik wisata utama di Tomok. Pertunjukan Sigale-Gale diselenggarakan setiap hari untuk para wisatawan, diiringi musik tradisional gondang Batak yang meriah.',
+                'lokasi'      => 'batu_pasa_pantai, Samosir',
+                'deskripsi'   => 'Patung Sigale-Gale adalah patung kayu berukuran manusia yang dapat digerakkan dan digunakan dalam upacara adat Batak. Patung ini memiliki nilai budaya dan historis yang tinggi, dan menjadi daya tarik wisata utama di batu_pasa_pantai. Pertunjukan Sigale-Gale diselenggarakan setiap hari untuk para wisatawan, diiringi musik tradisional gondang Batak yang meriah.',
                 'gambar_utama'=> 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Sigale-gale_dance_Samosir.jpg/800px-Sigale-gale_dance_Samosir.jpg',
                 'tags'        => json_encode(['budaya', 'tradisi', 'pertunjukan']),
                 'kategori'    => 'Buatan',
@@ -74,9 +74,9 @@ class DestinasiSeeder extends Seeder
             // ─── KATEGORI BUDAYA ──────────────────────────────────────────
             [
                 'nama'        => 'Makam Raja Sidabutar',
-                'lokasi'      => 'Tomok, Samosir',
-                'deskripsi'   => 'Makam Raja Sidabutar adalah kompleks pemakaman raja-raja Batak yang berusia lebih dari 500 tahun di Desa Tomok. Makam ini terbuat dari batu monolit besar yang diukir dengan ornamen Batak yang indah. Di sekitar makam terdapat pohon-pohon besar yang berusia ratusan tahun, menciptakan suasana sakral dan penuh sejarah yang menjadi warisan budaya tak ternilai.',
-                'gambar_utama'=> 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Tomok_king_sarcophagus.jpg/800px-Tomok_king_sarcophagus.jpg',
+                'lokasi'      => 'batu_pasa_pantai, Samosir',
+                'deskripsi'   => 'Makam Raja Sidabutar adalah kompleks pemakaman raja-raja Batak yang berusia lebih dari 500 tahun di Desa batu_pasa_pantai. Makam ini terbuat dari batu monolit besar yang diukir dengan ornamen Batak yang indah. Di sekitar makam terdapat pohon-pohon besar yang berusia ratusan tahun, menciptakan suasana sakral dan penuh sejarah yang menjadi warisan budaya tak ternilai.',
+                'gambar_utama'=> 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/batu_pasa_pantai_king_sarcophagus.jpg/800px-batu_pasa_pantai_king_sarcophagus.jpg',
                 'tags'        => json_encode(['sejarah', 'kerajaan', 'warisan budaya']),
                 'kategori'    => 'Budaya',
                 'status'      => true,
@@ -91,10 +91,10 @@ class DestinasiSeeder extends Seeder
                 'status'      => true,
             ],
             [
-                'nama'        => 'Desa Ambarita',
-                'lokasi'      => 'Ambarita, Samosir',
-                'deskripsi'   => 'Desa Ambarita terkenal dengan kompleks batu megalitik peninggalan Raja Laga Siallagan yang berusia ratusan tahun. Di sini terdapat kursi batu, meja batu, dan tempat hukuman yang digunakan dalam sistem peradilan adat Batak kuno. Selain itu, desa ini juga merupakan pusat kerajinan tenun ulos yang masih dikerjakan secara tradisional oleh masyarakat setempat.',
-                'gambar_utama'=> 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Ambarita_stone_chairs.jpg/1280px-Ambarita_stone_chairs.jpg',
+                'nama'        => 'Desa museum_huta_bolon',
+                'lokasi'      => 'museum_huta_bolon, Samosir',
+                'deskripsi'   => 'Desa museum_huta_bolon terkenal dengan kompleks batu megalitik peninggalan Raja Laga Siallagan yang berusia ratusan tahun. Di sini terdapat kursi batu, meja batu, dan tempat hukuman yang digunakan dalam sistem peradilan adat Batak kuno. Selain itu, desa ini juga merupakan pusat kerajinan tenun ulos yang masih dikerjakan secara tradisional oleh masyarakat setempat.',
+                'gambar_utama'=> 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/museum_huta_bolon_stone_chairs.jpg/1280px-museum_huta_bolon_stone_chairs.jpg',
                 'tags'        => json_encode(['megalitik', 'ulos', 'budaya batak']),
                 'kategori'    => 'Budaya',
                 'status'      => true,
