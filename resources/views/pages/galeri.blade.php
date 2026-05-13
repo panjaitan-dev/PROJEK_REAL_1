@@ -418,17 +418,6 @@
     }
 </style>
 
-<!-- Audio Background -->
-<audio id="bgMusic" loop preload="auto">
-    <source src="{{ asset('audio/GONDANG.mp4') }}" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
-
-<!-- Music Control -->
-<div class="music-control" id="musicControl">
-    <i class="fas fa-music" id="musicIcon"></i>
-</div>
-
 <!-- HERO SECTION -->
 <div class="gallery-hero">
     <div class="gallery-hero-content">
@@ -503,49 +492,8 @@
 </div>
 
 <script>
-    // ========== AUDIO CONTROL ==========
-    const audio = document.getElementById('bgMusic');
-    const musicControl = document.getElementById('musicControl');
-    const musicIcon = document.getElementById('musicIcon');
-    let isPlaying = false;
-    
-    function playAudio() {
-        audio.play().then(() => {
-            isPlaying = true;
-            musicIcon.className = 'fas fa-music';
-        }).catch(error => {
-            isPlaying = false;
-            musicIcon.className = 'fas fa-volume-mute';
-        });
-    }
-    
-    function pauseAudio() {
-        audio.pause();
-        isPlaying = false;
-        musicIcon.className = 'fas fa-volume-mute';
-    }
-    
-    let audioStarted = false;
-    
-    function startAudioOnFirstInteraction() {
-        if (!audioStarted) {
-            playAudio();
-            audioStarted = true;
-            document.removeEventListener('click', startAudioOnFirstInteraction);
-            document.removeEventListener('touchstart', startAudioOnFirstInteraction);
-        }
-    }
-    
-    document.addEventListener('click', startAudioOnFirstInteraction);
-    document.addEventListener('touchstart', startAudioOnFirstInteraction);
-    
     // ========== MODAL FUNCTIONS ==========
     function openPhoto(src, title, desc, tag) {
-        if (!audioStarted) {
-            audioStarted = true;
-        }
-        playAudio();
-        
         document.getElementById('mImg').src = src;
         document.getElementById('mTitle').innerText = title;
         document.getElementById('mTag').innerText = tag;
@@ -557,35 +505,11 @@
     function closePhoto() {
         document.getElementById('pModal').style.display = 'none';
         document.body.style.overflow = 'auto';
-        pauseAudio();
     }
-    
-    musicControl.addEventListener('click', function(e) {
-        e.stopPropagation();
-        if (isPlaying) {
-            pauseAudio();
-        } else {
-            if (!audioStarted) {
-                audioStarted = true;
-            }
-            playAudio();
-        }
-    });
     
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             closePhoto();
-        }
-        if (e.key === ' ' || e.key === 'Space') {
-            e.preventDefault();
-            if (isPlaying) {
-                pauseAudio();
-            } else {
-                if (!audioStarted) {
-                    audioStarted = true;
-                }
-                playAudio();
-            }
         }
     });
     
