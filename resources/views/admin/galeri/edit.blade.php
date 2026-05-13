@@ -28,11 +28,8 @@
                 <div class="col-md-6 mb-3">
                     <label>Kategori</label>
                     <select name="kategori" class="form-control">
-                        <option value="Balige" {{ $galeri->kategori=='Balige'?'selected':'' }}>Balige</option>
-                        <option value="batu_hoda_beach" {{ $galeri->kategori=='batu_hoda_beach'?'selected':'' }}>batu_hoda_beach</option>
-                        <option value="museum_huta_bolon" {{ $galeri->kategori=='museum_huta_bolon'?'selected':'' }}>museum_huta_bolon</option>
-                        <option value="batu_pasa_pantai" {{ $galeri->kategori=='batu_pasa_pantai'?'selected':'' }}>batu_pasa_pantai</option>
-                    </select>
+                        <option value="Simanindo" {{ $galeri->kategori=='Simanindo'?'selected':'' }}>Simanindo</option>
+                           </select>
                 </div>
 
                 <div class="col-md-12 mb-3">
