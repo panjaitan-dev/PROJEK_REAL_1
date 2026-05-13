@@ -65,10 +65,10 @@
             <p>Warisan budaya Batak yang autentik dan masih hidup</p>
         </div>
         <div class="sejarah-item">
-            <div class="sejarah-image"><img src="/image/museum_huta_bolon/museum_huta_bolon7.jpg" alt="Desa museum_huta_bolon"></div>
+            <div class="sejarah-image"><img src="/image/museum_huta_bolon/museum_huta_bolon7.jpg" alt="Desa Museum Huta Bolon"></div>
             <div class="sejarah-text">
-                <h3>Sejarah museum_huta_bolon</h3>
-                <p>museum_huta_bolon merupakan desa tua yang terkenal sebagai pusat pemerintahan Raja
+                <h3>Sejarah Museum Huta Bolon</h3>
+                <p>Museum Huta Bolon merupakan desa tua yang terkenal sebagai pusat pemerintahan Raja
                  Siallagan pada masa lalu. Desa ini dikenal karena adanya kursi batu dan meja persidangan batu yang digunakan 
                  sebagai tempat pengadilan adat masyarakat Batak Toba.</p>
             </div>
@@ -76,8 +76,8 @@
         <div class="sejarah-item reverse">
             <div class="sejarah-image"><img src="/image/museum_huta_bolon/museum_huta_bolon4.jpg" alt="Tradisi Batak"></div>
             <div class="sejarah-text">
-                <h3>Budaya museum_huta_bolon</h3>
-                <p>Budaya di museum_huta_bolon masih sangat kental dengan tradisi Batak Toba. Rumah adat tradisional, tarian tortor, dan penggunaan ulos
+                <h3>Budaya Museum Huta Bolon</h3>
+                <p>Budaya di Museum Huta Bolon masih sangat kental dengan tradisi Batak Toba. Rumah adat tradisional, tarian tortor, dan penggunaan ulos
                      masih dijaga oleh masyarakat setempat. 
                     Cerita rakyat dan sejarah kerajaan Batak juga diwariskan secara turun-temurun.</p>
             </div>
@@ -85,8 +85,8 @@
         <div class="sejarah-item">
             <div class="sejarah-image"><img src="/image/museum_huta_bolon/museum_huta_bolon5.jpg" alt="Wisata Budaya"></div>
             <div class="sejarah-text">
-                <h3>Daya Tarik Wisata museum_huta_bolon</h3>
-                <p>museum_huta_bolon terkenal dengan situs Batu Persidangan 
+                <h3>Daya Tarik Wisata Museum Huta Bolon</h3>
+                <p>Museum Huta Bolon terkenal dengan situs Batu Persidangan 
                     Raja Siallagan yang menjadi daya tarik utama wisatawan.
                      Selain melihat peninggalan sejarah, pengunjung juga dapat menikmati suasana
                       desa tradisional Batak dan menyaksikan pertunjukan budaya khas Batak Toba.</p>
@@ -101,7 +101,7 @@
         <div class="section-title">
             <h2>UMKM Lokal</h2>
             <div class="divider"></div>
-            <p>Produk autentik dan berkualitas dari pengrajin lokal museum_huta_bolon</p>
+            <p>Produk autentik dan berkualitas dari pengrajin lokal Museum Huta Bolon</p>
         </div>
         <div class="grid-3">
             @forelse($umkm as $item)
