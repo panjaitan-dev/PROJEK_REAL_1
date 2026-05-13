@@ -1141,7 +1141,7 @@
                 </div>
                 <div class="destinasi-content">
                     <div class="destinasi-number">03 — DESTINASI ALAM</div>
-                    <h3>Batu Pasa Pantai</h3>
+                    <h3>Batu Passa</h3>
                     <div class="destinasi-location">Kawasan Batu Hoda, Kecamatan Simanindo, Kabupaten Samosir</div>
                     <p class="destinasi-desc">Batu Pasa Pantai menyuguhkan formasi batu alam yang menakjubkan di tepian Danau Toba. Pengunjung dapat berenang di air danau yang jernih, berjemur di bebatuan besar, atau sekadar bersantai menikmati angin sepoi-sepoi. Spot foto yang instagramable dengan latar perbukitan hijau.</p>
                     <a href="{{ url('/geosite/batu_pasa_pantai') }}" class="destinasi-link">Jelajahi Lebih Lanjut →</a>
@@ -1178,7 +1178,7 @@
                     </div>
                     <div class="maps-location-item" onclick="window.open('https://maps.app.goo.gl/J7nhMKXPjTRrL6jh9?g_st=iwb', '_blank')">
                         <i class="fas fa-location-dot"></i>
-                        <span>#BatuPasa</span>
+                        <span>#BatuPassa</span>
                     </div>
                 </div>
                 <div class="maps-note">
