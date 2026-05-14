@@ -49,7 +49,7 @@
 </div>
 
 <!-- HERO -->
-<section class="hero" style="background-image: url('/image/batu_hoda_beach/batu_hoda_beach3.jpg');">
+<section class="hero" style="background-image: url('/image/SBH/BatuHoda.png');">
     <div>
         <h1 class="hero-title">Batu Hoda Beach</h1>
         <p class="hero-subtitle"></p>
@@ -57,269 +57,178 @@
 </section>
 
 <!-- SEJARAH -->
-<section id="sejarah" class="section">
-    <div class="container">
-        <div class="section-title">
-            <h2>Sejarah & Budaya</h2>
-            <div class="divider"></div>
-            <p>Warisan budaya Batak yang autentik dan masih hidup</p>
-        </div>
-        <div class="sejarah-item">
-            <div class="sejarah-image"><img src="/image/batu_hoda_beach/slide2.jpg" alt="Desa batu_hoda_beach"></div>
-            <div class="sejarah-text">
-                <h3>Sejarah batu_hoda_beach</h3>
-                <p>batu_hoda_beach Siadong merupakan kawasan wisata yang berada di Pulau Samosir, di tengah Danau Toba. Dahulu daerah ini merupakan perkampungan masyarakat Batak Toba yang 
-                    hidup dari pertanian dan perikanan. Seiring berkembangnya pariwisata Danau Toba, batu_hoda_beach mulai dikenal sebagai pusat wisata dan penginapan yang ramai dikunjungi wisatawan.</p>
-            </div>
-        </div>
-        <div class="sejarah-item reverse">
-            <div class="sejarah-image"><img src="/image/batu_hoda_beach/batu_hoda_beach8.jpg" alt="Tradisi Batak"></div>
-            <div class="sejarah-text">
-                <h3>Budaya batu_hoda_beach</h3>
-                <p>Budaya di batu_hoda_beach Siadong masih kental dengan tradisi Batak Toba, seperti tarian tortor, musik gondang, serta penggunaan kain ulos dalam acara adat.
-                     Kawasan ini juga dikenal dengan rumah adat Batak berukiran gorga dan berbagai kerajinan tradisional seperti ukiran kayu, patung, serta topeng budaya yang banyak dijumpai di galeri seni dan tempat wisata budaya. 
-                    Kehidupan masyarakat yang ramah membuat budaya lokal tetap hidup berdampingan dengan perkembangan pariwisata</p>
-            </div>
-        </div>
-        <div class="sejarah-item">
-            <div class="sejarah-image"><img src="/image/batu_hoda_beach/slide1.jpg" alt="Wisata Budaya"></div>
-            <div class="sejarah-text">
-                <h3>Daya Tarik Wisata batu_hoda_beach</h3>
-                <p>batu_hoda_beach terkenal dengan pemandangan Danau Toba yang indah dan suasana yang tenang. Di kawasan ini 
-                    terdapat berbagai penginapan, restoran, dan tempat bersantai di tepi danau. Wisatawan juga dapat menikmati
-                     kegiatan seperti bersepeda, berenang, berkeliling danau, hingga menikmati matahari terbenam.</p>
-            </div>
-        </div>
-
-        <!-- LEGENDA KUDA JADI BATU DENGAN EFEK MORPHING -->
-        <div class="sejarah-item morphing-item">
-            <div class="sejarah-image morphing-image">
-                <div class="morphing-container">
-                    <div class="morphing-horse">
-                        <svg viewBox="0 0 500 400" class="horse-svg">
-                            <!-- Badan kuda -->
-                            <ellipse cx="250" cy="220" rx="90" ry="55" fill="#C68642"/>
-                            <!-- Leher -->
-                            <path d="M180,190 Q160,140 140,110 Q130,95 145,90 L160,100 Q170,130 195,180Z" fill="#C68642"/>
-                            <!-- Kepala -->
-                            <ellipse cx="125" cy="100" rx="40" ry="35" fill="#C68642" transform="rotate(-15 125 100)"/>
-                            <!-- Moncong -->
-                            <ellipse cx="85" cy="115" rx="30" ry="22" fill="#D4944A" transform="rotate(-25 85 115)"/>
-                            <!-- Hidung -->
-                            <circle cx="70" cy="120" r="5" fill="#4A2A10"/>
-                            <circle cx="82" cy="125" r="5" fill="#4A2A10"/>
-                            <!-- Mata -->
-                            <circle cx="120" cy="85" r="10" fill="white"/>
-                            <circle cx="117" cy="85" r="6" fill="#2C1810"/>
-                            <circle cx="115" cy="83" r="2.5" fill="white"/>
-                            <!-- Telinga -->
-                            <path d="M140,65 L150,30 L165,60Z" fill="#B87333"/>
-                            <path d="M160,62 L175,32 L185,65Z" fill="#B87333"/>
-                            <path d="M145,60 L152,40 L160,55Z" fill="#D4944A"/>
-                            <path d="M165,58 L175,42 L180,60Z" fill="#D4944A"/>
-                            <!-- Surai -->
-                            <path d="M145,70 Q160,55 170,80 Q175,65 185,85 Q180,80 175,95 Q170,90 165,100" 
-                                  fill="none" stroke="#4A2A10" stroke-width="7" stroke-linecap="round"/>
-                            <path d="M150,75 Q155,60 165,70" fill="none" stroke="#5C3317" stroke-width="5" stroke-linecap="round"/>
-                            <!-- Kaki depan 1 -->
-                            <rect x="195" y="260" width="22" height="85" rx="8" fill="#B87333"/>
-                            <path d="M190,340 L200,360 L210,340Z" fill="#4A2A10"/>
-                            <!-- Kaki depan 2 -->
-                            <rect x="225" y="260" width="22" height="85" rx="8" fill="#C68642"/>
-                            <path d="M220,340 L230,360 L240,340Z" fill="#4A2A10"/>
-                            <!-- Kaki belakang 1 -->
-                            <rect x="290" y="260" width="22" height="85" rx="8" fill="#B87333"/>
-                            <path d="M285,340 L295,360 L305,340Z" fill="#4A2A10"/>
-                            <!-- Kaki belakang 2 -->
-                            <rect x="320" y="260" width="22" height="85" rx="8" fill="#C68642"/>
-                            <path d="M315,340 L325,360 L335,340Z" fill="#4A2A10"/>
-                            <!-- Ekor -->
-                            <path d="M335,200 Q375,190 380,220 Q385,200 395,230 Q385,235 375,225 Q370,220 365,215" 
-                                  fill="none" stroke="#4A2A10" stroke-width="10" stroke-linecap="round"/>
-                            <path d="M340,210 Q370,200 375,225" fill="none" stroke="#5C3317" stroke-width="6" stroke-linecap="round"/>
-                            <!-- Perut -->
-                            <path d="M185,245 Q250,285 315,245" fill="none" stroke="#A0622E" stroke-width="3"/>
-                            <!-- Detail otot -->
-                            <path d="M200,200 Q250,190 300,200" fill="none" stroke="#A0622E" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <div class="morphing-stone">
-                        <svg viewBox="0 0 500 400" class="stone-svg">
-                            <!-- BATU BENTUK KUDA - sama persis dengan bentuk kuda di atas, tapi warna batu -->
-                            <!-- Badan batu -->
-                            <ellipse cx="250" cy="220" rx="90" ry="55" fill="#7A8A7A"/>
-                            <!-- Leher batu -->
-                            <path d="M180,190 Q160,140 140,110 Q130,95 145,90 L160,100 Q170,130 195,180Z" fill="#7A8A7A"/>
-                            <!-- Kepala batu -->
-                            <ellipse cx="125" cy="100" rx="40" ry="35" fill="#7A8A7A" transform="rotate(-15 125 100)"/>
-                            <!-- Moncong batu -->
-                            <ellipse cx="85" cy="115" rx="30" ry="22" fill="#8A9A8A" transform="rotate(-25 85 115)"/>
-                            <!-- Lubang hidung batu -->
-                            <circle cx="70" cy="120" r="5" fill="#5A6A5A"/>
-                            <circle cx="82" cy="125" r="5" fill="#5A6A5A"/>
-                            <!-- Mata batu -->
-                            <circle cx="120" cy="85" r="10" fill="#6A7A6A"/>
-                            <circle cx="117" cy="85" r="6" fill="#4A5A4A"/>
-                            <!-- Telinga batu -->
-                            <path d="M140,65 L150,30 L165,60Z" fill="#6A7A6A"/>
-                            <path d="M160,62 L175,32 L185,65Z" fill="#6A7A6A"/>
-                            <path d="M145,60 L152,40 L160,55Z" fill="#8A9A8A"/>
-                            <path d="M165,58 L175,42 L180,60Z" fill="#8A9A8A"/>
-                            <!-- Surai batu (retak seperti rambut) -->
-                            <path d="M145,70 Q160,55 170,80 Q175,65 185,85 Q180,80 175,95 Q170,90 165,100" 
-                                  fill="none" stroke="#5A6A5A" stroke-width="7" stroke-linecap="round"/>
-                            <path d="M150,75 Q155,60 165,70" fill="none" stroke="#4A5A4A" stroke-width="5" stroke-linecap="round"/>
-                            <!-- Kaki depan batu -->
-                            <rect x="195" y="260" width="22" height="85" rx="8" fill="#6A7A6A"/>
-                            <path d="M190,340 L200,360 L210,340Z" fill="#4A5A4A"/>
-                            <rect x="225" y="260" width="22" height="85" rx="8" fill="#7A8A7A"/>
-                            <path d="M220,340 L230,360 L240,340Z" fill="#4A5A4A"/>
-                            <!-- Kaki belakang batu -->
-                            <rect x="290" y="260" width="22" height="85" rx="8" fill="#6A7A6A"/>
-                            <path d="M285,340 L295,360 L305,340Z" fill="#4A5A4A"/>
-                            <rect x="320" y="260" width="22" height="85" rx="8" fill="#7A8A7A"/>
-                            <path d="M315,340 L325,360 L335,340Z" fill="#4A5A4A"/>
-                            <!-- Ekor batu -->
-                            <path d="M335,200 Q375,190 380,220 Q385,200 395,230 Q385,235 375,225 Q370,220 365,215" 
-                                  fill="none" stroke="#5A6A5A" stroke-width="10" stroke-linecap="round"/>
-                            <path d="M340,210 Q370,200 375,225" fill="none" stroke="#4A5A4A" stroke-width="6" stroke-linecap="round"/>
-                            <!-- Retak batu di badan -->
-                            <path d="M220,195 L240,210 L235,230" fill="none" stroke="#5A6A5A" stroke-width="2.5"/>
-                            <path d="M280,200 L295,220 L290,240" fill="none" stroke="#5A6A5A" stroke-width="2"/>
-                            <path d="M250,245 L260,265 L255,280" fill="none" stroke="#5A6A5A" stroke-width="2"/>
-                            <!-- Retak di kepala -->
-                            <path d="M130,90 L145,100 L140,115" fill="none" stroke="#5A6A5A" stroke-width="2"/>
-                            <!-- Retak di kaki -->
-                            <path d="M205,290 L215,305" fill="none" stroke="#5A6A5A" stroke-width="1.5"/>
-                            <path d="M305,290 L315,305" fill="none" stroke="#5A6A5A" stroke-width="1.5"/>
-                            <!-- Lumut kecil -->
-                            <ellipse cx="230" cy="270" rx="12" ry="5" fill="#4A6A4A" opacity="0.6"/>
-                            <ellipse cx="270" cy="185" rx="10" ry="4" fill="#4A6A4A" opacity="0.5"/>
-                            <ellipse cx="140" cy="130" rx="8" ry="3" fill="#4A6A4A" opacity="0.5"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            <div class="sejarah-text">
-                <h3>Legenda Kuda Jadi Batu</h3>
-                <p>Konon di kawasan batu_hoda_beach dahulu terdapat seekor kuda putih kepunyaan seorang datu sakti. Karena durhaka, kuda tersebut dikutuk menjadi batu. Hingga kini, di tepi pantai danau terdapat batu besar menyerupai kuda yang sedang menunduk. Warga setempat menyebutnya <strong>Batu Hoda Si Kuda</strong>, dan diyakini sebagai pengingat akan kesetiaan serta konsekuensi dari kesombongan.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
 <style>
-/* CSS untuk efek morphing - SEDERHANA & HALUS */
-.morphing-container {
-    position: relative;
-    width: 100%;
-    height: 350px;
-    overflow: hidden;
-    border-radius: 12px;
-    background: linear-gradient(145deg, #2c3e2f, #1e2a20);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    color: #333;
 }
 
-.morphing-horse, .morphing-stone {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.8s ease-in-out;
-}
-
-.horse-svg, .stone-svg {
-    width: 95%;
-    height: 95%;
-    filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));
-}
-
-.morphing-horse {
-    opacity: 1;
-}
-
-.morphing-stone {
-    opacity: 0;
-}
-
-/* Hover - berubah jadi batu */
-.morphing-container:hover .morphing-horse {
-    opacity: 0;
-}
-
-.morphing-container:hover .morphing-stone {
-    opacity: 1;
-}
-
-/* Responsif */
-@media (max-width: 768px) {
-    .morphing-container {
-        height: 250px;
-    }
-}
-
-/* Gaya dasar section */
 .section {
     padding: 80px 0;
-    background: #f9f9f9;
 }
+
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1100px;
+    margin: auto;
     padding: 0 20px;
 }
+
+/* TITLE */
 .section-title {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
+
 .section-title h2 {
     font-size: 36px;
     margin-bottom: 10px;
 }
+
 .divider {
     width: 60px;
     height: 3px;
     background: #e74c3c;
-    margin: 15px auto;
+    margin: 10px auto;
 }
-.sejarah-item {
+
+/* LAYOUT */
+.sejarah-box {
     display: flex;
     gap: 40px;
-    margin-bottom: 60px;
-    align-items: center;
     flex-wrap: wrap;
+    align-items: flex-start;
 }
+
+/* IMAGE */
 .sejarah-image {
     flex: 1;
-    min-width: 280px;
+    min-width: 300px;
 }
+
 .sejarah-image img {
     width: 100%;
-    height: 250px;
+    height: 450px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
-.sejarah-text {
+
+/* CONTENT */
+.sejarah-content {
     flex: 1;
+    min-width: 300px;
 }
-.sejarah-text h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
+
+/* CARD */
+.card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: 0.3s;
 }
-.reverse {
-    flex-direction: row-reverse;
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
+
+.card h3 {
+    margin-top: 0;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    line-height: 1.8;
+    color: #444;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    .sejarah-item, .reverse {
+    .sejarah-box {
         flex-direction: column;
+    }
+
+    .sejarah-image img {
+        height: 260px;
     }
 }
 </style>
+
+<section class="section">
+
+<div class="container">
+
+    <!-- TITLE -->
+    <div class="section-title">
+        <h2>Sejarah Batu Hoda</h2>
+        <div class="divider"></div>
+        <p>Legenda dan cerita rakyat masyarakat Samosir</p>
+    </div>
+
+    <div class="sejarah-box">
+
+        <!-- GAMBAR -->
+        <div class="sejarah-image">
+            <img src="/image/SBH/BatuHoda2.png" alt="Batu Hoda">
+        </div>
+
+        <!-- KONTEN CARD -->
+        <div class="sejarah-content">
+
+            <!-- SEJARAH CARD -->
+            <div class="card">
+                <h3>📜 Sejarah Batu Hoda</h3>
+                <p>
+                    Batu Hoda merupakan sebuah kawasan yang namanya berasal dari gabungan kata
+                    “batu” dan “hoda” (kuda) dalam bahasa Batak. Kawasan ini berada di wilayah
+                    Tugu 0 KM Pulau Samosir, yang dikenal sebagai titik pusat dan arah penting
+                    dalam peta budaya dan wisata Danau Toba.
+                </p>
+
+                <p>
+                    Dahulu, wilayah ini merupakan bagian dari kehidupan masyarakat Batak Toba
+                    yang hidup berdampingan dengan alam. Mereka memanfaatkan tanah untuk pertanian,
+                    dan perairan Danau Toba untuk kehidupan sehari-hari. Seiring waktu, kawasan ini
+                    berkembang menjadi salah satu destinasi wisata yang dikenal karena keindahan alam
+                    dan nilai budayanya.
+                </p>
+            </div>
+
+            <!-- LEGENDA CARD -->
+            <div class="card">
+                <h3>🐎 Legenda Batu Hoda</h3>
+                <p>
+                    Menurut cerita yang berkembang di masyarakat, dahulu terdapat sepasang kuda
+                    yang hidup di kawasan Batu Hoda. Keduanya hidup berdampingan dengan penuh kasih,
+                    dan memiliki harapan untuk membangun kehidupan serta keturunan bersama.
+                </p>
+
+                <p>
+                    Namun suatu hari, salah satu kuda pergi meninggalkan pasangannya tanpa kembali.
+                    Kuda yang ditinggalkan tetap setia menunggu di tempat itu. Hari berganti hari,
+                    bulan berganti bulan, bahkan tahun berganti tahun, namun ia tetap menunggu
+                    dengan penuh harapan.
+                </p>
+
+                <p>
+                    Kesetiaan dan penantian yang begitu lama membuat kuda tersebut akhirnya berubah
+                    menjadi batu. Dari peristiwa inilah masyarakat percaya bahwa terbentuknya
+                    “Batu Hoda” merupakan simbol dari kuda yang setia menunggu hingga menjadi batu.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
 
 <!-- UMKM -->
 <section id="umkm" class="section bg-light">
