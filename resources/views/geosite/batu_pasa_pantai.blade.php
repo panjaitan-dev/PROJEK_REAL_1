@@ -51,14 +51,9 @@
 <!-- HERO -->
 <section class="hero" style="background-image: url('/image/batu_pasa_pantai/batu_pasa_pantai3.jpg');">
     <div>
-<<<<<<< HEAD:resources/views/geosite/BatuPasa.php
-        <h1 class="hero-title">Museum Huta Bolon</h1>
+        <h1 class="hero-title">Huta Siallagan </h1>
         <p class="hero-subtitle"></p>
-=======
-        <h1 class="hero-title">T O M O K</h1>
-        <p class="hero-subtitle">Pulau Samosir · Danau Toba</p>
->>>>>>> 62223c60bf9a4ac13cb7f39c319881c2f33201fd:resources/views/geosite/batu_pasa_pantai.blade.php
-    </div>
+
 </section>
 
 <!-- SEJARAH -->
@@ -70,29 +65,30 @@
             <p>Warisan budaya Batak yang autentik dan masih hidup</p>
         </div>
         <div class="sejarah-item">
-            <div class="sejarah-image"><img src="/image/batu_pasa_pantai/batu_pasa_pantai3.jpg" alt="Desa batu_pasa_pantai"></div>
+            <div class="sejarah-image"><img src="/image/Batu_Pasa/batu_pasa_2.jpg" alt="Desa Ambarita"></div>
             <div class="sejarah-text">
-                <h3>Sejarah batu_pasa_pantai</h3>
-                <p>batu_pasa_pantai dikenal sebagai desa bersejarah yang pernah menjadi pusat kekuasaan Raja Sidabutar. 
-                    Desa ini memiliki banyak peninggalan sejarah Batak Toba, termasuk makam batu Raja Sidabutar
-                     yang masih terawat hingga sekarang</p>
+                <h3>Sejarah  Pantai Batu Pasa </h3>
+                <p>
+Pantai Batu Pasa merupakan salah satu destinasi wisata di kawasan Simanindo, Pulau Samosir, yang dikenal dengan keindahan alam Danau Toba serta batu-batu alami di sekitar pantai. Tempat ini menjadi salah satu lokasi wisata yang sering dikunjungi wisatawan untuk menikmati suasana tenang dan panorama alam khas Danau Toba.
+</p>
             </div>
         </div>
         <div class="sejarah-item reverse">
-            <div class="sejarah-image"><img src="/image/batu_pasa_pantai/batu_pasa_pantai1.jpg" alt="Tradisi Batak"></div>
+            <div class="sejarah-image"><img src="/image/Batu_Pasa/batu_pasa.jpg" alt="Tradisi Batak"></div>
             <div class="sejarah-text">
-                <h3>Budaya batu_pasa_pantai</h3>
-                <p>Budaya Batak Toba sangat terasa di batu_pasa_pantai. Masyarakatnya masih menjaga tradisi adat, tarian tortor, 
-                    serta pertunjukan sigale-gale yang menjadi ikon budaya daerah tersebut. Kerajinan ulos dan 
-                    ukiran kayu khas Batak juga banyak ditemukan di desa ini.</p>
+                <h3>Budaya Pantai Batu Pasa</h3>
+                <p>
+Masyarakat di sekitar Batu Pasa masih mempertahankan budaya Batak Toba yang diwariskan secara turun-temurun. Tradisi adat, penggunaan kain ulos, musik tradisional, dan keramahan masyarakat menjadi bagian dari kehidupan sehari-hari yang dapat dirasakan langsung oleh wisatawan.
+</p>
             </div>
         </div>
         <div class="sejarah-item">
             <div class="sejarah-image"><img src="/image/batu_pasa_pantai/batu_pasa_pantai2.jpg" alt="Wisata Budaya"></div>
             <div class="sejarah-text">
-                <h3>Daya Tarik Wisata batu_pasa_pantai</h3>
-                <p>batu_pasa_pantai menjadi salah satu tujuan wisata favorit di Pulau Samosir karena memiliki situs sejarah dan pusat oleh-oleh khas Batak. Wisatawan dapat mengunjungi makam Raja Sidabutar,
-                     melihat pertunjukan sigale-gale, serta membeli kain ulos dan suvenir tradisional.</p>
+                <h3>Daya Tarik Wisata Pantai Batu Pasa</h3>
+                <p>
+Pantai Batu Pasa menawarkan pemandangan Danau Toba yang indah dengan suasana yang sejuk dan nyaman. Wisatawan dapat menikmati panorama alam, bersantai di tepi pantai, berfoto dengan latar batu-batu alami, serta menikmati suasana khas wisata Pulau Samosir yang masih alami dan asri.
+</p>
             </div>
         </div>
     </div>
@@ -231,7 +227,7 @@
 <section id="lokasi" class="section bg-light">
     <div class="container">
         <div class="section-title">
-            <h2>Lokasi batu_pasa_pantai</h2>
+            <h2>Lokasi Pantai Batu Pasa</h2>
             <div class="divider"></div>
             <p>Desa bersejarah di Pulau Samosir, Danau Toba</p>
         </div>
@@ -239,7 +235,7 @@
         <div class="maps-section">
             <div class="maps-container">
                 <iframe
-                    src="https://maps.google.com/maps?q=batu_pasa_pantai,%20Simanindo,%20Samosir,%20Sumatera%20Utara&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                    src="https://www.google.com/maps/place/Batu+Passa+Liang+sipogu/@2.7599407,98.684214,13z/data=!4m10!1m2!2m1!1sPantai+Batu+Pasa!3m6!1s0x3031c1000ee6f31f:0x6ee7c8a134f162fd!8m2!3d2.7432066!4d98.7662828!15sChBQYW50YWkgQmF0dSBQYXNhWhIiEHBhbnRhaSBiYXR1IHBhc2GSARJ0b3VyaXN0X2F0dHJhY3Rpb26aASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTlFMVzlZYkVKM0VBReABAPoBBAgAEEk!16s%2Fg%2F11vqwvkk66?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D"
                     width="100%"
                     height="450"
                     style="border:0;"
