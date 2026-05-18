@@ -341,7 +341,7 @@ body {
         <div class="maps-section">
             <div class="maps-container">
                 <iframe
-                    src="https://maps.app.goo.gl/VHYssvDzD7BaVZth9"
+                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.1906229135784!2d98.72283907423697!3d2.759850355423893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031c715b0bed547%3A0x346964c80c83147!2sPantai%20Batuhoda!5e0!3m2!1sid!2sid!4v1779111808139!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                     height="450"
                     style="border:0;"
                     allowfullscreen=""
@@ -349,12 +349,25 @@ body {
                 </iframe>
             </div>
 
-            <div class="rute-info">
-                <div class="rute-item">
-                    <h4>📍 batu_hoda_beach</h4>
-                    <p>Area favorit wisatawan dengan hotel, cafe, dan restoran.</p>
-                    <span class="rute-time">Pusat wisata Samosir</span>
-                </div>
+           <div class="rute-info">
+
+    <div class="rute-item">
+        <h4>🏍️ Dengan Motor</h4>
+        <p>Balige → Ajibata → Ferry menuju Tomok → Pantai Batu Hoda Simanindo</p>
+        <span class="rute-time">± 1.5 jam</span>
+    </div>
+
+    <div class="rute-item">
+        <h4>🚗 Dengan Mobil</h4>
+        <p>Balige → Ajibata → Ferry penyeberangan Danau Toba → Simanindo</p>
+        <span class="rute-time">± 2 jam</span>
+    </div>
+
+    <div class="rute-item">
+        <h4>⛴️ Ferry Schedule</h4>
+        <p>Ferry Ajibata – Tomok beroperasi setiap hari mulai pagi hingga sore hari.</p>
+        <span class="rute-time">06:00 - 17:00 WIB</span>
+    </div>
             </div>
         </div>
     </div>
@@ -363,7 +376,7 @@ body {
 <!-- CTA -->
 <section class="cta">
     <div class="container">
-        <h3>Jangan Lewatkan Keindahan batu_hoda_beach</h3>
+        <h3>Jangan Lewatkan Keindahan Batu Hoda Beach</h3>
         <div class="divider"></div>
         <p>Rasakan pengalaman wisata budaya Batak yang autentik, nikmati keindahan alam Danau Toba yang memukau, dan ciptakan kenangan indah bersama keluarga tercinta di batu_hoda_beach</p>
         <div class="cta-buttons">

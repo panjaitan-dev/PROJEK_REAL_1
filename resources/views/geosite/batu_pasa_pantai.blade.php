@@ -116,21 +116,25 @@ Pantai Batu Pasa menawarkan pemandangan Danau Toba yang indah dengan suasana yan
             </div>
 
             <div class="rute-info">
-                <div class="rute-item">
-                    <h4>🚢 Dari Parapat</h4>
-                    <p>Naik ferry dari Pelabuhan Parapat menuju Pelabuhan batu_pasa_pantai (± 45 menit).</p>
-                    <span class="rute-time">Ferry tersedia setiap hari</span>
-                </div>
-                <div class="rute-item">
-                    <h4>🏍️ Dari batu_hoda_beach Siadong</h4>
-                    <p>Berkendara ke arah selatan sekitar 5 km dari pusat batu_hoda_beach.</p>
-                    <span class="rute-time">± 10 menit</span>
-                </div>
-                <div class="rute-item">
-                    <h4>📍 Daya Tarik Utama</h4>
-                    <p>Makam Raja Sidabutar, pertunjukan Sigale-gale, dan pusat oleh-oleh khas Batak.</p>
-                    <span class="rute-time">Buka setiap hari</span>
-                </div>
+
+    <div class="rute-item">
+        <h4>🚢 Dari Parapat</h4>
+        <p>Naik kapal ferry dari Pelabuhan Ajibata menuju Pelabuhan Tomok atau Simanindo, kemudian melanjutkan perjalanan darat menuju kawasan Batu Pasa.</p>
+        <span class="rute-time">± 45–60 menit</span>
+    </div>
+
+    <div class="rute-item">
+        <h4>🏍️ Dari Simanindo</h4>
+        <p>Batu Pasa dapat dicapai melalui perjalanan darat dari pusat Kecamatan Simanindo dengan akses jalan yang cukup mudah dilalui kendaraan.</p>
+        <span class="rute-time">± 10–15 menit</span>
+    </div>
+
+    <div class="rute-item">
+        <h4>📍 Daya Tarik Utama</h4>
+        <p>Panorama Danau Toba, batu-batu alami di sekitar pantai, suasana alam yang tenang, dan pemandangan khas Pulau Samosir.</p>
+        <span class="rute-time">Buka setiap hari</span>
+    </div>
+</div>
             </div>
         </div>
     </div>
@@ -139,7 +143,7 @@ Pantai Batu Pasa menawarkan pemandangan Danau Toba yang indah dengan suasana yan
 <!-- CTA -->
 <section class="cta">
     <div class="container">
-        <h3>Jangan Lewatkan Keindahan batu_pasa_pantai</h3>
+        <h3>Jangan Lewatkan Keindahan Pantai Batu Pasa</h3>
         <div class="divider"></div>
         <p>Rasakan pengalaman wisata budaya Batak yang autentik, nikmati keindahan alam Danau Toba yang memukau, dan ciptakan kenangan indah bersama keluarga tercinta di batu_pasa_pantai</p>
         <div class="cta-buttons">

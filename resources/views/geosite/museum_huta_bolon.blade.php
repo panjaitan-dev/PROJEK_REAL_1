@@ -207,7 +207,7 @@
             <div class="maps-container">
                 <!-- Google Maps dengan marker lokasi museum_huta_bolon -->
                 <iframe
-                    src="https://maps.google.com/maps?q=museum_huta_bolon,%20Simanindo,%20Samosir,%20Sumatera%20Utara&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.216058140516!2d98.74152767423692!3d2.7522539554657346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031b8ac44688e05%3A0xdb20e0beafe625bd!2sMuseum%20Huta%20Bolon%20Simanindo!5e0!3m2!1sid!2sid!4v1779111913624!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                     width="100%"
                     height="450"
                     style="border:0;"
@@ -216,24 +216,27 @@
                 </iframe>
             </div>
 
-            <div class="rute-info">
-                <div class="rute-item">
-                    <h4>🏍️ Dengan Motor</h4>
-                    <p>Balige → Ajibata (30m) → Ferry (20m) → museum_huta_bolon (15m)</p>
-                    <span class="rute-time">± 1.5 jam</span>
-                </div>
+           <div class="rute-info">
 
-                <div class="rute-item">
-                    <h4>🚗 Dengan Mobil</h4>
-                    <p>Balige → Ajibata (30m) → Parkir → Ferry → Transportasi lokal</p>
-                    <span class="rute-time">± 2 jam</span>
-                </div>
+    <div class="rute-item">
+        <h4>🏍️ Dengan Motor</h4>
+        <p>Balige → Ajibata → Ferry menuju Tomok → museum_huta_bolon Simanindo</p>
+        <span class="rute-time">± 1.5 jam</span>
+    </div>
 
-                <div class="rute-item">
-                    <h4>⛴️ Ferry Schedule</h4>
-                    <p>Operasional setiap hari 06:00 - 17:00 WIB</p>
-                    <span class="rute-time">Kapasitas penuh</span>
-                </div>
+    <div class="rute-item">
+        <h4>🚗 Dengan Mobil</h4>
+        <p>Balige → Ajibata → Ferry penyeberangan Danau Toba → Simanindo</p>
+        <span class="rute-time">± 2 jam</span>
+    </div>
+
+    <div class="rute-item">
+        <h4>⛴️ Ferry Schedule</h4>
+        <p>Ferry Ajibata – Tomok beroperasi setiap hari mulai pagi hingga sore hari.</p>
+        <span class="rute-time">06:00 - 17:00 WIB</span>
+    </div>
+
+</div>
             </div>
         </div>
     </div>
@@ -242,7 +245,7 @@
 <!-- CTA -->
 <section class="cta">
     <div class="container">
-        <h3>Jangan Lewatkan Keindahan museum_huta_bolon</h3>
+        <h3>Jangan Lewatkan Keindahan Museum Huta Bolon</h3>
         <div class="divider"></div>
         <p>Rasakan pengalaman wisata budaya Batak yang autentik, nikmati keindahan alam Danau Toba yang memukau, dan ciptakan kenangan indah bersama keluarga tercinta di museum_huta_bolon</p>
         <div class="cta-buttons">
