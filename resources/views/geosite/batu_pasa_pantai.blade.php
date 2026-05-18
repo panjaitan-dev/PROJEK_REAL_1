@@ -106,7 +106,7 @@ Pantai Batu Pasa menawarkan pemandangan Danau Toba yang indah dengan suasana yan
         <div class="maps-section">
             <div class="maps-container">
                 <iframe
-                    src="https://www.google.com/maps/place/Batu+Passa+Liang+sipogu/@2.7599407,98.684214,13z/data=!4m10!1m2!2m1!1sPantai+Batu+Pasa!3m6!1s0x3031c1000ee6f31f:0x6ee7c8a134f162fd!8m2!3d2.7432066!4d98.7662828!15sChBQYW50YWkgQmF0dSBQYXNhWhIiEHBhbnRhaSBiYXR1IHBhc2GSARJ0b3VyaXN0X2F0dHJhY3Rpb26aASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTlFMVzlZYkVKM0VBReABAPoBBAgAEEk!16s%2Fg%2F11vqwvkk66?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.536348657673!2d98.763707!3d2.7432066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031c1000ee6f31f%3A0x6ee7c8a134f162fd!2sBatu%20Passa%20Liang%20sipogu!5e0!3m2!1sid!2sid!4v1715900000000"
                     width="100%"
                     height="450"
                     style="border:0;"
