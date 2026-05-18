@@ -49,9 +49,9 @@
 </div>
 
 <!-- HERO -->
-<section class="hero" style="background-image: url('/image/museum_huta_bolon/museum_huta_bolon1.jpg');">
+<section class="hero" style="background-image: url('/image/museum_huta/museum_huta.jpg');">
     <div>
-        <h1 class="hero-title">A M B A R I T A</h1>
+        <h1 class="hero-title">Museum Huta Bolon</h1>
         <p class="hero-subtitle">Pulau Samosir · Danau Toba</p>
     </div>
 </section>
@@ -65,7 +65,7 @@
             <p>Warisan budaya Batak yang autentik dan masih hidup</p>
         </div>
         <div class="sejarah-item">
-            <div class="sejarah-image"><img src="/image/museum_huta_bolon/museum_huta_bolon7.jpg" alt="Desa Museum Huta Bolon"></div>
+            <div class="sejarah-image"><img src="/image/museum_huta/museum_huta_4.jpg" alt="Desa Simanindo"></div>
             <div class="sejarah-text">
                 <h3>Sejarah Museum Huta Bolon</h3>
                 <p>Museum Huta Bolon merupakan desa tua yang terkenal sebagai pusat pemerintahan Raja
@@ -74,7 +74,7 @@
             </div>
         </div>
         <div class="sejarah-item reverse">
-            <div class="sejarah-image"><img src="/image/museum_huta_bolon/museum_huta_bolon4.jpg" alt="Tradisi Batak"></div>
+            <div class="sejarah-image"><img src="/image/museum_huta/museum_huta_2.jpg" alt="Tradisi Batak"></div>
             <div class="sejarah-text">
                 <h3>Budaya Museum Huta Bolon</h3>
                 <p>Budaya di Museum Huta Bolon masih sangat kental dengan tradisi Batak Toba. Rumah adat tradisional, tarian tortor, dan penggunaan ulos
@@ -83,7 +83,7 @@
             </div>
         </div>
         <div class="sejarah-item">
-            <div class="sejarah-image"><img src="/image/museum_huta_bolon/museum_huta_bolon5.jpg" alt="Wisata Budaya"></div>
+            <div class="sejarah-image"><img src="/image/museum_huta/museum_huta_3.jpg" alt="Wisata Budaya"></div>
             <div class="sejarah-text">
                 <h3>Daya Tarik Wisata Museum Huta Bolon</h3>
                 <p>Museum Huta Bolon terkenal dengan situs Batu Persidangan 
