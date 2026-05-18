@@ -185,7 +185,7 @@
             <div class="sejarah-item {{ $index % 2 == 1 ? 'reverse' : '' }}" data-aos="fade-{{ $index % 2 == 0 ? 'right' : 'left' }}">
                 <div class="sejarah-image">
                     @if($item->gambar)
-                        <img src="{{ $item->gambar }}" alt="{{ $item->judul }}">
+                        <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}">
                     @else
                         <img src="/image/sejarah{{ $index+1 }}.jpg" alt="{{ $item->judul }}">
                     @endif

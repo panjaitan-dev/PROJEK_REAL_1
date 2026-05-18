@@ -107,7 +107,7 @@
             @forelse($umkm as $item)
             <div class="card">
                 @if($item->gambar)
-                <img src="{{ $item->gambar }}" class="card-img" alt="{{ $item->nama }}">
+                <img src="{{ asset('storage/' . $item->gambar) }}" class="card-img" alt="{{ $item->nama }}">
                 @endif
                 <div class="card-content">
                     <h3>{{ $item->nama }}</h3>
@@ -141,7 +141,7 @@
             @forelse($penginapan as $item)
             <div class="card">
                 @if($item->gambar)
-                <img src="{{ $item->gambar }}" class="card-img" alt="{{ $item->nama }}">
+                <img src="{{ asset('storage/' . $item->gambar) }}" class="card-img" alt="{{ $item->nama }}">
                 @endif
                 <div class="card-content">
                     <h3>{{ $item->nama }}</h3>
@@ -175,7 +175,7 @@
             @forelse($fasilitas as $item)
             <div class="fasilitas-item">
                 @if($item->gambar)
-                <img src="{{ $item->gambar }}" class="fasilitas-img" alt="{{ $item->nama }}">
+                <img src="{{ asset('storage/' . $item->gambar) }}" class="fasilitas-img" alt="{{ $item->nama }}">
                 @endif
                 <div class="fasilitas-content">
                     <h4>{{ $item->nama }}</h4>

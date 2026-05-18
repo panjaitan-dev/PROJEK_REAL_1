@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Umkm;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UmkmController extends Controller
 {
@@ -44,7 +45,7 @@ class UmkmController extends Controller
         ];
 
         if ($request->hasFile('gambar')) {
-            $data['gambar'] = $this->imageToBase64($request->file('gambar'));
+            $data['gambar'] = $request->file('gambar')->store('umkm', 'public');
         }
 
         Umkm::create($data);
@@ -84,7 +85,11 @@ class UmkmController extends Controller
         ];
 
         if ($request->hasFile('gambar')) {
-            $data['gambar'] = $this->imageToBase64($request->file('gambar'));
+            // Hapus gambar lama jika ada
+            if ($umkm->gambar) {
+                Storage::disk('public')->delete($umkm->gambar);
+            }
+            $data['gambar'] = $request->file('gambar')->store('umkm', 'public');
         }
 
         $umkm->update($data);
@@ -96,17 +101,15 @@ class UmkmController extends Controller
     public function destroy($id)
     {
         $umkm = Umkm::findOrFail($id);
+
+        // Hapus gambar dari storage jika ada
+        if ($umkm->gambar) {
+            Storage::disk('public')->delete($umkm->gambar);
+        }
+
         $umkm->delete();
 
         return redirect()->route('admin.umkm.index')
             ->with('success', 'UMKM berhasil dihapus!');
-    }
-
-    private function imageToBase64($file): string
-    {
-        $imageData = file_get_contents($file->getRealPath());
-        $base64    = base64_encode($imageData);
-        $mimeType  = $file->getMimeType();
-        return 'data:' . $mimeType . ';base64,' . $base64;
     }
 }

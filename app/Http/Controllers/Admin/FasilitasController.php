@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Fasilitas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class FasilitasController extends Controller
 {
@@ -42,7 +43,7 @@ class FasilitasController extends Controller
         ];
 
         if ($request->hasFile('gambar')) {
-            $data['gambar'] = $this->imageToBase64($request->file('gambar'));
+            $data['gambar'] = $request->file('gambar')->store('fasilitas', 'public');
         }
 
         Fasilitas::create($data);
@@ -80,7 +81,11 @@ class FasilitasController extends Controller
         ];
 
         if ($request->hasFile('gambar')) {
-            $data['gambar'] = $this->imageToBase64($request->file('gambar'));
+            // Hapus gambar lama jika ada
+            if ($fasilitas->gambar) {
+                Storage::disk('public')->delete($fasilitas->gambar);
+            }
+            $data['gambar'] = $request->file('gambar')->store('fasilitas', 'public');
         }
 
         $fasilitas->update($data);
@@ -92,17 +97,16 @@ class FasilitasController extends Controller
     public function destroy($id)
     {
         $fasilitas = Fasilitas::findOrFail($id);
+
+        // Hapus gambar dari storage jika ada
+        if ($fasilitas->gambar) {
+            Storage::disk('public')->delete($fasilitas->gambar);
+        }
+
         $fasilitas->delete();
 
         return redirect()->route('admin.fasilitas.index')
             ->with('success', 'Fasilitas berhasil dihapus!');
     }
 
-    private function imageToBase64($file): string
-    {
-        $imageData = file_get_contents($file->getRealPath());
-        $base64    = base64_encode($imageData);
-        $mimeType  = $file->getMimeType();
-        return 'data:' . $mimeType . ';base64,' . $base64;
-    }
 }

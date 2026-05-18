@@ -588,7 +588,7 @@
         <div class="circle-card" onclick="openReader({{ $item->id }})">
             <div class="img-circle-frame">
                 @if($item->gambar)
-                    <img src="{{ $item->gambar }}" alt="{{ $item->judul }}" loading="lazy">
+                    <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}" loading="lazy">
                 @else
                     <img src="{{ asset('image/default.jpg') }}" alt="News">
                 @endif
@@ -654,7 +654,7 @@
         // Set content
         document.getElementById('r-title').innerText = item.judul;
         document.getElementById('r-content').innerHTML = item.konten;
-        document.getElementById('r-img').src = item.gambar || '{{ asset("image/default.jpg") }}';
+        document.getElementById('r-img').src = item.gambar ? '/storage/' + item.gambar : '{{ asset("image/default.jpg") }}';
         document.getElementById('r-date').innerText = new Date(item.created_at).toLocaleDateString('id-ID', {
             day: 'numeric',
             month: 'long',

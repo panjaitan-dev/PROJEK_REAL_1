@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Penginapan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PenginapanController extends Controller
 {
@@ -44,7 +45,7 @@ class PenginapanController extends Controller
         ];
 
         if ($request->hasFile('gambar')) {
-            $data['gambar'] = $this->imageToBase64($request->file('gambar'));
+            $data['gambar'] = $request->file('gambar')->store('penginapan', 'public');
         }
 
         Penginapan::create($data);
@@ -84,7 +85,11 @@ class PenginapanController extends Controller
         ];
 
         if ($request->hasFile('gambar')) {
-            $data['gambar'] = $this->imageToBase64($request->file('gambar'));
+            // Hapus gambar lama jika ada
+            if ($penginapan->gambar) {
+                Storage::disk('public')->delete($penginapan->gambar);
+            }
+            $data['gambar'] = $request->file('gambar')->store('penginapan', 'public');
         }
 
         $penginapan->update($data);
@@ -96,17 +101,15 @@ class PenginapanController extends Controller
     public function destroy($id)
     {
         $penginapan = Penginapan::findOrFail($id);
+
+        // Hapus gambar dari storage jika ada
+        if ($penginapan->gambar) {
+            Storage::disk('public')->delete($penginapan->gambar);
+        }
+
         $penginapan->delete();
 
         return redirect()->route('admin.penginapan.index')
             ->with('success', 'Penginapan berhasil dihapus!');
-    }
-
-    private function imageToBase64($file): string
-    {
-        $imageData = file_get_contents($file->getRealPath());
-        $base64    = base64_encode($imageData);
-        $mimeType  = $file->getMimeType();
-        return 'data:' . $mimeType . ';base64,' . $base64;
     }
 }
