@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>batu_pasa_pantai - Geosite Danau Toba</title>
+    <title>Pantai_Batu_Pasa - Geosite Danau Toba</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/batu_hoda_beach.css">
 </head>
@@ -49,9 +49,9 @@
 </div>
 
 <!-- HERO -->
-<section class="hero" style="background-image: url('/image/batu_pasa_pantai/batu_pasa_pantai3.jpg');">
+<section class="hero" style="background-image: url('/image/Batu_Pasa/batu_pasa.jpg');">
     <div>
-        <h1 class="hero-title">Huta Siallagan </h1>
+        <h1 class="hero-title">Pantai Batu Pasa</h1>
         <p class="hero-subtitle"></p>
 
 </section>
@@ -65,7 +65,7 @@
             <p>Warisan budaya Batak yang autentik dan masih hidup</p>
         </div>
         <div class="sejarah-item">
-            <div class="sejarah-image"><img src="/image/Batu_Pasa/batu_pasa_2.jpg" alt="Desa Ambarita"></div>
+            <div class="sejarah-image"><img src="/image/Batu_Pasa/batu_pasa_2.jpg" alt="Desa Sangkal"></div>
             <div class="sejarah-text">
                 <h3>Sejarah  Pantai Batu Pasa </h3>
                 <p>
@@ -74,7 +74,7 @@ Pantai Batu Pasa merupakan salah satu destinasi wisata di kawasan Simanindo, Pul
             </div>
         </div>
         <div class="sejarah-item reverse">
-            <div class="sejarah-image"><img src="/image/Batu_Pasa/batu_pasa.jpg" alt="Tradisi Batak"></div>
+            <div class="sejarah-image"><img src="/image/Batu_Pasa/batu_pasa_3.jpg" alt="Tradisi Batak"></div>
             <div class="sejarah-text">
                 <h3>Budaya Pantai Batu Pasa</h3>
                 <p>
@@ -83,7 +83,7 @@ Masyarakat di sekitar Batu Pasa masih mempertahankan budaya Batak Toba yang diwa
             </div>
         </div>
         <div class="sejarah-item">
-            <div class="sejarah-image"><img src="/image/batu_pasa_pantai/batu_pasa_pantai2.jpg" alt="Wisata Budaya"></div>
+            <div class="sejarah-image"><img src="/image/Batu_Pasa/batu_pasa_4.jpg" alt="Wisata Budaya"></div>
             <div class="sejarah-text">
                 <h3>Daya Tarik Wisata Pantai Batu Pasa</h3>
                 <p>
@@ -94,104 +94,6 @@ Pantai Batu Pasa menawarkan pemandangan Danau Toba yang indah dengan suasana yan
     </div>
 </section>
 
-<!-- UMKM -->
-<section id="umkm" class="section bg-light">
-    <div class="container">
-        <div class="section-title">
-            <h2>UMKM Lokal</h2>
-            <div class="divider"></div>
-            <p>Produk autentik dan berkualitas dari pengrajin lokal batu_pasa_pantai</p>
-        </div>
-        <div class="grid-3">
-            @forelse($umkm as $item)
-            <div class="card">
-                @if($item->gambar)
-                <img src="{{ $item->gambar }}" class="card-img" alt="{{ $item->nama }}">
-                @endif
-                <div class="card-content">
-                    <h3>{{ $item->nama }}</h3>
-                    <p>{{ $item->deskripsi }}</p>
-                    @if($item->lokasi)
-                    <div class="card-location">📍 {{ $item->lokasi }}</div>
-                    @endif
-                    @if($item->kontak)
-                    <div class="card-contact">📞 {{ $item->kontak }}</div>
-                    @endif
-                </div>
-            </div>
-            @empty
-            <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
-                <p>Belum ada data UMKM untuk geosite ini.</p>
-            </div>
-            @endforelse
-        </div>
-    </div>
-</section>
-
-<!-- PENGINAPAN -->
-<section id="penginapan" class="section">
-    <div class="container">
-        <div class="section-title">
-            <h2>Penginapan & Akomodasi</h2>
-            <div class="divider"></div>
-            <p>Pilihan tempat menginap dengan nuansa budaya Batak yang autentik</p>
-        </div>
-        <div class="grid-3">
-            @forelse($penginapan as $item)
-            <div class="card">
-                @if($item->gambar)
-                <img src="{{ $item->gambar }}" class="card-img" alt="{{ $item->nama }}">
-                @endif
-                <div class="card-content">
-                    <h3>{{ $item->nama }}</h3>
-                    <p>{{ $item->deskripsi }}</p>
-                    @if($item->harga)
-                    <div class="card-price">💰 {{ $item->harga }}</div>
-                    @endif
-                    @if($item->kontak)
-                    <div class="card-contact">📞 {{ $item->kontak }}</div>
-                    @endif
-                </div>
-            </div>
-            @empty
-            <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
-                <p>Belum ada data penginapan untuk geosite ini.</p>
-            </div>
-            @endforelse
-        </div>
-    </div>
-</section>
-
-<!-- FASILITAS -->
-<section id="fasilitas" class="section bg-light">
-    <div class="container">
-        <div class="section-title">
-            <h2>Fasilitas & Layanan</h2>
-            <div class="divider"></div>
-            <p>Berbagai fasilitas lengkap untuk kenyamanan wisatawan</p>
-        </div>
-        <div class="grid-2">
-            @forelse($fasilitas as $item)
-            <div class="fasilitas-item">
-                @if($item->gambar)
-                <img src="{{ $item->gambar }}" class="fasilitas-img" alt="{{ $item->nama }}">
-                @endif
-                <div class="fasilitas-content">
-                    <h4>{{ $item->nama }}</h4>
-                    <p>{{ $item->deskripsi }}</p>
-                    @if($item->harga)
-                    <div class="fasilitas-price">{{ $item->harga }}</div>
-                    @endif
-                </div>
-            </div>
-            @empty
-            <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
-                <p>Belum ada data fasilitas untuk geosite ini.</p>
-            </div>
-            @endforelse
-        </div>
-    </div>
-</section>
 
 <!-- GALERI -->
 <section id="galeri" class="section">
