@@ -30,7 +30,7 @@
             <div class="mb-3">
                 <label>Gambar Saat Ini</label><br>
                 @if($berita->gambar)
-                    <img src="{{ $berita->gambar }}" width="100">
+                    <img src="{{ $berita->gambar_url }}" width="100" style="border-radius: 6px; object-fit: cover;">
                 @else
                     <span class="text-muted">Tidak ada gambar</span>
                 @endif

@@ -587,11 +587,7 @@
         @forelse($berita as $item)
         <div class="circle-card" onclick="openReader({{ $item->id }})">
             <div class="img-circle-frame">
-                @if($item->gambar)
-                    <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}" loading="lazy">
-                @else
-                    <img src="{{ asset('image/default.jpg') }}" alt="News">
-                @endif
+                <img src="{{ $item->gambar_url }}" alt="{{ $item->judul }}" loading="lazy">
             </div>
             <span class="meta-tag">Jelajahi</span>
             <h3 class="title-main">{{ Str::limit($item->judul, 40) }}</h3>
@@ -645,7 +641,7 @@
 
 <script>
     // Data berita dari server
-    const newsData = @json($berita->items());
+    const newsData = @json($berita->getCollection()->each->append('gambar_url'));
 
     function openReader(id) {
         const item = newsData.find(x => x.id === id);
@@ -654,7 +650,7 @@
         // Set content
         document.getElementById('r-title').innerText = item.judul;
         document.getElementById('r-content').innerHTML = item.konten;
-        document.getElementById('r-img').src = item.gambar ? '/storage/' + item.gambar : '{{ asset("image/default.jpg") }}';
+        document.getElementById('r-img').src = item.gambar_url || '{{ asset("image/default.jpg") }}';
         document.getElementById('r-date').innerText = new Date(item.created_at).toLocaleDateString('id-ID', {
             day: 'numeric',
             month: 'long',
