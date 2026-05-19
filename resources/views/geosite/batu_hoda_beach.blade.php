@@ -60,9 +60,14 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     background: #f9f9f9;
     color: #333;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
 }
 
 .section {
@@ -84,6 +89,48 @@ body {
 .section-title h2 {
     font-size: 36px;
     margin-bottom: 10px;
+}
+
+.galeri-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.galeri-item {
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    background: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeri-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.galeri-item img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+}
+
+.galeri-caption {
+    padding: 1rem;
+}
+
+.galeri-caption h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+.galeri-caption p {
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
 }
 
 .divider {
@@ -159,7 +206,7 @@ body {
 }
 </style>
 
-<section class="section">
+<section id="sejarah" class="section">
 
 <div class="container">
 
@@ -324,6 +371,37 @@ body {
             <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
                 <p>Belum ada data fasilitas untuk geosite ini.</p>
             </div>
+            @endforelse
+        </div>
+    </div>
+</section>
+
+<!-- GALERI -->
+<section id="galeri" class="section bg-light">
+    <div class="container">
+        <div class="section-title">
+            <h2>Galeri Batu Hoda</h2>
+            <div class="divider"></div>
+            <p>Dokumentasi foto dan suasana di Geosite Batu Hoda.</p>
+        </div>
+
+        <div class="galeri-grid">
+            @forelse($galeriGeosite as $item)
+                <div class="galeri-item">
+                    @if($item->gambar)
+                        <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul ?? $item->kategori ?? 'Galeri Batu Hoda' }}">
+                    @endif
+                    <div class="galeri-caption">
+                        <h4>{{ $item->judul ?? $item->kategori ?? 'Galeri Batu Hoda' }}</h4>
+                        @if(!empty($item->kategori))
+                            <p>{{ $item->kategori }}</p>
+                        @endif
+                    </div>
+                </div>
+            @empty
+                <div style="grid-column: 1 / -1; text-align: center; padding: 2rem; color: #666;">
+                    <p>Belum ada foto galeri untuk saat ini.</p>
+                </div>
             @endforelse
         </div>
     </div>

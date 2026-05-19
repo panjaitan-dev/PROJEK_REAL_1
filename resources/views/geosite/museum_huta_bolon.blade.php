@@ -6,6 +6,17 @@
     <title>museum_huta_bolon - Geosite Danau Toba</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="/css/batu_hoda_beach.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, h5, h6,
+        .section-title h2,
+        .section-title h3 {
+            font-family: 'Cormorant Garamond', serif;
+        }
+    </style>
 </head>
 <body>
 
@@ -190,6 +201,40 @@
                 <p>Belum ada data fasilitas untuk geosite ini.</p>
             </div>
             @endforelse
+        </div>
+    </div>
+</section>
+
+<!-- GALERI -->
+<section id="galeri" class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Galeri</h2>
+            <div class="divider"></div>
+            <p>Foto dan momen menarik dari Museum Huta Bolon</p>
+        </div>
+        <div class="grid-3">
+            @isset($galeriGeosite)
+                @forelse($galeriGeosite as $item)
+                    <div class="galeri-item">
+                        @if($item->gambar)
+                            <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}" onclick="openLightbox(this)">
+                        @endif
+                        <div class="galeri-caption">
+                            <h4>{{ $item->judul }}</h4>
+                            <p>{{ $item->kategori }}</p>
+                        </div>
+                    </div>
+                @empty
+                    <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
+                        <p>Belum ada foto galeri untuk geosite ini.</p>
+                    </div>
+                @endforelse
+            @else
+                <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
+                    <p>Galeri belum tersedia.</p>
+                </div>
+            @endisset
         </div>
     </div>
 </section>
