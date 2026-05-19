@@ -31,13 +31,9 @@ class GeositeController extends Controller
         $penginapan = Penginapan::where('geosite', 'museum_huta_bolon')->where('status', true)->get();
         $fasilitas = Fasilitas::where('geosite', 'museum_huta_bolon')->where('status', true)->get();
         $galeriGeosite = GaleriGeosite::where('geosite', 'museum_huta_bolon')->where('status', true)->get();
-        $navbarItems = NavbarItem::where('geosite', 'museum_huta_bolon')
-            ->where('status', true)
-            ->orderBy('urutan')
-            ->get();
         $kategoriGaleri = $galeriGeosite->pluck('kategori')->unique()->values();
 
-        return view('geosite.museum_huta_bolon', compact('umkm', 'penginapan', 'fasilitas', 'galeriGeosite', 'kategoriGaleri', 'navbarItems'));
+        return view('geosite.museum_huta_bolon', compact('umkm', 'penginapan', 'fasilitas', 'galeriGeosite', 'kategoriGaleri'));
     }
     
     public function batu_pasa_pantai()

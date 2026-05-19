@@ -10,7 +10,6 @@ use App\Http\Controllers\Admin\UmkmController;
 use App\Http\Controllers\Admin\PenginapanController;
 use App\Http\Controllers\Admin\FasilitasController;
 use App\Http\Controllers\Admin\GaleriGeositeController;
-use App\Http\Controllers\Admin\NavbarItemController;
 use App\Http\Controllers\DestinasiController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GaleriController as PublicGaleriController;
