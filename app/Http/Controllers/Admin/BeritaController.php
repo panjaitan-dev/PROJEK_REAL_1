@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Berita;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class BeritaController extends Controller
 {
@@ -37,13 +38,8 @@ class BeritaController extends Controller
             'status' => $request->has('status') ? 1 : 0
         ];
 
-        // Konversi gambar ke base64
         if ($request->hasFile('gambar')) {
-            $image = $request->file('gambar');
-            $imageData = file_get_contents($image->getRealPath());
-            $base64 = base64_encode($imageData);
-            $mimeType = $image->getMimeType();
-            $data['gambar'] = 'data:' . $mimeType . ';base64,' . $base64;
+            $data['gambar'] = $request->file('gambar')->store('berita', 'public');
         }
 
         Berita::create($data);
@@ -78,11 +74,11 @@ class BeritaController extends Controller
         ];
 
         if ($request->hasFile('gambar')) {
-            $image = $request->file('gambar');
-            $imageData = file_get_contents($image->getRealPath());
-            $base64 = base64_encode($imageData);
-            $mimeType = $image->getMimeType();
-            $data['gambar'] = 'data:' . $mimeType . ';base64,' . $base64;
+            // Hapus gambar lama jika ada
+            if ($berita->gambar) {
+                Storage::disk('public')->delete($berita->gambar);
+            }
+            $data['gambar'] = $request->file('gambar')->store('berita', 'public');
         }
 
         $berita->update($data);
@@ -94,6 +90,12 @@ class BeritaController extends Controller
     public function destroy($id)
     {
         $berita = Berita::findOrFail($id);
+
+        // Hapus gambar dari storage jika ada
+        if ($berita->gambar) {
+            Storage::disk('public')->delete($berita->gambar);
+        }
+
         $berita->delete();
 
         return redirect()->route('admin.berita.index')

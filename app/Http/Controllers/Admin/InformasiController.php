@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Informasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class InformasiController extends Controller
 {
@@ -37,13 +38,8 @@ class InformasiController extends Controller
             'status' => $request->has('status') ? 1 : 0
         ];
 
-        // Konversi gambar ke base64 untuk disimpan di database
         if ($request->hasFile('gambar')) {
-            $image = $request->file('gambar');
-            $imageData = file_get_contents($image->getRealPath());
-            $base64 = base64_encode($imageData);
-            $mimeType = $image->getMimeType();
-            $data['gambar'] = 'data:' . $mimeType . ';base64,' . $base64;
+            $data['gambar'] = $request->file('gambar')->store('informasi', 'public');
         }
 
         Informasi::create($data);
@@ -78,11 +74,11 @@ class InformasiController extends Controller
         ];
 
         if ($request->hasFile('gambar')) {
-            $image = $request->file('gambar');
-            $imageData = file_get_contents($image->getRealPath());
-            $base64 = base64_encode($imageData);
-            $mimeType = $image->getMimeType();
-            $data['gambar'] = 'data:' . $mimeType . ';base64,' . $base64;
+            // Hapus gambar lama jika ada
+            if ($informasi->gambar) {
+                Storage::disk('public')->delete($informasi->gambar);
+            }
+            $data['gambar'] = $request->file('gambar')->store('informasi', 'public');
         }
 
         $informasi->update($data);
@@ -94,6 +90,12 @@ class InformasiController extends Controller
     public function destroy($id)
     {
         $informasi = Informasi::findOrFail($id);
+
+        // Hapus gambar dari storage jika ada
+        if ($informasi->gambar) {
+            Storage::disk('public')->delete($informasi->gambar);
+        }
+
         $informasi->delete();
 
         return redirect()->route('admin.informasi.index')

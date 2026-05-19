@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\GaleriGeosite;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class GaleriGeositeController extends Controller
 {
@@ -40,7 +41,7 @@ class GaleriGeositeController extends Controller
         ];
 
         if ($request->hasFile('gambar')) {
-            $data['gambar'] = $this->imageToBase64($request->file('gambar'));
+            $data['gambar'] = $request->file('gambar')->store('galeri-geosite', 'public');
         }
 
         GaleriGeosite::create($data);
@@ -76,7 +77,11 @@ class GaleriGeositeController extends Controller
         ];
 
         if ($request->hasFile('gambar')) {
-            $data['gambar'] = $this->imageToBase64($request->file('gambar'));
+            // Hapus gambar lama jika ada
+            if ($galeriGeosite->gambar) {
+                Storage::disk('public')->delete($galeriGeosite->gambar);
+            }
+            $data['gambar'] = $request->file('gambar')->store('galeri-geosite', 'public');
         }
 
         $galeriGeosite->update($data);
@@ -88,17 +93,15 @@ class GaleriGeositeController extends Controller
     public function destroy($id)
     {
         $galeriGeosite = GaleriGeosite::findOrFail($id);
+
+        // Hapus gambar dari storage jika ada
+        if ($galeriGeosite->gambar) {
+            Storage::disk('public')->delete($galeriGeosite->gambar);
+        }
+
         $galeriGeosite->delete();
 
         return redirect()->route('admin.galeri-geosite.index')
             ->with('success', 'Galeri Geosite berhasil dihapus!');
-    }
-
-    private function imageToBase64($file): string
-    {
-        $imageData = file_get_contents($file->getRealPath());
-        $base64    = base64_encode($imageData);
-        $mimeType  = $file->getMimeType();
-        return 'data:' . $mimeType . ';base64,' . $base64;
     }
 }

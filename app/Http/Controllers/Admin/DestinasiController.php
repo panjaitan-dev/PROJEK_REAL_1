@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Destinasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class DestinasiController extends Controller
 {
@@ -73,9 +74,7 @@ class DestinasiController extends Controller
         ];
 
         if ($request->hasFile('gambar_utama')) {
-            $data['gambar_utama'] = $this->imageToBase64(
-                $request->file('gambar_utama')
-            );
+            $data['gambar_utama'] = $request->file('gambar_utama')->store('destinasi', 'public');
         }
 
         Destinasi::create($data);
@@ -147,9 +146,11 @@ class DestinasiController extends Controller
         ];
 
         if ($request->hasFile('gambar_utama')) {
-            $data['gambar_utama'] = $this->imageToBase64(
-                $request->file('gambar_utama')
-            );
+            // Hapus gambar lama jika ada
+            if ($destinasi->gambar_utama) {
+                Storage::disk('public')->delete($destinasi->gambar_utama);
+            }
+            $data['gambar_utama'] = $request->file('gambar_utama')->store('destinasi', 'public');
         }
 
         $destinasi->update($data);
@@ -163,6 +164,11 @@ class DestinasiController extends Controller
     {
         $destinasi = Destinasi::findOrFail($id);
 
+        // Hapus gambar dari storage jika ada
+        if ($destinasi->gambar_utama) {
+            Storage::disk('public')->delete($destinasi->gambar_utama);
+        }
+
         $destinasi->delete();
 
         return redirect()
@@ -170,16 +176,6 @@ class DestinasiController extends Controller
             ->with('success', 'Destinasi berhasil dihapus!');
     }
 
-    private function imageToBase64($file): string
-    {
-        $imageData = file_get_contents($file->getRealPath());
-
-        $base64 = base64_encode($imageData);
-
-        $mimeType = $file->getMimeType();
-
-        return 'data:' . $mimeType . ';base64,' . $base64;
-    }
 
     private function parseTags(?string $tags): array
     {

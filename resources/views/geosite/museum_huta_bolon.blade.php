@@ -6,6 +6,17 @@
     <title>museum_huta_bolon - Geosite Danau Toba</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="/css/batu_hoda_beach.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, h5, h6,
+        .section-title h2,
+        .section-title h3 {
+            font-family: 'Cormorant Garamond', serif;
+        }
+    </style>
 </head>
 <body>
 
@@ -49,9 +60,9 @@
 </div>
 
 <!-- HERO -->
-<section class="hero" style="background-image: url('/image/museum_huta_bolon/museum_huta_bolon1.jpg');">
+<section class="hero" style="background-image: url('/image/museum_huta/museum_huta.jpg');">
     <div>
-        <h1 class="hero-title">A M B A R I T A</h1>
+        <h1 class="hero-title">Museum Huta Bolon</h1>
         <p class="hero-subtitle">Pulau Samosir · Danau Toba</p>
     </div>
 </section>
@@ -65,7 +76,7 @@
             <p>Warisan budaya Batak yang autentik dan masih hidup</p>
         </div>
         <div class="sejarah-item">
-            <div class="sejarah-image"><img src="/image/museum_huta_bolon/museum_huta_bolon7.jpg" alt="Desa Museum Huta Bolon"></div>
+            <div class="sejarah-image"><img src="/image/museum_huta/museum_huta_4.jpg" alt="Desa Simanindo"></div>
             <div class="sejarah-text">
                 <h3>Sejarah Museum Huta Bolon</h3>
                 <p>Museum Huta Bolon merupakan desa tua yang terkenal sebagai pusat pemerintahan Raja
@@ -74,7 +85,7 @@
             </div>
         </div>
         <div class="sejarah-item reverse">
-            <div class="sejarah-image"><img src="/image/museum_huta_bolon/museum_huta_bolon4.jpg" alt="Tradisi Batak"></div>
+            <div class="sejarah-image"><img src="/image/museum_huta/museum_huta_2.jpg" alt="Tradisi Batak"></div>
             <div class="sejarah-text">
                 <h3>Budaya Museum Huta Bolon</h3>
                 <p>Budaya di Museum Huta Bolon masih sangat kental dengan tradisi Batak Toba. Rumah adat tradisional, tarian tortor, dan penggunaan ulos
@@ -83,7 +94,7 @@
             </div>
         </div>
         <div class="sejarah-item">
-            <div class="sejarah-image"><img src="/image/museum_huta_bolon/museum_huta_bolon5.jpg" alt="Wisata Budaya"></div>
+            <div class="sejarah-image"><img src="/image/museum_huta/museum_huta_3.jpg" alt="Wisata Budaya"></div>
             <div class="sejarah-text">
                 <h3>Daya Tarik Wisata Museum Huta Bolon</h3>
                 <p>Museum Huta Bolon terkenal dengan situs Batu Persidangan 
@@ -107,7 +118,7 @@
             @forelse($umkm as $item)
             <div class="card">
                 @if($item->gambar)
-                <img src="{{ $item->gambar }}" class="card-img" alt="{{ $item->nama }}">
+                <img src="{{ asset('storage/' . $item->gambar) }}" class="card-img" alt="{{ $item->nama }}">
                 @endif
                 <div class="card-content">
                     <h3>{{ $item->nama }}</h3>
@@ -141,7 +152,7 @@
             @forelse($penginapan as $item)
             <div class="card">
                 @if($item->gambar)
-                <img src="{{ $item->gambar }}" class="card-img" alt="{{ $item->nama }}">
+                <img src="{{ asset('storage/' . $item->gambar) }}" class="card-img" alt="{{ $item->nama }}">
                 @endif
                 <div class="card-content">
                     <h3>{{ $item->nama }}</h3>
@@ -175,7 +186,7 @@
             @forelse($fasilitas as $item)
             <div class="fasilitas-item">
                 @if($item->gambar)
-                <img src="{{ $item->gambar }}" class="fasilitas-img" alt="{{ $item->nama }}">
+                <img src="{{ asset('storage/' . $item->gambar) }}" class="fasilitas-img" alt="{{ $item->nama }}">
                 @endif
                 <div class="fasilitas-content">
                     <h4>{{ $item->nama }}</h4>
@@ -198,29 +209,33 @@
 <section id="galeri" class="section">
     <div class="container">
         <div class="section-title">
-            <h2>Galeri museum_huta_bolon</h2>
+            <h2>Galeri</h2>
             <div class="divider"></div>
-            <p>Keindahan alam museum_huta_bolon yang memukau dalam setiap musim</p>
+            <p>Foto dan momen menarik dari Museum Huta Bolon</p>
         </div>
-        @if($galeriGeosite->count() > 0)
-        <div class="galeri-tabs">
-            @foreach($kategoriGaleri as $idx => $kat)
-            <button class="tab-btn {{ $loop->first ? 'active' : '' }}" data-tab="galeri-tab-{{ $idx }}">{{ $kat }}</button>
-            @endforeach
+        <div class="grid-3">
+            @isset($galeriGeosite)
+                @forelse($galeriGeosite as $item)
+                    <div class="galeri-item">
+                        @if($item->gambar)
+                            <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}" onclick="openLightbox(this)">
+                        @endif
+                        <div class="galeri-caption">
+                            <h4>{{ $item->judul }}</h4>
+                            <p>{{ $item->kategori }}</p>
+                        </div>
+                    </div>
+                @empty
+                    <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
+                        <p>Belum ada foto galeri untuk geosite ini.</p>
+                    </div>
+                @endforelse
+            @else
+                <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
+                    <p>Galeri belum tersedia.</p>
+                </div>
+            @endisset
         </div>
-        <div class="galeri-grid" id="galeriGrid">
-            @foreach($galeriGeosite as $foto)
-            @php $tabIdx = $kategoriGaleri->search($foto->kategori); @endphp
-            <div class="galeri-item galeri-tab-{{ $tabIdx }}"@if($tabIdx !== 0) style="display:none"@endif>
-                <img src="{{ $foto->gambar }}" alt="{{ $foto->judul }}" loading="lazy">
-            </div>
-            @endforeach
-        </div>
-        @else
-        <div style="text-align:center;padding:2rem;color:#888;">
-            <p>Belum ada foto galeri untuk geosite ini.</p>
-        </div>
-        @endif
     </div>
 </section>
 
@@ -237,7 +252,7 @@
             <div class="maps-container">
                 <!-- Google Maps dengan marker lokasi museum_huta_bolon -->
                 <iframe
-                    src="https://maps.google.com/maps?q=museum_huta_bolon,%20Simanindo,%20Samosir,%20Sumatera%20Utara&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.216058140516!2d98.74152767423692!3d2.7522539554657346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031b8ac44688e05%3A0xdb20e0beafe625bd!2sMuseum%20Huta%20Bolon%20Simanindo!5e0!3m2!1sid!2sid!4v1779111913624!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                     width="100%"
                     height="450"
                     style="border:0;"
@@ -246,24 +261,27 @@
                 </iframe>
             </div>
 
-            <div class="rute-info">
-                <div class="rute-item">
-                    <h4>🏍️ Dengan Motor</h4>
-                    <p>Balige → Ajibata (30m) → Ferry (20m) → museum_huta_bolon (15m)</p>
-                    <span class="rute-time">± 1.5 jam</span>
-                </div>
+           <div class="rute-info">
 
-                <div class="rute-item">
-                    <h4>🚗 Dengan Mobil</h4>
-                    <p>Balige → Ajibata (30m) → Parkir → Ferry → Transportasi lokal</p>
-                    <span class="rute-time">± 2 jam</span>
-                </div>
+    <div class="rute-item">
+        <h4>🏍️ Dengan Motor</h4>
+        <p>Balige → Ajibata → Ferry menuju Tomok → museum_huta_bolon Simanindo</p>
+        <span class="rute-time">± 1.5 jam</span>
+    </div>
 
-                <div class="rute-item">
-                    <h4>⛴️ Ferry Schedule</h4>
-                    <p>Operasional setiap hari 06:00 - 17:00 WIB</p>
-                    <span class="rute-time">Kapasitas penuh</span>
-                </div>
+    <div class="rute-item">
+        <h4>🚗 Dengan Mobil</h4>
+        <p>Balige → Ajibata → Ferry penyeberangan Danau Toba → Simanindo</p>
+        <span class="rute-time">± 2 jam</span>
+    </div>
+
+    <div class="rute-item">
+        <h4>⛴️ Ferry Schedule</h4>
+        <p>Ferry Ajibata – Tomok beroperasi setiap hari mulai pagi hingga sore hari.</p>
+        <span class="rute-time">06:00 - 17:00 WIB</span>
+    </div>
+
+</div>
             </div>
         </div>
     </div>
@@ -272,7 +290,7 @@
 <!-- CTA -->
 <section class="cta">
     <div class="container">
-        <h3>Jangan Lewatkan Keindahan museum_huta_bolon</h3>
+        <h3>Jangan Lewatkan Keindahan Museum Huta Bolon</h3>
         <div class="divider"></div>
         <p>Rasakan pengalaman wisata budaya Batak yang autentik, nikmati keindahan alam Danau Toba yang memukau, dan ciptakan kenangan indah bersama keluarga tercinta di museum_huta_bolon</p>
         <div class="cta-buttons">

@@ -6,6 +6,7 @@ use App\Models\Umkm;
 use App\Models\Penginapan;
 use App\Models\Fasilitas;
 use App\Models\GaleriGeosite;
+use App\Models\NavbarItem;
 
 class GeositeController extends Controller
 {
@@ -15,9 +16,13 @@ class GeositeController extends Controller
         $penginapan = Penginapan::where('geosite', 'batu_hoda_beach')->where('status', true)->get();
         $fasilitas = Fasilitas::where('geosite', 'batu_hoda_beach')->where('status', true)->get();
         $galeriGeosite = GaleriGeosite::where('geosite', 'batu_hoda_beach')->where('status', true)->get();
+        $navbarItems = NavbarItem::where('geosite', 'batu_hoda_beach')
+            ->where('status', true)
+            ->orderBy('urutan')
+            ->get();
         $kategoriGaleri = $galeriGeosite->pluck('kategori')->unique()->values();
 
-        return view('geosite.batu_hoda_beach', compact('umkm', 'penginapan', 'fasilitas', 'galeriGeosite', 'kategoriGaleri'));
+        return view('geosite.batu_hoda_beach', compact('umkm', 'penginapan', 'fasilitas', 'galeriGeosite', 'kategoriGaleri', 'navbarItems'));
     }
     
     public function museum_huta_bolon()

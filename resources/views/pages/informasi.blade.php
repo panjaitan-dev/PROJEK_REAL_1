@@ -60,23 +60,69 @@
         flex-wrap: wrap;
         gap: 20px;
         margin-top: 30px;
+        position: relative;
+    }
+    .timeline::before {
+        content: '';
+        position: absolute;
+        top: 30px;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #c6a43b 0%, #003366 50%, #c6a43b 100%);
+        z-index: 0;
     }
     .timeline-item {
         flex: 1;
-        background: white;
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
         border-radius: 16px;
-        padding: 20px;
+        padding: 30px 20px;
         text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 5px 15px rgba(0, 51, 102, 0.05);
+        transition: all 0.4s ease;
+        box-shadow: 0 8px 20px rgba(0, 51, 102, 0.1);
+        border: 2px solid transparent;
+        position: relative;
+        z-index: 1;
+    }
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 20px;
+        background: linear-gradient(135deg, #c6a43b 0%, #d4a947 100%);
+        border-radius: 50%;
+        border: 4px solid #f8f9fa;
+        z-index: 2;
     }
     .timeline-item:hover { 
-        transform: translateY(-5px); 
-        box-shadow: 0 15px 30px rgba(0, 51, 102, 0.15);
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 51, 102, 0.2);
         border-color: #c6a43b;
+        background: linear-gradient(135deg, #fffbf0 0%, #ffffff 100%);
     }
-    .timeline-year { font-size: 1.3rem; font-weight: 700; color: #c6a43b; }
-    .timeline-title { font-weight: 600; color: #003366; }
+    .timeline-item:hover::before {
+        background: linear-gradient(135deg, #003366 0%, #0a4a7a 100%);
+        box-shadow: 0 0 15px rgba(198, 164, 59, 0.6);
+    }
+    .timeline-year { 
+        font-size: 1.5rem; 
+        font-weight: 800; 
+        color: #c6a43b;
+        background: linear-gradient(135deg, rgba(198, 164, 59, 0.1) 0%, rgba(0, 51, 102, 0.05) 100%);
+        padding: 12px 16px;
+        border-radius: 12px;
+        margin-bottom: 12px;
+        letter-spacing: 0.5px;
+    }
+    .timeline-title { 
+        font-weight: 700; 
+        color: #003366;
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
 
     .fakta-grid { 
         display: grid; 
@@ -99,7 +145,7 @@
         background: linear-gradient(135deg, #003366 0%, #0a4a7a 100%);
         padding: 60px 0;
         text-align: center;
-    }
+    } 
     .cta-btn {
         display: inline-block;
         background: #c6a43b;
@@ -139,7 +185,7 @@
             <div class="sejarah-item {{ $index % 2 == 1 ? 'reverse' : '' }}" data-aos="fade-{{ $index % 2 == 0 ? 'right' : 'left' }}">
                 <div class="sejarah-image">
                     @if($item->gambar)
-                        <img src="{{ $item->gambar }}" alt="{{ $item->judul }}">
+                        <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}">
                     @else
                         <img src="/image/sejarah{{ $index+1 }}.jpg" alt="{{ $item->judul }}">
                     @endif

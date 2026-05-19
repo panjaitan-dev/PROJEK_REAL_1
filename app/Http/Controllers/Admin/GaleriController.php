@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Galeri;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class GaleriController extends Controller
 {
@@ -38,11 +39,7 @@ class GaleriController extends Controller
         ];
 
         if ($request->hasFile('gambar')) {
-            $image    = $request->file('gambar');
-            $imageData = file_get_contents($image->getRealPath());
-            $base64   = base64_encode($imageData);
-            $mimeType = $image->getMimeType();
-            $data['gambar'] = 'data:' . $mimeType . ';base64,' . $base64;
+            $data['gambar'] = $request->file('gambar')->store('galeri', 'public');
         }
 
         Galeri::create($data);
@@ -77,11 +74,11 @@ class GaleriController extends Controller
         ];
 
         if ($request->hasFile('gambar')) {
-            $image    = $request->file('gambar');
-            $imageData = file_get_contents($image->getRealPath());
-            $base64   = base64_encode($imageData);
-            $mimeType = $image->getMimeType();
-            $data['gambar'] = 'data:' . $mimeType . ';base64,' . $base64;
+            // Hapus gambar lama jika ada
+            if ($galeri->gambar) {
+                Storage::disk('public')->delete($galeri->gambar);
+            }
+            $data['gambar'] = $request->file('gambar')->store('galeri', 'public');
         }
 
         $galeri->update($data);
@@ -92,6 +89,12 @@ class GaleriController extends Controller
     public function destroy($id)
     {
         $galeri = Galeri::findOrFail($id);
+
+        // Hapus gambar dari storage jika ada
+        if ($galeri->gambar) {
+            Storage::disk('public')->delete($galeri->gambar);
+        }
+
         $galeri->delete();
         return redirect()->route('admin.galeri.index')->with('success', 'Data dihapus!');
     }

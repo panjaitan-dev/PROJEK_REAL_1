@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>batu_pasa_pantai - Geosite Danau Toba</title>
+    <title>Pantai_Batu_Pasa - Geosite Danau Toba</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/batu_hoda_beach.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, h5, h6,
+        .section-title h2,
+        .section-title h3 {
+            font-family: 'Cormorant Garamond', serif;
+        }
+    </style>
 </head>
 <body>
 
@@ -49,16 +60,11 @@
 </div>
 
 <!-- HERO -->
-<section class="hero" style="background-image: url('/image/batu_pasa_pantai/batu_pasa_pantai3.jpg');">
+<section class="hero" style="background-image: url('/image/Batu_Pasa/batu_pasa.jpg');">
     <div>
-<<<<<<< HEAD:resources/views/geosite/BatuPasa.php
-        <h1 class="hero-title">Museum Huta Bolon</h1>
+        <h1 class="hero-title">Pantai Batu Pasa</h1>
         <p class="hero-subtitle"></p>
-=======
-        <h1 class="hero-title">T O M O K</h1>
-        <p class="hero-subtitle">Pulau Samosir · Danau Toba</p>
->>>>>>> 62223c60bf9a4ac13cb7f39c319881c2f33201fd:resources/views/geosite/batu_pasa_pantai.blade.php
-    </div>
+
 </section>
 
 <!-- SEJARAH -->
@@ -70,29 +76,30 @@
             <p>Warisan budaya Batak yang autentik dan masih hidup</p>
         </div>
         <div class="sejarah-item">
-            <div class="sejarah-image"><img src="/image/batu_pasa_pantai/batu_pasa_pantai3.jpg" alt="Desa batu_pasa_pantai"></div>
+            <div class="sejarah-image"><img src="/image/Batu_Pasa/batu_pasa_2.jpg" alt="Desa Sangkal"></div>
             <div class="sejarah-text">
-                <h3>Sejarah batu_pasa_pantai</h3>
-                <p>batu_pasa_pantai dikenal sebagai desa bersejarah yang pernah menjadi pusat kekuasaan Raja Sidabutar. 
-                    Desa ini memiliki banyak peninggalan sejarah Batak Toba, termasuk makam batu Raja Sidabutar
-                     yang masih terawat hingga sekarang</p>
+                <h3>Sejarah  Pantai Batu Pasa </h3>
+                <p>
+Pantai Batu Pasa merupakan salah satu destinasi wisata di kawasan Simanindo, Pulau Samosir, yang dikenal dengan keindahan alam Danau Toba serta batu-batu alami di sekitar pantai. Tempat ini menjadi salah satu lokasi wisata yang sering dikunjungi wisatawan untuk menikmati suasana tenang dan panorama alam khas Danau Toba.
+</p>
             </div>
         </div>
         <div class="sejarah-item reverse">
-            <div class="sejarah-image"><img src="/image/batu_pasa_pantai/batu_pasa_pantai1.jpg" alt="Tradisi Batak"></div>
+            <div class="sejarah-image"><img src="/image/Batu_Pasa/batu_pasa_3.jpg" alt="Tradisi Batak"></div>
             <div class="sejarah-text">
-                <h3>Budaya batu_pasa_pantai</h3>
-                <p>Budaya Batak Toba sangat terasa di batu_pasa_pantai. Masyarakatnya masih menjaga tradisi adat, tarian tortor, 
-                    serta pertunjukan sigale-gale yang menjadi ikon budaya daerah tersebut. Kerajinan ulos dan 
-                    ukiran kayu khas Batak juga banyak ditemukan di desa ini.</p>
+                <h3>Budaya Pantai Batu Pasa</h3>
+                <p>
+Masyarakat di sekitar Batu Pasa masih mempertahankan budaya Batak Toba yang diwariskan secara turun-temurun. Tradisi adat, penggunaan kain ulos, musik tradisional, dan keramahan masyarakat menjadi bagian dari kehidupan sehari-hari yang dapat dirasakan langsung oleh wisatawan.
+</p>
             </div>
         </div>
         <div class="sejarah-item">
-            <div class="sejarah-image"><img src="/image/batu_pasa_pantai/batu_pasa_pantai2.jpg" alt="Wisata Budaya"></div>
+            <div class="sejarah-image"><img src="/image/Batu_Pasa/batu_pasa_4.jpg" alt="Wisata Budaya"></div>
             <div class="sejarah-text">
-                <h3>Daya Tarik Wisata batu_pasa_pantai</h3>
-                <p>batu_pasa_pantai menjadi salah satu tujuan wisata favorit di Pulau Samosir karena memiliki situs sejarah dan pusat oleh-oleh khas Batak. Wisatawan dapat mengunjungi makam Raja Sidabutar,
-                     melihat pertunjukan sigale-gale, serta membeli kain ulos dan suvenir tradisional.</p>
+                <h3>Daya Tarik Wisata Pantai Batu Pasa</h3>
+                <p>
+Pantai Batu Pasa menawarkan pemandangan Danau Toba yang indah dengan suasana yang sejuk dan nyaman. Wisatawan dapat menikmati panorama alam, bersantai di tepi pantai, berfoto dengan latar batu-batu alami, serta menikmati suasana khas wisata Pulau Samosir yang masih alami dan asri.
+</p>
             </div>
         </div>
     </div>
@@ -104,30 +111,36 @@
         <div class="section-title">
             <h2>UMKM Lokal</h2>
             <div class="divider"></div>
-            <p>Produk autentik dan berkualitas dari pengrajin lokal batu_pasa_pantai</p>
+            <p>Produk lokal dan kerajinan khas sekitar Pantai Batu Pasa</p>
         </div>
         <div class="grid-3">
-            @forelse($umkm as $item)
-            <div class="card">
-                @if($item->gambar)
-                <img src="{{ $item->gambar }}" class="card-img" alt="{{ $item->nama }}">
-                @endif
-                <div class="card-content">
-                    <h3>{{ $item->nama }}</h3>
-                    <p>{{ $item->deskripsi }}</p>
-                    @if($item->lokasi)
-                    <div class="card-location">📍 {{ $item->lokasi }}</div>
-                    @endif
-                    @if($item->kontak)
-                    <div class="card-contact">📞 {{ $item->kontak }}</div>
-                    @endif
+            @isset($umkm)
+                @forelse($umkm as $item)
+                    <div class="card">
+                        @if($item->gambar)
+                            <img src="{{ asset('storage/' . $item->gambar) }}" class="card-img" alt="{{ $item->nama }}">
+                        @endif
+                        <div class="card-content">
+                            <h3>{{ $item->nama }}</h3>
+                            <p>{{ $item->deskripsi }}</p>
+                            @if($item->lokasi)
+                                <div class="card-location">📍 {{ $item->lokasi }}</div>
+                            @endif
+                            @if($item->kontak)
+                                <div class="card-contact">📞 {{ $item->kontak }}</div>
+                            @endif
+                        </div>
+                    </div>
+                @empty
+                    <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
+                        <p>Belum ada data UMKM untuk geosite ini.</p>
+                    </div>
+                @endforelse
+            @else
+                <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
+                    <p>Informasi UMKM belum tersedia.</p>
                 </div>
-            </div>
-            @empty
-            <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
-                <p>Belum ada data UMKM untuk geosite ini.</p>
-            </div>
-            @endforelse
+            @endisset
         </div>
     </div>
 </section>
@@ -138,30 +151,36 @@
         <div class="section-title">
             <h2>Penginapan & Akomodasi</h2>
             <div class="divider"></div>
-            <p>Pilihan tempat menginap dengan nuansa budaya Batak yang autentik</p>
+            <p>Pilihan tempat menginap dekat Pantai Batu Pasa</p>
         </div>
         <div class="grid-3">
-            @forelse($penginapan as $item)
-            <div class="card">
-                @if($item->gambar)
-                <img src="{{ $item->gambar }}" class="card-img" alt="{{ $item->nama }}">
-                @endif
-                <div class="card-content">
-                    <h3>{{ $item->nama }}</h3>
-                    <p>{{ $item->deskripsi }}</p>
-                    @if($item->harga)
-                    <div class="card-price">💰 {{ $item->harga }}</div>
-                    @endif
-                    @if($item->kontak)
-                    <div class="card-contact">📞 {{ $item->kontak }}</div>
-                    @endif
+            @isset($penginapan)
+                @forelse($penginapan as $item)
+                    <div class="card">
+                        @if($item->gambar)
+                            <img src="{{ asset('storage/' . $item->gambar) }}" class="card-img" alt="{{ $item->nama }}">
+                        @endif
+                        <div class="card-content">
+                            <h3>{{ $item->nama }}</h3>
+                            <p>{{ $item->deskripsi }}</p>
+                            @if($item->harga)
+                                <div class="card-price">💰 {{ $item->harga }}</div>
+                            @endif
+                            @if($item->kontak)
+                                <div class="card-contact">📞 {{ $item->kontak }}</div>
+                            @endif
+                        </div>
+                    </div>
+                @empty
+                    <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
+                        <p>Belum ada data penginapan untuk geosite ini.</p>
+                    </div>
+                @endforelse
+            @else
+                <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
+                    <p>Informasi penginapan belum tersedia.</p>
                 </div>
-            </div>
-            @empty
-            <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
-                <p>Belum ada data penginapan untuk geosite ini.</p>
-            </div>
-            @endforelse
+            @endisset
         </div>
     </div>
 </section>
@@ -172,27 +191,33 @@
         <div class="section-title">
             <h2>Fasilitas & Layanan</h2>
             <div class="divider"></div>
-            <p>Berbagai fasilitas lengkap untuk kenyamanan wisatawan</p>
+            <p>Fasilitas wisata yang tersedia di sekitar Pantai Batu Pasa</p>
         </div>
         <div class="grid-2">
-            @forelse($fasilitas as $item)
-            <div class="fasilitas-item">
-                @if($item->gambar)
-                <img src="{{ $item->gambar }}" class="fasilitas-img" alt="{{ $item->nama }}">
-                @endif
-                <div class="fasilitas-content">
-                    <h4>{{ $item->nama }}</h4>
-                    <p>{{ $item->deskripsi }}</p>
-                    @if($item->harga)
-                    <div class="fasilitas-price">{{ $item->harga }}</div>
-                    @endif
+            @isset($fasilitas)
+                @forelse($fasilitas as $item)
+                    <div class="fasilitas-item">
+                        @if($item->gambar)
+                            <img src="{{ asset('storage/' . $item->gambar) }}" class="fasilitas-img" alt="{{ $item->nama }}">
+                        @endif
+                        <div class="fasilitas-content">
+                            <h4>{{ $item->nama }}</h4>
+                            <p>{{ $item->deskripsi }}</p>
+                            @if($item->harga)
+                                <div class="fasilitas-price">{{ $item->harga }}</div>
+                            @endif
+                        </div>
+                    </div>
+                @empty
+                    <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
+                        <p>Belum ada data fasilitas untuk geosite ini.</p>
+                    </div>
+                @endforelse
+            @else
+                <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
+                    <p>Informasi fasilitas belum tersedia.</p>
                 </div>
-            </div>
-            @empty
-            <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
-                <p>Belum ada data fasilitas untuk geosite ini.</p>
-            </div>
-            @endforelse
+            @endisset
         </div>
     </div>
 </section>
@@ -201,29 +226,33 @@
 <section id="galeri" class="section">
     <div class="container">
         <div class="section-title">
-            <h2>Galeri batu_pasa_pantai</h2>
+            <h2>Galeri</h2>
             <div class="divider"></div>
-            <p>Keindahan alam batu_pasa_pantai yang memukau dalam setiap musim</p>
+            <p>Foto dan momen menarik dari Pantai Batu Pasa</p>
         </div>
-        @if($galeriGeosite->count() > 0)
-        <div class="galeri-tabs">
-            @foreach($kategoriGaleri as $idx => $kat)
-            <button class="tab-btn {{ $loop->first ? 'active' : '' }}" data-tab="galeri-tab-{{ $idx }}">{{ $kat }}</button>
-            @endforeach
+        <div class="grid-3">
+            @isset($galeriGeosite)
+                @forelse($galeriGeosite as $item)
+                    <div class="galeri-item">
+                        @if($item->gambar)
+                            <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}" onclick="openLightbox(this)">
+                        @endif
+                        <div class="galeri-caption">
+                            <h4>{{ $item->judul }}</h4>
+                            <p>{{ $item->kategori }}</p>
+                        </div>
+                    </div>
+                @empty
+                    <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
+                        <p>Belum ada foto galeri untuk geosite ini.</p>
+                    </div>
+                @endforelse
+            @else
+                <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
+                    <p>Galeri belum tersedia.</p>
+                </div>
+            @endisset
         </div>
-        <div class="galeri-grid" id="galeriGrid">
-            @foreach($galeriGeosite as $foto)
-            @php $tabIdx = $kategoriGaleri->search($foto->kategori); @endphp
-            <div class="galeri-item galeri-tab-{{ $tabIdx }}"@if($tabIdx !== 0) style="display:none"@endif>
-                <img src="{{ $foto->gambar }}" alt="{{ $foto->judul }}" loading="lazy">
-            </div>
-            @endforeach
-        </div>
-        @else
-        <div style="text-align:center;padding:2rem;color:#888;">
-            <p>Belum ada foto galeri untuk geosite ini.</p>
-        </div>
-        @endif
     </div>
 </section>
 
@@ -231,7 +260,7 @@
 <section id="lokasi" class="section bg-light">
     <div class="container">
         <div class="section-title">
-            <h2>Lokasi batu_pasa_pantai</h2>
+            <h2>Lokasi Pantai Batu Pasa</h2>
             <div class="divider"></div>
             <p>Desa bersejarah di Pulau Samosir, Danau Toba</p>
         </div>
@@ -239,7 +268,7 @@
         <div class="maps-section">
             <div class="maps-container">
                 <iframe
-                    src="https://maps.google.com/maps?q=batu_pasa_pantai,%20Simanindo,%20Samosir,%20Sumatera%20Utara&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.536348657673!2d98.763707!3d2.7432066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031c1000ee6f31f%3A0x6ee7c8a134f162fd!2sBatu%20Passa%20Liang%20sipogu!5e0!3m2!1sid!2sid!4v1715900000000"
                     width="100%"
                     height="450"
                     style="border:0;"
@@ -249,21 +278,25 @@
             </div>
 
             <div class="rute-info">
-                <div class="rute-item">
-                    <h4>🚢 Dari Parapat</h4>
-                    <p>Naik ferry dari Pelabuhan Parapat menuju Pelabuhan batu_pasa_pantai (± 45 menit).</p>
-                    <span class="rute-time">Ferry tersedia setiap hari</span>
-                </div>
-                <div class="rute-item">
-                    <h4>🏍️ Dari batu_hoda_beach Siadong</h4>
-                    <p>Berkendara ke arah selatan sekitar 5 km dari pusat batu_hoda_beach.</p>
-                    <span class="rute-time">± 10 menit</span>
-                </div>
-                <div class="rute-item">
-                    <h4>📍 Daya Tarik Utama</h4>
-                    <p>Makam Raja Sidabutar, pertunjukan Sigale-gale, dan pusat oleh-oleh khas Batak.</p>
-                    <span class="rute-time">Buka setiap hari</span>
-                </div>
+
+    <div class="rute-item">
+        <h4>🚢 Dari Parapat</h4>
+        <p>Naik kapal ferry dari Pelabuhan Ajibata menuju Pelabuhan Tomok atau Simanindo, kemudian melanjutkan perjalanan darat menuju kawasan Batu Pasa.</p>
+        <span class="rute-time">± 45–60 menit</span>
+    </div>
+
+    <div class="rute-item">
+        <h4>🏍️ Dari Simanindo</h4>
+        <p>Batu Pasa dapat dicapai melalui perjalanan darat dari pusat Kecamatan Simanindo dengan akses jalan yang cukup mudah dilalui kendaraan.</p>
+        <span class="rute-time">± 10–15 menit</span>
+    </div>
+
+    <div class="rute-item">
+        <h4>📍 Daya Tarik Utama</h4>
+        <p>Panorama Danau Toba, batu-batu alami di sekitar pantai, suasana alam yang tenang, dan pemandangan khas Pulau Samosir.</p>
+        <span class="rute-time">Buka setiap hari</span>
+    </div>
+</div>
             </div>
         </div>
     </div>
@@ -272,7 +305,7 @@
 <!-- CTA -->
 <section class="cta">
     <div class="container">
-        <h3>Jangan Lewatkan Keindahan batu_pasa_pantai</h3>
+        <h3>Jangan Lewatkan Keindahan Pantai Batu Pasa</h3>
         <div class="divider"></div>
         <p>Rasakan pengalaman wisata budaya Batak yang autentik, nikmati keindahan alam Danau Toba yang memukau, dan ciptakan kenangan indah bersama keluarga tercinta di batu_pasa_pantai</p>
         <div class="cta-buttons">
