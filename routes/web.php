@@ -113,7 +113,6 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('penginapan', PenginapanController::class)->names('admin.penginapan');
     Route::resource('fasilitas', FasilitasController::class)->names('admin.fasilitas');
     Route::resource('galeri-geosite', GaleriGeositeController::class)->names('admin.galeri-geosite');
-    Route::resource('navbar-items', NavbarItemController::class)->names('admin.navbar-items');
     Route::post('galeri/toggle-status/{id}', [GaleriController::class, 'toggleStatus'])->name('admin.galeri.toggle-status');
     
 });
