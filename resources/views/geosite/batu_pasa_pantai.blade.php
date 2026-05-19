@@ -25,11 +25,9 @@
         <div class="nav-menu">
             <a href="{{ url('/') }}" class="nav-link home-btn">Home</a>
             <a href="#sejarah" class="nav-link">Sejarah</a>
-            <a href="#umkm" class="nav-link">UMKM</a>
-            <a href="#penginapan" class="nav-link">Penginapan</a>
-            <a href="#fasilitas" class="nav-link">Fasilitas</a>
-            <a href="#galeri" class="nav-link">Galeri</a>
-            <a href="#lokasi" class="nav-link">Lokasi</a>
+            @foreach($navbarItems as $item)
+                <a href="{{ $item->href }}" class="nav-link">{{ $item->label }}</a>
+            @endforeach
         </div>
         <div class="hamburger" id="hamburger">
             <span></span><span></span><span></span>
@@ -41,11 +39,9 @@
     <div class="mobile-close" id="mobileClose">×</div>
     <a href="{{ url('/') }}" class="mobile-link mobile-home">Home</a>
     <a href="#sejarah" class="mobile-link">Sejarah</a>
-    <a href="#umkm" class="mobile-link">UMKM</a>
-    <a href="#penginapan" class="mobile-link">Penginapan</a>
-    <a href="#fasilitas" class="mobile-link">Fasilitas</a>
-    <a href="#galeri" class="mobile-link">Galeri</a>
-    <a href="#lokasi" class="mobile-link">Lokasi</a>
+    @foreach($navbarItems as $item)
+        <a href="{{ $item->href }}" class="mobile-link">{{ $item->label }}</a>
+    @endforeach
 </div>
 
 <!-- HERO -->
