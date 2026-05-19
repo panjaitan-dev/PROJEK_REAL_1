@@ -1256,7 +1256,7 @@
                     <h3>Batu Hoda Beach</h3>
                     <div class="destinasi-location">Desa Cinta Dame, Kecamatan Simanindo, Kabupaten Samosir</div>
                     <p class="destinasi-desc">Pantai Batu Hoda menawarkan pemandangan Danau Toba yang spektakuler dengan air berwarna biru kehijauan. Terdapat batu besar berbentuk unik yang konon menyerupai kuda. Tempat ini menjadi spot favorit untuk menikmati matahari terbenam terindah di Pulau Samosir.</p>
-                    <a href="{{ url('/geosite/batu_hoda_beach') }}" class="destinasi-link">Jelajahi Lebih Lanjut →</a>
+                    <a href="{{ url('/geosite/batu_hoda_beach') }}" class="destinasi-link">Jelajahi Lebih Lanjut </a>
                 </div>
             </div>
             
@@ -1270,7 +1270,7 @@
                     <h3>Museum Huta Bolon</h3>
                     <div class="destinasi-location">Desa Simanindo, Kecamatan Simanindo, Kabupaten Samosir</div>
                     <p class="destinasi-desc">Museum Huta Bolon adalah museum terbuka yang menyajikan rumah adat Batak Toba yang megah dengan arsitektur tradisional. Di sini pengunjung dapat menyaksikan pertunjukan tarian tortor, mendengarkan musik gondang, dan belajar tentang sejarah serta filosofi masyarakat Batak.</p>
-                    <a href="{{ url('/geosite/museum_huta_bolon') }}" class="destinasi-link">Jelajahi Lebih Lanjut →</a>
+                    <a href="{{ url('/geosite/museum_huta_bolon') }}" class="destinasi-link">Jelajahi Lebih Lanjut </a>
                 </div>
             </div>
             
@@ -1284,7 +1284,7 @@
                     <h3>Batu Passa</h3>
                     <div class="destinasi-location">Kawasan Batu Hoda, Kecamatan Simanindo, Kabupaten Samosir</div>
                     <p class="destinasi-desc">Batu Pasa Pantai menyuguhkan formasi batu alam yang menakjubkan di tepian Danau Toba. Pengunjung dapat berenang di air danau yang jernih, berjemur di bebatuan besar, atau sekadar bersantai menikmati angin sepoi-sepoi. Spot foto yang instagramable dengan latar perbukitan hijau.</p>
-                    <a href="{{ url('/geosite/batu_pasa_pantai') }}" class="destinasi-link">Jelajahi Lebih Lanjut →</a>
+                    <a href="{{ url('/geosite/batu_pasa_pantai') }}" class="destinasi-link">Jelajahi Lebih Lanjut </a>
                 </div>
             </div>
         </div>
