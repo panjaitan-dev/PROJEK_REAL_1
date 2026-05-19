@@ -407,10 +407,10 @@
             <div class="info-card">
                 <h3 class="info-title">Destinasi Unggulan</h3>
                 <div class="dest-list">
-                    <div class="dest-item" onclick="window.location.href='{{ url('/geosite/meat') }}'">
+                    <div class="dest-item" onclick="window.location.href='{{ url('/geosite/batu-hoda-beach') }}'">
                         <div class="dest-icon"><i class="fas fa-umbrella-beach"></i></div>
                         <div class="dest-info">
-                            <h4>Meat Village</h4>
+                            <h4>Batu Hoda Beach</h4>
                             <p>Desa wisata budaya di tepi Danau Toba</p>
                         </div>
                     </div>
@@ -421,7 +421,13 @@
                             <p>Situs batu bersejarah dengan pemandangan indah</p>
                         </div>
                     </div>
-                    
+                    <div class="dest-item" onclick="window.location.href='{{ url('/geosite/liang-sipege') }}'">
+                        <div class="dest-icon"><i class="fas fa-cave"></i></div>
+                        <div class="dest-info">
+                            <h4>Liang Sipege</h4>
+                            <p>Gua alami dengan stalaktit dan stalakmit</p>
+                        </div>
+                    </div>
                     <div class="dest-item" onclick="window.location.href='{{ url('/galeri') }}'">
                         <div class="dest-icon"><i class="fas fa-camera"></i></div>
                         <div class="dest-info">
