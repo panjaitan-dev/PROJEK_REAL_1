@@ -60,8 +60,8 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f9f9f9;
+    font-family: 'Inter', sans-serif;
+    background: #fafaf8;
     color: #333;
 }
 
@@ -159,7 +159,7 @@ body {
 }
 </style>
 
-<section class="section">
+<section id="sejarah" class="section">
 
 <div class="container">
 
