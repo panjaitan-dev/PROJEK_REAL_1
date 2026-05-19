@@ -145,7 +145,7 @@
         background: linear-gradient(135deg, #003366 0%, #0a4a7a 100%);
         padding: 60px 0;
         text-align: center;
-    }
+    } 
     .cta-btn {
         display: inline-block;
         background: #c6a43b;
