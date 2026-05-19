@@ -639,8 +639,39 @@
             closePhoto();
         }
     });
-    
-    audio.load();
+
+    // ==================== BACKGROUND MUSIC ====================
+    const audio = new Audio("{{ asset('audio/musik-galeri.mp3') }}");
+
+    audio.loop = true;
+    audio.volume = 0.5;
+
+    // autoplay saat user klik halaman pertama kali
+    window.addEventListener('click', function () {
+        audio.play();
+    }, { once: true });
+
+    // tombol musik
+    const musicBtn = document.createElement('div');
+    musicBtn.classList.add('music-control');
+    musicBtn.innerHTML = '<i class="bi bi-volume-up-fill"></i>';
+
+    document.body.appendChild(musicBtn);
+
+    let isPlaying = false;
+
+    musicBtn.addEventListener('click', () => {
+        if (isPlaying) {
+            audio.pause();
+            musicBtn.innerHTML = '<i class="bi bi-volume-mute-fill"></i>';
+        } else {
+            audio.play();
+            musicBtn.innerHTML = '<i class="bi bi-volume-up-fill"></i>';
+        }
+
+        isPlaying = !isPlaying;
+    });
+
 </script>
 
 @endsection
