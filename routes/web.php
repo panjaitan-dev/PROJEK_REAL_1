@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\UmkmController;
 use App\Http\Controllers\Admin\PenginapanController;
 use App\Http\Controllers\Admin\FasilitasController;
 use App\Http\Controllers\Admin\GaleriGeositeController;
+use App\Http\Controllers\Admin\HomeSettingController;
 use App\Http\Controllers\DestinasiController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GaleriController as PublicGaleriController;
@@ -113,5 +114,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('fasilitas', FasilitasController::class)->names('admin.fasilitas');
     Route::resource('galeri-geosite', GaleriGeositeController::class)->names('admin.galeri-geosite');
     Route::post('galeri/toggle-status/{id}', [GaleriController::class, 'toggleStatus'])->name('admin.galeri.toggle-status');
+
+    // Home Manager
+    Route::get('home-settings', [HomeSettingController::class, 'index'])->name('admin.home-settings.index');
+    Route::put('home-settings', [HomeSettingController::class, 'update'])->name('admin.home-settings.update');
     
 });

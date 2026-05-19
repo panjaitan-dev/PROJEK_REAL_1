@@ -1183,8 +1183,8 @@
     
     <div class="hero-content">
         <div>
-            <div class="hero-subtitle">Global Geopark</div>
-            <h1 class="hero-title">Simanindo - Batu Hoda</h1>
+            <div class="hero-subtitle">{{ $hs['hero_subtitle'] ?? 'Global Geopark' }}</div>
+            <h1 class="hero-title">{{ $hs['hero_title'] ?? 'Simanindo - Batu Hoda' }}</h1>
             <div class="hero-divider"></div>
             <a href="#destinasi" class="hero-btn">Jelajahi Sekarang</a>
         </div>
@@ -1201,20 +1201,20 @@
     <div class="container">
         <div class="stats-grid">
             <div class="stat-item" data-aos="zoom-in" data-aos-duration="800">
-                <div class="stat-number">16</div>
-                <div class="stat-label">GEOSITES</div>
+                <div class="stat-number">{{ $hs['stat_geosites'] ?? '16' }}</div>
+                <div class="stat-label">{{ $hs['stat_geosites_label'] ?? 'GEOSITES' }}</div>
             </div>
             <div class="stat-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
-                <div class="stat-number">74.000</div>
-                <div class="stat-label">TAHUN SEJARAH</div>
+                <div class="stat-number">{{ $hs['stat_sejarah'] ?? '74.000' }}</div>
+                <div class="stat-label">{{ $hs['stat_sejarah_label'] ?? 'TAHUN SEJARAH' }}</div>
             </div>
             <div class="stat-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
-                <div class="stat-number">15+</div>
-                <div class="stat-label">WARISAN BUDAYA</div>
+                <div class="stat-number">{{ $hs['stat_warisan'] ?? '15+' }}</div>
+                <div class="stat-label">{{ $hs['stat_warisan_label'] ?? 'WARISAN BUDAYA' }}</div>
             </div>
             <div class="stat-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
-                <div class="stat-number">100+</div>
-                <div class="stat-label">UMKM LOKAL</div>
+                <div class="stat-number">{{ $hs['stat_umkm'] ?? '100+' }}</div>
+                <div class="stat-label">{{ $hs['stat_umkm_label'] ?? 'UMKM LOKAL' }}</div>
             </div>
         </div>
     </div>
@@ -1225,12 +1225,20 @@
     <div class="container">
         <div class="about-grid">
             <div class="about-content" data-aos="fade-right" data-aos-duration="1000">
-                <h3>Warisan Geologi Kelas Dunia</h3>
-                <p>Danau Toba, terbentuk dari letusan supervolcano 74.000 tahun lalu, adalah danau vulkanik terbesar di dunia. Diakui UNESCO sebagai Global Geopark pada tahun 2020.</p>
+                <h3>{{ $hs['warisan_judul'] ?? 'Warisan Geologi Kelas Dunia' }}</h3>
+                <p>{{ $hs['warisan_paragraf_1'] ?? 'Danau Toba, terbentuk dari letusan supervolcano 74.000 tahun lalu, adalah danau vulkanik terbesar di dunia. Diakui UNESCO sebagai Global Geopark pada tahun 2020.' }}</p>
+                @if(!empty($hs['warisan_paragraf_2']))
+                <p>{{ $hs['warisan_paragraf_2'] }}</p>
+                @else
                 <p>Kawasan Simanindo - Batu Hoda menyimpan pesona pantai eksotis, museum budaya Batak, serta formasi batu unik yang menjadi ikon geopark Danau Toba.</p>
+                @endif
             </div>
             <div class="about-image" data-aos="fade-left" data-aos-duration="1000">
+                @if(!empty($hs['warisan_gambar']))
+                <img src="{{ asset('storage/'.$hs['warisan_gambar']) }}" alt="Warisan Geologi">
+                @else
                 <img src="/image/SBH/DanauToba.png" alt="Danau Toba">
+                @endif
             </div>
         </div>
     </div>
@@ -1240,12 +1248,34 @@
 <section id="destinasi" class="section section-white">
     <div class="container">
         <div class="section-title" data-aos="fade-up" data-aos-duration="800">
-            <h2>Destinasi Unggulan</h2>
+            <h2>{{ $hs['destinasi_judul'] ?? 'Destinasi Unggulan' }}</h2>
             <div class="divider"></div>
-            <p>Wisata eksotis di kawasan Simanindo - Batu Hoda, Pulau Samosir</p>
+            <p>{{ $hs['destinasi_subjudul'] ?? 'Wisata eksotis di kawasan Simanindo - Batu Hoda, Pulau Samosir' }}</p>
         </div>
         <div class="destinasi-list">
-            
+
+        @if($destinasiHome->isNotEmpty())
+            {{-- ===== DINAMIS DARI DATABASE ===== --}}
+            @foreach($destinasiHome as $idx => $dest)
+            <div class="destinasi-item {{ $idx % 2 !== 0 ? 'reverse' : '' }}" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="{{ $idx * 200 }}">
+                <div class="destinasi-image">
+                    @if($dest->gambar_utama)
+                    <img src="{{ asset('storage/'.$dest->gambar_utama) }}" alt="{{ $dest->nama }}">
+                    @else
+                    <img src="/image/SBH/BatuHoda.png" alt="{{ $dest->nama }}">
+                    @endif
+                </div>
+                <div class="destinasi-content">
+                    <div class="destinasi-number">{{ str_pad($idx+1,'2','0',STR_PAD_LEFT) }} — DESTINASI {{ strtoupper($dest->kategori) }}</div>
+                    <h3>{{ $dest->nama }}</h3>
+                    <div class="destinasi-location">{{ $dest->lokasi }}</div>
+                    <p class="destinasi-desc">{{ $dest->deskripsi }}</p>
+                    <a href="{{ url('/destinasi/'.$dest->slug) }}" class="destinasi-link">Jelajahi Lebih Lanjut </a>
+                </div>
+            </div>
+            @endforeach
+        @else
+            {{-- ===== FALLBACK STATIS (jika belum ada data) ===== --}}
             <!-- BATU HODA BEACH -->
             <div class="destinasi-item" data-aos="fade-up" data-aos-duration="1000">
                 <div class="destinasi-image">
@@ -1287,6 +1317,7 @@
                     <a href="{{ url('/geosite/batu_pasa_pantai') }}" class="destinasi-link">Jelajahi Lebih Lanjut </a>
                 </div>
             </div>
+        @endif
         </div>
     </div>
 </section>
@@ -1334,9 +1365,9 @@
 <section class="cta-section">
     <div class="container">
         <div class="cta-content" data-aos="fade-up" data-aos-duration="800">
-            <h3>Mulai Petualangan Anda</h3>
+            <h3>{{ $hs['cta_judul'] ?? 'Mulai Petualangan Anda' }}</h3>
             <div class="divider"></div>
-            <p>Temukan keindahan Pantai Batu Hoda, belajar budaya Batak di Museum Huta Bolon, dan abadikan momen di Batu Pasa Pantai.</p>
+            <p>{{ $hs['cta_deskripsi'] ?? 'Temukan keindahan Pantai Batu Hoda, belajar budaya Batak di Museum Huta Bolon, dan abadikan momen di Batu Pasa Pantai.' }}</p>
             <a href="#destinasi" class="cta-btn">Jelajahi Sekarang</a>
         </div>
     </div>

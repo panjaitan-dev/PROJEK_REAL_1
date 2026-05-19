@@ -682,6 +682,9 @@
         <a href="{{ route('admin.dashboard') }}" class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
             <i class="fas fa-chart-pie"></i> Dashboard
         </a>
+        <a href="{{ route('admin.home-settings.index') }}" class="{{ request()->routeIs('admin.home-settings.*') ? 'active' : '' }}">
+            <i class="fas fa-home"></i> Home Manager
+        </a>
         
         <div class="menu-title">Konten</div>
         <a href="{{ route('admin.galeri.index') }}" class="{{ request()->routeIs('admin.galeri.*') ? 'active' : '' }}">
@@ -691,7 +694,13 @@
             <i class="fas fa-newspaper"></i> Berita
         </a>
         <a href="{{ route('admin.informasi.index') }}" class="{{ request()->routeIs('admin.informasi.*') ? 'active' : '' }}">
-            <i class="fas fa-info-circle"></i> Informasi
+            <i class="fas fa-info-circle"></i> Informasi / Sejarah
+        </a>
+        <a href="{{ route('admin.destinasi.index') }}" class="{{ request()->routeIs('admin.destinasi.*') ? 'active' : '' }}">
+            <i class="fas fa-map-marked-alt"></i> Destinasi
+        </a>
+        <a href="{{ route('admin.galeri-geosite.index') }}" class="{{ request()->routeIs('admin.galeri-geosite.*') ? 'active' : '' }}">
+            <i class="fas fa-mountain"></i> Galeri Geosite
         </a>
         
         <div class="menu-title">HutaBolon</div>
@@ -703,6 +712,11 @@
         </a>
         <a href="{{ route('admin.penginapan.index') }}" class="{{ request()->routeIs('admin.penginapan.*') ? 'active' : '' }}">
             <i class="fas fa-hotel"></i> Penginapan </a>
+        
+        <div class="menu-title">Lainnya</div>
+        <a href="{{ url('/') }}" target="_blank">
+            <i class="fas fa-globe"></i> Lihat Website
+        </a>
     </div>
 </div>
 

@@ -3,12 +3,29 @@
 namespace App\Http\Controllers;
 
 use App\Models\Destinasi;
+use App\Models\HomeSetting;
+use App\Models\Informasi;
 
 class DestinasiController extends Controller
 {
     public function indexX()
     {
-        return view('pages.home');
+        // Ambil semua setting home
+        $hs = HomeSetting::allAsArray();
+
+        // Destinasi yang dipilih tampil di home, urut sesuai urutan_home
+        $destinasiHome = Destinasi::where('tampil_di_home', true)
+            ->where('status', true)
+            ->orderBy('urutan_home')
+            ->get();
+
+        // Informasi/sejarah aktif (untuk section informasi di home jika ditampilkan)
+        $informasiHome = Informasi::where('status', true)
+            ->orderBy('urutan')
+            ->take(5)
+            ->get();
+
+        return view('pages.home', compact('hs', 'destinasiHome', 'informasiHome'));
     }
 
     public function index()

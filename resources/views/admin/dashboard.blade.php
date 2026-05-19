@@ -79,6 +79,7 @@
 
 <!-- Quick Actions -->
 <div class="action-buttons" style="flex-wrap: wrap;">
+    <a href="{{ route('admin.home-settings.index') }}" class="action-btn" style="background:linear-gradient(135deg,#003366,#0a4a7a);color:white"><i class="fas fa-home"></i> Home Manager</a>
     <a href="{{ route('admin.galeri.create') }}" class="action-btn"><i class="fas fa-plus-circle"></i> Galeri</a>
     <a href="{{ route('admin.berita.create') }}" class="action-btn"><i class="fas fa-plus-circle"></i> Berita</a>
     <a href="{{ route('admin.informasi.create') }}" class="action-btn"><i class="fas fa-plus-circle"></i> Informasi</a>

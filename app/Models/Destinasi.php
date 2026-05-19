@@ -27,14 +27,18 @@ class Destinasi extends Model
         'informasi_tambahan',
         'maps',
         'status',
-        'admin_id'
+        'admin_id',
+        'tampil_di_home',
+        'urutan_home',
     ];
 
     protected $casts = [
-        'tags' => 'array',
-        'fasilitas' => 'array',
-        'umkm_terdekat' => 'array',
-        'status' => 'boolean',
+        'tags'           => 'array',
+        'fasilitas'      => 'array',
+        'umkm_terdekat'  => 'array',
+        'status'         => 'boolean',
+        'tampil_di_home' => 'boolean',
+        'urutan_home'    => 'integer',
     ];
 
     public function admin()
