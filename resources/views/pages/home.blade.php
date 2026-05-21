@@ -55,12 +55,22 @@
         inset: 0;
         background: linear-gradient(135deg, rgba(0,51,102,0.5) 0%, rgba(0,102,153,0.3) 100%);
     }
+<<<<<<< HEAD
     .slide-1 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/BatuHoda.png'); }
     .slide-2 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/HutaBolon.png'); }
     .slide-3 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/DanauToba.png'); }
     .slide-4 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/Simanindo.png'); }
     .slide-5 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/BatuPasa.png'); }
 
+=======
+    
+    .slide-1 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/SBH/BatuHoda.png'); }
+    .slide-2 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/SBH/HutaBolon.png'); }
+    .slide-3 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/SBH/RumahKaca.png'); }
+    .slide-4 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/SBH/batu_pasa_pantai.jpg'); }
+    .slide-5 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/SBH/BatuHoda2.png'); }
+    
+>>>>>>> 297d5790505eb25fa5926d561e14ad903528a55a
     .hero-content {
         position: absolute;
         z-index: 10;
