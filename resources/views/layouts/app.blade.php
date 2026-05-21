@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'Geosite Danau Toba')</title>
+    <title>@yield('title', 'Geosite Simanindo – Batu Hoda, Danau Toba')</title>
+    <meta name="description" content="Jelajahi keindahan Geosite Simanindo dan Batu Hoda di kawasan UNESCO Global Geopark Danau Toba. Wisata alam, budaya Batak, dan geologi kelas dunia.">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,36 +13,71 @@
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Inter + Cormorant Garamond -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
    <style>
-        * { font-family: 'Inter', sans-serif; }
+        *, *::before, *::after { box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; margin: 0; }
         
         :root {
-            --blue-dark: #003366;
+            --blue-dark:   #003366;
             --blue-medium: #1a4a7a;
-            --gold: #c6a43b;
-            --white: #ffffff;
+            --gold:        #c6a43b;
+            --white:       #ffffff;
+            --nav-height:  80px;
         }
-        
+
+        /* ===== SMOOTH SCROLL ===== */
+        html { scroll-behavior: smooth; }
+
+        /* ===== NAVBAR — transparent on hero, solid on scroll ===== */
         .navbar {
-            transition: all 0.4s ease;
-            padding: 0.8rem 0;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0, 51, 102, 0.1);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+            transition: background 0.55s cubic-bezier(0.4,0,0.2,1),
+                        padding   0.4s ease,
+                        box-shadow 0.4s ease;
+            padding: 1.1rem 0;
+            background: transparent;
+            border-bottom: 1px solid transparent;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1050;
         }
-        
+
+        /* links white when transparent */
+        .navbar:not(.scrolled) .nav-link,
+        .navbar:not(.scrolled) .navbar-brand {
+            color: rgba(255,255,255,0.92) !important;
+            text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+        }
+        .navbar:not(.scrolled) .navbar-brand span {
+            color: #e8c96a !important;
+        }
+        .navbar:not(.scrolled) .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        .navbar:not(.scrolled) .logo-divider {
+            background: linear-gradient(145deg, rgba(255,255,255,0.3), rgba(255,255,255,0.05));
+        }
+
         .navbar.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            padding: 0.4rem 0;
-            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            padding: 0.55rem 0;
+            border-bottom: 1px solid rgba(0, 51, 102, 0.08);
+            box-shadow: 0 4px 28px rgba(0, 0, 0, 0.08);
         }
+        .navbar.scrolled .nav-link  { color: #2c3e50 !important; text-shadow: none; }
+        .navbar.scrolled .navbar-brand { color: #003366 !important; text-shadow: none; }
+        .navbar.scrolled .navbar-brand span { color: var(--gold) !important; }
         
         .navbar .container {
             max-width: 1200px;
@@ -98,18 +134,18 @@
         }
         
         .nav-link {
-            color: #2c3e50 !important;
             font-weight: 500;
-            margin: 0 0.2rem;
-            transition: all 0.25s ease;
-            font-size: 0.95rem;
-            padding: 0.5rem 1rem;
+            margin: 0 0.15rem;
+            transition: color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+            font-size: 0.88rem;
+            letter-spacing: 0.04em;
+            padding: 0.45rem 0.9rem;
             border-radius: 40px;
         }
         
         .nav-link:hover {
             color: var(--gold) !important;
-            background: rgba(0, 51, 102, 0.08);
+            background: rgba(198, 164, 59, 0.12);
             transform: translateY(-2px);
         }
         
@@ -392,20 +428,24 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <script>
-        AOS.init({ duration: 1000, once: true });
-        
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) navbar.classList.add('scrolled');
+        AOS.init({ duration: 900, once: true, offset: 60, easing: 'ease-out-cubic' });
+
+        /* ── Navbar scroll behaviour ──────────────────────────── */
+        const navbar  = document.getElementById('navbar');
+        const NAV_THRESHOLD = 80;
+        function updateNavbar() {
+            if (window.scrollY > NAV_THRESHOLD) navbar.classList.add('scrolled');
             else navbar.classList.remove('scrolled');
-        });
-        
+        }
+        window.addEventListener('scroll', updateNavbar, { passive: true });
+        updateNavbar(); // run once on load
+
+        /* ── Back-to-top ──────────────────────────────────────── */
         const backToTop = document.getElementById('backToTop');
         window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) backToTop.classList.add('show');
+            if (window.scrollY > 320) backToTop.classList.add('show');
             else backToTop.classList.remove('show');
-        });
-        
+        }, { passive: true });
         backToTop.addEventListener('click', function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
