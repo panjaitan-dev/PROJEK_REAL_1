@@ -63,9 +63,8 @@ Route::get('/umkm', [HomeController::class, 'umkm'])->name('umkm');
 Route::get('/budaya', [HomeController::class, 'budaya'])->name('budaya');
 
 // Kontak
-Route::get('/kontak', function () {
-    return view('pages.kontak');
-})->name('kontak');
+Route::get('/kontak', [HomeController::class, 'kontak'])->name('kontak');
+Route::post('/kontak', [HomeController::class, 'sendKontak'])->name('kontak.send');
 
 // ==================== GEOSITE ROUTES ====================
 Route::get('/geosite/batu_hoda_beach', [GeositeController::class, 'batu_hoda_beach'])->name('geosite.batu_hoda_beach');
@@ -77,10 +76,16 @@ Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// Lupa Password Routes
+// Lupa Password Routes — OTP based
 Route::get('/forgot-password', [AuthController::class, 'showForgotForm'])->name('password.request');
 Route::post('/forgot-password', [AuthController::class, 'sendResetLink'])->name('password.email');
-Route::get('/reset-password/{token}', [AuthController::class, 'showResetForm'])->name('password.reset');
+
+// OTP Verification
+Route::get('/otp-verify', [AuthController::class, 'showOtpForm'])->name('password.otp.form');
+Route::post('/otp-verify', [AuthController::class, 'verifyOtp'])->name('password.otp.verify');
+
+// Reset Password (setelah OTP terverifikasi)
+Route::get('/reset-password/{token}', [AuthController::class, 'showResetForm'])->name('password.reset.form');
 Route::post('/reset-password', [AuthController::class, 'resetPassword'])->name('password.update');
 
 // ==================== ADMIN ROUTES ====================

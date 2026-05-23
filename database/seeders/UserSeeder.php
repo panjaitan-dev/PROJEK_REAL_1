@@ -10,13 +10,25 @@ class UserSeeder extends Seeder
 {
     public function run()
     {
-        // Cek apakah sudah ada, jika belum buat
-        User::firstOrCreate(
+        // Update atau buat admin dengan credentials terbaru (tanpa truncate agar tidak error FK)
+        User::updateOrCreate(
             ['email' => 'admina246@gmail.com'],
             [
-                'name' => 'Admin GeoToba',
-                'password' => Hash::make('admin123'),
+                'name'     => 'Admin GeoToba',
+                'email'    => 'adminsimanindobatuhoda@gmail.com',
+                'password' => Hash::make('rpqpfqpsssjzhlwh'),
             ]
         );
+
+        // Juga pastikan kalau tidak ada email lama, buat baru
+        User::updateOrCreate(
+            ['email' => 'adminsimanindobatuhoda@gmail.com'],
+            [
+                'name'     => 'Admin GeoToba',
+                'password' => Hash::make('rpqpfqpsssjzhlwh'),
+            ]
+        );
+
+        echo "✅ Admin seeded: adminsimanindobatuhoda@gmail.com\n";
     }
 }

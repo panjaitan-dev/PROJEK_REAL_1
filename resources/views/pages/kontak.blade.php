@@ -323,6 +323,126 @@
         .kontak-section { padding: 60px 0 72px; }
     }
     @media (max-width: 480px)  { .kontak-cards { grid-template-columns: 1fr; } }
+    /* ── CONTACT FORM ── */
+    .kontak-form-section {
+        margin-bottom: 70px;
+    }
+    .kontak-form-card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 40px;
+        border: 1px solid rgba(0,51,102,0.07);
+        box-shadow: var(--shadow);
+        transition: transform 0.38s ease, box-shadow 0.38s ease;
+    }
+    .kontak-form-card:hover {
+        box-shadow: var(--shadow-lg);
+    }
+    .kontak-form-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 8px;
+    }
+    .kontak-form-subtitle {
+        color: var(--gray);
+        font-size: 0.88rem;
+        margin-bottom: 28px;
+    }
+    .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-group label {
+        display: block;
+        color: var(--primary);
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        font-family: 'Inter', sans-serif;
+    }
+    .form-group input, .form-group textarea {
+        width: 100%;
+        padding: 12px 16px;
+        background: #f8fafc;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 12px;
+        color: #1e293b;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        font-family: 'Inter', sans-serif;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+        outline: none;
+        border-color: var(--gold);
+        background: #ffffff;
+        box-shadow: 0 0 0 4px rgba(198,164,59,0.15);
+    }
+    .form-group textarea {
+        resize: vertical;
+    }
+    .kontak-form-btn {
+        display: block;
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(135deg, var(--primary) 0%, #0a4a7a 100%);
+        color: #ffffff;
+        border: none;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+        margin-top: 10px;
+        font-family: 'Inter', sans-serif;
+        box-shadow: 0 4px 12px rgba(0,51,102,0.15);
+    }
+    .kontak-form-btn:hover {
+        background: linear-gradient(135deg, var(--gold) 0%, #d4a947 100%);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(198,164,59,0.35);
+    }
+    .alert-success {
+        background: rgba(34,197,94,0.1);
+        border: 1px solid rgba(34,197,94,0.3);
+        color: #15803d;
+        padding: 14px 18px;
+        border-radius: 12px;
+        font-size: 0.88rem;
+        margin-bottom: 22px;
+        font-weight: 500;
+        text-align: left;
+    }
+    .alert-error {
+        background: rgba(239,68,68,0.1);
+        border: 1px solid rgba(239,68,68,0.3);
+        color: #b91c1c;
+        padding: 14px 18px;
+        border-radius: 12px;
+        font-size: 0.88rem;
+        margin-bottom: 22px;
+        font-weight: 500;
+        text-align: left;
+    }
+
+    @media (max-width: 768px) {
+        .form-grid {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+        .kontak-form-card {
+            padding: 26px 20px;
+        }
+    }
 </style>
 
 {{-- HERO --}}
@@ -377,6 +497,51 @@
                 <p><strong style="color:#003366;">08:00 – 17:00 WIB</strong></p>
                 <p>Sabtu – Minggu</p>
                 <p><strong style="color:#003366;">08:00 – 18:00 WIB</strong></p>
+            </div>
+        </div>
+
+        {{-- Form Kontak --}}
+        <div class="kontak-form-section">
+            <div class="kontak-form-card">
+                <div class="kontak-form-title">📨 Kirim Pesan Langsung</div>
+                <p class="kontak-form-subtitle">Punya pertanyaan, masukan, atau rencana kunjungan? Hubungi kami langsung melalui form di bawah ini.</p>
+                
+                @if(session('success'))
+                    <div class="alert-success">✅ {{ session('success') }}</div>
+                @endif
+                
+                @if($errors->any())
+                    <div class="alert-error">❌ {{ $errors->first() }}</div>
+                @endif
+
+                <form action="{{ route('kontak.send') }}" method="POST">
+                    @csrf
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap</label>
+                            <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda" value="{{ old('nama') }}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Alamat Email</label>
+                            <input type="email" id="email" name="email" placeholder="nama@email.com" value="{{ old('email') }}" required>
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="telepon">No. Telepon / WhatsApp (Opsional)</label>
+                            <input type="text" id="telepon" name="telepon" placeholder="Contoh: 081234567890" value="{{ old('telepon') }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="subjek">Subjek Pesan</label>
+                            <input type="text" id="subjek" name="subjek" placeholder="Topik atau subjek pesan Anda" value="{{ old('subjek') }}" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pesan">Pesan Anda</label>
+                        <textarea id="pesan" name="pesan" rows="5" placeholder="Tuliskan pesan atau pertanyaan Anda secara lengkap di sini..." required>{{ old('pesan') }}</textarea>
+                    </div>
+                    <button type="submit" class="kontak-form-btn">📤 Kirim Pesan</button>
+                </form>
             </div>
         </div>
 
