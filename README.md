@@ -1,59 +1,159 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🏔️ GeoToba — Geopark Danau Toba Admin System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistem informasi dan manajemen konten Geosite Danau Toba berbasis Laravel 12.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Cara Setup Setelah `git pull` / `git clone`
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 1. Clone atau Pull Kode dari GitHub
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+```bash
+git clone https://github.com/panjaitan-dev/PROJEK_REAL_1.git
+cd PROJEK_REAL_1
+```
 
-## Learning Laravel
+> Jika sudah pernah clone sebelumnya, cukup jalankan:
+> ```bash
+> git pull origin main
+> ```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 2. Install Dependencies PHP
 
-## Laravel Sponsors
+```bash
+composer install
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+### 3. Salin File `.env`
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```bash
+copy .env.example .env
+```
 
-## Contributing
+> Jika file `.env.example` belum ada, buat file `.env` baru dan isi sesuai contoh di bawah.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+### 4. Generate App Key
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+php artisan key:generate
+```
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 5. Konfigurasi Database di `.env`
 
-## License
+Buka file `.env` dan sesuaikan dengan pengaturan MySQL lokal kamu:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=Pa1           ← sesuaikan nama database kamu
+DB_USERNAME=root          ← sesuaikan username MySQL kamu
+DB_PASSWORD=              ← isi password MySQL jika ada
+```
+
+> **Catatan:** Buat database kosong terlebih dahulu di phpMyAdmin atau MySQL:
+> ```sql
+> CREATE DATABASE Pa1;
+> ```
+
+---
+
+### 6. Jalankan Migrasi + Seeder (Buat Semua Tabel + Data Awal)
+
+```bash
+php artisan migrate --seed
+```
+
+> Perintah ini akan:
+> - Membuat semua tabel database secara otomatis
+> - Mengisi data awal (admin, destinasi, galeri, UMKM, penginapan, dll.)
+
+---
+
+### 7. Jalankan Aplikasi
+
+```bash
+php artisan serve
+```
+
+Buka browser: **http://127.0.0.1:8000**
+
+---
+
+## 🔐 Login Admin Default
+
+Setelah `php artisan migrate --seed`, gunakan kredensial ini untuk login:
+
+| | Nilai |
+|---|---|
+| **URL Login** | http://127.0.0.1:8000/login |
+| **Email** | `adminsimanindobatuhoda@gmail.com` |
+| **Password** | `rpqpfqpsssjzhlwh` |
+
+> ⚠️ **Penting:** Segera ganti password setelah login pertama kali melalui fitur **Lupa Password** di halaman login.
+
+---
+
+## 📧 Konfigurasi Email (OTP Reset Password)
+
+Sistem ini menggunakan Gmail untuk mengirim kode OTP. Isi bagian ini di `.env`:
+
+```env
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=adminsimanindobatuhoda@gmail.com
+MAIL_PASSWORD=              ← isi App Password Gmail (bukan password biasa)
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=adminsimanindobatuhoda@gmail.com
+MAIL_FROM_NAME="GeoToba Admin"
+```
+
+> Cara mendapatkan App Password Gmail:
+> 1. Buka [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
+> 2. Pilih "Mail" → "Other (Custom name)" → beri nama "GeoToba"
+> 3. Salin 16 karakter yang muncul → paste ke `MAIL_PASSWORD`
+
+---
+
+## 📁 Struktur Perintah Penting
+
+| Perintah | Fungsi |
+|---|---|
+| `php artisan migrate --seed` | Buat tabel + isi data awal |
+| `php artisan migrate:fresh --seed` | **Reset** semua tabel + isi ulang data |
+| `php artisan db:seed --class=UserSeeder` | Seed ulang hanya akun admin |
+| `php artisan cache:clear` | Hapus cache aplikasi |
+| `php artisan config:clear` | Hapus cache konfigurasi |
+| `php artisan serve` | Jalankan server lokal |
+
+---
+
+## 🗂️ Fitur Admin
+
+- 📊 **Dashboard** — Ringkasan statistik konten
+- 🏠 **Home Manager** — Kelola tampilan halaman utama
+- 🖼️ **Galeri** — Kelola galeri foto
+- 📰 **Berita** — Kelola artikel berita
+- ℹ️ **Informasi / Sejarah** — Kelola halaman informasi
+- 🗺️ **Destinasi** — Kelola destinasi wisata
+- 📸 **Galeri Geosite** — Kelola foto geosite
+- 🛒 **UMKM** — Kelola data UMKM per geosite
+- 🏗️ **Fasilitas** — Kelola fasilitas wisata
+- 🏨 **Penginapan** — Kelola data penginapan
+
+---
+
+## ⚠️ Catatan Penting
+
+- File `.env` **tidak di-push** ke GitHub (sudah ada di `.gitignore`) — setiap anggota tim harus membuat file `.env` sendiri
+- Folder `storage/app/public` berisi gambar — jalankan `php artisan storage:link` jika gambar tidak tampil
+- Jika ada error setelah `git pull`, coba: `composer install` → `php artisan migrate` → `php artisan cache:clear`
