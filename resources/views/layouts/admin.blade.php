@@ -8,34 +8,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
-            --sidebar-bg: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+            --sidebar-bg: #ffffff;
             --sidebar-width: 270px;
-            --sidebar-text: #94a3b8;
-            --sidebar-text-hover: #f1f5f9;
-            --sidebar-active-bg: rgba(59, 130, 246, 0.15);
-            --sidebar-active-text: #60a5fa;
-            --sidebar-active-bar: #3b82f6;
-            --sidebar-menu-title: #475569;
-            --body-bg: #f0f4f8;
+            --sidebar-text: #64748b;
+            --sidebar-text-hover: #0f172a;
+            --sidebar-active-bg: #eff6ff; /* Light blue capsule */
+            --sidebar-active-text: #2563eb; /* Blue text */
+            --sidebar-active-bar: transparent; /* No vertical bar */
+            --sidebar-menu-title: #94a3b8;
+            --body-bg: #f8fafc;
             --card-bg: #ffffff;
-            --card-border: rgba(226, 232, 240, 0.8);
-            --card-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
-            --card-shadow-hover: 0 10px 25px rgba(0,0,0,0.08);
+            --card-border: #e2e8f0;
+            --card-shadow: 0 1px 3px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.04);
+            --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.05);
             --text-primary: #0f172a;
             --text-secondary: #475569;
             --text-muted: #94a3b8;
-            --accent-blue: #3b82f6;
-            --accent-indigo: #6366f1;
-            --accent-emerald: #10b981;
-            --accent-amber: #f59e0b;
-            --accent-rose: #f43f5e;
-            --accent-purple: #8b5cf6;
-            --accent-cyan: #06b6d4;
-            --accent-pink: #ec4899;
-            --border-radius: 14px;
-            --border-radius-sm: 10px;
-            --border-radius-xs: 8px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --accent-blue: #003366; /* Navy Blue Brand Color */
+            --accent-gold: #c6a43b; /* Gold Brand Color */
+            --border-radius: 12px;
+            --border-radius-sm: 8px;
+            --border-radius-xs: 6px;
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -90,7 +84,7 @@
             z-index: 1000;
             overflow-y: auto;
             transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            border-right: 1px solid rgba(255,255,255,0.05);
+            border-right: 1px solid #e2e8f0;
         }
 
         .sidebar::-webkit-scrollbar { width: 4px; }
@@ -102,19 +96,9 @@
         }
 
         .sidebar-header {
-            padding: 28px 24px 24px;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 24px;
+            border-bottom: 1px solid #f1f5f9;
             position: relative;
-        }
-
-        .sidebar-header::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 24px;
-            right: 24px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(59,130,246,0.3), transparent);
         }
 
         .sidebar-brand {
@@ -996,6 +980,82 @@
             opacity: 0.4;
         }
 
+        /* ========== CAPSULE PILLS STYLING ========== */
+        .btn-edit-pill {
+            background: #ede9fe !important;
+            color: #7c3aed !important;
+            padding: 6px 14px !important;
+            border-radius: 50px !important;
+            font-size: 0.72rem !important;
+            font-weight: 600 !important;
+            text-decoration: none !important;
+            border: none !important;
+            display: inline-block;
+            transition: all 0.2s ease;
+        }
+        .btn-edit-pill:hover {
+            background: #ddd6fe !important;
+            color: #7c3aed !important;
+            transform: translateY(-1px);
+        }
+        .btn-delete-pill {
+            background: #ffe4e6 !important;
+            color: #e11d48 !important;
+            padding: 6px 14px !important;
+            border-radius: 50px !important;
+            font-size: 0.72rem !important;
+            font-weight: 600 !important;
+            text-decoration: none !important;
+            border: none !important;
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .btn-delete-pill:hover {
+            background: #fecdd3 !important;
+            color: #e11d48 !important;
+            transform: translateY(-1px);
+        }
+        .btn-add-pill {
+            background: #003366 !important;
+            color: #ffffff !important;
+            padding: 8px 18px !important;
+            border-radius: 50px !important;
+            font-size: 0.75rem !important;
+            font-weight: 600 !important;
+            text-decoration: none !important;
+            border: none !important;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0, 51, 102, 0.15);
+        }
+        .btn-add-pill:hover {
+            background: #c6a43b !important;
+            color: #ffffff !important;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(198, 164, 59, 0.2);
+        }
+        .badge-status-active {
+            background-color: #d1fae5 !important;
+            color: #065f46 !important;
+            font-size: 0.72rem !important;
+            font-weight: 600 !important;
+            padding: 6px 12px !important;
+            border-radius: 50px !important;
+            display: inline-block;
+        }
+        .badge-status-inactive {
+            background-color: #fee2e2 !important;
+            color: #9f1239 !important;
+            font-size: 0.72rem !important;
+            font-weight: 600 !important;
+            padding: 6px 12px !important;
+            border-radius: 50px !important;
+            display: inline-block;
+        }
+
         /* ========== PAGINATION ========== */
         .pagination {
             margin-top: 20px;
@@ -1226,12 +1286,9 @@
 <div class="sidebar" id="sidebar">
     <div class="sidebar-header">
         <div class="sidebar-brand">
-            <div class="sidebar-brand-icon">
-                <i class="fas fa-mountain"></i>
-            </div>
             <div>
-                <h3>Geo<span>Toba</span></h3>
-                <p>Administrator</p>
+                <h3 style="font-size: 1.45rem; font-weight: 800; color: #003366; font-family: 'Inter', sans-serif; letter-spacing: -0.5px;">Geo<span style="color: #c6a43b;">Toba</span></h3>
+                <p style="font-size: 0.65rem; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px;">Administrator</p>
             </div>
         </div>
     </div>
@@ -1239,9 +1296,6 @@
         <div class="menu-title">Menu</div>
         <a href="{{ route('admin.dashboard') }}" class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
             <i class="fas fa-chart-pie"></i> Dashboard
-        </a>
-        <a href="{{ route('admin.home-settings.index') }}" class="{{ request()->routeIs('admin.home-settings.*') ? 'active' : '' }}">
-            <i class="fas fa-home"></i> Home Manager
         </a>
         
         <div class="menu-title">Konten</div>
@@ -1252,16 +1306,10 @@
             <i class="fas fa-newspaper"></i> Berita
         </a>
         <a href="{{ route('admin.informasi.index') }}" class="{{ request()->routeIs('admin.informasi.*') ? 'active' : '' }}">
-            <i class="fas fa-info-circle"></i> Informasi / Sejarah
-        </a>
-        <a href="{{ route('admin.destinasi.index') }}" class="{{ request()->routeIs('admin.destinasi.*') ? 'active' : '' }}">
-            <i class="fas fa-map-marked-alt"></i> Destinasi
-        </a>
-        <a href="{{ route('admin.galeri-geosite.index') }}" class="{{ request()->routeIs('admin.galeri-geosite.*') ? 'active' : '' }}">
-            <i class="fas fa-mountain"></i> Galeri Geosite
+            <i class="fas fa-info-circle"></i> Informasi
         </a>
         
-        <div class="menu-title">HutaBolon</div>
+        <div class="menu-title">Desa Meat</div>
         <a href="{{ route('admin.umkm.index') }}" class="{{ request()->routeIs('admin.umkm.*') ? 'active' : '' }}">
             <i class="fas fa-store"></i> UMKM
         </a>
@@ -1269,9 +1317,19 @@
             <i class="fas fa-tools"></i> Fasilitas
         </a>
         <a href="{{ route('admin.penginapan.index') }}" class="{{ request()->routeIs('admin.penginapan.*') ? 'active' : '' }}">
-            <i class="fas fa-hotel"></i> Penginapan </a>
+            <i class="fas fa-hotel"></i> Penginapan
+        </a>
         
         <div class="menu-title">Lainnya</div>
+        <a href="{{ route('admin.home-settings.index') }}" class="{{ request()->routeIs('admin.home-settings.*') ? 'active' : '' }}">
+            <i class="fas fa-home"></i> Home Manager
+        </a>
+        <a href="{{ route('admin.destinasi.index') }}" class="{{ request()->routeIs('admin.destinasi.*') ? 'active' : '' }}">
+            <i class="fas fa-map-marked-alt"></i> Destinasi
+        </a>
+        <a href="{{ route('admin.galeri-geosite.index') }}" class="{{ request()->routeIs('admin.galeri-geosite.*') ? 'active' : '' }}">
+            <i class="fas fa-mountain"></i> Galeri Geosite
+        </a>
         <a href="{{ url('/') }}" target="_blank">
             <i class="fas fa-globe"></i> Lihat Website
         </a>
@@ -1289,10 +1347,8 @@
         </div>
         <div class="user-menu">
             <span class="user-name">
-                <div class="user-avatar">
-                    {{ strtoupper(substr(Auth::user()->name ?? 'A', 0, 1)) }}
-                </div>
-                {{ Auth::user()->name ?? 'Admin' }}
+                <i class="fas fa-user-circle" style="font-size: 1.25rem; color: #003366; margin-right: 4px; vertical-align: middle;"></i>
+                {{ Auth::user()->name ?? 'Admin GeoToba' }}
             </span>
             <form action="{{ route('logout') }}" method="POST" class="d-inline">
                 @csrf

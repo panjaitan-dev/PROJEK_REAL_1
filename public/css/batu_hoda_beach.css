@@ -17,17 +17,18 @@ body {
     --dark: #1a1a1a;
 }
 
-/* ========== NAVBAR BIRU ========== */
+/* ========== NAVBAR PUTIH ========== */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(0, 51, 102, 0.95);
+    background: rgba(255, 255, 255, 0.97);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(198, 164, 59, 0.3);
+    border-bottom: 1px solid rgba(0, 51, 102, 0.08);
     padding: 12px 0;
+    box-shadow: 0 4px 28px rgba(0, 0, 0, 0.08);
 }
 .nav-container {
     max-width: 1200px;
@@ -49,7 +50,7 @@ body {
 .logo-divider {
     width: 1px;
     height: 28px;
-    background: rgba(255,255,255,0.3);
+    background: linear-gradient(145deg, rgba(0,51,102,0.3), rgba(0,51,102,0.05));
 }
 .del-img {
     width: 32px;
@@ -57,33 +58,42 @@ body {
 }
 .logo-text h4 {
     font-size: 0.85rem;
-    color: white;
+    color: #1a1a1a;
 }
 .logo-text p {
     font-size: 0.4rem;
-    color: rgba(255,255,255,0.6);
+    color: #888;
 }
 .nav-menu {
     display: flex;
     gap: 25px;
+    align-items: center;
 }
 .nav-link {
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     text-decoration: none;
-    color: rgba(255,255,255,0.85);
-    font-weight: 500;
-    transition: 0.3s;
+    color: #2c3e50;
+    font-weight: 600;
+    transition: color 0.25s ease;
+    padding: 6px 0;
+    margin: 0;
+    display: inline-block;
 }
 .nav-link:hover {
-    color: var(--gold);
+    color: var(--gold) !important;
 }
 .home-btn {
-    background: var(--gold);
-    color: var(--blue) !important;
-    padding: 6px 18px;
+    background: #c6a43b !important;
+    color: #003366 !important;
+    padding: 8px 22px !important;
     border-radius: 40px;
+    font-weight: 700;
+}
+.home-btn:hover {
+    background: #2c3e50 !important;
+    color: #ffffff !important;
 }
 
 /* ========== HAMBURGER ========== */
@@ -91,14 +101,14 @@ body {
     display: none;
     cursor: pointer;
     padding: 8px 12px;
-    background: rgba(255,255,255,0.1);
+    background: rgba(0, 51, 102, 0.08);
     border-radius: 50px;
 }
 .hamburger span {
     display: block;
     width: 20px;
     height: 2px;
-    background: white;
+    background: #003366;
     margin: 5px 0;
 }
 .mobile-overlay {
@@ -735,7 +745,7 @@ body {
 /* ========== RESPONSIVE ========== */
 @media (max-width: 900px) {
     .nav-menu {
-        gap: 25px;
+        gap: 15px;
     }
     .hero-title {
         font-size: 2.5rem;

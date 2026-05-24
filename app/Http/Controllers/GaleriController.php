@@ -7,45 +7,42 @@ use Illuminate\Http\Request;
 
 class GaleriController extends Controller
 {
-    // Halaman galeri publik
+    /**
+     * Halaman galeri publik.
+     * Menampilkan semua gambar aktif dari tabel galeri
+     * (termasuk yang di-sync dari galeri_geosite).
+     */
     public function index()
     {
-        // Ambil semua data galeri yang status aktif
         $allGaleri = Galeri::where('status', true)
             ->orderBy('created_at', 'desc')
-            ->get();
+            ->get()
+            ->map(function ($item) {
+                // Normalkan src gambar (bisa storage path atau base64)
+                if (!$item->gambar) {
+                    $src = 'https://via.placeholder.com/400x600?text=No+Image';
+                } elseif (str_starts_with($item->gambar, 'data:')) {
+                    $src = $item->gambar;
+                } else {
+                    $src = asset('storage/' . $item->gambar);
+                }
 
-        // Kelompokkan secara dinamis berdasarkan kolom kategori di DB
+                return [
+                    'src'              => $src,
+                    'judul'            => $item->judul,
+                    'deskripsi'        => $item->deskripsi ?? '',
+                    'lokasi'           => $item->lokasi ?? 'Danau Toba',
+                    'kategori'         => strtoupper($item->kategori),
+                    'galeri_geosite_id'=> $item->galeri_geosite_id,
+                ];
+            });
+
+        // Kelompokkan berdasarkan kategori (untuk phone stack section-label)
         $galeriByKategori = $allGaleri->groupBy('kategori');
 
-        return view('pages.galeri', compact('galeriByKategori'));
-    }
+        // $allPhotos = array siap pakai di blade
+        $allPhotos = $allGaleri->values()->toArray();
 
-    // Fungsi untuk Admin menyimpan foto baru
-    public function store(Request $request)
-    {
-        $request->validate([
-            'judul' => 'required',
-            'kategori' => 'required',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-        ]);
-
-        if ($request->hasFile('gambar')) {
-            $file = $request->file('gambar');
-            $imageData = file_get_contents($file->getRealPath());
-            $base64    = base64_encode($imageData);
-            $mimeType  = $file->getMimeType();
-
-            Galeri::create([
-                'judul'        => $request->judul,
-                'kategori'     => $request->kategori,
-                'deskripsi'    => $request->deskripsi,
-                'gambar'       => 'data:' . $mimeType . ';base64,' . $base64,
-                'status'       => true,
-                'tanggal_foto' => now(),
-            ]);
-        }
-
-        return redirect()->back()->with('success', 'Foto Berhasil Ditambahkan!');
+        return view('pages.galeri', compact('galeriByKategori', 'allPhotos'));
     }
 }

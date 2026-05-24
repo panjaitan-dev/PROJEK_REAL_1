@@ -87,7 +87,7 @@
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Tanggal Foto</label>
                     <input type="date" name="tanggal_foto" class="form-control @error('tanggal_foto') is-invalid @enderror" 
-                           value="{{ old('tanggal_foto') }}">
+                           value="{{ old('tanggal_foto') }}" max="9999-12-31">
                     @error('tanggal_foto')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror

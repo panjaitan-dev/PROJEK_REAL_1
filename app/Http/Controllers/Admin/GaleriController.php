@@ -23,10 +23,12 @@ class GaleriController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'judul'     => 'required|string|max:255',
-            'kategori'  => 'required|string',
-            'deskripsi' => 'required|string',
-            'gambar'    => 'nullable|image|mimes:jpeg,png,jpg,webp|max:6144', // Max 6MB
+            'judul'        => 'required|string|max:255',
+            'kategori'     => 'required|string',
+            'deskripsi'    => 'required|string',
+            'gambar'       => 'nullable|image|mimes:jpeg,png,jpg,webp|max:6144',
+            'tanggal_foto' => 'nullable|date_format:Y-m-d|before:2100-01-01|after:1900-01-01',
+            'lokasi'       => 'nullable|string|max:255',
         ]);
 
         $data = [
@@ -56,10 +58,12 @@ class GaleriController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'judul'     => 'required|string|max:255',
-            'kategori'  => 'required|string',
-            'deskripsi' => 'required|string',
-            'gambar'    => 'nullable|image|mimes:jpeg,png,jpg,webp|max:6144', // Max 6MB
+            'judul'        => 'required|string|max:255',
+            'kategori'     => 'required|string',
+            'deskripsi'    => 'required|string',
+            'gambar'       => 'nullable|image|mimes:jpeg,png,jpg,webp|max:6144',
+            'tanggal_foto' => 'nullable|date_format:Y-m-d|before:2100-01-01|after:1900-01-01',
+            'lokasi'       => 'nullable|string|max:255',
         ]);
 
         $galeri = Galeri::findOrFail($id);

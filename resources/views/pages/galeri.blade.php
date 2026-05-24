@@ -1,561 +1,478 @@
 @extends('layouts.app')
 
-@section('title', 'Galeri - GeoToba')
+@section('title', 'Galeri Foto - Geosite Danau Toba')
 
-@section('content')
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
+@push('styles')
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
+    /* ==============================
+       GALERI PAGE - DESIGN SYSTEM
+       Warna: Navy #003366, Gold #c6a43b
+       Font: Inter (body), serif (heading)
+    ============================== */
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: #f0f2f5; }
-
-    /* ===== HERO ===== */
-    .gallery-hero {
-        background: linear-gradient(135deg, #003366 0%, #1a4a7a 50%, #0a3a6a 100%);
-        padding: 90px 0 60px;
-        margin-top: 70px;
-        text-align: center;
+    .page-hero {
         position: relative;
-        overflow: hidden;
+        height: 55vh; min-height: 360px;
+        display: flex; align-items: center; justify-content: center;
+        text-align: center; color: #fff;
+        margin-top: 70px; overflow: hidden;
+        background: linear-gradient(135deg, #003366 0%, #1a4a7a 50%, #0a3a6a 100%);
     }
-    .gallery-hero::before {
-        content: '';
-        position: absolute;
-        top: -50%; left: -50%;
-        width: 200%; height: 200%;
-        background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
-        animation: slowRotate 30s linear infinite;
+    .page-hero::before {
+        content: ''; position: absolute; inset: 0;
+        background: radial-gradient(circle at 50% 30%, rgba(198,164,59,0.15), transparent 70%);
     }
-    .gallery-hero::after {
-        content: '';
-        position: absolute; inset: 0;
-        background: linear-gradient(135deg, rgba(198,164,59,0.1) 0%, transparent 50%, rgba(198,164,59,0.05) 100%);
-        pointer-events: none;
+    .page-hero-inner {
+        position: relative; z-index: 2; padding: 0 24px;
+        animation: heroFade 0.8s ease both;
     }
-    @keyframes slowRotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-    .gallery-hero-content { position: relative; z-index: 2; }
-    .gallery-hero h1 {
-        font-size: 3rem; font-weight: 800;
-        font-family: 'Playfair Display', serif;
-        color: white; margin-bottom: 15px;
-        letter-spacing: 3px;
-        animation: slideDown 0.8s ease;
+    @keyframes heroFade {
+        from { opacity: 0; transform: translateY(30px); }
+        to   { opacity: 1; transform: translateY(0); }
     }
-    .gallery-hero p {
-        font-size: 0.9rem; letter-spacing: 3.5px;
-        text-transform: uppercase; color: rgba(255,255,255,0.85);
-        font-weight: 600; animation: slideUp 0.8s ease 0.2s both;
+    .page-hero-eyebrow {
+        font-size: 0.65rem; letter-spacing: 0.35em;
+        text-transform: uppercase; color: #c6a43b;
+        font-weight: 600; margin-bottom: 12px;
     }
-    @keyframes slideDown { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
-    @keyframes slideUp   { from { opacity:0; transform:translateY(20px);  } to { opacity:1; transform:translateY(0); } }
+    .page-hero h1 {
+        font-size: clamp(2.2rem, 5vw, 3.4rem);
+        font-weight: 800; letter-spacing: 2px;
+        margin-bottom: 10px;
+        text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+    }
+    .page-hero-sub {
+        font-size: 0.85rem; letter-spacing: 2.5px;
+        text-transform: uppercase; opacity: 0.8; font-weight: 500;
+    }
 
-    /* ===== SECTION ===== */
-    .gallery-section {
+    /* === MAIN SECTION === */
+    .page-content {
         padding: 60px 0 100px;
-        background: linear-gradient(135deg, #f0f7ff 0%, #e8f0fa 50%, #dde5f0 100%);
-        min-height: 100vh;
+        background: linear-gradient(160deg, #f0f7ff 0%, #e8f0fa 55%, #dde5f0 100%);
+        min-height: 60vh;
     }
-    .container { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+    .page-container { max-width: 1360px; margin: 0 auto; padding: 0 24px; }
 
-    /* ===== SECTION LABEL ===== */
-    .section-label {
-        display: flex; align-items: center; gap: 14px;
-        margin-bottom: 22px;
+    .sec-header { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+    .sec-header h2 {
+        font-size: 1.35rem; font-weight: 800; color: #003366;
+        white-space: nowrap; margin: 0;
     }
-    .section-label h2 {
-        font-size: 1.4rem; font-weight: 800; color: #003366;
-        font-family: 'Playfair Display', serif; white-space: nowrap;
-    }
-    .label-line { flex: 1; height: 2px; background: linear-gradient(90deg, #c6a43b, transparent); border-radius: 2px; }
-    .label-badge {
+    .sec-line { display: none; }
+    .sec-badge {
         background: linear-gradient(135deg, #003366, #1a4a7a);
-        color: #c6a43b; font-size: 0.62rem; font-weight: 800;
+        color: #c6a43b; font-size: 0.6rem; font-weight: 800;
         letter-spacing: 1.5px; text-transform: uppercase;
         padding: 4px 14px; border-radius: 20px; white-space: nowrap;
     }
-
-    /* ===== CAROUSEL ===== */
-    .carousel-section { margin-bottom: 56px; }
-
-    .carousel-wrapper {
-        position: relative; border-radius: 28px; overflow: hidden;
-        box-shadow: 0 30px 80px rgba(0,51,102,0.2), 0 0 0 1px rgba(198,164,59,0.15);
-        background: #0a0a1a; height: 520px;
-        cursor: grab; user-select: none;
+    .sec-desc {
+        font-size: 0.84rem; color: #64748b; margin-bottom: 28px;
+        line-height: 1.7; max-width: 580px;
     }
-    .carousel-wrapper:active { cursor: grabbing; }
 
+    /* ==============================
+       CAROUSEL — FULLWIDTH HORIZONTAL
+       Setiap slide = 1 foto penuh lebar
+    ============================== */
+    .carousel-block { margin-bottom: 64px; }
+
+    .carousel-wrap {
+        position: relative; width: 100%;
+        border-radius: 20px; overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0,51,102,0.18);
+        background: #0a1628;
+    }
+    .carousel-viewport {
+        width: 100%; height: 460px;
+        overflow: hidden; position: relative;
+    }
     .carousel-track {
         display: flex; height: 100%;
-        transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
         will-change: transform;
     }
-
     .carousel-slide {
-        min-width: 100%; height: 100%;
-        position: relative; overflow: hidden;
-        flex-shrink: 0;
+        flex: 0 0 100%; width: 100%; height: 100%;
+        position: relative; cursor: pointer; overflow: hidden;
     }
     .carousel-slide img {
-        width: 100%; height: 100%; object-fit: cover;
-        transition: transform 8s ease;
-        pointer-events: none; display: block;
+        width: 100%; height: 100%; object-fit: cover; display: block;
+        filter: brightness(0.75);
+        transition: transform 0.6s ease, filter 0.4s ease;
     }
-    .carousel-slide.is-active img { transform: scale(1.06); }
-
-    .carousel-overlay {
+    .carousel-slide:hover img {
+        transform: scale(1.04); filter: brightness(0.88);
+    }
+    .slide-overlay {
         position: absolute; inset: 0;
-        background: linear-gradient(to top, rgba(0,18,55,0.93) 0%, rgba(0,18,55,0.25) 55%, transparent 100%);
-        display: flex; flex-direction: column;
-        justify-content: flex-end; padding: 44px 52px;
+        background: linear-gradient(to top, rgba(0,10,40,0.88) 0%, rgba(0,10,40,0.3) 45%, transparent 70%);
+        pointer-events: none;
     }
-    .carousel-cat {
-        display: inline-block;
+    .slide-badge {
+        position: absolute; top: 18px; left: 18px; z-index: 3;
         background: linear-gradient(135deg, #c6a43b, #d4a947);
-        color: #003366; padding: 5px 16px; border-radius: 20px;
-        font-size: 0.64rem; font-weight: 800;
+        color: #003366; font-size: 0.58rem; font-weight: 800;
         text-transform: uppercase; letter-spacing: 1.5px;
-        margin-bottom: 14px; width: fit-content;
+        padding: 4px 13px; border-radius: 20px;
     }
-    .carousel-title {
-        color: white; font-size: 2.1rem; font-weight: 800;
-        font-family: 'Playfair Display', serif; line-height: 1.2;
-        margin-bottom: 10px;
-        text-shadow: 0 2px 20px rgba(0,0,0,0.5);
-        animation: none;
+    .slide-num {
+        position: absolute; top: 18px; right: 18px; z-index: 3;
+        background: rgba(0,0,0,0.5); backdrop-filter: blur(6px);
+        color: rgba(198,164,59,0.85); font-size: 0.6rem; font-weight: 700;
+        font-family: monospace; padding: 3px 10px; border-radius: 8px;
+        border: 1px solid rgba(198,164,59,0.2);
     }
-    .carousel-desc {
-        color: rgba(255,255,255,0.72); font-size: 0.85rem;
-        line-height: 1.7; max-width: 580px;
-        display: -webkit-box; -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical; overflow: hidden;
+    .slide-zoom {
+        position: absolute; top: 50%; left: 50%; z-index: 3;
+        transform: translate(-50%,-50%) scale(0);
+        width: 60px; height: 60px;
+        background: rgba(198,164,59,0.9); border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        color: #003366; font-size: 1.3rem;
+        transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+        pointer-events: none;
     }
-    .carousel-loc {
-        display: flex; align-items: center; gap: 7px;
-        color: #c6a43b; font-size: 0.8rem; font-weight: 600;
-        margin-top: 12px;
+    .carousel-slide:hover .slide-zoom { transform: translate(-50%,-50%) scale(1); }
+    .slide-info {
+        position: absolute; bottom: 0; left: 0; right: 0; z-index: 3;
+        padding: 24px 28px 22px;
+    }
+    .slide-title {
+        font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+        font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 6px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    .slide-loc {
+        display: flex; align-items: center; gap: 5px;
+        color: rgba(198,164,59,0.9); font-size: 0.78rem; font-weight: 600;
     }
 
-    /* Prev / Next */
-    .c-btn {
-        position: absolute; top: 50%; transform: translateY(-50%);
-        width: 54px; height: 54px; border-radius: 50%;
-        background: rgba(255,255,255,0.13); backdrop-filter: blur(12px);
-        border: 1px solid rgba(255,255,255,0.22);
-        color: white; display: flex; align-items: center; justify-content: center;
-        cursor: pointer; z-index: 10; font-size: 1.1rem;
-        transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Arrows */
+    .c-arrow {
+        position: absolute; top: 50%; transform: translateY(-50%); z-index: 10;
+        width: 48px; height: 48px; border-radius: 50%;
+        background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);
+        border: 1.5px solid rgba(255,255,255,0.25);
+        display: flex; align-items: center; justify-content: center;
+        color: #fff; font-size: 1.1rem; cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
     }
-    .c-btn:hover {
+    .c-arrow:hover {
         background: linear-gradient(135deg, #c6a43b, #d4a947);
-        color: #003366; transform: translateY(-50%) scale(1.12);
-        border-color: transparent; box-shadow: 0 8px 28px rgba(198,164,59,0.4);
+        color: #003366; border-color: transparent;
+        transform: translateY(-50%) scale(1.1);
     }
-    .c-btn.prev { left: 22px; }
-    .c-btn.next { right: 22px; }
+    .c-arrow-l { left: 16px; }
+    .c-arrow-r { right: 16px; }
 
     /* Counter */
-    .c-counter {
-        position: absolute; top: 24px; right: 24px;
+    .slide-counter {
+        position: absolute; bottom: 22px; right: 28px; z-index: 5;
         background: rgba(0,0,0,0.5); backdrop-filter: blur(8px);
-        color: white; font-size: 0.72rem; font-weight: 700;
-        padding: 6px 15px; border-radius: 20px;
-        border: 1px solid rgba(255,255,255,0.12); z-index: 10;
-        letter-spacing: 1px;
+        color: #fff; font-size: 0.7rem; font-weight: 700;
+        padding: 4px 12px; border-radius: 16px;
+        border: 1px solid rgba(255,255,255,0.1);
     }
-    .c-counter .cur { color: #c6a43b; }
+    .slide-counter b { color: #c6a43b; }
 
     /* Dots */
     .c-dots {
-        position: absolute; bottom: 22px; left: 50%;
-        transform: translateX(-50%);
-        display: flex; gap: 7px; z-index: 10;
+        display: flex; align-items: center; justify-content: center;
+        gap: 7px; margin-top: 14px;
     }
     .c-dot {
-        width: 7px; height: 7px; border-radius: 4px;
-        background: rgba(255,255,255,0.35); cursor: pointer;
-        transition: all 0.4s ease;
+        width: 8px; height: 8px; border-radius: 4px;
+        background: rgba(0,51,102,0.2); cursor: pointer;
+        transition: all 0.3s ease;
     }
-    .c-dot.active { width: 28px; background: #c6a43b; }
+    .c-dot.on { width: 26px; background: #c6a43b; }
 
-    /* Progress bar */
-    .c-progress {
-        position: absolute; bottom: 0; left: 0; height: 3px;
-        background: linear-gradient(90deg, #c6a43b, #d4a947);
-        width: 0%; z-index: 10; border-radius: 0 3px 3px 0;
-        transition: none;
-    }
-    .c-progress.running {
-        animation: progressBar 5s linear forwards;
-    }
-    @keyframes progressBar { from { width: 0%; } to { width: 100%; } }
-
-    /* ===== 4-COLUMN GRID ===== */
-    .grid-section { margin-top: 8px; }
-
+    /* ==============================
+       PHOTO GRID — 4 KOLOM
+    ============================== */
     .photo-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 16px;
     }
-
     .photo-card {
-        position: relative; border-radius: 18px; overflow: hidden;
-        background: #111827; cursor: pointer;
-        aspect-ratio: 3/4;
-        transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
-        box-shadow: 0 8px 24px rgba(0,51,102,0.12);
-        border: 1px solid rgba(198,164,59,0.08);
+        position: relative; border-radius: 14px;
+        overflow: hidden; background: #111827;
+        cursor: pointer; aspect-ratio: 4/3;
+        transition: all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+        box-shadow: 0 4px 16px rgba(0,51,102,0.08);
     }
     .photo-card:hover {
-        transform: translateY(-10px) scale(1.02);
-        box-shadow: 0 24px 56px rgba(0,51,102,0.22), 0 0 0 1.5px rgba(198,164,59,0.35);
-        z-index: 5;
+        transform: translateY(-6px) scale(1.01);
+        box-shadow: 0 16px 40px rgba(0,51,102,0.18);
+        z-index: 3;
     }
     .photo-card img {
-        width: 100%; height: 100%; object-fit: cover;
-        transition: transform 0.65s ease;
-        filter: brightness(0.88);
-        display: block;
+        width: 100%; height: 100%; object-fit: cover; display: block;
+        transition: transform 0.5s ease;
     }
-    .photo-card:hover img { transform: scale(1.1); filter: brightness(1.05); }
-
-    /* Category badge */
-    .p-cat {
-        position: absolute; top: 12px; left: 12px;
-        background: linear-gradient(135deg, #c6a43b, #d4a947);
-        color: #003366; font-size: 0.55rem; font-weight: 800;
+    .photo-card:hover img { transform: scale(1.08); }
+    .pc-badge {
+        position: absolute; top: 8px; left: 8px;
+        background: linear-gradient(135deg,#c6a43b,#d4a947);
+        color: #003366; font-size: 0.48rem; font-weight: 800;
         text-transform: uppercase; letter-spacing: 1px;
-        padding: 3px 10px; border-radius: 12px;
+        padding: 2px 8px; border-radius: 8px; z-index: 2;
     }
-    /* Number badge */
-    .p-num {
-        position: absolute; top: 12px; right: 12px;
-        background: rgba(0,0,0,0.5); backdrop-filter: blur(6px);
-        color: rgba(198,164,59,0.8); font-size: 0.58rem; font-weight: 700;
-        font-family: 'Courier New', monospace;
-        padding: 3px 9px; border-radius: 10px; letter-spacing: 1px;
-    }
-    /* Zoom icon on hover */
-    .p-zoom {
+    .pc-zoom {
         position: absolute; top: 50%; left: 50%;
-        transform: translate(-50%, -50%) scale(0);
-        width: 46px; height: 46px;
-        background: rgba(198,164,59,0.92);
-        border-radius: 50%; display: flex;
-        align-items: center; justify-content: center;
-        color: #003366; font-size: 1.05rem;
-        transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        transform: translate(-50%,-50%) scale(0);
+        width: 40px; height: 40px;
+        background: rgba(198,164,59,0.9); border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        color: #003366; font-size: 0.9rem; z-index: 2;
+        transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
         pointer-events: none;
     }
-    .photo-card:hover .p-zoom { transform: translate(-50%, -50%) scale(1); }
-
-    /* Bottom info bar — selalu terlihat */
-    .p-info {
-        position: absolute; bottom: 0; left: 0; right: 0;
-        padding: 14px 14px 12px;
-        background: linear-gradient(to top, rgba(0,15,45,0.92) 0%, rgba(0,15,45,0.6) 65%, transparent 100%);
+    .photo-card:hover .pc-zoom { transform: translate(-50%,-50%) scale(1); }
+    .pc-info {
+        position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
+        padding: 10px 10px 8px;
+        background: linear-gradient(to top, rgba(0,10,40,0.9) 0%, transparent 100%);
     }
-    .p-title {
-        color: white; font-size: 0.78rem; font-weight: 700;
-        line-height: 1.35; white-space: nowrap;
-        overflow: hidden; text-overflow: ellipsis;
-    }
-    .p-loc {
-        color: rgba(198,164,59,0.85); font-size: 0.63rem; font-weight: 500;
-        margin-top: 4px; display: flex; align-items: center; gap: 4px;
+    .pc-title {
+        color: #fff; font-size: 0.72rem; font-weight: 700;
         white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     }
+    .pc-loc {
+        color: rgba(198,164,59,0.85); font-size: 0.58rem; font-weight: 500;
+        margin-top: 2px; display: flex; align-items: center; gap: 3px;
+    }
 
-    /* Empty state */
-    .empty-gallery {
-        grid-column: 1/-1; text-align: center; padding: 80px;
-        background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    /* Empty */
+    .empty-box {
+        grid-column: 1/-1; text-align: center;
+        padding: 80px 40px; background: #fff;
         border-radius: 20px; border: 2px dashed rgba(198,164,59,0.2);
     }
-    .empty-gallery i { font-size: 4rem; color: rgba(198,164,59,0.2); margin-bottom: 20px; display: block; }
+    .empty-box i { font-size: 3.5rem; color: rgba(198,164,59,0.2); display: block; margin-bottom: 14px; }
+    .empty-box p { color: #64748b; font-weight: 600; }
+    .empty-box small { color: #94a3b8; }
 
-    /* ===== MODAL ===== */
-    .modal-overlay {
+    /* ==============================
+       MODAL — Gambar kiri, info kanan
+    ============================== */
+    .photo-modal {
         position: fixed; inset: 0;
-        background: rgba(0,0,0,0.97); z-index: 9999;
-        display: none; align-items: center; justify-content: center;
-        backdrop-filter: blur(15px);
+        background: rgba(0,0,0,0.94);
+        z-index: 9999; display: none;
+        align-items: center; justify-content: center;
+        backdrop-filter: blur(15px); padding: 20px;
     }
-    .modal-box {
-        background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
-        width: 90%; max-width: 1000px;
-        display: grid; grid-template-columns: 1.2fr 1fr;
-        border-radius: 24px; overflow: hidden;
-        animation: modalIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        box-shadow: 0 50px 100px rgba(0,0,0,0.5), 0 0 60px rgba(198,164,59,0.2);
-        border: 1px solid rgba(198,164,59,0.3);
+    .photo-modal.show { display: flex; }
+    .pm-box {
+        background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+        width: 100%; max-width: 960px; max-height: 90vh;
+        display: grid; grid-template-columns: 1.1fr 1fr;
+        border-radius: 20px; overflow: hidden;
+        animation: modalPop 0.4s cubic-bezier(0.34,1.56,0.64,1);
+        box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+        border: 1px solid rgba(198,164,59,0.25);
     }
-    @keyframes modalIn { from { opacity:0; transform:scale(0.93) rotateX(-8deg); } to { opacity:1; transform:scale(1) rotateX(0); } }
-    .modal-img-part {
-        background: #0a0a0a;
+    @keyframes modalPop {
+        from { opacity: 0; transform: scale(0.92); }
+        to   { opacity: 1; transform: scale(1); }
+    }
+    .pm-img {
+        background: #050505;
         display: flex; align-items: center; justify-content: center;
-        padding: 30px; position: relative;
+        padding: 20px; min-height: 280px;
     }
-    .modal-img-part::before {
-        content: ''; position: absolute; inset: 0;
-        background: radial-gradient(circle at 50% 50%, rgba(198,164,59,0.1), transparent 70%);
-        pointer-events: none;
+    .pm-img img {
+        max-width: 100%; max-height: 70vh; object-fit: contain;
+        border-radius: 10px; box-shadow: 0 8px 28px rgba(0,0,0,0.4);
     }
-    .modal-img-part img {
-        width: 100%; max-height: 70vh; object-fit: contain;
-        position: relative; z-index: 1;
-        filter: drop-shadow(0 0 20px rgba(198,164,59,0.2));
+    .pm-text {
+        padding: 36px 32px; color: #fff;
+        display: flex; flex-direction: column; justify-content: center;
+        position: relative; overflow-y: auto;
+    }
+    .pm-text::before {
+        content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+        width: 3px; background: linear-gradient(180deg, #c6a43b, transparent);
+    }
+    .pm-close {
+        position: absolute; top: 16px; right: 16px;
+        width: 42px; height: 42px; border-radius: 50%;
+        background: rgba(0,0,0,0.6); border: 1px solid rgba(198,164,59,0.3);
+        display: flex; align-items: center; justify-content: center;
+        color: #fff; font-size: 1.1rem; cursor: pointer; z-index: 10;
+        transition: all 0.3s ease;
+    }
+    .pm-close:hover {
+        background: linear-gradient(135deg, #c6a43b, #d4a947);
+        color: #003366; transform: rotate(90deg) scale(1.1);
+    }
+    .pm-tag {
+        display: inline-block; background: linear-gradient(135deg, #c6a43b, #d4a947);
+        color: #003366; font-size: 0.58rem; font-weight: 800;
+        text-transform: uppercase; letter-spacing: 1.5px;
+        padding: 4px 12px; border-radius: 16px; margin-bottom: 16px;
+        align-self: flex-start;
+    }
+    .pm-text h2 {
+        font-size: 1.4rem; font-weight: 700; color: #fff;
+        line-height: 1.35; margin: 0 0 12px;
+    }
+    .pm-desc {
+        color: #b0b8c8; line-height: 1.8; font-size: 0.85rem; margin-bottom: 20px;
+    }
+    .pm-meta {
+        display: flex; flex-direction: column; gap: 8px;
+        padding-top: 16px; border-top: 1px solid rgba(198,164,59,0.15);
+    }
+    .pm-meta-row {
+        display: flex; align-items: center; gap: 8px; font-size: 0.78rem;
+    }
+    .pm-meta-row i { color: #c6a43b; min-width: 16px; }
+    .pm-meta-row .label { color: #94a3b8; }
+    .pm-meta-row .val { color: #e2e8f0; font-weight: 600; }
+
+    /* ==============================
+       MUSIK LATAR
+    ============================== */
+    .music-float {
+        position: fixed; bottom: 24px; right: 20px; z-index: 1100;
+        display: flex; align-items: center; gap: 10px;
+        background: rgba(10,10,20,0.82); backdrop-filter: blur(18px);
+        border: 1px solid rgba(198,164,59,0.3);
+        border-radius: 50px; padding: 6px 14px 6px 6px;
+        box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+        cursor: pointer; transition: transform 0.3s ease;
+    }
+    .music-float:hover { transform: translateY(-2px); }
+    .mf-disc {
+        width: 40px; height: 40px; border-radius: 50%; object-fit: cover;
+        border: 2px solid rgba(198,164,59,0.5);
+        animation: spin 4s linear infinite; animation-play-state: paused;
+    }
+    .mf-disc.playing { animation-play-state: running; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .mf-info { flex: 1; overflow: hidden; }
+    .mf-title { font-size: 0.7rem; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .mf-artist { font-size: 0.6rem; color: rgba(198,164,59,0.9); font-weight: 500; margin-top: 1px; }
+    .mf-btn {
+        width: 28px; height: 28px; border-radius: 50%;
+        background: linear-gradient(135deg, #c6a43b, #d4a947);
+        display: flex; align-items: center; justify-content: center;
+        color: #003366; font-size: 0.7rem; flex-shrink: 0;
         transition: transform 0.3s ease;
     }
-    .modal-img-part img:hover { transform: scale(1.02); }
-    .modal-text-part {
-        padding: 40px; color: white;
-        background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
-        display: flex; flex-direction: column; justify-content: center;
-        position: relative;
-    }
-    .modal-text-part::before {
-        content: ''; position: absolute;
-        left: 0; top: 0; bottom: 0; width: 3px;
-        background: linear-gradient(180deg, #c6a43b, transparent);
-    }
-    .close-btn {
-        position: absolute; top: 25px; right: 25px;
-        color: white; font-size: 1.5rem; cursor: pointer;
-        z-index: 10000; width: 48px; height: 48px;
-        background: rgba(0,0,0,0.6); border-radius: 50%;
-        display: flex; align-items: center; justify-content: center;
-        backdrop-filter: blur(8px); border: 1px solid rgba(198,164,59,0.3);
-        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-    .close-btn:hover {
-        background: linear-gradient(135deg, #c6a43b, #d4a947);
-        color: #003366; transform: rotate(90deg) scale(1.15);
-    }
-    .modal-text-part small { color: #c6a43b; letter-spacing: 2.5px; font-size: 0.75rem; text-transform: uppercase; font-weight: 800; }
-    .modal-text-part h2 { font-size: 1.6rem; margin: 15px 0; font-family: 'Playfair Display', serif; font-weight: 700; }
-    .modal-text-part p  { color: #ccc; line-height: 1.8; font-size: 0.9rem; }
+    .mf-btn:hover { transform: scale(1.15); }
 
-    /* ===== MUSIC CARD ===== */
-    .music-card {
-        position: fixed; bottom: 28px; right: 24px; z-index: 1100;
-        display: flex; align-items: center; gap: 12px;
-        background: rgba(10,10,20,0.82);
-        backdrop-filter: blur(20px) saturate(180%);
-        -webkit-backdrop-filter: blur(20px) saturate(180%);
-        border: 1px solid rgba(198,164,59,0.35);
-        border-radius: 50px; padding: 8px 16px 8px 8px;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.05);
-        cursor: pointer; transition: all 0.4s cubic-bezier(0.34,1.56,0.64,1);
-        min-width: 205px; max-width: 265px;
+    /* ==============================
+       RESPONSIVE
+    ============================== */
+    @media (max-width: 1024px) {
+        .photo-grid { grid-template-columns: repeat(3, 1fr); }
     }
-    .music-card:hover {
-        background: rgba(20,15,35,0.9);
-        border-color: rgba(198,164,59,0.6);
-        transform: translateY(-3px);
-        box-shadow: 0 14px 42px rgba(0,0,0,0.55), 0 0 22px rgba(198,164,59,0.18);
-    }
-    .music-disc { position: relative; width: 44px; height: 44px; flex-shrink: 0; }
-    .music-disc-img {
-        width: 44px; height: 44px; border-radius: 50%;
-        object-fit: cover; border: 2px solid rgba(198,164,59,0.55);
-        animation: spinDisc 4s linear infinite;
-        animation-play-state: paused; filter: brightness(0.8);
-    }
-    .music-disc-img.playing { animation-play-state: running; filter: brightness(1); }
-    @keyframes spinDisc { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-    .music-disc::after {
-        content: ''; position: absolute; top: 50%; left: 50%;
-        transform: translate(-50%, -50%);
-        width: 11px; height: 11px; background: #10102a;
-        border-radius: 50%; border: 1.5px solid rgba(198,164,59,0.65);
-        z-index: 2; pointer-events: none;
-    }
-    .music-info { flex: 1; overflow: hidden; min-width: 0; }
-    .music-title {
-        font-size: 0.72rem; font-weight: 700; color: #fff;
-        white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-        letter-spacing: 0.3px; line-height: 1.3;
-    }
-    .music-artist {
-        font-size: 0.62rem; color: rgba(198,164,59,0.9);
-        font-weight: 500; margin-top: 2px;
-        white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    }
-    .music-eq {
-        display: flex; align-items: flex-end; gap: 2px;
-        height: 16px; flex-shrink: 0; opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-    .music-eq.active { opacity: 1; }
-    .music-eq span {
-        display: block; width: 3px;
-        background: linear-gradient(to top, #c6a43b, #f0d060);
-        border-radius: 2px;
-        animation: eqBar 0.8s ease-in-out infinite alternate;
-    }
-    .music-eq span:nth-child(1) { height: 6px;  animation-delay: 0s; }
-    .music-eq span:nth-child(2) { height: 12px; animation-delay: 0.15s; }
-    .music-eq span:nth-child(3) { height: 8px;  animation-delay: 0.3s; }
-    .music-eq span:nth-child(4) { height: 14px; animation-delay: 0.1s; }
-    @keyframes eqBar { from { transform: scaleY(0.3); } to { transform: scaleY(1); } }
-    .music-btn {
-        width: 30px; height: 30px; border-radius: 50%;
-        background: linear-gradient(135deg, #c6a43b, #d4a947);
-        display: flex; align-items: center; justify-content: center;
-        flex-shrink: 0; font-size: 0.72rem; color: #003366;
-        transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
-        box-shadow: 0 3px 10px rgba(198,164,59,0.4);
-    }
-    .music-btn:hover { transform: scale(1.2); }
-    .music-badge {
-        position: absolute; top: -7px; left: 14px;
-        background: linear-gradient(135deg, #003366, #1a4a7a);
-        color: rgba(198,164,59,0.9); font-size: 0.47rem; font-weight: 800;
-        letter-spacing: 0.8px; text-transform: uppercase;
-        padding: 2px 8px; border-radius: 20px;
-        border: 1px solid rgba(198,164,59,0.3); white-space: nowrap;
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 1100px) { .photo-grid { grid-template-columns: repeat(4, 1fr); gap: 12px; } }
-    @media (max-width: 860px)  {
-        .photo-grid { grid-template-columns: repeat(2, 1fr); }
-        .carousel-wrapper { height: 380px; }
-        .carousel-title { font-size: 1.5rem; }
-        .carousel-overlay { padding: 30px; }
-    }
-    @media (max-width: 560px)  {
+    @media (max-width: 768px) {
         .photo-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-        .carousel-wrapper { height: 265px; }
-        .carousel-title { font-size: 1.1rem; }
-        .c-btn { width: 36px; height: 36px; font-size: 0.8rem; }
-        .carousel-overlay { padding: 20px; }
-        .gallery-hero h1 { font-size: 2rem; }
-        .modal-box { grid-template-columns: 1fr; max-height: 88vh; overflow-y: auto; }
-        .music-card { bottom: 14px; right: 10px; min-width: 170px; max-width: 210px; }
-        .music-disc, .music-disc-img { width: 36px; height: 36px; }
+        .carousel-viewport { height: 320px; }
+        .pm-box { grid-template-columns: 1fr; max-height: 90vh; overflow-y: auto; }
+        .pm-img img { max-height: 45vh; }
+    }
+    @media (max-width: 480px) {
+        .carousel-viewport { height: 240px; }
+        .c-arrow { width: 38px; height: 38px; font-size: 0.9rem; }
+        .page-hero h1 { font-size: 2rem; }
     }
 </style>
+@endpush
+
+@section('content')
 
 <!-- HERO -->
-<div class="gallery-hero">
-    <div class="gallery-hero-content">
-        <h1>GALERI</h1>
-        <p>Koleksi Foto Terbaik</p>
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <div class="page-hero-eyebrow">Geopark Kaldera Toba</div>
+        <h1>Galeri Foto</h1>
+        <div class="page-hero-sub">Pesona Alam &amp; Budaya Danau Toba</div>
     </div>
-</div>
+</section>
 
-<section class="gallery-section">
-    <div class="container">
+<!-- CONTENT -->
+<section class="page-content">
+    <div class="page-container">
 
-        @php
-            $allPhotos = [];
-            foreach ($galeriByKategori as $kategori => $items) {
-                foreach ($items as $item) {
-                    $gambar = $item->gambar;
-                    if (str_starts_with($gambar ?? '', 'data:')) {
-                        $src = $gambar;
-                    } elseif (!empty($gambar)) {
-                        $src = asset('storage/' . $gambar);
-                    } else {
-                        $src = 'https://via.placeholder.com/400x600?text=No+Image';
-                    }
-                    $allPhotos[] = [
-                        'src'       => $src,
-                        'judul'     => $item->judul,
-                        'deskripsi' => $item->deskripsi ?? '',
-                        'lokasi'    => $item->lokasi ?? 'Danau Toba',
-                        'kategori'  => strtoupper($kategori),
-                    ];
-                }
-            }
-        @endphp
-
-        {{-- ========== CAROUSEL SWIPE ========== --}}
-        @if(count($allPhotos) > 0)
-        <div class="carousel-section">
-            <div class="section-label">
-                <h2>Featured</h2>
-                <div class="label-line"></div>
-                <span class="label-badge">&#8592; Geser &#8594;</span>
+        <!-- CAROUSEL -->
+        <div class="carousel-block">
+            <div class="sec-header">
+                <h2>Foto Unggulan</h2>
+                <span class="sec-badge">Geser untuk Jelajahi</span>
             </div>
+            <p class="sec-desc">Klik foto untuk detail, atau geser kiri-kanan untuk melihat foto berikutnya.</p>
 
-            <div class="carousel-wrapper" id="carouselWrapper">
-                <div class="carousel-track" id="carouselTrack">
-                    @foreach($allPhotos as $i => $photo)
-                    <div class="carousel-slide {{ $i === 0 ? 'is-active' : '' }}">
-                        <img src="{{ $photo['src'] }}"
-                             alt="{{ $photo['judul'] }}"
-                             loading="{{ $i < 2 ? 'eager' : 'lazy' }}"
-                             onerror="this.src='https://via.placeholder.com/1200x520?text=No+Image'">
-                        <div class="carousel-overlay">
-                            <span class="carousel-cat">{{ $photo['kategori'] }}</span>
-                            <div class="carousel-title">{{ $photo['judul'] }}</div>
-                            @if($photo['deskripsi'])
-                            <div class="carousel-desc">{{ $photo['deskripsi'] }}</div>
-                            @endif
-                            <div class="carousel-loc">
-                                <i class="fas fa-map-marker-alt"></i>
-                                {{ $photo['lokasi'] }}
+            @if(count($allPhotos) > 0)
+            <div class="carousel-wrap">
+                <div class="carousel-viewport">
+                    <div class="carousel-track" id="cTrack">
+                        @foreach($allPhotos as $i => $p)
+                        <div class="carousel-slide" data-idx="{{ $i }}">
+                            <img src="{{ $p['src'] }}" alt="{{ $p['judul'] }}"
+                                 loading="{{ $i < 2 ? 'eager' : 'lazy' }}"
+                                 onerror="this.src='https://placehold.co/1200x460/003366/c6a43b?text=GeoToba'">
+                            <div class="slide-overlay"></div>
+                            <span class="slide-badge">{{ $p['kategori'] }}</span>
+                            <span class="slide-num">#{{ str_pad($i+1,3,'0',STR_PAD_LEFT) }}</span>
+                            <div class="slide-zoom"><i class="fas fa-search-plus"></i></div>
+                            <div class="slide-info">
+                                <div class="slide-title">{{ $p['judul'] }}</div>
+                                <div class="slide-loc"><i class="fas fa-map-marker-alt"></i> {{ Str::limit($p['lokasi'], 50) }}</div>
                             </div>
                         </div>
+                        @endforeach
                     </div>
-                    @endforeach
+                    <div class="c-arrow c-arrow-l" id="cPrev"><i class="fas fa-chevron-left"></i></div>
+                    <div class="c-arrow c-arrow-r" id="cNext"><i class="fas fa-chevron-right"></i></div>
+                    <div class="slide-counter"><b id="cNum">1</b> / {{ count($allPhotos) }}</div>
                 </div>
-
-                <div class="c-btn prev" id="prevBtn"><i class="bi bi-chevron-left"></i></div>
-                <div class="c-btn next" id="nextBtn"><i class="bi bi-chevron-right"></i></div>
-
-                <div class="c-counter">
-                    <span class="cur" id="curNum">1</span> / {{ count($allPhotos) }}
-                </div>
-
-                <div class="c-dots" id="cDots">
-                    @foreach($allPhotos as $i => $photo)
-                    <div class="c-dot {{ $i === 0 ? 'active' : '' }}" data-idx="{{ $i }}"></div>
-                    @endforeach
-                </div>
-
-                <div class="c-progress" id="cProgress"></div>
             </div>
+            <div class="c-dots" id="cDots">
+                @foreach($allPhotos as $i => $p)
+                <div class="c-dot {{ $i === 0 ? 'on' : '' }}" data-i="{{ $i }}"></div>
+                @endforeach
+            </div>
+            @else
+            <div class="empty-box">
+                <i class="fas fa-images"></i>
+                <p>Belum ada foto galeri.</p>
+                <small>Unggah foto melalui panel admin.</small>
+            </div>
+            @endif
         </div>
-        @endif
 
-        {{-- ========== 4-COLUMN PHOTO GRID ========== --}}
-        <div class="grid-section">
-            <div class="section-label">
+        <!-- GRID 4 KOLOM -->
+        <div>
+            <div class="sec-header">
                 <h2>Semua Foto</h2>
-                <div class="label-line"></div>
-                <span class="label-badge">{{ count($allPhotos) }} Foto</span>
+                <span class="sec-badge">{{ count($allPhotos) }} Foto</span>
             </div>
+            <p class="sec-desc">Klik foto untuk melihat detail dan informasi lokasi.</p>
 
             <div class="photo-grid">
-                @forelse($allPhotos as $i => $photo)
-                <div class="photo-card"
-                     onclick="openPhoto('{{ $photo['src'] }}', '{{ addslashes($photo['judul']) }}', '{{ addslashes($photo['deskripsi']) }}', '{{ $photo['kategori'] }}')">
-                    <img src="{{ $photo['src'] }}"
-                         alt="{{ $photo['judul'] }}"
-                         loading="lazy"
-                         onerror="this.src='https://via.placeholder.com/300x400?text=No+Image'">
-                    <span class="p-cat">{{ $photo['kategori'] }}</span>
-                    <span class="p-num">#{{ str_pad($i+1, 3, '0', STR_PAD_LEFT) }}</span>
-                    <div class="p-zoom"><i class="bi bi-zoom-in"></i></div>
-                    <div class="p-info">
-                        <div class="p-title">{{ Str::limit($photo['judul'], 28) }}</div>
-                        <div class="p-loc">
-                            <i class="fas fa-map-marker-alt" style="font-size:0.56rem;"></i>
-                            {{ Str::limit($photo['lokasi'], 22) }}
-                        </div>
+                @forelse($allPhotos as $i => $p)
+                <div class="photo-card" data-idx="{{ $i }}">
+                    <img src="{{ $p['src'] }}" alt="{{ $p['judul'] }}" loading="lazy"
+                         onerror="this.src='https://placehold.co/400x300/003366/c6a43b?text=GeoToba'">
+                    <span class="pc-badge">{{ $p['kategori'] }}</span>
+                    <div class="pc-zoom"><i class="fas fa-search-plus"></i></div>
+                    <div class="pc-info">
+                        <div class="pc-title">{{ Str::limit($p['judul'], 30) }}</div>
+                        <div class="pc-loc"><i class="fas fa-map-marker-alt"></i> {{ Str::limit($p['lokasi'], 24) }}</div>
                     </div>
                 </div>
                 @empty
-                <div class="empty-gallery">
-                    <i class="fas fa-images"></i>
-                    <p style="color:#64748b;font-weight:600;">Belum ada foto galeri</p>
+                <div class="empty-box">
+                    <i class="fas fa-camera"></i>
+                    <p>Belum ada foto.</p>
+                    <small>Unggah foto melalui panel admin.</small>
                 </div>
                 @endforelse
             </div>
@@ -565,178 +482,141 @@
 </section>
 
 <!-- MODAL -->
-<div id="pModal" class="modal-overlay" onclick="closePhoto()">
-    <div class="close-btn" onclick="closePhoto()">&times;</div>
-    <div class="modal-box" onclick="event.stopPropagation()">
-        <div class="modal-img-part"><img src="" id="mImg" alt=""></div>
-        <div class="modal-text-part">
-            <small id="mTag"></small>
-            <h2 id="mTitle"></h2>
-            <p id="mDesc"></p>
+<div class="photo-modal" id="pModal">
+    <div class="pm-close" id="pmClose"><i class="fas fa-times"></i></div>
+    <div class="pm-box" onclick="event.stopPropagation()">
+        <div class="pm-img"><img src="" id="pmImg" alt="Foto"></div>
+        <div class="pm-text">
+            <span class="pm-tag" id="pmTag"></span>
+            <h2 id="pmTitle"></h2>
+            <p class="pm-desc" id="pmDesc"></p>
+            <div class="pm-meta">
+                <div class="pm-meta-row">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="label">Lokasi:</span>
+                    <span class="val" id="pmLoc"></span>
+                </div>
+                <div class="pm-meta-row">
+                    <i class="fas fa-globe-asia"></i>
+                    <span class="label">Kawasan:</span>
+                    <span class="val">Geopark Kaldera Toba</span>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-<script>
-// ===== MODAL =====
-function openPhoto(src, title, desc, tag) {
-    document.getElementById('mImg').src = src;
-    document.getElementById('mTitle').innerText = title;
-    document.getElementById('mTag').innerText = tag;
-    document.getElementById('mDesc').innerText = desc || 'Tidak ada deskripsi.';
-    document.getElementById('pModal').style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-}
-function closePhoto() {
-    document.getElementById('pModal').style.display = 'none';
-    document.body.style.overflow = 'auto';
-}
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closePhoto(); });
-
-// ===== CAROUSEL =====
-const track    = document.getElementById('carouselTrack');
-const slides   = document.querySelectorAll('.carousel-slide');
-const dots     = document.querySelectorAll('.c-dot');
-const curNum   = document.getElementById('curNum');
-const progress = document.getElementById('cProgress');
-const total    = slides.length;
-let current    = 0;
-let autoTimer  = null;
-let isDragging = false, startX = 0, currentDiffX = 0;
-
-function goTo(idx, resetAuto = true) {
-    slides[current].classList.remove('is-active');
-    dots[current]?.classList.remove('active');
-    current = ((idx % total) + total) % total;
-    slides[current].classList.add('is-active');
-    dots[current]?.classList.add('active');
-    track.style.transform = `translateX(-${current * 100}%)`;
-    if (curNum) curNum.textContent = current + 1;
-    // restart progress bar
-    if (progress) {
-        progress.classList.remove('running');
-        void progress.offsetWidth; // reflow
-        progress.classList.add('running');
-    }
-    if (resetAuto) {
-        clearInterval(autoTimer);
-        autoTimer = setInterval(() => goTo(current + 1), 5000);
-    }
-}
-
-// Auto-play
-if (total > 1) {
-    goTo(0, true);
-}
-
-document.getElementById('prevBtn')?.addEventListener('click', () => goTo(current - 1));
-document.getElementById('nextBtn')?.addEventListener('click', () => goTo(current + 1));
-dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.idx)));
-
-// Touch + Mouse drag
-const wrapper = document.getElementById('carouselWrapper');
-if (wrapper && total > 1) {
-    const getX = e => e.touches ? e.touches[0].clientX : e.clientX;
-
-    const onStart = e => {
-        isDragging = true;
-        startX = getX(e);
-        currentDiffX = 0;
-        track.style.transition = 'none';
-        clearInterval(autoTimer);
-    };
-    const onMove = e => {
-        if (!isDragging) return;
-        currentDiffX = getX(e) - startX;
-        track.style.transform = `translateX(calc(-${current * 100}% + ${currentDiffX}px))`;
-    };
-    const onEnd = () => {
-        if (!isDragging) return;
-        isDragging = false;
-        track.style.transition = 'transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-        if (currentDiffX < -55)      goTo(current + 1);
-        else if (currentDiffX > 55)  goTo(current - 1);
-        else                         goTo(current);
-        currentDiffX = 0;
-    };
-
-    wrapper.addEventListener('mousedown',  onStart);
-    wrapper.addEventListener('touchstart', onStart, { passive: true });
-    window.addEventListener('mousemove',   onMove);
-    window.addEventListener('touchmove',   onMove, { passive: true });
-    window.addEventListener('mouseup',     onEnd);
-    window.addEventListener('touchend',    onEnd);
-    // Block click-to-open if was dragging
-    wrapper.addEventListener('click', e => { if (Math.abs(currentDiffX) > 8) e.stopPropagation(); });
-}
-
-// Keyboard left/right arrows (only when modal closed)
-document.addEventListener('keydown', e => {
-    if (document.getElementById('pModal').style.display === 'flex') return;
-    if (e.key === 'ArrowLeft')  goTo(current - 1);
-    if (e.key === 'ArrowRight') goTo(current + 1);
-});
-
-// ===== MUSIC CARD (Instagram Story Style) =====
-const SONG_TITLE  = 'Horbo Paung';
-const SONG_ARTIST = "D' bambo official";
-// ▸ Letakkan gambar cover lagu di: public/image/musik/horbo_paung.jpg
-const DISC_IMG    = "{{ asset('image/musik/horbo_paung.jpg') }}";
-
-const musicCard = document.createElement('div');
-musicCard.className = 'music-card';
-musicCard.id        = 'musicCard';
-musicCard.innerHTML = `
-    <span class="music-badge">&#9835; Bebas Copyright</span>
-    <div class="music-disc">
-        <img src="${DISC_IMG}" alt="cover" class="music-disc-img" id="musicDisc"
-             onerror="this.onerror=null;this.src='https://placehold.co/44x44/003366/c6a43b?text=\u266a'">
+<!-- MUSIK -->
+<div class="music-float" id="musicFloat">
+    <img class="mf-disc" id="mfDisc" src="{{ asset('image/musik/horbo_paung.jpg') }}"
+         alt="disc" onerror="this.src='https://placehold.co/40x40/003366/c6a43b?text=%E2%99%AA'">
+    <div class="mf-info">
+        <div class="mf-title">Horbo Paung</div>
+        <div class="mf-artist">D' Bambo Official</div>
     </div>
-    <div class="music-info">
-        <div class="music-title">${SONG_TITLE}</div>
-        <div class="music-artist">${SONG_ARTIST}</div>
-    </div>
-    <div class="music-eq" id="musicEq">
-        <span></span><span></span><span></span><span></span>
-    </div>
-    <div class="music-btn" id="musicPlayBtn">
-        <i class="bi bi-play-fill" id="musicBtnIcon"></i>
-    </div>
-`;
-document.body.appendChild(musicCard);
-
-const audio   = new Audio("{{ asset('audio/musik-galeri.mp3') }}");
-audio.loop    = true;
-audio.volume  = 0.5;
-
-const discEl  = document.getElementById('musicDisc');
-const eqEl    = document.getElementById('musicEq');
-const iconEl  = document.getElementById('musicBtnIcon');
-let isPlaying = false;
-
-function startMusic() {
-    audio.play().catch(() => {});
-    discEl.classList.add('playing');
-    eqEl.classList.add('active');
-    iconEl.className = 'bi bi-stop-fill';
-    isPlaying = true;
-}
-function stopMusic() {
-    audio.pause();
-    discEl.classList.remove('playing');
-    eqEl.classList.remove('active');
-    iconEl.className = 'bi bi-play-fill';
-    isPlaying = false;
-}
-
-document.getElementById('musicPlayBtn').addEventListener('click', e => {
-    e.stopPropagation();
-    isPlaying ? stopMusic() : startMusic();
-});
-musicCard.addEventListener('click', () => { isPlaying ? stopMusic() : startMusic(); });
-
-// Autoplay saat user pertama kali klik halaman
-window.addEventListener('click', () => { if (!isPlaying) startMusic(); }, { once: true });
-</script>
+    <div class="mf-btn" id="mfBtn"><i class="fas fa-play" id="mfIcon"></i></div>
+</div>
 
 @endsection
+
+@push('scripts')
+<script>
+(function() {
+    var photos = @json($allPhotos);
+    var total = photos.length;
+    var cur = 0;
+
+    // -- MODAL --
+    function openModal(idx) {
+        var p = photos[idx];
+        if (!p) return;
+        document.getElementById('pmImg').src = p.src;
+        document.getElementById('pmTitle').textContent = p.judul;
+        document.getElementById('pmTag').textContent = p.kategori;
+        document.getElementById('pmDesc').textContent = p.deskripsi || 'Pemandangan indah di Geopark Kaldera Toba.';
+        document.getElementById('pmLoc').textContent = p.lokasi || 'Danau Toba';
+        document.getElementById('pModal').classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+        document.getElementById('pModal').classList.remove('show');
+        document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('pModal').addEventListener('click', closeModal);
+    document.getElementById('pmClose').addEventListener('click', closeModal);
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+
+    // Klik slide carousel
+    document.querySelectorAll('.carousel-slide').forEach(function(el) {
+        el.addEventListener('click', function() { openModal(parseInt(el.dataset.idx)); });
+    });
+    // Klik grid card
+    document.querySelectorAll('.photo-card').forEach(function(el) {
+        el.addEventListener('click', function() { openModal(parseInt(el.dataset.idx)); });
+    });
+
+    // -- CAROUSEL --
+    function goSlide(idx) {
+        cur = ((idx % total) + total) % total;
+        var track = document.getElementById('cTrack');
+        if (track) track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+        document.querySelectorAll('.c-dot').forEach(function(d, i) {
+            d.classList.toggle('on', i === cur);
+        });
+        var numEl = document.getElementById('cNum');
+        if (numEl) numEl.textContent = cur + 1;
+    }
+
+    var prevBtn = document.getElementById('cPrev');
+    var nextBtn = document.getElementById('cNext');
+    if (prevBtn) prevBtn.addEventListener('click', function(e) { e.stopPropagation(); goSlide(cur - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function(e) { e.stopPropagation(); goSlide(cur + 1); });
+
+    document.querySelectorAll('.c-dot').forEach(function(d) {
+        d.addEventListener('click', function() { goSlide(parseInt(d.dataset.i)); });
+    });
+
+    // Auto-play
+    var timer = setInterval(function() { goSlide(cur + 1); }, 5000);
+    var wrap = document.querySelector('.carousel-wrap');
+    if (wrap) {
+        wrap.addEventListener('mouseenter', function() { clearInterval(timer); });
+        wrap.addEventListener('mouseleave', function() { timer = setInterval(function() { goSlide(cur + 1); }, 5000); });
+    }
+
+    // Touch swipe
+    var startX = 0;
+    var vp = document.querySelector('.carousel-viewport');
+    if (vp) {
+        vp.addEventListener('touchstart', function(e) { startX = e.changedTouches[0].screenX; }, {passive:true});
+        vp.addEventListener('touchend', function(e) {
+            var diff = startX - e.changedTouches[0].screenX;
+            if (Math.abs(diff) > 40) goSlide(diff > 0 ? cur + 1 : cur - 1);
+        }, {passive:true});
+    }
+
+    if (total > 0) goSlide(0);
+
+    // -- MUSIK --
+    var audio = new Audio("{{ asset('audio/musik-galeri.mp3') }}");
+    audio.loop = true; audio.volume = 0.4;
+    var playing = false;
+    var disc = document.getElementById('mfDisc');
+    var icon = document.getElementById('mfIcon');
+
+    function toggleMusic() {
+        if (playing) {
+            audio.pause(); disc.classList.remove('playing');
+            icon.className = 'fas fa-play'; playing = false;
+        } else {
+            audio.play().catch(function(){}); disc.classList.add('playing');
+            icon.className = 'fas fa-stop'; playing = true;
+        }
+    }
+    document.getElementById('mfBtn').addEventListener('click', function(e) { e.stopPropagation(); toggleMusic(); });
+    document.getElementById('musicFloat').addEventListener('click', toggleMusic);
+    window.addEventListener('click', function() { if (!playing) toggleMusic(); }, {once:true});
+})();
+</script>
+@endpush

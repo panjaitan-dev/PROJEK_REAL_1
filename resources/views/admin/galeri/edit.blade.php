@@ -69,7 +69,7 @@
                 <div class="col-md-6 mb-3">
                     <label>Tanggal</label>
                     <input type="date" name="tanggal_foto" class="form-control"
-                        value="{{ $galeri->tanggal_foto }}">
+                        value="{{ $galeri->tanggal_foto }}" max="9999-12-31">
                 </div>
 
                 <div class="col-md-6 mb-3">

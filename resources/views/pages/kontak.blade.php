@@ -88,7 +88,7 @@
     /* ── CONTACT CARD GRID (4 columns) ── */
     .kontak-cards {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 26px;
         margin-bottom: 70px;
     }
@@ -315,7 +315,8 @@
     .wa-float a:hover { transform: scale(1.18) rotate(360deg); box-shadow: 0 12px 36px rgba(37,211,102,.55); }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 1100px) { .kontak-cards { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 1100px) { .kontak-cards { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 900px)  { .kontak-cards { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 768px)  {
         .kontak-cards { grid-template-columns: repeat(2,1fr); gap: 18px; }
         .kontak-info-row { grid-template-columns: 1fr; }
@@ -467,7 +468,7 @@
             <p>Jangan ragu untuk menghubungi kami melalui berbagai saluran komunikasi yang tersedia</p>
         </div>
 
-        {{-- 4 Contact Cards --}}
+        {{-- 3 Contact Cards --}}
         <div class="kontak-cards">
             <div class="kontak-card">
                 <div class="kontak-card-icon"><i class="fas fa-map-marker-alt"></i></div>
@@ -489,14 +490,6 @@
                 <a href="mailto:info@geotoba.com">info@geotoba.com</a>
                 <a href="mailto:reservasi@geotoba.com">reservasi@geotoba.com</a>
                 <a href="mailto:support@geotoba.com">support@geotoba.com</a>
-            </div>
-            <div class="kontak-card">
-                <div class="kontak-card-icon"><i class="fas fa-clock"></i></div>
-                <h3>Jam Buka</h3>
-                <p>Senin – Jumat</p>
-                <p><strong style="color:#003366;">08:00 – 17:00 WIB</strong></p>
-                <p>Sabtu – Minggu</p>
-                <p><strong style="color:#003366;">08:00 – 18:00 WIB</strong></p>
             </div>
         </div>
 
@@ -563,32 +556,25 @@
             <div class="kontak-info-card">
                 <div class="kontak-info-title">🗺 Destinasi Unggulan</div>
                 <div class="dest-list">
-                    <div class="dest-item" onclick="window.location.href='{{ route('destinasi') }}'">
+                    <div class="dest-item" onclick="window.location.href='{{ route('geosite.batu_hoda_beach') }}'">
                         <div class="dest-icon"><i class="fas fa-umbrella-beach"></i></div>
                         <div class="dest-info">
                             <h4>Batu Hoda Beach</h4>
                             <p>Pantai indah di tepi Danau Toba, Simanindo</p>
                         </div>
                     </div>
-                    <div class="dest-item" onclick="window.location.href='{{ route('destinasi') }}'">
+                    <div class="dest-item" onclick="window.location.href='{{ route('geosite.museum_huta_bolon') }}'">
                         <div class="dest-icon"><i class="fas fa-landmark"></i></div>
                         <div class="dest-info">
                             <h4>Museum Huta Bolon</h4>
                             <p>Pusat budaya dan sejarah Batak Toba</p>
                         </div>
                     </div>
-                    <div class="dest-item" onclick="window.location.href='{{ route('destinasi') }}'">
+                    <div class="dest-item" onclick="window.location.href='{{ route('geosite.batu_pasa_pantai') }}'">
                         <div class="dest-icon"><i class="fas fa-mountain"></i></div>
                         <div class="dest-info">
                             <h4>Batu Pasa Pantai</h4>
                             <p>Formasi batuan unik dengan pemandangan danau</p>
-                        </div>
-                    </div>
-                    <div class="dest-item" onclick="window.location.href='{{ route('galeri') }}'">
-                        <div class="dest-icon"><i class="fas fa-camera"></i></div>
-                        <div class="dest-info">
-                            <h4>Galeri Foto</h4>
-                            <p>Koleksi foto terbaik Geopark Danau Toba</p>
                         </div>
                     </div>
                 </div>
