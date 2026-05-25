@@ -159,7 +159,13 @@
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->nama }}</td>
-                    <td>Rp {{ number_format($item->harga, 0, ',', '.') }}</td>
+                    <td>
+                        @if(is_numeric($item->harga))
+                            Rp {{ number_format((float)$item->harga, 0, ',', '.') }}
+                        @else
+                            {{ $item->harga }}
+                        @endif
+                    </td>
                     <td>
                         @if($item->status)
                             <span class="badge-status-active">Aktif</span>
@@ -214,7 +220,13 @@
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->nama }}</td>
-                    <td>Rp {{ number_format($item->harga, 0, ',', '.') }}</td>
+                    <td>
+                        @if(is_numeric($item->harga))
+                            Rp {{ number_format((float)$item->harga, 0, ',', '.') }}
+                        @else
+                            {{ $item->harga }}
+                        @endif
+                    </td>
                     <td>{{ $item->kontak }}</td>
                     <td>
                         @if($item->status)

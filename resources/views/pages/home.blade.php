@@ -24,6 +24,10 @@
         from { transform: rotate(0deg); }
         to   { transform: rotate(360deg); }
     }
+    @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(360deg); }
+    }
 
     /* ==================== HERO SLIDER ==================== */
     .hero-section {
@@ -55,22 +59,12 @@
         inset: 0;
         background: linear-gradient(135deg, rgba(0,51,102,0.5) 0%, rgba(0,102,153,0.3) 100%);
     }
-<<<<<<< HEAD
-    .slide-1 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/BatuHoda.png'); }
-    .slide-2 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/HutaBolon.png'); }
-    .slide-3 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/DanauToba.png'); }
-    .slide-4 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/Simanindo.png'); }
-    .slide-5 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/BatuPasa.png'); }
-
-=======
-    
-    .slide-1 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/SBH/BatuHoda.png'); }
-    .slide-2 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/SBH/HutaBolon.png'); }
-    .slide-3 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/SBH/RumahKaca.png'); }
-    .slide-4 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/SBH/batu_pasa_pantai.jpg'); }
-    .slide-5 { background-image: linear-gradient(rgba(0, 51, 102, 0.5), rgba(0, 102, 153, 0.3)), url('/image/SBH/BatuHoda2.png'); }
-    
->>>>>>> 297d5790505eb25fa5926d561e14ad903528a55a
+    .slide-1 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/BatuHoda.webp'); }
+    .slide-2 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/sejarah.webp'); }
+    .slide-3 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/BatuHoda2.webp'); }
+    .slide-4 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/Simanindo.webp'); }
+    .slide-5 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/BatuPasa.webp'); }
+    .slide-6 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/penginapan.webp'); }
     .hero-content {
         position: absolute;
         z-index: 10;
@@ -461,6 +455,7 @@
         <div class="slide slide-3"></div>
         <div class="slide slide-4"></div>
         <div class="slide slide-5"></div>
+        <div class="slide slide-6"></div>
     </div>
 
     <div class="slider-dots">
@@ -469,6 +464,8 @@
         <div class="dot" data-slide="2"></div>
         <div class="dot" data-slide="3"></div>
         <div class="dot" data-slide="4"></div>
+        <div class="dot" data-slide="5"></div>
+        <div class="dot" data-slide="6"></div>
     </div>
 
     <div class="hero-content">
@@ -569,7 +566,7 @@
             <!-- BATU HODA BEACH -->
             <div class="destinasi-item">
                 <div class="destinasi-image">
-                    <img src="/image/SBH/BatuHoda.png" alt="Batu Hoda Beach">
+                    <img src="/image/SBH/BatuHoda.webp" alt="Batu Hoda Beach">
                 </div>
                 <div class="destinasi-content">
                     <div class="destinasi-number">01 &mdash; DESTINASI ALAM</div>
@@ -583,7 +580,7 @@
             <!-- MUSEUM HUTA BOLON -->
             <div class="destinasi-item reverse">
                 <div class="destinasi-image">
-                    <img src="/image/SBH/HutaBolon.png" alt="Museum Huta Bolon">
+                    <img src="/image/SBH/HutaBolon.webp" alt="Museum Huta Bolon">
                 </div>
                 <div class="destinasi-content">
                     <div class="destinasi-number">02 &mdash; DESTINASI BUDAYA</div>
@@ -597,7 +594,7 @@
             <!-- BATU PASA PANTAI -->
             <div class="destinasi-item">
                 <div class="destinasi-image">
-                    <img src="/image/SBH/BatuPasa.png" alt="Batu Pasa Pantai">
+                    <img src="/image/SBH/BatuPasa.webp" alt="Batu Pasa Pantai">
                 </div>
                 <div class="destinasi-content">
                     <div class="destinasi-number">03 &mdash; DESTINASI ALAM</div>

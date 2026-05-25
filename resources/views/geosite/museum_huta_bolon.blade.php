@@ -16,6 +16,61 @@
         .section-title h3 {
             font-family: 'Cormorant Garamond', serif;
         }
+        .galeri-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+        .galeri-item {
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            background: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            aspect-ratio: auto !important;
+        }
+        .galeri-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+        }
+        .galeri-item img {
+            width: 100% !important;
+            display: block !important;
+            object-fit: cover !important;
+            aspect-ratio: 4 / 3 !important;
+            height: auto !important;
+            cursor: pointer !important;
+        }
+        .galeri-caption {
+            padding: 1rem !important;
+            background: #fff !important;
+            text-align: left !important;
+        }
+        .galeri-caption h4 {
+            margin: 0 0 0.5rem !important;
+            font-size: 1.1rem !important;
+            color: #333 !important;
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 600 !important;
+        }
+        .galeri-caption p {
+            margin: 0 !important;
+            color: #666 !important;
+            line-height: 1.6 !important;
+            font-size: 0.9rem !important;
+            font-family: 'Inter', sans-serif !important;
+        }
+        @media (max-width: 992px) {
+            .galeri-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        @media (max-width: 576px) {
+            .galeri-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -59,7 +114,7 @@
 </div>
 
 <!-- HERO -->
-<section class="hero" style="background-image: url('/image/museum_huta/museum_huta.jpg');">
+<section class="hero" style="background-image: url('{{ asset('image/museum_huta/museum_huta.jpg') }}');">
     <div>
         <h1 class="hero-title">Museum Huta Bolon</h1>
         <p class="hero-subtitle">Pulau Samosir · Danau Toba</p>
@@ -212,17 +267,13 @@
             <div class="divider"></div>
             <p>Foto dan momen menarik dari Museum Huta Bolon</p>
         </div>
-        <div class="grid-3">
+        <div class="galeri-grid">
             @isset($galeriGeosite)
                 @forelse($galeriGeosite as $item)
                     <div class="galeri-item">
                         @if($item->gambar)
                             <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}" onclick="openLightbox(this)">
                         @endif
-                        <div class="galeri-caption">
-                            <h4>{{ $item->judul }}</h4>
-                            <p>{{ $item->kategori }}</p>
-                        </div>
                     </div>
                 @empty
                     <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">

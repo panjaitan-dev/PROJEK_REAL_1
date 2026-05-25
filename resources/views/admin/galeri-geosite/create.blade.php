@@ -12,22 +12,12 @@
             @csrf
 
             <div class="mb-3">
-                <label>Judul Foto</label>
-                <input type="text" name="judul" class="form-control" required>
-            </div>
-
-            <div class="mb-3">
                 <label>Geosite</label>
                 <select name="geosite" class="form-control" required>
                     @foreach($geositeList as $gs)
-                        <option value="{{ $gs }}">{{ ucfirst($gs) }}</option>
+                        <option value="{{ $gs }}">{{ ucfirst(str_replace('_', ' ', $gs)) }}</option>
                     @endforeach
                 </select>
-            </div>
-
-            <div class="mb-3">
-                <label>Kategori (contoh: pantai1, pantai2, pantai3)</label>
-                <input type="text" name="kategori" class="form-control" required>
             </div>
 
             <div class="mb-3">

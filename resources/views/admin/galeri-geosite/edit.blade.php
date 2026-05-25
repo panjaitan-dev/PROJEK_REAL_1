@@ -13,28 +13,18 @@
             @method('PUT')
 
             <div class="mb-3">
-                <label>Judul Foto</label>
-                <input type="text" name="judul" class="form-control" value="{{ $galeriGeosite->judul }}" required>
-            </div>
-
-            <div class="mb-3">
                 <label>Geosite</label>
                 <select name="geosite" class="form-control" required>
                     @foreach($geositeList as $gs)
-                        <option value="{{ $gs }}" {{ $galeriGeosite->geosite == $gs ? 'selected' : '' }}>{{ ucfirst($gs) }}</option>
+                        <option value="{{ $gs }}" {{ $galeriGeosite->geosite == $gs ? 'selected' : '' }}>{{ ucfirst(str_replace('_', ' ', $gs)) }}</option>
                     @endforeach
                 </select>
             </div>
 
             <div class="mb-3">
-                <label>Kategori</label>
-                <input type="text" name="kategori" class="form-control" value="{{ $galeriGeosite->kategori }}" required>
-            </div>
-
-            <div class="mb-3">
                 <label>Gambar Saat Ini</label><br>
                 @if($galeriGeosite->gambar)
-                    <img src="{{ $galeriGeosite->gambar }}" width="100">
+                    <img src="{{ asset('storage/' . $galeriGeosite->gambar) }}" width="100" style="border-radius: 8px; border: 1px solid #ddd;">
                 @else
                     <span class="text-muted">Tidak ada gambar</span>
                 @endif

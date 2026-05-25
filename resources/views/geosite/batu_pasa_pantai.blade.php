@@ -16,6 +16,61 @@
         .section-title h3 {
             font-family: 'Cormorant Garamond', serif;
         }
+        .galeri-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+        .galeri-item {
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            background: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            aspect-ratio: auto !important;
+        }
+        .galeri-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+        }
+        .galeri-item img {
+            width: 100% !important;
+            display: block !important;
+            object-fit: cover !important;
+            aspect-ratio: 4 / 3 !important;
+            height: auto !important;
+            cursor: pointer !important;
+        }
+        .galeri-caption {
+            padding: 1rem !important;
+            background: #fff !important;
+            text-align: left !important;
+        }
+        .galeri-caption h4 {
+            margin: 0 0 0.5rem !important;
+            font-size: 1.1rem !important;
+            color: #333 !important;
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 600 !important;
+        }
+        .galeri-caption p {
+            margin: 0 !important;
+            color: #666 !important;
+            line-height: 1.6 !important;
+            font-size: 0.9rem !important;
+            font-family: 'Inter', sans-serif !important;
+        }
+        @media (max-width: 992px) {
+            .galeri-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        @media (max-width: 576px) {
+            .galeri-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -62,8 +117,8 @@
 <section class="hero" style="background-image: url('/image/Batu_Pasa/batu_pasa.jpg');">
     <div>
         <h1 class="hero-title">Pantai Batu Pasa</h1>
-        <p class="hero-subtitle"></p>
-
+        <p class="hero-subtitle">Pulau Samosir · Danau Toba</p>
+    </div>
 </section>
 
 <!-- SEJARAH -->
@@ -78,13 +133,11 @@
             <div class="sejarah-image"><img src="/image/Batu_Pasa/batu_pasa_2.jpg" alt="Desa Sangkal"></div>
             <div class="sejarah-text">
                 <h3>Sejarah  Pantai Batu Pasa </h3>
-                <p>
-Pantai Batu Pasa merupakan salah satu destinasi wisata di kawasan Simanindo, Pulau Samosir, yang dikenal dengan keindahan alam Danau Toba serta batu-batu alami di sekitar pantai. Tempat ini menjadi salah satu lokasi wisata yang sering dikunjungi wisatawan untuk menikmati suasana tenang dan panorama alam khas Danau Toba.
-</p>
+            <p>Pantai Batu Pasa merupakan salah satu destinasi wisata di kawasan Simanindo, Pulau Samosir, yang dikenal dengan keindahan alam Danau Toba serta batu-batu alami di sekitar pantai. Tempat ini menjadi salah satu lokasi wisata yang sering dikunjungi wisatawan untuk menikmati suasana tenang dan panorama alam khas Danau Toba.</p>
             </div>
         </div>
         <div class="sejarah-item reverse">
-            <div class="sejarah-image"><img src="/image/Batu_Pasa/batu_pasa_3.jpg" alt="Tradisi Batak"></div>
+            <div class="sejarah-image"><img src="/image/SBH/batu_pasa_3.jpg" alt="Tradisi Batak"></div>
             <div class="sejarah-text">
                 <h3>Budaya Pantai Batu Pasa</h3>
                 <p>
@@ -104,123 +157,6 @@ Pantai Batu Pasa menawarkan pemandangan Danau Toba yang indah dengan suasana yan
     </div>
 </section>
 
-<!-- UMKM -->
-<section id="umkm" class="section bg-light">
-    <div class="container">
-        <div class="section-title">
-            <h2>UMKM Lokal</h2>
-            <div class="divider"></div>
-            <p>Produk lokal dan kerajinan khas sekitar Pantai Batu Pasa</p>
-        </div>
-        <div class="grid-3">
-            @isset($umkm)
-                @forelse($umkm as $item)
-                    <div class="card">
-                        @if($item->gambar)
-                            <img src="{{ asset('storage/' . $item->gambar) }}" class="card-img" alt="{{ $item->nama }}">
-                        @endif
-                        <div class="card-content">
-                            <h3>{{ $item->nama }}</h3>
-                            <p>{{ $item->deskripsi }}</p>
-                            @if($item->lokasi)
-                                <div class="card-location">📍 {{ $item->lokasi }}</div>
-                            @endif
-                            @if($item->kontak)
-                                <div class="card-contact">📞 {{ $item->kontak }}</div>
-                            @endif
-                        </div>
-                    </div>
-                @empty
-                    <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
-                        <p>Belum ada data UMKM untuk geosite ini.</p>
-                    </div>
-                @endforelse
-            @else
-                <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
-                    <p>Informasi UMKM belum tersedia.</p>
-                </div>
-            @endisset
-        </div>
-    </div>
-</section>
-
-<!-- PENGINAPAN -->
-<section id="penginapan" class="section">
-    <div class="container">
-        <div class="section-title">
-            <h2>Penginapan & Akomodasi</h2>
-            <div class="divider"></div>
-            <p>Pilihan tempat menginap dekat Pantai Batu Pasa</p>
-        </div>
-        <div class="grid-3">
-            @isset($penginapan)
-                @forelse($penginapan as $item)
-                    <div class="card">
-                        @if($item->gambar)
-                            <img src="{{ asset('storage/' . $item->gambar) }}" class="card-img" alt="{{ $item->nama }}">
-                        @endif
-                        <div class="card-content">
-                            <h3>{{ $item->nama }}</h3>
-                            <p>{{ $item->deskripsi }}</p>
-                            @if($item->harga)
-                                <div class="card-price">💰 {{ $item->harga }}</div>
-                            @endif
-                            @if($item->kontak)
-                                <div class="card-contact">📞 {{ $item->kontak }}</div>
-                            @endif
-                        </div>
-                    </div>
-                @empty
-                    <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
-                        <p>Belum ada data penginapan untuk geosite ini.</p>
-                    </div>
-                @endforelse
-            @else
-                <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
-                    <p>Informasi penginapan belum tersedia.</p>
-                </div>
-            @endisset
-        </div>
-    </div>
-</section>
-
-<!-- FASILITAS -->
-<section id="fasilitas" class="section bg-light">
-    <div class="container">
-        <div class="section-title">
-            <h2>Fasilitas & Layanan</h2>
-            <div class="divider"></div>
-            <p>Fasilitas wisata yang tersedia di sekitar Pantai Batu Pasa</p>
-        </div>
-        <div class="grid-2">
-            @isset($fasilitas)
-                @forelse($fasilitas as $item)
-                    <div class="fasilitas-item">
-                        @if($item->gambar)
-                            <img src="{{ asset('storage/' . $item->gambar) }}" class="fasilitas-img" alt="{{ $item->nama }}">
-                        @endif
-                        <div class="fasilitas-content">
-                            <h4>{{ $item->nama }}</h4>
-                            <p>{{ $item->deskripsi }}</p>
-                            @if($item->harga)
-                                <div class="fasilitas-price">{{ $item->harga }}</div>
-                            @endif
-                        </div>
-                    </div>
-                @empty
-                    <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
-                        <p>Belum ada data fasilitas untuk geosite ini.</p>
-                    </div>
-                @endforelse
-            @else
-                <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">
-                    <p>Informasi fasilitas belum tersedia.</p>
-                </div>
-            @endisset
-        </div>
-    </div>
-</section>
-
 <!-- GALERI -->
 <section id="galeri" class="section">
     <div class="container">
@@ -229,17 +165,13 @@ Pantai Batu Pasa menawarkan pemandangan Danau Toba yang indah dengan suasana yan
             <div class="divider"></div>
             <p>Foto dan momen menarik dari Pantai Batu Pasa</p>
         </div>
-        <div class="grid-3">
+        <div class="galeri-grid">
             @isset($galeriGeosite)
                 @forelse($galeriGeosite as $item)
                     <div class="galeri-item">
                         @if($item->gambar)
                             <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}" onclick="openLightbox(this)">
                         @endif
-                        <div class="galeri-caption">
-                            <h4>{{ $item->judul }}</h4>
-                            <p>{{ $item->kategori }}</p>
-                        </div>
                     </div>
                 @empty
                     <div style="grid-column:1/-1;text-align:center;padding:2rem;color:#888;">

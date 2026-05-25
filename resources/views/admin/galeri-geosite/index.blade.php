@@ -20,9 +20,7 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Gambar</th>
-                    <th>Judul</th>
-                    <th>Kategori</th>
+                    <th>Gambar (Klik untuk Memperbesar)</th>
                     <th>Geosite</th>
                     <th>Status</th>
                     <th>Aksi</th>
@@ -34,14 +32,14 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>
                         @if($item->gambar)
-                            <img src="{{ asset('storage/' . $item->gambar) }}" width="50" height="50" style="object-fit: cover;">
+                            <a href="{{ asset('storage/' . $item->gambar) }}" target="_blank" title="Klik untuk memperbesar">
+                                <img src="{{ asset('storage/' . $item->gambar) }}" width="80" height="80" style="object-fit: cover; border-radius: 8px; cursor: pointer; border: 1px solid #ddd;">
+                            </a>
                         @else
                             <span class="text-muted">-</span>
                         @endif
                     </td>
-                    <td>{{ $item->judul }}</td>
-                    <td><span class="badge bg-secondary">{{ $item->kategori }}</span></td>
-                    <td><span class="badge bg-info">{{ ucfirst($item->geosite) }}</span></td>
+                    <td><span class="badge bg-info">{{ ucfirst(str_replace('_', ' ', $item->geosite)) }}</span></td>
                     <td>
                         <span class="badge {{ $item->status ? 'bg-success' : 'bg-danger' }}">
                             {{ $item->status ? 'Aktif' : 'Tidak' }}
@@ -56,7 +54,7 @@
                     </td>
                 </tr>
                 @empty
-                <tr><td colspan="7" class="text-center">Belum ada data Galeri Geosite</td></tr>
+                <tr><td colspan="5" class="text-center">Belum ada data Galeri Geosite</td></tr>
                 @endforelse
             </tbody>
         </table>

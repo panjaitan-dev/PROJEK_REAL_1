@@ -27,8 +27,8 @@ class GaleriGeositeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'judul'    => 'required|string|max:255',
-            'kategori' => 'required|string|max:100',
+            'judul'    => 'nullable|string|max:255',
+            'kategori' => 'nullable|string|max:100',
             'gambar'   => 'nullable|image|mimes:jpeg,png,jpg,webp|max:6144',
             'geosite'  => 'required|in:museum_huta_bolon,batu_hoda_beach,batu_pasa_pantai',
             'deskripsi'=> 'nullable|string',
@@ -40,10 +40,13 @@ class GaleriGeositeController extends Controller
             $gambarPath = $request->file('gambar')->store('galeri-geosite', 'public');
         }
 
+        $judulDefault = $request->judul ?: 'Foto ' . ucwords(str_replace('_', ' ', $request->geosite));
+        $kategoriDefault = $request->kategori ?: 'galeri';
+
         // 1. Simpan ke galeri_geosite
         $geosite = GaleriGeosite::create([
-            'judul'    => $request->judul,
-            'kategori' => $request->kategori,
+            'judul'    => $judulDefault,
+            'kategori' => $kategoriDefault,
             'geosite'  => $request->geosite,
             'gambar'   => $gambarPath,
             'status'   => $request->has('status') ? 1 : 0,
@@ -51,8 +54,8 @@ class GaleriGeositeController extends Controller
 
         // 2. Otomatis sync ke tabel galeri (halaman publik)
         Galeri::create([
-            'judul'             => $request->judul,
-            'kategori'          => $request->kategori,
+            'judul'             => $judulDefault,
+            'kategori'          => $kategoriDefault,
             'deskripsi'         => $request->deskripsi ?? 'Foto dari ' . str_replace('_', ' ', $request->geosite),
             'gambar'            => $gambarPath ? 'galeri-geosite/' . basename($gambarPath) : null,
             'lokasi'            => str_replace('_', ' ', $request->geosite),
@@ -76,8 +79,8 @@ class GaleriGeositeController extends Controller
         $galeriGeosite = GaleriGeosite::findOrFail($id);
 
         $request->validate([
-            'judul'    => 'required|string|max:255',
-            'kategori' => 'required|string|max:100',
+            'judul'    => 'nullable|string|max:255',
+            'kategori' => 'nullable|string|max:100',
             'gambar'   => 'nullable|image|mimes:jpeg,png,jpg,webp|max:6144',
             'geosite'  => 'required|in:museum_huta_bolon,batu_hoda_beach,batu_pasa_pantai',
             'deskripsi'=> 'nullable|string',
@@ -94,10 +97,13 @@ class GaleriGeositeController extends Controller
             $gambarPath = $request->file('gambar')->store('galeri-geosite', 'public');
         }
 
+        $judulDefault = $request->judul ?: 'Foto ' . ucwords(str_replace('_', ' ', $request->geosite));
+        $kategoriDefault = $request->kategori ?: 'galeri';
+
         // 1. Update galeri_geosite
         $galeriGeosite->update([
-            'judul'    => $request->judul,
-            'kategori' => $request->kategori,
+            'judul'    => $judulDefault,
+            'kategori' => $kategoriDefault,
             'geosite'  => $request->geosite,
             'gambar'   => $gambarPath,
             'status'   => $request->has('status') ? 1 : 0,
@@ -107,8 +113,8 @@ class GaleriGeositeController extends Controller
         $galeriEntry = Galeri::where('galeri_geosite_id', $galeriGeosite->id)->first();
         if ($galeriEntry) {
             $galeriEntry->update([
-                'judul'    => $request->judul,
-                'kategori' => $request->kategori,
+                'judul'    => $judulDefault,
+                'kategori' => $kategoriDefault,
                 'deskripsi'=> $request->deskripsi ?? $galeriEntry->deskripsi,
                 'gambar'   => $gambarPath ? 'galeri-geosite/' . basename($gambarPath) : $galeriEntry->gambar,
                 'lokasi'   => str_replace('_', ' ', $request->geosite),
@@ -117,8 +123,8 @@ class GaleriGeositeController extends Controller
         } else {
             // Jika belum ada entri galeri (data lama), buat baru
             Galeri::create([
-                'judul'             => $request->judul,
-                'kategori'          => $request->kategori,
+                'judul'             => $judulDefault,
+                'kategori'          => $kategoriDefault,
                 'deskripsi'         => $request->deskripsi ?? 'Foto dari ' . str_replace('_', ' ', $request->geosite),
                 'gambar'            => $gambarPath ? 'galeri-geosite/' . basename($gambarPath) : null,
                 'lokasi'            => str_replace('_', ' ', $request->geosite),

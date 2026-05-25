@@ -48,7 +48,7 @@
 </div>
 
 <!-- HERO -->
-<section class="hero" style="background-image: url('/image/SBH/BatuHoda.png');">
+<section class="hero" style="background-image: url('{{ asset('image/SBH/BatuHoda.webp') }}');">
     <div>
         <h1 class="hero-title">Batu Hoda Beach</h1>
         <p class="hero-subtitle"></p>
@@ -92,9 +92,21 @@ h1, h2, h3, h4, h5, h6 {
 
 .galeri-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     align-items: stretch;
+}
+
+@media (max-width: 992px) {
+    .galeri-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .galeri-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .galeri-item {
@@ -115,6 +127,7 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     object-fit: cover;
     aspect-ratio: 4 / 3;
+    cursor: pointer;
 }
 
 .galeri-caption {
@@ -220,7 +233,7 @@ h1, h2, h3, h4, h5, h6 {
 
         <!-- GAMBAR -->
         <div class="sejarah-image">
-            <img src="/image/SBH/BatuHoda2.png" alt="Batu Hoda">
+            <img src="/image/SBH/BatuHoda2.webp" alt="Batu Hoda">
         </div>
 
         <!-- KONTEN CARD -->
@@ -390,12 +403,6 @@ h1, h2, h3, h4, h5, h6 {
                     @if($item->gambar)
                         <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul ?? $item->kategori ?? 'Galeri Batu Hoda' }}">
                     @endif
-                    <div class="galeri-caption">
-                        <h4>{{ $item->judul ?? $item->kategori ?? 'Galeri Batu Hoda' }}</h4>
-                        @if(!empty($item->kategori))
-                            <p>{{ $item->kategori }}</p>
-                        @endif
-                    </div>
                 </div>
             @empty
                 <div style="grid-column: 1 / -1; text-align: center; padding: 2rem; color: #666;">

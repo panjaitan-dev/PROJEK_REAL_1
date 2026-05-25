@@ -15,10 +15,10 @@ class UserSeeder extends Seeder
             ['email' => 'adminsimanindobatuhoda@gmail.com'],
             [
                 'name'     => 'Admin GeoToba',
-                'password' => Hash::make('admin123'),
+                'password' => Hash::make('PA6J@ya666'),
             ]
         );
 
-        echo "✅ Admin seeded: adminsimanindobatuhoda@gmail.com (Password: admin123)\n";
+        echo "✅ Admin seeded: adminsimanindobatuhoda@gmail.com (Password: PA6J@ya666)\n";
     }
 }

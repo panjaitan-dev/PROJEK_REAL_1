@@ -837,6 +837,21 @@
             color: #9f1239 !important;
         }
 
+        .badge-primary, .bg-primary {
+            background: linear-gradient(135deg, #e0e7ff, #c7d2fe) !important;
+            color: #3730a3 !important;
+        }
+
+        .badge-warning, .bg-warning {
+            background: linear-gradient(135deg, #fef3c7, #fde68a) !important;
+            color: #92400e !important;
+        }
+
+        .badge-secondary, .bg-secondary {
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0) !important;
+            color: #475569 !important;
+        }
+
         .bg-info {
             background: linear-gradient(135deg, #dbeafe, #bfdbfe) !important;
             color: #1e40af !important;
@@ -1309,7 +1324,7 @@
             <i class="fas fa-info-circle"></i> Informasi
         </a>
         
-        <div class="menu-title">Desa Meat</div>
+        <div class="menu-title">Desa Simanindo</div>
         <a href="{{ route('admin.umkm.index') }}" class="{{ request()->routeIs('admin.umkm.*') ? 'active' : '' }}">
             <i class="fas fa-store"></i> UMKM
         </a>
