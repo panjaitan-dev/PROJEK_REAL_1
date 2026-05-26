@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <title>Admin - GeoToba</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -1077,7 +1079,9 @@
             display: flex;
             justify-content: flex-end;
             flex-wrap: wrap;
-            gap: 4px;
+            gap: 6px;
+            list-style: none;
+            padding: 0;
         }
 
         .pagination .page-link {
@@ -1088,17 +1092,44 @@
             color: var(--text-secondary);
             padding: 8px 14px;
             transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
         }
 
         .pagination .page-link:hover {
-            background: var(--accent-blue);
-            border-color: var(--accent-blue);
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
             color: white;
         }
 
         .pagination .page-item.active .page-link {
             background: var(--accent-blue) !important;
             border-color: var(--accent-blue) !important;
+            color: white !important;
+        }
+
+        .pagination .page-item-prev .page-link,
+        .pagination .page-item-next .page-link {
+            background: var(--accent-blue) !important;
+            color: white !important;
+            border-color: var(--accent-blue) !important;
+            font-weight: 600;
+        }
+
+        .pagination .page-item-prev .page-link:hover,
+        .pagination .page-item-next .page-link:hover {
+            background: var(--accent-gold) !important;
+            border-color: var(--accent-gold) !important;
+            color: white !important;
+        }
+
+        .pagination .page-item-prev.disabled .page-link,
+        .pagination .page-item-next.disabled .page-link {
+            background: #e2e8f0 !important;
+            color: #94a3b8 !important;
+            border-color: #e2e8f0 !important;
+            cursor: not-allowed;
+            pointer-events: none;
         }
 
         /* ========== ACTION BUTTONS GRID (Dashboard) ========== */
@@ -1300,10 +1331,11 @@
 <!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
     <div class="sidebar-header">
-        <div class="sidebar-brand">
+        <div class="sidebar-brand" style="display:flex; align-items:center; gap: 10px;">
+            <img src="{{ asset('favicon.png') }}" alt="Logo" style="width: 35px; height: 35px;">
             <div>
-                <h3 style="font-size: 1.45rem; font-weight: 800; color: #003366; font-family: 'Inter', sans-serif; letter-spacing: -0.5px;">Geo<span style="color: #c6a43b;">Toba</span></h3>
-                <p style="font-size: 0.65rem; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px;">Administrator</p>
+                <h3 style="font-size: 1.45rem; font-weight: 800; color: #003366; font-family: 'Inter', sans-serif; letter-spacing: -0.5px; margin:0;">Geo<span style="color: #c6a43b;">Toba</span></h3>
+                <p style="font-size: 0.65rem; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; margin-bottom: 0;">Administrator</p>
             </div>
         </div>
     </div>

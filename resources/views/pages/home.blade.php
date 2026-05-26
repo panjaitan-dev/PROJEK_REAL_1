@@ -594,7 +594,7 @@
             <!-- BATU PASA PANTAI -->
             <div class="destinasi-item">
                 <div class="destinasi-image">
-                    <img src="/image/SBH/BatuPasa.webp" alt="Batu Pasa Pantai">
+                    <img src="/image/Batu_Pasa/batu_pasa.jpg" alt="Batu Pasa Pantai">
                 </div>
                 <div class="destinasi-content">
                     <div class="destinasi-number">03 &mdash; DESTINASI ALAM</div>

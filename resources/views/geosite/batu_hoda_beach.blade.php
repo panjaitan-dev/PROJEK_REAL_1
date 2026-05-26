@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>batu_hoda_beach - Geosite Danau Toba</title>
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <title>Batu Hoda Beach - Geosite Danau Toba</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/batu_hoda_beach.css">
 </head>
@@ -295,7 +297,7 @@ h1, h2, h3, h4, h5, h6 {
         <div class="section-title">
             <h2>UMKM Lokal</h2>
             <div class="divider"></div>
-            <p>Produk autentik dan berkualitas dari pengrajin lokal batu_hoda_beach</p>
+            <p>Produk autentik dan berkualitas dari pengrajin lokal Batu Hoda Beach</p>
         </div>
         <div class="grid-3">
             @forelse($umkm as $item)
@@ -417,7 +419,7 @@ h1, h2, h3, h4, h5, h6 {
 <section id="lokasi" class="section bg-light">
     <div class="container">
         <div class="section-title">
-            <h2>Lokasi batu_hoda_beach</h2>
+            <h2>Lokasi Batu Hoda Beach</h2>
             <div class="divider"></div>
             <p>Pusat wisata dan penginapan di Samosir</p>
         </div>
@@ -462,7 +464,7 @@ h1, h2, h3, h4, h5, h6 {
     <div class="container">
         <h3>Jangan Lewatkan Keindahan Batu Hoda Beach</h3>
         <div class="divider"></div>
-        <p>Rasakan pengalaman wisata budaya Batak yang autentik, nikmati keindahan alam Danau Toba yang memukau, dan ciptakan kenangan indah bersama keluarga tercinta di batu_hoda_beach</p>
+        <p>Rasakan pengalaman wisata budaya Batak yang autentik, nikmati keindahan alam Danau Toba yang memukau, dan ciptakan kenangan indah bersama keluarga tercinta di Pantai Batu Hoda</p>
         <div class="cta-buttons">
             <a href="{{ url('/') }}" class="cta-btn">Kembali ke Beranda</a>
         </div>

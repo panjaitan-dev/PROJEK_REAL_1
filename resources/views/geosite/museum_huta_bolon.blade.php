@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>museum_huta_bolon - Geosite Danau Toba</title>
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <title>Museum Huta Bolon - Geosite Danau Toba</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="/css/batu_hoda_beach.css">
     <style>
@@ -300,7 +302,7 @@
 
         <div class="maps-section">
             <div class="maps-container">
-                <!-- Google Maps dengan marker lokasi museum_huta_bolon -->
+                <!-- Google Maps dengan marker lokasi Museum Huta Bolon -->
                 <iframe
                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.216058140516!2d98.74152767423692!3d2.7522539554657346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031b8ac44688e05%3A0xdb20e0beafe625bd!2sMuseum%20Huta%20Bolon%20Simanindo!5e0!3m2!1sid!2sid!4v1779111913624!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                     width="100%"
@@ -315,7 +317,7 @@
 
     <div class="rute-item">
         <h4>🏍️ Dengan Motor</h4>
-        <p>Balige → Ajibata → Ferry menuju Tomok → museum_huta_bolon Simanindo</p>
+        <p>Balige → Ajibata → Ferry menuju Tomok → Museum Huta Bolon Simanindo</p>
         <span class="rute-time">± 1.5 jam</span>
     </div>
 
@@ -342,7 +344,7 @@
     <div class="container">
         <h3>Jangan Lewatkan Keindahan Museum Huta Bolon</h3>
         <div class="divider"></div>
-        <p>Rasakan pengalaman wisata budaya Batak yang autentik, nikmati keindahan alam Danau Toba yang memukau, dan ciptakan kenangan indah bersama keluarga tercinta di museum_huta_bolon</p>
+        <p>Rasakan pengalaman wisata budaya Batak yang autentik, nikmati keindahan alam Danau Toba yang memukau, dan ciptakan kenangan indah bersama keluarga tercinta di Museum Huta Bolon</p>
         <div class="cta-buttons">
             <a href="{{ url('/') }}" class="cta-btn">Kembali ke Beranda</a>
         </div>

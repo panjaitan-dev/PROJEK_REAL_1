@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <title>@yield('title', 'Geosite Simanindo – Batu Hoda, Danau Toba')</title>
     <meta name="description" content="Jelajahi keindahan Geosite Simanindo dan Batu Hoda di kawasan UNESCO Global Geopark Danau Toba. Wisata alam, budaya Batak, dan geologi kelas dunia.">
     
@@ -367,6 +369,15 @@
                             <li><a class="dropdown-item" href="{{ url('/destinasi') }}">Semua Destinasi</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle {{ request()->routeIs('geosite*') ? 'active' : '' }}" href="#" data-bs-toggle="dropdown">Geosite</a>
+                        <ul class="dropdown-menu">
+                            <li><h6 class="dropdown-header"><i class="fas fa-mountain me-1"></i> DAFTAR GEOSITE</h6></li>
+                            <li><a class="dropdown-item" href="{{ route('geosite.batu_hoda_beach') }}">Batu Hoda Beach</a></li>
+                            <li><a class="dropdown-item" href="{{ route('geosite.museum_huta_bolon') }}">Museum Huta Bolon</a></li>
+                            <li><a class="dropdown-item" href="{{ route('geosite.batu_pasa_pantai') }}">Batu Pasa Pantai</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a class="nav-link {{ request()->routeIs('galeri') ? 'active' : '' }}" href="{{ url('/galeri') }}">Galeri</a></li>
                     <li class="nav-item"><a class="nav-link {{ request()->routeIs('berita') ? 'active' : '' }}" href="{{ url('/berita') }}">Berita</a></li>
                     <li class="nav-item"><a class="nav-link {{ request()->routeIs('kontak') ? 'active' : '' }}" href="{{ url('/kontak') }}">Kontak</a></li>
@@ -380,7 +391,7 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
+                <div class="col-lg-3 col-md-6 mb-4">
                     <h5>Geo<span style="color: #c6a43b;">Toba</span></h5>
                     <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7);">Sistem Informasi Geosite Danau Toba - Menyajikan informasi lengkap tentang keindahan geologi dan budaya Batak di kawasan Danau Toba.</p>
                     <div class="social-icons">
@@ -400,7 +411,15 @@
                         <li class="mb-2"><a href="{{ url('/kontak') }}">Kontak</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Geosite</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="{{ route('geosite.batu_hoda_beach') }}">Batu Hoda</a></li>
+                        <li class="mb-2"><a href="{{ route('geosite.museum_huta_bolon') }}">Huta Bolon</a></li>
+                        <li class="mb-2"><a href="{{ route('geosite.batu_pasa_pantai') }}">Batu Pasa</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
                     <h5>Destinasi</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="{{ url('/destinasi/alam') }}">Destinasi Alam</a></li>
