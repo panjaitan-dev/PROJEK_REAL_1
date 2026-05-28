@@ -53,11 +53,12 @@ class GaleriGeositeController extends Controller
         ]);
 
         // 2. Otomatis sync ke tabel galeri (halaman publik)
+        // $gambarPath sudah berformat 'galeri-geosite/NamaFile.jpg' dari Storage::store()
         Galeri::create([
             'judul'             => $judulDefault,
             'kategori'          => $kategoriDefault,
             'deskripsi'         => $request->deskripsi ?? 'Foto dari ' . str_replace('_', ' ', $request->geosite),
-            'gambar'            => $gambarPath ? 'galeri-geosite/' . basename($gambarPath) : null,
+            'gambar'            => $gambarPath, // langsung pakai path dari storage, sudah benar
             'lokasi'            => str_replace('_', ' ', $request->geosite),
             'status'            => $request->has('status') ? 1 : 0,
             'galeri_geosite_id' => $geosite->id,
@@ -110,13 +111,14 @@ class GaleriGeositeController extends Controller
         ]);
 
         // 2. Sync update ke tabel galeri
+        // $gambarPath sudah berformat 'galeri-geosite/NamaFile.jpg'
         $galeriEntry = Galeri::where('galeri_geosite_id', $galeriGeosite->id)->first();
         if ($galeriEntry) {
             $galeriEntry->update([
                 'judul'    => $judulDefault,
                 'kategori' => $kategoriDefault,
                 'deskripsi'=> $request->deskripsi ?? $galeriEntry->deskripsi,
-                'gambar'   => $gambarPath ? 'galeri-geosite/' . basename($gambarPath) : $galeriEntry->gambar,
+                'gambar'   => $gambarPath ?? $galeriEntry->gambar, // pakai gambar baru jika ada, jika tidak pertahankan yang lama
                 'lokasi'   => str_replace('_', ' ', $request->geosite),
                 'status'   => $request->has('status') ? 1 : 0,
             ]);
@@ -126,7 +128,7 @@ class GaleriGeositeController extends Controller
                 'judul'             => $judulDefault,
                 'kategori'          => $kategoriDefault,
                 'deskripsi'         => $request->deskripsi ?? 'Foto dari ' . str_replace('_', ' ', $request->geosite),
-                'gambar'            => $gambarPath ? 'galeri-geosite/' . basename($gambarPath) : null,
+                'gambar'            => $gambarPath, // langsung pakai path storage
                 'lokasi'            => str_replace('_', ' ', $request->geosite),
                 'status'            => $request->has('status') ? 1 : 0,
                 'galeri_geosite_id' => $galeriGeosite->id,

@@ -59,6 +59,12 @@
 
 <!-- SEJARAH -->
 <style>
+html {
+    scroll-behavior: smooth;
+}
+section[id] {
+    scroll-margin-top: 100px;
+}
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
@@ -154,32 +160,46 @@ h1, h2, h3, h4, h5, h6 {
     margin: 10px auto;
 }
 
-/* LAYOUT */
+/* ===== LAYOUT SEJARAH — GRID 2 KOLOM ===== */
 .sejarah-box {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 /* IMAGE */
 .sejarah-image {
-    flex: 1;
-    min-width: 300px;
+    position: relative;
+    height: 100%;
+}
+
+.sejarah-image-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
 }
 
 .sejarah-image img {
     width: 100%;
-    height: 450px;
+    flex: 1;
+    min-height: 0;
     object-fit: cover;
     border-radius: 14px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.sejarah-image img:hover {
+    transform: scale(1.02);
 }
 
 /* CONTENT */
 .sejarah-content {
-    flex: 1;
-    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
 /* CARD */
@@ -187,7 +207,6 @@ h1, h2, h3, h4, h5, h6 {
     background: #fff;
     border-radius: 14px;
     padding: 18px;
-    margin-bottom: 18px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     transition: 0.3s;
 }
@@ -208,17 +227,17 @@ h1, h2, h3, h4, h5, h6 {
     color: #444;
 }
 
-/* RESPONSIVE */
+/* ===== RESPONSIVE SEJARAH ===== */
 @media (max-width: 768px) {
     .sejarah-box {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
-
     .sejarah-image img {
-        height: 260px;
+        height: 250px;
     }
 }
 </style>
+
 
 <section id="sejarah" class="section">
 
@@ -233,9 +252,12 @@ h1, h2, h3, h4, h5, h6 {
 
     <div class="sejarah-box">
 
-        <!-- GAMBAR -->
+        <!-- GAMBAR — PATUNG KUDA BATU HODA -->
         <div class="sejarah-image">
-            <img src="/image/SBH/BatuHoda2.webp" alt="Batu Hoda">
+            <div class="sejarah-image-grid">
+                <img src="{{ asset('image/SBH/batu_hoda_patung.png') }}" alt="Patung Kuda Batu Hoda - Tampak Samping">
+                <img src="{{ asset('image/SBH/batu_hoda_patung2.jpg') }}" alt="Patung Kuda Batu Hoda - Tampak Depan">
+            </div>
         </div>
 
         <!-- KONTEN CARD -->
@@ -246,7 +268,7 @@ h1, h2, h3, h4, h5, h6 {
                 <h3>📜 Sejarah Batu Hoda</h3>
                 <p>
                     Batu Hoda merupakan sebuah kawasan yang namanya berasal dari gabungan kata
-                    “batu” dan “hoda” (kuda) dalam bahasa Batak. Kawasan ini berada di wilayah
+                    "batu" dan "hoda" (kuda) dalam bahasa Batak. Kawasan ini berada di wilayah
                     Tugu 0 KM Pulau Samosir, yang dikenal sebagai titik pusat dan arah penting
                     dalam peta budaya dan wisata Danau Toba.
                 </p>
@@ -279,15 +301,15 @@ h1, h2, h3, h4, h5, h6 {
                 <p>
                     Kesetiaan dan penantian yang begitu lama membuat kuda tersebut akhirnya berubah
                     menjadi batu. Dari peristiwa inilah masyarakat percaya bahwa terbentuknya
-                    “Batu Hoda” merupakan simbol dari kuda yang setia menunggu hingga menjadi batu.
+                    "Batu Hoda" merupakan simbol dari kuda yang setia menunggu hingga menjadi batu.
                 </p>
             </div>
 
         </div>
 
-    </div>
+    </div><!-- end .sejarah-box -->
 
-</div>
+</div><!-- end .container -->
 
 </section>
 
