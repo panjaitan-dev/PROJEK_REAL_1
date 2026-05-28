@@ -31,19 +31,23 @@
         to   { opacity: 1; transform: translateY(0); }
     }
     .page-hero-eyebrow {
-        font-size: 0.65rem; letter-spacing: 0.35em;
+        font-size: 0.8rem; letter-spacing: 0.25em;
         text-transform: uppercase; color: #c6a43b;
-        font-weight: 600; margin-bottom: 12px;
+        font-weight: 700; margin-bottom: 12px;
+        font-family: 'Inter', sans-serif !important;
     }
     .page-hero h1 {
         font-size: clamp(2.2rem, 5vw, 3.4rem);
-        font-weight: 800; letter-spacing: 2px;
-        margin-bottom: 10px;
+        font-weight: 800; letter-spacing: 1px;
+        margin-bottom: 12px;
         text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+        font-family: 'Inter', sans-serif !important;
     }
     .page-hero-sub {
-        font-size: 0.85rem; letter-spacing: 2.5px;
-        text-transform: uppercase; opacity: 0.8; font-weight: 500;
+        font-size: 0.95rem; letter-spacing: 3px;
+        text-transform: uppercase; opacity: 0.9; font-weight: 700;
+        color: rgba(255,255,255,0.85);
+        font-family: 'Inter', sans-serif !important;
     }
 
     /* === MAIN SECTION === */

@@ -369,15 +369,6 @@
                             <li><a class="dropdown-item" href="{{ url('/destinasi') }}">Semua Destinasi</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle {{ request()->routeIs('geosite*') ? 'active' : '' }}" href="#" data-bs-toggle="dropdown">Geosite</a>
-                        <ul class="dropdown-menu">
-                            <li><h6 class="dropdown-header"><i class="fas fa-mountain me-1"></i> DAFTAR GEOSITE</h6></li>
-                            <li><a class="dropdown-item" href="{{ route('geosite.batu_hoda_beach') }}">Batu Hoda Beach</a></li>
-                            <li><a class="dropdown-item" href="{{ route('geosite.museum_huta_bolon') }}">Museum Huta Bolon</a></li>
-                            <li><a class="dropdown-item" href="{{ route('geosite.batu_pasa_pantai') }}">Batu Pasa Pantai</a></li>
-                        </ul>
-                    </li>
                     <li class="nav-item"><a class="nav-link {{ request()->routeIs('galeri') ? 'active' : '' }}" href="{{ url('/galeri') }}">Galeri</a></li>
                     <li class="nav-item"><a class="nav-link {{ request()->routeIs('berita') ? 'active' : '' }}" href="{{ url('/berita') }}">Berita</a></li>
                     <li class="nav-item"><a class="nav-link {{ request()->routeIs('kontak') ? 'active' : '' }}" href="{{ url('/kontak') }}">Kontak</a></li>
@@ -411,15 +402,7 @@
                         <li class="mb-2"><a href="{{ url('/kontak') }}">Kontak</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-6 mb-4">
-                    <h5>Geosite</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="{{ route('geosite.batu_hoda_beach') }}">Batu Hoda</a></li>
-                        <li class="mb-2"><a href="{{ route('geosite.museum_huta_bolon') }}">Huta Bolon</a></li>
-                        <li class="mb-2"><a href="{{ route('geosite.batu_pasa_pantai') }}">Batu Pasa</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-6 mb-4">
+                <div class="col-lg-3 col-md-6 mb-4">
                     <h5>Destinasi</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="{{ url('/destinasi/alam') }}">Destinasi Alam</a></li>
@@ -428,7 +411,7 @@
                         <li class="mb-2"><a href="{{ url('/destinasi') }}">Semua Destinasi</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
+                <div class="col-lg-4 col-md-6 mb-4">
                     <h5>Kontak</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2"><i class="fas fa-map-marker-alt me-2" style="color: #c6a43b;"></i> Danau Toba, Sumatera Utara</li>

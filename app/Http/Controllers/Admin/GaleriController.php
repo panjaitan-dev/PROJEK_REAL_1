@@ -49,6 +49,11 @@ class GaleriController extends Controller
         return redirect()->route('admin.galeri.index')->with('success', 'Data berhasil ditambah!');
     }
 
+    public function show($id)
+    {
+        return redirect()->route('admin.galeri.edit', $id);
+    }
+
     public function edit($id)
     {
         $galeri = Galeri::findOrFail($id);

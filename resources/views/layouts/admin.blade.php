@@ -1374,9 +1374,6 @@
         <a href="{{ route('admin.destinasi.index') }}" class="{{ request()->routeIs('admin.destinasi.*') ? 'active' : '' }}">
             <i class="fas fa-map-marked-alt"></i> Destinasi
         </a>
-        <a href="{{ route('admin.galeri-geosite.index') }}" class="{{ request()->routeIs('admin.galeri-geosite.*') ? 'active' : '' }}">
-            <i class="fas fa-mountain"></i> Galeri Geosite
-        </a>
         <a href="{{ url('/') }}" target="_blank">
             <i class="fas fa-globe"></i> Lihat Website
         </a>
