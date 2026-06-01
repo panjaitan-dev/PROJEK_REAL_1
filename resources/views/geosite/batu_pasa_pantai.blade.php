@@ -113,7 +113,7 @@
 <!-- HERO -->
 <section class="hero" style="background-image: url('/image/Batu_Pasa/batu_pasa.jpg');">
     <div>
-        <h1 class="hero-title">Pantai Batu Pasa</h1>
+        <h1 class="hero-title"> Batu Pasa</h1>
         <p class="hero-subtitle">Pulau Samosir · Danau Toba</p>
     </div>
 </section>
