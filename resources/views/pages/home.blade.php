@@ -547,7 +547,7 @@
             <div class="destinasi-item {{ $idx % 2 !== 0 ? 'reverse' : '' }}">
                 <div class="destinasi-image">
                     @if($dest->gambar_utama)
-                    <img src="{{ asset('storage/'.$dest->gambar_utama) }}" alt="{{ $dest->nama }}">
+                    <img src="{{ $dest->gambar_utama_url }}" alt="{{ $dest->nama }}" onerror="this.src='/image/SBH/batu_hoda_poster.png'">
                     @else
                     <img src="/image/SBH/BatuHoda.png" alt="{{ $dest->nama }}">
                     @endif

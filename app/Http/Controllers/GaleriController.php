@@ -18,14 +18,8 @@ class GaleriController extends Controller
             ->orderBy('created_at', 'desc')
             ->get()
             ->map(function ($item) {
-                // Normalkan src gambar (bisa storage path atau base64)
-                if (!$item->gambar) {
-                    $src = 'https://via.placeholder.com/400x600?text=No+Image';
-                } elseif (str_starts_with($item->gambar, 'data:')) {
-                    $src = $item->gambar;
-                } else {
-                    $src = asset('storage/' . $item->gambar);
-                }
+                // Normalkan src gambar (bisa storage path, URL eksternal, atau base64)
+                $src = $item->gambar_url;
 
                 return [
                     'src'              => $src,

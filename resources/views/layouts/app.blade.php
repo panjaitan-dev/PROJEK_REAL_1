@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <title>@yield('title', 'Geosite Simanindo – Batu Hoda, Danau Toba')</title>
     <meta name="description" content="Jelajahi keindahan Geosite Simanindo dan Batu Hoda di kawasan UNESCO Global Geopark Danau Toba. Wisata alam, budaya Batak, dan geologi kelas dunia.">
     
@@ -77,8 +75,8 @@
             border-bottom: 1px solid rgba(0, 51, 102, 0.08);
             box-shadow: 0 4px 28px rgba(0, 0, 0, 0.08);
         }
-        .navbar.scrolled .nav-link  { color: #2c3e50 !important; text-shadow: none; }
-        .navbar.scrolled .navbar-brand { color: #003366 !important; text-shadow: none; }
+        .navbar.scrolled .nav-link  { color: #111111 !important; text-shadow: none !important; }
+        .navbar.scrolled .navbar-brand { color: #003366 !important; text-shadow: none !important; }
         .navbar.scrolled .navbar-brand span { color: var(--gold) !important; }
         
         .navbar .container {

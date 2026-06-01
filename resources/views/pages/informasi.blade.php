@@ -14,7 +14,7 @@
         height: 55vh; min-height: 360px;
         display: flex; align-items: center; justify-content: center;
         text-align: center; color: #fff;
-        margin-top: 70px; overflow: hidden;
+        margin-top: 0; overflow: hidden;
         background: linear-gradient(160deg, rgba(0,30,70,0.85) 0%, rgba(0,51,102,0.6) 55%, rgba(0,80,130,0.5) 100%),
                     url('/image/SBH/sejarah.png') center/cover no-repeat;
     }
@@ -276,7 +276,7 @@
         font-size: 1.6rem; font-weight: 700;
         margin-bottom: 12px; position: relative; z-index: 1;
     }
-    .page-cta em { color: #c6a43b; font-style: italic; }
+    .page-cta em { color: #c6a43b; font-style: italic; }php
     .page-cta p {
         max-width: 550px; margin: 0 auto 24px;
         font-size: 0.85rem; opacity: 0.8; line-height: 1.7;

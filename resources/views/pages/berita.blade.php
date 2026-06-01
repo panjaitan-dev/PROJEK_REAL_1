@@ -14,7 +14,7 @@
         height: 55vh; min-height: 360px;
         display: flex; align-items: center; justify-content: center;
         text-align: center; color: #fff;
-        margin-top: 70px; overflow: hidden;
+        margin-top: 0; overflow: hidden;
         background: linear-gradient(135deg, rgba(0,51,102,0.8) 0%, rgba(0,0,0,0.35) 50%, rgba(0,51,102,0.7) 100%),
                     url('{{ asset("image/batu_hoda_beach/batu_hoda_beach1.jpg") }}') center/cover no-repeat;
     }

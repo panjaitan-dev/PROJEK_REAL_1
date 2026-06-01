@@ -41,7 +41,7 @@
                     <label class="form-label">Gambar Saat Ini</label>
                     @if($galeri->gambar)
                         <div class="mb-2">
-                            <img src="{{ $galeri->gambar }}" style="max-width: 150px; border-radius: 8px;">
+                            <img src="{{ $galeri->gambar_url }}" style="max-width: 150px; border-radius: 8px;">
                         </div>
                     @else
                         <p class="text-muted">Tidak ada gambar</p>

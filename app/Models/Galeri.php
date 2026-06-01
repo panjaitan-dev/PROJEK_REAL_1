@@ -38,6 +38,9 @@ class Galeri extends Model
         if (str_starts_with($this->gambar, 'data:')) {
             return $this->gambar;
         }
+        if (str_starts_with($this->gambar, 'http://') || str_starts_with($this->gambar, 'https://')) {
+            return $this->gambar;
+        }
         // Path relatif storage
         return asset('storage/' . $this->gambar);
     }

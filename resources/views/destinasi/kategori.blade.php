@@ -5,6 +5,17 @@
 @section('content')
 
 <style>
+@php
+    $heroImage = 'image/SBH/DanauToba.webp';
+    if (strtolower($kategori) === 'alam') {
+        $heroImage = 'image/SBH/BatuHoda.webp';
+    } elseif (strtolower($kategori) === 'buatan') {
+        $heroImage = 'image/SBH/BatuPasa.webp';
+    } elseif (strtolower($kategori) === 'budaya') {
+        $heroImage = 'image/SBH/HutaBolon.webp';
+    }
+@endphp
+
     /* ==================== HERO SECTION ==================== */
     .kategori-hero {
         height: 45vh;
@@ -12,7 +23,7 @@
 
         background:
             linear-gradient(rgba(0,51,102,0.45), rgba(0,51,102,0.45)),
-            url('{{ asset("image/batu_hoda_beach/destinasi-" . strtolower($kategori) . ".jpg") }}');
+            url('{{ asset($heroImage) }}');
 
         background-size: cover;
         background-position: center;
@@ -224,7 +235,7 @@
                  data-aos-delay="{{ $loop->index * 100 }}">
 
                 <div class="card-image">
-                    <img src="{{ $item->gambar_utama ? asset('storage/' . $item->gambar_utama) : asset('image/destinasi-hero.jpg') }}"
+                    <img src="{{ $item->gambar_utama_url }}"
                          alt="{{ $item->nama }}"
                          onerror="this.src='{{ asset('image/destinasi-hero.jpg') }}'">
                 </div>
@@ -266,7 +277,7 @@
             <div class="dest-card" data-aos="fade-up">
 
                 <div class="card-image">
-                    <img src="{{ asset('image/tuktuk/destinasi-alam.jpg') }}"
+                    <img src="{{ asset('image/SBH/DanauToba.webp') }}"
                          alt="Danau Toba">
                 </div>
 

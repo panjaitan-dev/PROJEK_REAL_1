@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <title>Pantai Batu Pasa - Geosite Danau Toba</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/batu_hoda_beach.css">
@@ -169,7 +167,7 @@ Pantai Batu Pasa menawarkan pemandangan Danau Toba yang indah dengan suasana yan
                 @forelse($galeriGeosite as $item)
                     <div class="galeri-item">
                         @if($item->gambar)
-                            <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}" onclick="openLightbox(this)">
+                            <img src="{{ $item->gambar_url }}" alt="{{ $item->judul }}" onclick="openLightbox(this)" onerror="this.src='/image/Batu_Pasa/batu_pasa.jpg'">
                         @endif
                     </div>
                 @empty

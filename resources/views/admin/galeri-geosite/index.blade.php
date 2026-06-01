@@ -32,8 +32,8 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>
                         @if($item->gambar)
-                            <a href="{{ asset('storage/' . $item->gambar) }}" target="_blank" title="Klik untuk memperbesar">
-                                <img src="{{ asset('storage/' . $item->gambar) }}" width="80" height="80" style="object-fit: cover; border-radius: 8px; cursor: pointer; border: 1px solid #ddd;">
+                            <a href="{{ $item->gambar_url }}" target="_blank" title="Klik untuk memperbesar">
+                                <img src="{{ $item->gambar_url }}" width="80" height="80" style="object-fit: cover; border-radius: 8px; cursor: pointer; border: 1px solid #ddd;">
                             </a>
                         @else
                             <span class="text-muted">-</span>

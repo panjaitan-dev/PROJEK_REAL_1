@@ -37,13 +37,14 @@
             </div>
 
             <div class="mb-3">
-                <label>Gambar Saat Ini</label><br>
+                <label class="form-label">Gambar Saat Ini</label><br>
                 @if($fasilitas->gambar)
-                    <img src="{{ $fasilitas->gambar }}" width="100">
+                    <img src="{{ $fasilitas->gambar_url }}" width="100" style="border-radius: 6px; border: 1px solid #dee2e6; object-fit: cover;">
                 @else
                     <span class="text-muted">Tidak ada gambar</span>
                 @endif
-                <input type="file" name="gambar" class="form-control mt-2" accept="image/*">
+                <input type="file" name="gambar" class="form-control mt-2" accept="image/jpeg,image/png,image/jpg,image/webp">
+                <small class="text-muted">Kosongkan untuk mempertahankan gambar lama. Maks 6 MB.</small>
             </div>
 
             <div class="mb-3">

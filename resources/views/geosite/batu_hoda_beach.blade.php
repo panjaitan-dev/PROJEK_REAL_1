@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <title>Batu Hoda Beach - Geosite Danau Toba</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/batu_hoda_beach.css">
@@ -325,7 +323,7 @@ h1, h2, h3, h4, h5, h6 {
             @forelse($umkm as $item)
             <div class="card">
                 @if($item->gambar)
-                <img src="{{ asset('storage/' . $item->gambar) }}" class="card-img" alt="{{ $item->nama }}">
+                <img src="{{ $item->gambar_url }}" class="card-img" alt="{{ $item->nama }}" onerror="this.onerror=null;this.src='{{ asset('image/Batu_Hoda/umkn.jpg') }}'">
                 @endif
                 <div class="card-content">
                     <h3>{{ $item->nama }}</h3>
@@ -359,7 +357,7 @@ h1, h2, h3, h4, h5, h6 {
             @forelse($penginapan as $item)
             <div class="card">
                 @if($item->gambar)
-                <img src="{{ asset('storage/' . $item->gambar) }}" class="card-img" alt="{{ $item->nama }}">
+                <img src="{{ $item->gambar_url }}" class="card-img" alt="{{ $item->nama }}" onerror="this.onerror=null;this.src='{{ asset('image/Batu_Hoda/Penginapan.jpeg') }}'">
                 @endif
                 <div class="card-content">
                     <h3>{{ $item->nama }}</h3>
@@ -393,7 +391,7 @@ h1, h2, h3, h4, h5, h6 {
             @forelse($fasilitas as $item)
             <div class="fasilitas-item">
                 @if($item->gambar)
-                <img src="{{ asset('storage/' . $item->gambar) }}" class="fasilitas-img" alt="{{ $item->nama }}">
+                <img src="{{ $item->gambar_url }}" class="fasilitas-img" alt="{{ $item->nama }}" onerror="this.onerror=null;this.src='{{ asset('image/Batu_Hoda/Galeri2.jpeg') }}'">
                 @endif
                 <div class="fasilitas-content">
                     <h4>{{ $item->nama }}</h4>
@@ -425,7 +423,7 @@ h1, h2, h3, h4, h5, h6 {
             @forelse($galeriGeosite as $item)
                 <div class="galeri-item">
                     @if($item->gambar)
-                        <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul ?? $item->kategori ?? 'Galeri Batu Hoda' }}">
+                        <img src="{{ $item->gambar_url }}" alt="{{ $item->judul ?? $item->kategori ?? 'Galeri Batu Hoda' }}" onerror="this.onerror=null;this.src='{{ asset('image/Batu_Hoda/Galeri1.jpeg') }}'">
                     @endif
                 </div>
             @empty

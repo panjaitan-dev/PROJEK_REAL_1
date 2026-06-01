@@ -45,4 +45,21 @@ class Destinasi extends Model
     {
         return $this->belongsTo(Admin::class);
     }
+
+    /**
+     * Kembalikan URL gambar_utama yang siap dipakai di view.
+     */
+    public function getGambarUtamaUrlAttribute(): string
+    {
+        if (!$this->gambar_utama) {
+            return 'https://via.placeholder.com/800x500?text=No+Image';
+        }
+        if (str_starts_with($this->gambar_utama, 'data:')) {
+            return $this->gambar_utama;
+        }
+        if (str_starts_with($this->gambar_utama, 'http://') || str_starts_with($this->gambar_utama, 'https://')) {
+            return $this->gambar_utama;
+        }
+        return asset('storage/' . $this->gambar_utama);
+    }
 }

@@ -15,7 +15,7 @@
         height: 55vh; min-height: 360px;
         display: flex; align-items: center; justify-content: center;
         text-align: center; color: #fff;
-        margin-top: 70px; overflow: hidden;
+        margin-top: 0; overflow: hidden;
         background: linear-gradient(135deg, #003366 0%, #1a4a7a 50%, #0a3a6a 100%);
     }
     .page-hero::before {
