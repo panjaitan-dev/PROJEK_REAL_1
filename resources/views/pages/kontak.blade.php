@@ -584,11 +584,10 @@
             <div class="kontak-info-card">
                 <div class="kontak-info-title">📱 Ikuti Kami</div>
                 <div class="social-row">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/share/1EGJyH9J1T/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/batuhodabeachofficial?igsh=dG02YW0wNnNweDJ5" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/batuhodabeach" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.tiktok.com/@batuhodabeach" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
                 </div>
                 <div class="hours-box">
                     <h4><i class="far fa-clock" style="margin-right:8px;color:#e8c96a;"></i>Jam Operasional</h4>
