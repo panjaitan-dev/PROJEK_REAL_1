@@ -21,5 +21,16 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Paginator::useBootstrapFive();
+
+        // Share home settings globally with all views
+        try {
+            if (\Illuminate\Support\Facades\Schema::hasTable('home_settings')) {
+                \Illuminate\Support\Facades\View::share('hs', \App\Models\HomeSetting::allAsArray());
+            } else {
+                \Illuminate\Support\Facades\View::share('hs', []);
+            }
+        } catch (\Exception $e) {
+            \Illuminate\Support\Facades\View::share('hs', []);
+        }
     }
 }

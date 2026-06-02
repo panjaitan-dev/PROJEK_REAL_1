@@ -16,7 +16,7 @@
         text-align: center; color: #fff;
         margin-top: 0; overflow: hidden;
         background: linear-gradient(160deg, rgba(0,30,70,0.85) 0%, rgba(0,51,102,0.6) 55%, rgba(0,80,130,0.5) 100%),
-                    url('/image/SBH/sejarah.png') center/cover no-repeat;
+                    url('{{ !empty($hs["informasi_hero_gambar"]) ? asset("storage/" . $hs["informasi_hero_gambar"]) : "/image/SBH/sejarah.webp" }}') center/cover no-repeat;
     }
     .page-hero::before {
         content: ''; position: absolute; inset: 0;
@@ -312,9 +312,9 @@
 <!-- HERO -->
 <section class="page-hero">
     <div class="page-hero-inner">
-        <div class="page-hero-eyebrow">Pengetahuan &amp; Wawasan</div>
-        <h1>Informasi <em style="font-style:italic;color:#c6a43b;">Terbaru</em></h1>
-        <div class="page-hero-sub">Warisan Geologi Kelas Dunia</div>
+        <div class="page-hero-eyebrow">Geosite Danau Toba</div>
+        <h1>{{ $hs['informasi_title'] ?? 'Informasi Terbaru' }}</h1>
+        <div class="page-hero-sub">{{ $hs['informasi_subtitle'] ?? 'Warisan Geologi Kelas Dunia' }}</div>
     </div>
 </section>
 
@@ -383,8 +383,8 @@
 
 <!-- CTA -->
 <section class="page-cta">
-    <h3>Jelajahi <em>Destinasi</em> Kami</h3>
-    <p>Temukan keindahan Pantai Batu Hoda, Museum Huta Bolon, dan keajaiban alam Samosir</p>
+    <h3>{{ $hs['cta_judul'] ?? 'Mulai Petualangan Anda' }}</h3>
+    <p>{{ $hs['cta_deskripsi'] ?? 'Temukan keindahan Pantai Batu Hoda, belajar budaya Batak di Museum Huta Bolon, dan abadikan momen di Batu Pasa Pantai.' }}</p>
     <a href="{{ url('/') }}" class="page-cta-btn">Kembali ke Beranda</a>
 </section>
 

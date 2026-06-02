@@ -17,55 +17,41 @@
 @endphp
 
     /* ==================== HERO SECTION ==================== */
-    .kategori-hero {
-        height: 45vh;
-        min-height: 350px;
-
-        background:
-            linear-gradient(rgba(0,51,102,0.45), rgba(0,51,102,0.45)),
-            url('{{ asset($heroImage) }}');
-
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: white;
-        margin-top: 76px;
-
+    .page-hero {
         position: relative;
-        overflow: hidden;
+        height: 55vh; min-height: 360px;
+        display: flex; align-items: center; justify-content: center;
+        text-align: center; color: #fff;
+        margin-top: 0; overflow: hidden;
+        background: linear-gradient(135deg, rgba(0,51,102,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,51,102,0.7) 100%),
+                    url('{{ asset($heroImage) }}') center/cover no-repeat;
     }
-
-    .kategori-hero::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: rgba(0,0,0,0.15);
-        backdrop-filter: blur(1px);
+    .page-hero::before {
+        content: ''; position: absolute; inset: 0;
+        background: radial-gradient(circle at 50% 30%, rgba(198,164,59,0.15), transparent 70%);
     }
-
-    .kategori-hero div {
-        position: relative;
-        z-index: 2;
+    .page-hero-inner {
+        position: relative; z-index: 2; padding: 0 24px;
+        animation: heroFade 0.8s ease both;
     }
-
-    .kategori-hero h1 {
-        font-size: 3rem;
-        font-weight: 700;
+    @keyframes heroFade {
+        from { opacity: 0; transform: translateY(30px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+    .page-hero-eyebrow {
+        font-size: 0.65rem; letter-spacing: 0.35em;
+        text-transform: uppercase; color: #c6a43b;
+        font-weight: 600; margin-bottom: 12px;
+    }
+    .page-hero h1 {
+        font-size: clamp(2.2rem, 5vw, 3.4rem);
+        font-weight: 800; letter-spacing: 2px;
         margin-bottom: 10px;
-        text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        text-shadow: 0 2px 15px rgba(0,0,0,0.3);
     }
-
-    .kategori-hero p {
-        font-size: 0.9rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        opacity: 0.95;
-        text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    .page-hero-sub {
+        font-size: 0.85rem; letter-spacing: 2.5px;
+        text-transform: uppercase; opacity: 0.8; font-weight: 500;
     }
 
     /* ==================== DESTINASI GRID ==================== */
@@ -191,11 +177,11 @@
     }
 
     @media (max-width: 768px) {
-        .kategori-hero {
+        .page-hero {
             min-height: 280px;
         }
 
-        .kategori-hero h1 {
+        .page-hero h1 {
             font-size: 2rem;
         }
 
@@ -215,10 +201,11 @@
 </style>
 
 <!-- HERO SECTION -->
-<section class="kategori-hero">
-    <div data-aos="fade-up">
+<section class="page-hero">
+    <div class="page-hero-inner" data-aos="fade-up">
+        <div class="page-hero-eyebrow">Geosite Danau Toba</div>
         <h1>Destinasi {{ $kategori }}</h1>
-        <p>{{ $deskripsi }}</p>
+        <div class="page-hero-sub">{{ $deskripsi }}</div>
     </div>
 </section>
 

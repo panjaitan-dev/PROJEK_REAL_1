@@ -661,11 +661,10 @@
 </section>
 
 <script>
-    // ==================== HERO SLIDER ====================
+    // ==================== HERO SLIDER (SCROLL CONTROLLED) ====================
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
-    let slideInterval;
     const slideCount = slides.length;
 
     function showSlide(index) {
@@ -673,30 +672,31 @@
             slide.classList.remove('active');
             if (dots[i]) dots[i].classList.remove('active');
         });
-        slides[index].classList.add('active');
+        if (slides[index]) slides[index].classList.add('active');
         if (dots[index]) dots[index].classList.add('active');
         currentSlide = index;
     }
 
-    function nextSlide() {
-        let next = (currentSlide + 1) % slideCount;
-        showSlide(next);
+    function handleScrollImage() {
+        if (window.scrollY > 80) {
+            if (currentSlide !== 1) {
+                showSlide(1);
+            }
+        } else {
+            if (currentSlide !== 0) {
+                showSlide(0);
+            }
+        }
     }
 
-    function startSlider() {
-        if (slideInterval) clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, 5000);
-    }
+    window.addEventListener('scroll', handleScrollImage, { passive: true });
+    handleScrollImage(); // run once on load
 
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
-            clearInterval(slideInterval);
             showSlide(index);
-            startSlider();
         });
     });
-
-    startSlider();
 
     // ==================== SMOOTH SCROLL ====================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

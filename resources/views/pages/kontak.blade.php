@@ -17,50 +17,41 @@
     }
 
     /* ── HERO ── */
-    .kontak-hero {
-        height: 46vh;
-        min-height: 320px;
-        background: linear-gradient(160deg, rgba(0,30,70,0.82) 0%, rgba(0,51,102,0.55) 60%, rgba(0,80,130,0.45) 100%),
-                    url('/image/kontak-hero.jpg') center/cover no-repeat;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: #fff;
-        margin-top: 76px;
+    .page-hero {
         position: relative;
-        overflow: hidden;
+        height: 55vh; min-height: 360px;
+        display: flex; align-items: center; justify-content: center;
+        text-align: center; color: #fff;
+        margin-top: 0; overflow: hidden;
+        background: linear-gradient(135deg, rgba(0,51,102,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,51,102,0.7) 100%),
+                    url('{{ !empty($hs["kontak_hero_gambar"]) ? asset("storage/" . $hs["kontak_hero_gambar"]) : "/image/SBH/DanauToba.webp" }}') center/cover no-repeat;
     }
-    .kontak-hero::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(ellipse 80% 60% at 50% 120%, rgba(198,164,59,0.18), transparent);
-        pointer-events: none;
+    .page-hero::before {
+        content: ''; position: absolute; inset: 0;
+        background: radial-gradient(circle at 50% 30%, rgba(198,164,59,0.15), transparent 70%);
     }
-    .kontak-hero-inner {
-        position: relative; z-index: 2;
-        animation: kHeroUp 0.9s cubic-bezier(0.34,1.2,0.64,1) both;
+    .page-hero-inner {
+        position: relative; z-index: 2; padding: 0 24px;
+        animation: heroFade 0.8s ease both;
     }
-    @keyframes kHeroUp {
-        from { opacity:0; transform:translateY(36px); }
-        to   { opacity:1; transform:translateY(0); }
+    @keyframes heroFade {
+        from { opacity: 0; transform: translateY(30px); }
+        to   { opacity: 1; transform: translateY(0); }
     }
-    .kontak-hero-eyebrow {
-        font-size: 0.63rem; letter-spacing: 0.38em;
-        text-transform: uppercase; color: #e8c96a;
-        font-family: 'Inter', sans-serif; font-weight: 500; margin-bottom: 14px;
+    .page-hero-eyebrow {
+        font-size: 0.65rem; letter-spacing: 0.35em;
+        text-transform: uppercase; color: #c6a43b;
+        font-weight: 600; margin-bottom: 12px;
     }
-    .kontak-hero h1 {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: clamp(2rem, 5vw, 3.6rem);
-        font-weight: 600; letter-spacing: 0.02em; line-height: 1.2;
-        margin-bottom: 14px; text-shadow: 0 2px 18px rgba(0,0,0,0.35);
+    .page-hero h1 {
+        font-size: clamp(2.2rem, 5vw, 3.4rem);
+        font-weight: 800; letter-spacing: 2px;
+        margin-bottom: 10px;
+        text-shadow: 0 2px 15px rgba(0,0,0,0.3);
     }
-    .kontak-hero-divider { width:40px; height:1.5px; background:#c6a43b; margin:0 auto 14px; opacity:.7; }
-    .kontak-hero p {
-        font-size: 0.82rem; letter-spacing: 0.25em; text-transform: uppercase;
-        opacity: .8; font-family: 'Inter',sans-serif; font-weight: 400;
+    .page-hero-sub {
+        font-size: 0.85rem; letter-spacing: 2.5px;
+        text-transform: uppercase; opacity: 0.8; font-weight: 500;
     }
 
     /* ── SECTION ── */
@@ -446,13 +437,12 @@
     }
 </style>
 
-{{-- HERO --}}
-<section class="kontak-hero" aria-label="Halaman Kontak">
-    <div class="kontak-hero-inner">
-        <div class="kontak-hero-eyebrow">Geosite Danau Toba &bull; Samosir</div>
-        <h1>Hubungi <em style="font-style:italic;color:#e8c96a;">Kami</em></h1>
-        <div class="kontak-hero-divider"></div>
-        <p>Kami siap membantu perjalanan wisata Anda</p>
+<!-- HERO -->
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <div class="page-hero-eyebrow">Geosite Danau Toba</div>
+        <h1>{{ $hs['kontak_title'] ?? 'Hubungi Kami' }}</h1>
+        <div class="page-hero-sub">{{ $hs['kontak_subtitle'] ?? 'Kami siap membantu perjalanan wisata Anda' }}</div>
     </div>
 </section>
 
@@ -606,9 +596,9 @@
 {{-- CTA --}}
 <section class="kontak-cta">
     <div class="kontak-cta-inner">
-        <h3>Mulai <em>Petualangan</em> Anda</h3>
+        <h3>{{ $hs['cta_judul'] ?? 'Mulai Petualangan Anda' }}</h3>
         <div class="kontak-cta-divider"></div>
-        <p>Temukan keindahan alam dan budaya Samosir bersama kami. Kami siap memandu perjalanan terbaik Anda.</p>
+        <p>{{ $hs['cta_deskripsi'] ?? 'Temukan keindahan alam dan budaya Samosir bersama kami. Kami siap memandu perjalanan terbaik Anda.' }}</p>
         <a href="{{ url('/') }}" class="kontak-cta-btn">Kembali ke Beranda</a>
     </div>
 </section>

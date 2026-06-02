@@ -110,14 +110,14 @@
         .sidebar-brand-icon {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, #3b82f6, #6366f1);
+            background: linear-gradient(135deg, #003366, #004d99);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.1rem;
             color: white;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.35);
         }
 
         .sidebar-header h3 {
@@ -1344,6 +1344,9 @@
         </a>
         
         <div class="menu-title">Konten</div>
+        <a href="{{ route('admin.home-settings.index') }}" class="{{ request()->routeIs('admin.home-settings.*') ? 'active' : '' }}">
+            <i class="fas fa-home"></i> Home
+        </a>
         <a href="{{ route('admin.galeri.index') }}" class="{{ request()->routeIs('admin.galeri.*') ? 'active' : '' }}">
             <i class="fas fa-images"></i> Galeri
         </a>
@@ -1353,8 +1356,11 @@
         <a href="{{ route('admin.informasi.index') }}" class="{{ request()->routeIs('admin.informasi.*') ? 'active' : '' }}">
             <i class="fas fa-info-circle"></i> Informasi
         </a>
+        <a href="{{ route('admin.destinasi.index') }}" class="{{ request()->routeIs('admin.destinasi.*') ? 'active' : '' }}">
+            <i class="fas fa-map-marked-alt"></i> Destinasi
+        </a>
         
-        <div class="menu-title">Desa Simanindo</div>
+        <div class="menu-title">Detail Tambahan</div>
         <a href="{{ route('admin.umkm.index') }}" class="{{ request()->routeIs('admin.umkm.*') ? 'active' : '' }}">
             <i class="fas fa-store"></i> UMKM
         </a>
@@ -1363,14 +1369,6 @@
         </a>
         <a href="{{ route('admin.penginapan.index') }}" class="{{ request()->routeIs('admin.penginapan.*') ? 'active' : '' }}">
             <i class="fas fa-hotel"></i> Penginapan
-        </a>
-        
-        <div class="menu-title">Lainnya</div>
-        <a href="{{ route('admin.home-settings.index') }}" class="{{ request()->routeIs('admin.home-settings.*') ? 'active' : '' }}">
-            <i class="fas fa-home"></i> Home Manager
-        </a>
-        <a href="{{ route('admin.destinasi.index') }}" class="{{ request()->routeIs('admin.destinasi.*') ? 'active' : '' }}">
-            <i class="fas fa-map-marked-alt"></i> Destinasi
         </a>
         <a href="{{ route('admin.galeri-geosite.index') }}" class="{{ request()->routeIs('admin.galeri-geosite.*') ? 'active' : '' }}">
             <i class="fas fa-mountain"></i> Galeri Geosite

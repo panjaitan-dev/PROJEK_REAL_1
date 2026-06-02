@@ -6,56 +6,41 @@
 
 <style>
     /* ==================== HERO SECTION ==================== */
-    .destinasi-hero {
-        height: 55vh;
-        min-height: 400px;
-
-        background:
-            linear-gradient(rgba(0, 51, 102, 0.45), rgba(0, 51, 102, 0.45)),
-            url('{{ asset("image/batu_hoda_beach/slide1.jpg") }}');
-
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: white;
-        margin-top: 76px;
+    .page-hero {
         position: relative;
-        overflow: hidden;
+        height: 55vh; min-height: 360px;
+        display: flex; align-items: center; justify-content: center;
+        text-align: center; color: #fff;
+        margin-top: 0; overflow: hidden;
+        background: linear-gradient(135deg, rgba(0,51,102,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,51,102,0.7) 100%),
+                    url('{{ !empty($hs["destinasi_hero_gambar"]) ? asset("storage/" . $hs["destinasi_hero_gambar"]) : "/image/SBH/BatuHoda.webp" }}') center/cover no-repeat;
     }
-
-    .destinasi-hero::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: rgba(0,0,0,0.15);
-        backdrop-filter: blur(1px);
+    .page-hero::before {
+        content: ''; position: absolute; inset: 0;
+        background: radial-gradient(circle at 50% 30%, rgba(198,164,59,0.15), transparent 70%);
     }
-
-    .destinasi-hero div {
-        position: relative;
-        z-index: 2;
+    .page-hero-inner {
+        position: relative; z-index: 2; padding: 0 24px;
+        animation: heroFade 0.8s ease both;
     }
-
-    .destinasi-hero h1 {
-        font-size: 3.5rem;
-        font-weight: 700;
-        margin-bottom: 15px;
-        animation: fadeInUp 0.8s ease;
-        text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    @keyframes heroFade {
+        from { opacity: 0; transform: translateY(30px); }
+        to   { opacity: 1; transform: translateY(0); }
     }
-
-    .destinasi-hero p {
-        font-size: 1rem;
-        letter-spacing: 0.25em;
-        text-transform: uppercase;
-        opacity: 0.95;
-        animation: fadeInUp 0.8s ease 0.1s both;
-        text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    .page-hero-eyebrow {
+        font-size: 0.65rem; letter-spacing: 0.35em;
+        text-transform: uppercase; color: #c6a43b;
+        font-weight: 600; margin-bottom: 12px;
+    }
+    .page-hero h1 {
+        font-size: clamp(2.2rem, 5vw, 3.4rem);
+        font-weight: 800; letter-spacing: 2px;
+        margin-bottom: 10px;
+        text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+    }
+    .page-hero-sub {
+        font-size: 0.85rem; letter-spacing: 2.5px;
+        text-transform: uppercase; opacity: 0.8; font-weight: 500;
     }
 
     @keyframes fadeInUp {
@@ -250,17 +235,12 @@
     }
 
     @media (max-width: 768px) {
-        .destinasi-hero {
+        .page-hero {
             min-height: 320px;
         }
 
-        .destinasi-hero h1 {
-            font-size: 2.2rem;
-        }
-
-        .destinasi-hero p {
-            font-size: 0.8rem;
-            letter-spacing: 0.15em;
+        .page-hero h1 {
+            font-size: 2rem;
         }
 
         .category-section {
@@ -283,10 +263,11 @@
 </style>
 
 <!-- HERO SECTION -->
-<section class="destinasi-hero">
-    <div data-aos="fade-up">
-        <h1>Destinasi Geosite</h1>
-        <p>Jelajahi Pesona Caldera Danau Toba</p>
+<section class="page-hero">
+    <div class="page-hero-inner" data-aos="fade-up">
+        <div class="page-hero-eyebrow">Geosite Danau Toba</div>
+        <h1>{{ $hs['destinasi_title'] ?? 'Eksplorasi Destinasi' }}</h1>
+        <div class="page-hero-sub">{{ $hs['destinasi_subtitle'] ?? 'Keindahan Alam, Budaya & Buatan di Simanindo' }}</div>
     </div>
 </section>
 

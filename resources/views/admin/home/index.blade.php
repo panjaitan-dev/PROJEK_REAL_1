@@ -185,6 +185,98 @@
     </div>
 </div>
 
+{{-- ======== BANNER & BACKGROUND PAGES ======== --}}
+<div class="hm-card">
+    <div class="hm-card-head">
+        <span class="hm-icon" style="background:#fae8ff;color:#a21caf">🌄</span>
+        <div>
+            <div class="hm-card-title">Header & Background Halaman</div>
+            <div class="hm-card-sub">Atur judul, subjudul, dan gambar background atas untuk halaman Informasi, Destinasi, Galeri, Berita, dan Kontak</div>
+        </div>
+    </div>
+    
+    @php
+    $pagesConfig = [
+        [
+            'name' => 'Informasi',
+            'title_key' => 'informasi_title',
+            'sub_key' => 'informasi_subtitle',
+            'img_key' => 'informasi_hero_gambar',
+            'default_title' => 'Informasi Terbaru',
+            'default_sub' => 'Warisan Geologi Kelas Dunia',
+            'default_img' => '/image/SBH/sejarah.webp'
+        ],
+        [
+            'name' => 'Destinasi',
+            'title_key' => 'destinasi_title',
+            'sub_key' => 'destinasi_subtitle',
+            'img_key' => 'destinasi_hero_gambar',
+            'default_title' => 'Eksplorasi Destinasi',
+            'default_sub' => 'Keindahan Alam, Budaya & Buatan di Simanindo',
+            'default_img' => '/image/SBH/BatuHoda.webp'
+        ],
+        [
+            'name' => 'Galeri',
+            'title_key' => 'galeri_title',
+            'sub_key' => 'galeri_subtitle',
+            'img_key' => 'galeri_hero_gambar',
+            'default_title' => 'Galeri Foto',
+            'default_sub' => 'Pesona Alam & Budaya Danau Toba',
+            'default_img' => '/image/SBH/Rumahkaca.webp'
+        ],
+        [
+            'name' => 'Berita',
+            'title_key' => 'berita_title',
+            'sub_key' => 'berita_subtitle',
+            'img_key' => 'berita_hero_gambar',
+            'default_title' => 'Berita Terkini',
+            'default_sub' => 'Informasi & Perkembangan Terbaru',
+            'default_img' => '/image/SBH/BatuHoda2.webp'
+        ],
+        [
+            'name' => 'Kontak',
+            'title_key' => 'kontak_title',
+            'sub_key' => 'kontak_subtitle',
+            'img_key' => 'kontak_hero_gambar',
+            'default_title' => 'Hubungi Kami',
+            'default_sub' => 'Kami siap membantu perjalanan wisata Anda',
+            'default_img' => '/image/SBH/DanauToba.webp'
+        ]
+    ];
+    @endphp
+
+    @foreach($pagesConfig as $pConfig)
+    <div style="border: 1px solid #f1f5f9; padding: 18px; border-radius: 12px; margin-bottom: 20px; background: #fafafa;">
+        <h5 style="font-size: .95rem; font-weight: 700; color: #003366; margin-bottom: 12px; border-bottom: 2px solid #e2e8f0; padding-bottom: 6px;">Halaman {{ $pConfig['name'] }}</h5>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label class="form-label">Judul Banner</label>
+                <input type="text" name="{{ $pConfig['title_key'] }}" class="form-control" value="{{ $s[$pConfig['title_key']] ?? $pConfig['default_title'] }}">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Subjudul / Deskripsi Banner</label>
+                <input type="text" name="{{ $pConfig['sub_key'] }}" class="form-control" value="{{ $s[$pConfig['sub_key']] ?? $pConfig['default_sub'] }}">
+            </div>
+        </div>
+        
+        <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label">Gambar Background Banner</label>
+            @if(!empty($s[$pConfig['img_key']]))
+            <div style="margin-bottom:10px; display:flex; align-items:center; gap:12px;">
+                <img src="{{ asset('storage/'.$s[$pConfig['img_key']]) }}" style="width:120px; height:60px; object-fit:cover; border-radius:8px; border:1px solid #e2e8f0;" alt="Gambar">
+                <span style="font-size:.72rem; color:#64748b;">Gambar saat ini. Upload baru untuk mengganti.</span>
+            </div>
+            @else
+            <div style="margin-bottom:8px; font-size:.72rem; color:#94a3b8;"><i class="fas fa-image"></i> Menggunakan gambar default: <code>{{ $pConfig['default_img'] }}</code></div>
+            @endif
+            <input type="file" name="{{ $pConfig['img_key'] }}" class="form-control" accept="image/*">
+            <small style="color:#94a3b8; font-size: .72rem;">Maks 6MB. Format: jpg, png, webp</small>
+        </div>
+    </div>
+    @endforeach
+</div>
+
 {{-- ======== SUBMIT ======== --}}
 <div style="display:flex;gap:12px;justify-content:flex-end;margin-top:8px;padding:20px 0">
     <a href="{{ url('/') }}" target="_blank" class="btn-cancel" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none">

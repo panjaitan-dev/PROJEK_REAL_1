@@ -207,16 +207,38 @@
             .logo-divider { height: 36px; }
             .navbar-brand { font-size: 1.5rem; }
             .navbar-collapse {
-                background: rgba(255, 255, 255, 0.98);
+                background: rgba(0, 51, 102, 0.98);
                 backdrop-filter: blur(20px);
                 padding: 1.2rem;
                 border-radius: 28px;
                 margin-top: 1rem;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+                border: 1px solid rgba(255, 255, 255, 0.1);
             }
             .nav-link { 
                 text-align: center;
-                color: #003366 !important;
+                color: rgba(255, 255, 255, 0.9) !important;
+            }
+            .navbar.scrolled .nav-link {
+                color: rgba(255, 255, 255, 0.9) !important;
+            }
+            .nav-link:hover, .navbar.scrolled .nav-link:hover {
+                color: var(--gold) !important;
+                background: rgba(198, 164, 59, 0.15);
+            }
+            .dropdown-menu {
+                background: rgba(0, 38, 77, 0.98);
+                border-color: rgba(255, 255, 255, 0.1);
+            }
+            .dropdown-item {
+                color: rgba(255, 255, 255, 0.8) !important;
+            }
+            .dropdown-item:hover {
+                background: rgba(198, 164, 59, 0.2);
+                color: var(--gold) !important;
+            }
+            .dropdown-header {
+                color: var(--gold) !important;
             }
         }
         

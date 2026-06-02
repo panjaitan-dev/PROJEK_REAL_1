@@ -16,7 +16,8 @@
         display: flex; align-items: center; justify-content: center;
         text-align: center; color: #fff;
         margin-top: 0; overflow: hidden;
-        background: linear-gradient(135deg, #003366 0%, #1a4a7a 50%, #0a3a6a 100%);
+        background: linear-gradient(135deg, rgba(0,51,102,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,51,102,0.7) 100%),
+                    url('{{ !empty($hs["galeri_hero_gambar"]) ? asset("storage/" . $hs["galeri_hero_gambar"]) : "/image/SBH/Rumahkaca.webp" }}') center/cover no-repeat;
     }
     .page-hero::before {
         content: ''; position: absolute; inset: 0;
@@ -395,9 +396,9 @@
 <!-- HERO -->
 <section class="page-hero">
     <div class="page-hero-inner">
-        <div class="page-hero-eyebrow">Geopark Kaldera Toba</div>
-        <h1>Galeri Foto</h1>
-        <div class="page-hero-sub">Pesona Alam &amp; Budaya Danau Toba</div>
+        <div class="page-hero-eyebrow">Geosite Danau Toba</div>
+        <h1>{{ $hs['galeri_title'] ?? 'Galeri Foto' }}</h1>
+        <div class="page-hero-sub">{{ $hs['galeri_subtitle'] ?? 'Pesona Alam & Budaya Danau Toba' }}</div>
     </div>
 </section>
 
