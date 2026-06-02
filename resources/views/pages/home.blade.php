@@ -557,7 +557,7 @@
                     <h3>{{ $dest->nama }}</h3>
                     <div class="destinasi-location">{{ $dest->lokasi }}</div>
                     <p class="destinasi-desc">{{ $dest->deskripsi }}</p>
-                    <a href="{{ url('/destinasi/'.$dest->slug) }}" class="destinasi-link">Jelajahi Lebih Lanjut</a>
+                    <a href="{{ $dest->detail_url }}" class="destinasi-link">Jelajahi Lebih Lanjut</a>
                 </div>
             </div>
             @endforeach

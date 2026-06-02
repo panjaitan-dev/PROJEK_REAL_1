@@ -257,7 +257,7 @@
                                 Gambar saat ini:
                             </p>
 
-                            <img src="{{ $destinasi->gambar_utama }}"
+                            <img src="{{ $destinasi->gambar_utama_url }}"
                                  alt="{{ $destinasi->nama }}"
                                  style="max-height:180px; border-radius:10px; border:1px solid #ddd;">
 

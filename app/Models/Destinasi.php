@@ -62,4 +62,22 @@ class Destinasi extends Model
         }
         return asset('storage/' . $this->gambar_utama);
     }
+
+    /**
+     * Dapatkan URL detail destinasi (mengarahkan ke geosite spesifik jika ada).
+     */
+    public function getDetailUrlAttribute(): string
+    {
+        $slugLower = strtolower($this->slug);
+        if (str_contains($slugLower, 'batu-hoda') || str_contains($slugLower, 'batu_hoda')) {
+            return route('geosite.batu_hoda_beach');
+        }
+        if (str_contains($slugLower, 'batu-pasa') || str_contains($slugLower, 'batu_pasa') || str_contains($slugLower, 'batu-passa')) {
+            return route('geosite.batu_pasa_pantai');
+        }
+        if (str_contains($slugLower, 'museum-huta-bolon') || str_contains($slugLower, 'museum_huta_bolon') || str_contains($slugLower, 'huta-bolon')) {
+            return route('geosite.museum_huta_bolon');
+        }
+        return route('destinasi.detail', $this->slug);
+    }
 }

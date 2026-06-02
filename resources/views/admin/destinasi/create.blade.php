@@ -46,12 +46,13 @@
                     @error('lokasi') <div class="invalid-feedback">{{ $message }}</div> @enderror
                 </div>
 
-                {{-- URL --}}
-                <div class="col-md-4">
-                    <label class="form-label fw-semibold">URL Detail</label>
-                    <input type="text" name="url" class="form-control @error('url') is-invalid @enderror"
-                           value="{{ old('url', '/destinasi/batu-hoda') }}" placeholder="Contoh: /destinasi/batu-hoda">
-                    @error('url') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                {{-- Info Geosite --}}
+                <div class="col-md-4 d-flex align-items-end">
+                    <div class="alert alert-info mb-0 p-2" style="font-size: 0.75rem;">
+                        <i class="fas fa-info-circle"></i>
+                        Destinasi dengan nama <strong>Batu Hoda</strong>, <strong>Batu Pasa</strong>, atau <strong>Museum Huta Bolon</strong>
+                        akan otomatis diarahkan ke halaman Geosite.
+                    </div>
                 </div>
 
                 {{-- Deskripsi --}}

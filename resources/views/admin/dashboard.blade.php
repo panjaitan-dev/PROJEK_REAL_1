@@ -79,6 +79,30 @@
         </div>
     </div>
 
+    <div class="stat-card">
+        <div class="stat-card-inner">
+            <div class="stat-icon cyan">
+                <i class="fas fa-mountain"></i>
+            </div>
+            <div class="stat-info">
+                <div class="stat-number">{{ $totalGaleriGeosite ?? 0 }}</div>
+                <div class="stat-label">Galeri Geosite</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-card-inner">
+            <div class="stat-icon pink">
+                <i class="fas fa-map-marked-alt"></i>
+            </div>
+            <div class="stat-info">
+                <div class="stat-number">{{ $totalDestinasi ?? 0 }}</div>
+                <div class="stat-label">Destinasi</div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 {{-- ===== UMKM TERBARU ===== --}}
@@ -271,6 +295,8 @@
         <a href="{{ route('admin.umkm.index') }}" class="btn-add-pill"><i class="fas fa-store"></i> UMKM</a>
         <a href="{{ route('admin.fasilitas.index') }}" class="btn-add-pill"><i class="fas fa-tools"></i> Fasilitas</a>
         <a href="{{ route('admin.penginapan.index') }}" class="btn-add-pill"><i class="fas fa-hotel"></i> Penginapan</a>
+        <a href="{{ route('admin.galeri-geosite.index') }}" class="btn-add-pill"><i class="fas fa-mountain"></i> Galeri Geosite</a>
+        <a href="{{ route('admin.destinasi.index') }}" class="btn-add-pill"><i class="fas fa-map-marked-alt"></i> Destinasi</a>
     </div>
 </div>
 

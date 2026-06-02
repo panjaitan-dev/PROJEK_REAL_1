@@ -264,7 +264,7 @@
                     </div>
 
                     <!-- LINK AMAN -->
-                    <a href="{{ url('/destinasi') }}" class="card-link">
+                    <a href="{{ $item->detail_url }}" class="card-link">
                         Jelajahi →
                     </a>
 

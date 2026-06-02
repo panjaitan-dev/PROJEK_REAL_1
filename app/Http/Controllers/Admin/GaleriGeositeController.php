@@ -29,7 +29,7 @@ class GaleriGeositeController extends Controller
         $request->validate([
             'judul'    => 'nullable|string|max:255',
             'kategori' => 'nullable|string|max:100',
-            'gambar'   => 'nullable|image|mimes:jpeg,png,jpg,webp|max:6144',
+            'gambar'   => 'required|image|mimes:jpeg,png,jpg,webp|max:6144',
             'geosite'  => 'required|in:museum_huta_bolon,batu_hoda_beach,batu_pasa_pantai',
             'deskripsi'=> 'nullable|string',
             'status'   => 'nullable|boolean',

@@ -1,12 +1,16 @@
 @extends('layouts.admin')
 
-@section('title', 'Tambah Galeri Geosite')
+@section('title', 'Tambah Foto Geosite')
 
 @section('content')
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h5 class="mb-0">➕ Tambah Foto Geosite</h5>
+    <a href="{{ route('admin.galeri-geosite.index') }}" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Kembali
+    </a>
+</div>
+
 <div class="card">
-    <div class="card-header">
-        <h5>Tambah Galeri Geosite</h5>
-    </div>
     <div class="card-body">
         @if($errors->any())
             <div class="alert alert-danger">
@@ -24,33 +28,23 @@
             <div class="mb-3">
                 <label class="form-label fw-semibold">Geosite <span class="text-danger">*</span></label>
                 <select name="geosite" class="form-control" required>
-                    @foreach($geositeList as $gs)
-                        <option value="{{ $gs }}" {{ old('geosite') == $gs ? 'selected' : '' }}>
-                            {{ ucfirst(str_replace('_', ' ', $gs)) }}
-                        </option>
-                    @endforeach
+                    <option value="">-- Pilih Geosite --</option>
+                    <option value="batu_hoda_beach"   {{ old('geosite') == 'batu_hoda_beach'   ? 'selected' : '' }}>🏖️ Batu Hoda Beach</option>
+                    <option value="batu_pasa_pantai"  {{ old('geosite') == 'batu_pasa_pantai'  ? 'selected' : '' }}>🌊 Batu Pasa Pantai</option>
+                    <option value="museum_huta_bolon" {{ old('geosite') == 'museum_huta_bolon' ? 'selected' : '' }}>🏛️ Museum Huta Bolon</option>
                 </select>
             </div>
 
             <div class="mb-3">
-                <label class="form-label fw-semibold">Judul Foto</label>
-                <input type="text" name="judul" class="form-control" value="{{ old('judul') }}"
-                       placeholder="Cth: Pemandangan Pantai Batu Hoda (opsional)">
-                <small class="text-muted">Kosongkan untuk menggunakan judul otomatis.</small>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label fw-semibold">Gambar <span class="text-danger">*</span></label>
-                <input type="file" name="gambar" class="form-control" accept="image/jpeg,image/png,image/jpg,image/webp"
-                       id="inputGambar" onchange="previewImage(this)">
+                <label class="form-label fw-semibold">Upload Foto <span class="text-danger">*</span></label>
+                <input type="file" name="gambar" class="form-control"
+                       accept="image/jpeg,image/png,image/jpg,image/webp"
+                       id="inputGambar" onchange="previewImage(this)" required>
                 <small class="text-muted">Format: JPG, PNG, WEBP. Maks 6 MB.</small>
 
-                {{-- Preview gambar --}}
-                <div id="imgPreviewWrap" style="display:none; margin-top: 12px;">
-                    <p class="text-muted small mb-1">Preview:</p>
+                <div id="imgPreviewWrap" style="display:none; margin-top:10px;">
                     <img id="imgPreview" src="#" alt="Preview"
-                         style="max-width: 200px; max-height: 200px; border-radius: 8px;
-                                border: 1px solid #dee2e6; object-fit: cover;">
+                         style="max-width:160px; max-height:160px; border-radius:8px; border:1px solid #dee2e6; object-fit:cover;">
                 </div>
             </div>
 
@@ -61,10 +55,12 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary">
-                <i class="fas fa-save"></i> Simpan
-            </button>
-            <a href="{{ route('admin.galeri-geosite.index') }}" class="btn btn-secondary">Batal</a>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Simpan
+                </button>
+                <a href="{{ route('admin.galeri-geosite.index') }}" class="btn btn-secondary">Batal</a>
+            </div>
         </form>
     </div>
 </div>
@@ -75,14 +71,10 @@ function previewImage(input) {
     const preview = document.getElementById('imgPreview');
     if (input.files && input.files[0]) {
         const reader = new FileReader();
-        reader.onload = function(e) {
-            preview.src = e.target.result;
-            wrap.style.display = 'block';
-        };
+        reader.onload = e => { preview.src = e.target.result; wrap.style.display = 'block'; };
         reader.readAsDataURL(input.files[0]);
     } else {
         wrap.style.display = 'none';
-        preview.src = '#';
     }
 }
 </script>
