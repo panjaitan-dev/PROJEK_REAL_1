@@ -48,7 +48,7 @@
 </div>
 
 <!-- HERO -->
-<section class="hero" style="background-image: url('{{ asset('image/SBH/BatuHoda.webp') }}');">
+<section class="hero" id="home" style="background-image: url('{{ asset('image/SBH/BatuHoda.webp') }}');">
     <div>
         <h1 class="hero-title">Batu Hoda Beach</h1>
         <p class="hero-subtitle"></p>
@@ -710,8 +710,66 @@ h1, h2, h3, h4, h5, h6 {
         if (e.target === lightbox) closeLightbox();
     });
 
+    // ========== SCROLL SPY & ACTIVE NAVBAR ==========
+    const navLinks = document.querySelectorAll('.nav-menu .nav-link');
+    const sections = document.querySelectorAll('section[id]');
+
+    function makeActive() {
+        let scrollPos = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
+        
+        // If we are at the top, highlight Home
+        if (scrollPos < 200) {
+            navLinks.forEach(link => {
+                if (link.classList.contains('home-btn') || link.getAttribute('href') === "{{ url('/') }}") {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+            return;
+        }
+
+        let activeSection = null;
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 150;
+            const sectionHeight = section.offsetHeight;
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                activeSection = section.getAttribute('id');
+            }
+        });
+
+        if (activeSection) {
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === '#' + activeSection) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+    }
+
+    window.addEventListener('scroll', makeActive);
+    window.addEventListener('load', makeActive);
+
     // ========== SMOOTH SCROLL ==========
-    document.querySelectorAll('.nav-link[href^="#"], .mobile-link[href^="#"]').forEach(function(anchor) {
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            }
+        });
+    });
+
+    document.querySelectorAll('.mobile-link[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             var target = document.querySelector(this.getAttribute('href'));
