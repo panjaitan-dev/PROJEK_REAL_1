@@ -470,7 +470,7 @@
             <div class="kontak-card">
                 <div class="kontak-card-icon"><i class="fas fa-phone-alt"></i></div>
                 <h3>Telepon</h3>
-                <a href="tel:+6281234567890">+62 812 3456 7890</a>
+                <a href="https://wa.me/+6285362259937" target="_blank">+62 853 6225 9937</a>
                 <a href="tel:+6281398765432">+62 813 9876 5432</a>
                 <a href="tel:062212345">(0622) 12345</a>
             </div>
@@ -576,8 +576,6 @@
                 <div class="social-row">
                     <a href="https://www.facebook.com/share/1EGJyH9J1T/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/batuhodabeachofficial?igsh=dG02YW0wNnNweDJ5" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://twitter.com/batuhodabeach" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.tiktok.com/@batuhodabeach" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
                 </div>
                 <div class="hours-box">
                     <h4><i class="far fa-clock" style="margin-right:8px;color:#e8c96a;"></i>Jam Operasional</h4>
