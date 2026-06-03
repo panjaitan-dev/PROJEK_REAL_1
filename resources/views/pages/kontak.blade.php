@@ -435,6 +435,7 @@
             padding: 26px 20px;
         }
     }
+    
 </style>
 
 <!-- HERO -->
@@ -471,15 +472,13 @@
                 <div class="kontak-card-icon"><i class="fas fa-phone-alt"></i></div>
                 <h3>Telepon</h3>
                 <a href="https://wa.me/+6285362259937" target="_blank">+62 853 6225 9937</a>
-                <a href="tel:+6281398765432">+62 813 9876 5432</a>
-                <a href="tel:062212345">(0622) 12345</a>
+                <p>Co-Founder Batuhoda Beach</p>
+                <p>ZEN M. SIBORO</p>
             </div>
             <div class="kontak-card">
                 <div class="kontak-card-icon"><i class="fas fa-envelope"></i></div>
                 <h3>Email</h3>
-                <a href="mailto:info@geotoba.com">info@geotoba.com</a>
-                <a href="mailto:reservasi@geotoba.com">reservasi@geotoba.com</a>
-                <a href="mailto:support@geotoba.com">support@geotoba.com</a>
+                <a href="mailto:zenmarchelloboro@gmail.com">zenmarchelloboro@gmail.com</a>
             </div>
         </div>
 
