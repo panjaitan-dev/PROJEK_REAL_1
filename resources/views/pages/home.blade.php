@@ -86,13 +86,24 @@
         position: absolute;
         z-index: 10;
         top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
         text-align: center;
         color: white;
         padding: 0 24px;
         width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .hero-content > div {
+        width: 100%;
         max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
     @keyframes fadeInUp {
         from { opacity: 0; transform: translateY(30px); }
@@ -124,6 +135,8 @@
         color: #f3ecd8;
         text-shadow: 0 2px 20px rgba(0,0,0,0.6);
         animation: fadeInUp 0.8s ease 0.4s both;
+        text-align: center;
+        width: 100%;
     }
     .hero-divider {
         width: 60px; height: 2px;
