@@ -1377,6 +1377,9 @@
         <a href="{{ route('admin.penginapan.index') }}" class="{{ request()->routeIs('admin.penginapan.*') ? 'active' : '' }}">
             <i class="fas fa-hotel"></i> Penginapan
         </a>
+        <a href="{{ route('admin.kontak.index') }}" class="{{ request()->routeIs('admin.kontak.*') ? 'active' : '' }}">
+            <i class="fas fa-address-book"></i> Kontak
+        </a>
         <a href="{{ route('admin.galeri-geosite.index') }}" class="{{ request()->routeIs('admin.galeri-geosite.*') ? 'active' : '' }}">
             <i class="fas fa-mountain"></i> Galeri Geosite
         </a>

@@ -75,99 +75,199 @@
             background-position: center center !important; /* Landscape photo, center is perfect */
         }
     }
+    .hero-section {
+        height: 100vh;
+        height: 100svh;
+        position: relative;
+        overflow: hidden;
+        margin-top: 0;
+    }
     .hero-content {
         position: absolute;
         z-index: 10;
-        bottom: 20%;
-        left: 0; right: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         text-align: center;
         color: white;
-        padding: 0 20px;
+        padding: 0 24px;
+        width: 100%;
+        max-width: 800px;
+    }
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to   { opacity: 1; transform: translateY(0); }
     }
     .hero-subtitle {
-        font-size: 0.7rem;
-        letter-spacing: 0.35em;
+        display: inline-block;
+        background: rgba(15, 23, 42, 0.55);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: #ffffff;
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.25em;
         text-transform: uppercase;
+        padding: 8px 24px;
+        border-radius: 30px;
         margin-bottom: 20px;
-        font-weight: 300;
-        opacity: 0.9;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+        animation: fadeInUp 0.8s ease 0.2s both;
     }
     .hero-title {
-        font-size: 3.8rem;
+        font-size: clamp(1.8rem, 5.5vw, 3.6rem);
         font-weight: 700;
         font-family: 'Cormorant Garamond', serif;
-        line-height: 1.2;
-        margin-bottom: 25px;
-        color: white;
-        text-shadow: 0 2px 15px rgba(0,0,0,0.4);
+        line-height: 1.25;
+        margin-bottom: 22px;
+        color: #f3ecd8;
+        text-shadow: 0 2px 20px rgba(0,0,0,0.6);
+        animation: fadeInUp 0.8s ease 0.4s both;
     }
     .hero-divider {
         width: 60px; height: 2px;
         background: #c6a43b;
-        margin: 0 auto 30px;
+        margin: 0 auto 28px;
+        animation: fadeInUp 0.8s ease 0.5s both;
     }
     .hero-btn {
         display: inline-block;
         background: #c6a43b;
         color: #003366;
-        padding: 14px 42px;
-        font-size: 0.75rem;
-        letter-spacing: 0.25em;
+        padding: 12px 38px;
+        font-size: 0.72rem;
+        letter-spacing: 0.2em;
         text-transform: uppercase;
-        transition: all 0.4s ease;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         text-decoration: none;
-        font-weight: 600;
-        border-radius: 40px;
+        font-weight: 700;
+        border-radius: 30px;
         border: none;
         cursor: pointer;
+        box-shadow: 0 4px 18px rgba(198,164,59,0.35);
+        animation: fadeInUp 0.8s ease 0.6s both;
     }
     .hero-btn:hover {
-        background: white;
+        background: #ffffff;
         color: #003366;
-        transform: translateY(-3px);
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 10px 25px rgba(255,255,255,0.25);
+    }
+    /* Stats bar di bawah hero button */
+    .hero-stats {
+        display: none; /* tampil hanya di mobile lewat media query */
+        gap: 20px;
+        margin-top: 32px;
+        justify-content: center;
+    }
+    .hero-stat-item {
+        text-align: center;
+    }
+    .hero-stat-num {
+        font-size: 1.3rem;
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 700;
+        color: #c6a43b;
+        display: block;
+    }
+    .hero-stat-label {
+        font-size: 0.5rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        opacity: 0.7;
+        display: block;
+    }
+    .hero-stat-divider {
+        width: 1px; background: rgba(255,255,255,0.2);
+        align-self: stretch;
     }
 
     .slider-dots {
         position: absolute;
-        bottom: 30px;
+        bottom: 28px;
         left: 50%;
         transform: translateX(-50%);
         display: flex;
-        gap: 12px;
+        gap: 8px;
         z-index: 15;
     }
     .dot {
-        width: 10px; height: 10px;
+        width: 8px; height: 8px;
         border-radius: 50%;
-        background: rgba(255,255,255,0.5);
+        background: rgba(255,255,255,0.4);
         cursor: pointer;
         transition: all 0.4s ease;
+        border: 1px solid rgba(255,255,255,0.3);
     }
-    .dot.active { background: #c6a43b; width: 28px; border-radius: 10px; }
+    .dot.active { background: #c6a43b; width: 24px; border-radius: 8px; border-color: #c6a43b; }
     .dot:hover  { background: #c6a43b; }
 
     .scroll-indicator {
         position: absolute;
-        bottom: 30px;
+        bottom: 50px;
         left: 50%;
         transform: translateX(-50%);
         z-index: 15;
-        animation: bounce 2.5s infinite;
         cursor: pointer;
-        color: white;
-        font-size: 0.65rem;
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 0.55rem;
         letter-spacing: 0.25em;
         text-transform: uppercase;
-        opacity: 0.8;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 8px;
+        gap: 6px;
+        transition: all 0.3s ease;
     }
-    .scroll-indicator .line {
-        width: 1px; height: 30px;
-        background: white;
+    .scroll-indicator:hover {
+        color: #c6a43b;
     }
+    .scroll-mouse {
+        width: 20px;
+        height: 32px;
+        border: 2px solid currentColor;
+        border-radius: 10px;
+        position: relative;
+        margin-top: 4px;
+    }
+    .scroll-wheel {
+        width: 4px;
+        height: 8px;
+        background: currentColor;
+        border-radius: 2px;
+        position: absolute;
+        top: 6px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: scrollAnim 1.6s infinite;
+    }
+    @keyframes scrollAnim {
+        0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+        100% { opacity: 0; transform: translateX(-50%) translateY(6px); }
+    }
+    /* Swipe hint — hanya tampil di mobile */
+    .swipe-hint {
+        display: none;
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 15;
+        align-items: center;
+        gap: 6px;
+        color: rgba(255,255,255,0.65);
+        font-size: 0.55rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        animation: fadeInOut 3s ease 2s infinite;
+    }
+    @keyframes fadeInOut {
+        0%, 100% { opacity: 0; transform: translateX(-50%) translateX(0); }
+        30%, 70% { opacity: 1; }
+        50% { transform: translateX(-50%) translateX(6px); }
+    }
+    .swipe-hint i { font-size: 0.9rem; }
 
     /* ==================== SECTION UMUM ==================== */
     .section { padding: 90px 0; position: relative; overflow: hidden; }
@@ -442,14 +542,17 @@
     @media (max-width: 768px) {
         .hero-title { font-size: 2rem; }
         .hero-subtitle { font-size: 0.6rem; letter-spacing: 0.2em; }
-        .hero-btn { padding: 10px 28px; font-size: 0.65rem; }
-        .hero-content { bottom: 15%; padding: 0 16px; }
+        .hero-btn { padding: 12px 30px; font-size: 0.68rem; }
+        .hero-content { padding: 0 20px; }
+        .scroll-indicator { display: none; }  /* tutupi dots — sembunyi di mobile */
+        .swipe-hint { display: flex; }         /* tampil di mobile */
+        .hero-stats { display: flex; }         /* tampil di mobile */
         .section { padding: 50px 0; }
         .container { padding: 0 16px; }
         .section-title { margin-bottom: 36px; }
         .section-title h2 { font-size: 1.6rem; }
         .section-title p { font-size: 0.85rem; }
-        /* Stats: 2 kolom di tablet */
+        /* Stats section */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -478,9 +581,11 @@
         .cta-btn { padding: 13px 36px; font-size: 0.72rem; }
     }
     @media (max-width: 480px) {
-        .hero-title { font-size: 1.6rem; }
-        .hero-section { height: 100svh; } /* safe for notch phones */
-        /* Stats: 1 kolom di HP kecil */
+        .hero-title { font-size: 1.55rem; }
+        .hero-btn { padding: 11px 26px; font-size: 0.62rem; letter-spacing: 0.18em; }
+        .hero-stat-num { font-size: 1.1rem; }
+        .hero-stats { gap: 14px; margin-top: 24px; }
+        /* Stats section: 1 kolom di HP kecil */
         .stats-grid { grid-template-columns: 1fr; gap: 10px; }
         .stat-item { padding: 18px 14px; }
         .stat-number { font-size: 1.8rem; }
@@ -527,13 +632,15 @@
             <div class="hero-subtitle">{{ $hs['hero_subtitle'] ?? 'Global Geopark' }}</div>
             <h1 class="hero-title">{{ $hs['hero_title'] ?? 'Simanindo - Batu Hoda' }}</h1>
             <div class="hero-divider"></div>
-            <a href="#destinasi" class="hero-btn">Jelajahi Sekarang</a>
+            <a href="#destinasi" class="hero-btn">{{ $hs['hero_btn_text'] ?? 'Jelajahi Sekarang' }}</a>
         </div>
     </div>
 
     <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
         <span>SCROLL</span>
-        <div class="line"></div>
+        <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+        </div>
     </div>
 </section>
 

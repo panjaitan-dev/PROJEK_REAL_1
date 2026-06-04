@@ -16,7 +16,8 @@ class HomeController extends Controller
 
     public function kontak()
     {
-        return view('pages.kontak');
+        $contacts = \App\Models\Kontak::where('status', true)->get();
+        return view('pages.kontak', compact('contacts'));
     }
 
     public function sendKontak(\Illuminate\Http\Request $request)

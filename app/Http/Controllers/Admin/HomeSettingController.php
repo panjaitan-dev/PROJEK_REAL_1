@@ -25,6 +25,7 @@ class HomeSettingController extends Controller
         $request->validate([
             'hero_subtitle'      => 'nullable|string|max:255',
             'hero_title'         => 'nullable|string|max:255',
+            'hero_btn_text'      => 'nullable|string|max:255',
             'stat_geosites'      => 'nullable|string|max:50',
             'stat_geosites_label'=> 'nullable|string|max:100',
             'stat_sejarah'       => 'nullable|string|max:50',
@@ -62,7 +63,7 @@ class HomeSettingController extends Controller
 
         // Simpan semua text settings
         $textKeys = [
-            'hero_subtitle', 'hero_title',
+            'hero_subtitle', 'hero_title', 'hero_btn_text',
             'stat_geosites', 'stat_geosites_label',
             'stat_sejarah', 'stat_sejarah_label',
             'stat_warisan', 'stat_warisan_label',

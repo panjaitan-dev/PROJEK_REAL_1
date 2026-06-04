@@ -32,8 +32,12 @@
             <input type="text" name="hero_title" class="form-control" value="{{ $s['hero_title'] ?? 'Simanindo - Batu Hoda' }}" placeholder="Simanindo - Batu Hoda">
         </div>
     </div>
+    <div class="form-group">
+        <label class="form-label">Teks Tombol Hero</label>
+        <input type="text" name="hero_btn_text" class="form-control" value="{{ $s['hero_btn_text'] ?? 'Jelajahi Sekarang' }}" placeholder="Jelajahi Sekarang">
+    </div>
     <div class="hm-preview-box">
-        <i class="fas fa-eye"></i> Preview: <em>"{{ $s['hero_subtitle'] ?? 'Global Geopark' }}"</em> → <strong>"{{ $s['hero_title'] ?? 'Simanindo - Batu Hoda' }}"</strong>
+        <i class="fas fa-eye"></i> Preview: <em>"{{ $s['hero_subtitle'] ?? 'Global Geopark' }}"</em> → <strong>"{{ $s['hero_title'] ?? 'Simanindo - Batu Hoda' }}"</strong> → <span>Tombol: "{{ $s['hero_btn_text'] ?? 'Jelajahi Sekarang' }}"</span>
     </div>
 </div>
 

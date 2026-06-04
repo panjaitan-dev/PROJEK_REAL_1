@@ -103,6 +103,18 @@
         </div>
     </div>
 
+    <div class="stat-card">
+        <div class="stat-card-inner">
+            <div class="stat-icon" style="background: linear-gradient(135deg, #e0f2fe, #bae6fd); color: #0284c7;">
+                <i class="fas fa-address-book"></i>
+            </div>
+            <div class="stat-info">
+                <div class="stat-number">{{ $totalKontak ?? 0 }}</div>
+                <div class="stat-label">Kontak</div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 
@@ -118,6 +130,7 @@
         <a href="{{ route('admin.umkm.index') }}" class="btn-add-pill"><i class="fas fa-store"></i> UMKM</a>
         <a href="{{ route('admin.fasilitas.index') }}" class="btn-add-pill"><i class="fas fa-tools"></i> Fasilitas</a>
         <a href="{{ route('admin.penginapan.index') }}" class="btn-add-pill"><i class="fas fa-hotel"></i> Penginapan</a>
+        <a href="{{ route('admin.kontak.index') }}" class="btn-add-pill"><i class="fas fa-address-book"></i> Kontak</a>
         <a href="{{ route('admin.galeri-geosite.index') }}" class="btn-add-pill"><i class="fas fa-mountain"></i> Galeri Geosite</a>
         <a href="{{ route('admin.destinasi.index') }}" class="btn-add-pill"><i class="fas fa-map-marked-alt"></i> Destinasi</a>
     </div>

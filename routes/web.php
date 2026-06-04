@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\GaleriGeositeController;
 use App\Http\Controllers\Admin\HomeSettingController;
 use App\Http\Controllers\Admin\DetailGeositeController;
 use App\Http\Controllers\Admin\InformasiGeositeController;
+use App\Http\Controllers\Admin\KontakController;
 use App\Http\Controllers\DestinasiController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GaleriController as PublicGaleriController;
@@ -102,10 +103,12 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         $totalPenginapan = DB::table('penginapan')->count();
         $totalFasilitas  = DB::table('fasilitas')->count();
         $totalGaleriGeosite = DB::table('galeri_geosite')->count();
+        $totalKontak     = DB::table('kontak')->count();
         
         return view('admin.dashboard', compact(
             'totalGaleri', 'totalBerita', 'totalInformasi', 'totalDestinasi',
-            'totalUmkm', 'totalPenginapan', 'totalFasilitas', 'totalGaleriGeosite'
+            'totalUmkm', 'totalPenginapan', 'totalFasilitas', 'totalGaleriGeosite',
+            'totalKontak'
         ));
     })->name('admin.dashboard');
     
@@ -121,6 +124,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('fasilitas', FasilitasController::class)->names('admin.fasilitas');
     Route::resource('galeri-geosite', GaleriGeositeController::class)->names('admin.galeri-geosite');
     Route::resource('informasi-geosite', InformasiGeositeController::class)->names('admin.informasi-geosite');
+    Route::resource('kontak', KontakController::class)->names('admin.kontak');
     Route::post('galeri/toggle-status/{id}', [GaleriController::class, 'toggleStatus'])->name('admin.galeri.toggle-status');
 
     // Home Manager

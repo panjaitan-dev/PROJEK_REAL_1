@@ -484,23 +484,48 @@
 
         {{-- 3 Contact Cards --}}
         <div class="kontak-cards">
+            {{-- Alamat --}}
             <div class="kontak-card">
                 <div class="kontak-card-icon"><i class="fas fa-map-marker-alt"></i></div>
                 <h3>Alamat</h3>
-                <p>Geosite Danau Toba</p>
-                <p>Desa Simanindo, Pulau Samosir</p>
-                <p>Sumatera Utara, Indonesia</p>
+                @forelse($contacts->where('tipe', 'alamat') as $alamat)
+                    <div style="white-space: pre-line; font-size: 0.83rem; color: var(--gray); line-height: 1.75;">{{ $alamat->nilai }}</div>
+                @empty
+                    <p>Geosite Danau Toba</p>
+                    <p>Desa Simanindo, Pulau Samosir</p>
+                    <p>Sumatera Utara, Indonesia</p>
+                @endforelse
             </div>
+
+            {{-- Telepon --}}
             <div class="kontak-card">
                 <div class="kontak-card-icon"><i class="fas fa-phone-alt"></i></div>
                 <h3>Telepon</h3>
-                <a href="https://wa.me/6285362259937" target="_blank"><i class="fab fa-whatsapp"></i> +62 853 6225 9937<br><span style="font-size: 0.72rem; color: #64748b;">(Zen M. Siboro - Co-Founder)</span></a>
-                <a href="tel:+6285362259937"><i class="fas fa-phone-alt"></i> +62 853 6225 9937</a>
+                @forelse($contacts->where('tipe', 'telepon') as $telp)
+                    <a href="{{ $telp->tautan ?? 'javascript:void(0)' }}" target="{{ str_starts_with($telp->tautan, 'http') ? '_blank' : '_self' }}">
+                        @if($telp->icon)
+                            <i class="{{ $telp->icon }}"></i>
+                        @endif
+                        {{ $telp->nilai }}
+                        @if($telp->nilai_tambahan)
+                            <br><span style="font-size: 0.72rem; color: #64748b;">({{ $telp->nilai_tambahan }})</span>
+                        @endif
+                    </a>
+                @empty
+                    <a href="https://wa.me/6285362259937" target="_blank"><i class="fab fa-whatsapp"></i> +62 853 6225 9937<br><span style="font-size: 0.72rem; color: #64748b;">(Zen M. Siboro - Co-Founder)</span></a>
+                    <a href="tel:+6285362259937"><i class="fas fa-phone-alt"></i> +62 853 6225 9937</a>
+                @endforelse
             </div>
+
+            {{-- Email --}}
             <div class="kontak-card">
                 <div class="kontak-card-icon"><i class="fas fa-envelope"></i></div>
                 <h3>Email</h3>
-                <a href="mailto:zenmarchelloboro@gmail.com">zenmarchelloboro@gmail.com</a>
+                @forelse($contacts->where('tipe', 'email') as $email)
+                    <a href="{{ $email->tautan ?? 'mailto:' . $email->nilai }}">{{ $email->nilai }}</a>
+                @empty
+                    <a href="mailto:zenmarchelloboro@gmail.com">zenmarchelloboro@gmail.com</a>
+                @endforelse
             </div>
         </div>
 
@@ -595,14 +620,24 @@
             <div class="kontak-info-card">
                 <div class="kontak-info-title">📱 Ikuti Kami</div>
                 <div class="social-row">
-                    <a href="https://www.facebook.com/share/1EGJyH9J1T/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/batuhodabeachofficial?igsh=dG02YW0wNnNweDJ5" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    @forelse($contacts->where('tipe', 'sosmed') as $sosmed)
+                        <a href="{{ $sosmed->tautan }}" aria-label="{{ $sosmed->judul }}" target="_blank">
+                            <i class="{{ $sosmed->icon ?? 'fas fa-share-alt' }}"></i>
+                        </a>
+                    @empty
+                        <a href="https://www.facebook.com/share/1EGJyH9J1T/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/batuhodabeachofficial?igsh=dG02YW0wNnNweDJ5" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    @endforelse
                 </div>
                 <div class="hours-box">
                     <h4><i class="far fa-clock" style="margin-right:8px;color:#e8c96a;"></i>Jam Operasional</h4>
                     <div class="hours-divider"></div>
-                    <p>Senin – Jumat: 08:00 – 17:00 WIB</p>
-                    <p>Sabtu – Minggu: 08:00 – 18:00 WIB</p>
+                    @forelse($contacts->where('tipe', 'jam_operasional') as $jam)
+                        <p>{{ $jam->judul }}: {{ $jam->nilai }}</p>
+                    @empty
+                        <p>Senin – Jumat: 08:00 – 17:00 WIB</p>
+                        <p>Sabtu – Minggu: 08:00 – 18:00 WIB</p>
+                    @endforelse
                     <div class="hours-divider"></div>
                     <p><i class="fas fa-map-marker-alt" style="color:#e8c96a;margin-right:6px;"></i>Simanindo, Pulau Samosir</p>
                 </div>
@@ -622,9 +657,13 @@
     </div>
 </section>
 
+@php
+    $whatsappContact = $contacts->where('tipe', 'telepon')->where('judul', 'WhatsApp')->first();
+    $waLink = $whatsappContact ? $whatsappContact->tautan : 'https://wa.me/6285362259937';
+@endphp
 {{-- WhatsApp Float --}}
 <div class="wa-float">
-    <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="Hubungi via WhatsApp">
+    <a href="{{ $waLink }}" target="_blank" rel="noopener" aria-label="Hubungi via WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 </div>
