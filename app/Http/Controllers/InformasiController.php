@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Informasi;
+use App\Models\Sejarah;
 
 class InformasiController extends Controller
 {
     public function index()
     {
-        $sejarahList = Informasi::where('status', 1)
+        $sejarahList = Sejarah::where('status', 1)
             ->orderBy('urutan', 'asc')
             ->get();
         

@@ -16,7 +16,7 @@
         text-align: center; color: #fff;
         margin-top: 0; overflow: hidden;
         background: linear-gradient(135deg, rgba(0,51,102,0.8) 0%, rgba(0,0,0,0.35) 50%, rgba(0,51,102,0.7) 100%),
-                    url('{{ !empty($hs["berita_hero_gambar"]) ? asset("storage/" . $hs["berita_hero_gambar"]) : "/image/SBH/BatuHoda2.webp" }}') center/cover no-repeat;
+                    url('{{ !empty($hs["berita_hero_gambar"]) ? asset("storage/" . $hs["berita_hero_gambar"]) : "/image/SBH/BatuHoda2.webp" }}') center top/cover no-repeat;
     }
     .page-hero::before {
         content: ''; position: absolute; inset: 0;

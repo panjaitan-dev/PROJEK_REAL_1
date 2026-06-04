@@ -17,7 +17,7 @@
         text-align: center; color: #fff;
         margin-top: 0; overflow: hidden;
         background: linear-gradient(135deg, rgba(0,51,102,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,51,102,0.7) 100%),
-                    url('{{ !empty($hs["galeri_hero_gambar"]) ? asset("storage/" . $hs["galeri_hero_gambar"]) : "/image/SBH/Rumahkaca.webp" }}') center/cover no-repeat;
+                    url('{{ !empty($hs["galeri_hero_gambar"]) ? asset("storage/" . $hs["galeri_hero_gambar"]) : "/image/SBH/Rumahkaca.webp" }}') center top/cover no-repeat;
     }
     .page-hero::before {
         content: ''; position: absolute; inset: 0;

@@ -16,14 +16,9 @@
         text-align: center; color: #fff;
         margin-top: 0; overflow: hidden;
         background: linear-gradient(160deg, rgba(0,30,70,0.85) 0%, rgba(0,51,102,0.6) 55%, rgba(0,80,130,0.5) 100%),
-                    url('{{ !empty($hs["informasi_hero_gambar"]) ? asset("storage/" . $hs["informasi_hero_gambar"]) : "/image/SBH/payung_baru.jpg" }}') center/cover no-repeat;
+                   url('{{ !empty($hs["informasi_hero_gambar"]) ? asset("storage/" . $hs["informasi_hero_gambar"]) : "/image/SBH/DanauToba.webp" }}') center top/cover no-repeat;
     }
 
-    @media (min-width: 992px) {
-        .page-hero {
-            background-position: center bottom !important; /* Focus on the pathway/people/balls at the bottom for desktop */
-        }
-    }
     .page-hero::before {
         content: ''; position: absolute; inset: 0;
         background: radial-gradient(circle at 50% 30%, rgba(198,164,59,0.15), transparent 70%);
@@ -110,6 +105,21 @@
     .ic-header::before {
         content: ''; position: absolute; inset: 0;
         background: radial-gradient(circle at 80% 20%, rgba(198,164,59,0.18), transparent 65%);
+    }
+    .ic-thumb {
+        width: 100%; height: 180px;
+        background-position: center top;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .do-image-wrap {
+        margin-bottom: 18px;
+    }
+    .do-image-wrap img {
+        width: 100%; display: block;
+        border-radius: 18px;
+        object-fit: cover;
+        object-position: center top;
     }
     .ic-num {
         position: absolute; top: 14px; right: 14px;
@@ -352,6 +362,7 @@
                     <div class="ic-icon"><i class="{{ $icons[$i % count($icons)] }}"></i></div>
                     <span class="ic-badge">Informasi</span>
                 </div>
+                <div class="ic-thumb" style="background-image: url('{{ $item->gambar_url }}')"></div>
                 <div class="ic-body">
                     <div class="ic-title">{{ $item->judul }}</div>
                     <div class="ic-excerpt">{{ Str::limit(strip_tags($item->konten), 120) }}</div>
@@ -412,7 +423,8 @@
         document.getElementById('doIcon').className = infoIcons[idx % infoIcons.length] || 'fas fa-info-circle';
         document.getElementById('doNum').textContent = '#' + String(idx + 1).padStart(3, '0');
         document.getElementById('doTitle').textContent = item.judul;
-        document.getElementById('doContent').innerHTML = item.konten || '<p>Tidak ada konten.</p>';
+        var imageBlock = item.gambar_url ? '<div class="do-image-wrap"><img src="' + item.gambar_url + '" alt="' + (item.judul || '') + '"></div>' : '';
+        document.getElementById('doContent').innerHTML = imageBlock + (item.konten || '<p>Tidak ada konten.</p>');
         document.getElementById('detailOverlay').classList.add('show');
         document.body.style.overflow = 'hidden';
     }

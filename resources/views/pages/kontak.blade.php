@@ -24,7 +24,7 @@
         text-align: center; color: #fff;
         margin-top: 0; overflow: hidden;
         background: linear-gradient(135deg, rgba(0,51,102,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,51,102,0.7) 100%),
-                    url('{{ !empty($hs["kontak_hero_gambar"]) ? asset("storage/" . $hs["kontak_hero_gambar"]) : "/image/SBH/DanauToba.webp" }}') center/cover no-repeat;
+                    url('{{ !empty($hs["kontak_hero_gambar"]) ? asset("storage/" . $hs["kontak_hero_gambar"]) : "/image/SBH/DanauToba.webp" }}') center top/cover no-repeat;
     }
     .page-hero::before {
         content: ''; position: absolute; inset: 0;
@@ -471,15 +471,8 @@
             <div class="kontak-card">
                 <div class="kontak-card-icon"><i class="fas fa-phone-alt"></i></div>
                 <h3>Telepon</h3>
-<<<<<<< HEAD
-                <a href="tel:+6281234567890">+62 853 6225 9937</a>
-                <a href="tel:+6281398765432">62 813 9876 5432</a>
-                <a href="tel:062212345">(0622) 12345</a>
-=======
-                <a href="https://wa.me/+6285362259937" target="_blank">+62 853 6225 9937</a>
-                <p>Co-Founder Batuhoda Beach</p>
-                <p>ZEN M. SIBORO</p>
->>>>>>> f8120f44d15a312ef3278e18c9b2a56e1095cbc6
+                <a href="https://wa.me/6285362259937" target="_blank"><i class="fab fa-whatsapp"></i> +62 853 6225 9937<br><span style="font-size: 0.72rem; color: #64748b;">(Zen M. Siboro - Co-Founder)</span></a>
+                <a href="tel:+6285362259937"><i class="fas fa-phone-alt"></i> +62 853 6225 9937</a>
             </div>
             <div class="kontak-card">
                 <div class="kontak-card-icon"><i class="fas fa-envelope"></i></div>

@@ -24,7 +24,7 @@
         text-align: center; color: #fff;
         margin-top: 0; overflow: hidden;
         background: linear-gradient(135deg, rgba(0,51,102,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,51,102,0.7) 100%),
-                    url('{{ asset($heroImage) }}') center/cover no-repeat;
+                    url('{{ asset($heroImage) }}') center top/cover no-repeat;
     }
     .page-hero::before {
         content: ''; position: absolute; inset: 0;
@@ -89,6 +89,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center top;
         transition: transform 0.5s ease;
     }
 

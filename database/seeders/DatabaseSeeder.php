@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
             // ── Core ─────────────────────────────────────────
             UserSeeder::class,
             InformasiSeeder::class,
+            SejarahSeeder::class,
 
             // ── Konten Utama ─────────────────────────────────
             BeritaSeeder::class,

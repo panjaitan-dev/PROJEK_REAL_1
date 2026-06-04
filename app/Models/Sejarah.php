@@ -3,11 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Admin;
+use Illuminate\Support\Facades\Storage;
 
-class Informasi extends Model
+class Sejarah extends Model
 {
-    protected $table = 'informasi';
+    protected $table = 'sejarah';
 
     protected $fillable = [
         'judul',
@@ -16,12 +16,11 @@ class Informasi extends Model
         'gambar',
         'urutan',
         'status',
-        'admin_id'  
     ];
 
     protected $casts = [
         'status' => 'boolean',
-        'urutan' => 'integer'
+        'urutan' => 'integer',
     ];
 
     protected $appends = [
@@ -31,24 +30,16 @@ class Informasi extends Model
     protected static function boot()
     {
         parent::boot();
-        
-        static::creating(function ($informasi) {
-            $informasi->slug = \Illuminate\Support\Str::slug($informasi->judul);
+
+        static::creating(function ($model) {
+            $model->slug = \Illuminate\Support\Str::slug($model->judul);
         });
-        
-        static::updating(function ($informasi) {
-            $informasi->slug = \Illuminate\Support\Str::slug($informasi->judul);
+
+        static::updating(function ($model) {
+            $model->slug = \Illuminate\Support\Str::slug($model->judul);
         });
     }
 
-    public function admin()
-    {
-        return $this->belongsTo(Admin::class);
-    }
-
-    /**
-     * Kembalikan URL gambar yang siap dipakai di view.
-     */
     public function getGambarUrlAttribute(): string
     {
         if (!$this->gambar) {
