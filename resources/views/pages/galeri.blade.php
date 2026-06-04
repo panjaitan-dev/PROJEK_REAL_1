@@ -420,15 +420,39 @@
         .photo-grid { grid-template-columns: repeat(3, 1fr); }
     }
     @media (max-width: 768px) {
+        .page-content { padding: 40px 0 70px; }
+        .page-container { padding: 0 14px; }
+        .sec-header { gap: 8px; }
+        .sec-header h2 { font-size: 1.1rem; }
+        .carousel-viewport { height: 280px; }
+        .slide-info { padding: 16px 14px 14px; }
+        .slide-title { font-size: 1rem; }
+        .c-arrow { width: 36px; height: 36px; font-size: 0.85rem; }
+        .c-arrow-l { left: 8px; }
+        .c-arrow-r { right: 8px; }
         .photo-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-        .carousel-viewport { height: 320px; }
-        .pm-box { grid-template-columns: 1fr; max-height: 90vh; overflow-y: auto; }
-        .pm-img img { max-height: 45vh; }
+        .pm-close { top: 10px !important; right: 10px !important; position: fixed !important; width: 38px; height: 38px; font-size: 0.95rem; }
+        .pm-nav { display: none; }
+        .pm-box { grid-template-columns: 1fr; max-height: 92vh; overflow-y: auto; border-radius: 16px; }
+        .pm-img { padding: 14px; min-height: auto; }
+        .pm-img img { max-height: 40vh; border-radius: 8px; }
+        .pm-text { padding: 18px 16px 24px; }
+        .pm-text h2 { font-size: 1.1rem; }
+        .music-float { bottom: 14px; right: 10px; padding: 5px 10px 5px 5px; gap: 8px; }
+        .mf-disc { width: 32px; height: 32px; }
+        .mf-title { font-size: 0.62rem; }
+        .mf-artist { font-size: 0.55rem; }
+        .mf-btn { width: 24px; height: 24px; font-size: 0.62rem; }
     }
     @media (max-width: 480px) {
-        .carousel-viewport { height: 240px; }
-        .c-arrow { width: 38px; height: 38px; font-size: 0.9rem; }
-        .page-hero h1 { font-size: 2rem; }
+        .carousel-viewport { height: 220px; }
+        .c-arrow { width: 34px; height: 34px; font-size: 0.8rem; }
+        .page-hero h1 { font-size: 1.8rem; }
+        .photo-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+        .sec-desc { font-size: 0.78rem; margin-bottom: 18px; }
+    }
+    @media (max-width: 360px) {
+        .photo-grid { grid-template-columns: 1fr; }
     }
 </style>
 @endpush

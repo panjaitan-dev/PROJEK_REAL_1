@@ -227,9 +227,8 @@
     @media (max-width: 992px) {
         .category-grid {
             grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
+            gap: 20px;
         }
-
         .stats-grid {
             grid-template-columns: repeat(2, 1fr);
         }
@@ -237,29 +236,42 @@
 
     @media (max-width: 768px) {
         .page-hero {
-            min-height: 320px;
+            min-height: 280px;
+            height: 45vh;
         }
-
         .page-hero h1 {
             font-size: 2rem;
         }
-
         .category-section {
             padding: 50px 0;
         }
-
         .section-header h2 {
             font-size: 1.6rem;
         }
-
         .category-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
         }
-
+        .card-image {
+            height: 180px;
+        }
         .stats-grid {
-            grid-template-columns: 1fr;
-            gap: 15px;
+            grid-template-columns: repeat(2, 1fr);
         }
+        .stat-number {
+            font-size: 1.6rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .page-hero h1 { font-size: 1.7rem; }
+        .page-hero { height: 40vh; min-height: 240px; }
+        .category-grid { grid-template-columns: 1fr; gap: 14px; }
+        .card-image { height: 200px; }
+        .category-section { padding: 36px 0; }
+        .section-header h2 { font-size: 1.4rem; }
+        .stats-grid { grid-template-columns: 1fr; gap: 12px; }
+        .container { padding: 0 14px; }
     }
 </style>
 

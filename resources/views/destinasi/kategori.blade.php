@@ -173,31 +173,38 @@
     @media (max-width: 992px) {
         .destinasi-grid {
             grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
+            gap: 20px;
         }
     }
 
     @media (max-width: 768px) {
         .page-hero {
-            min-height: 280px;
+            min-height: 260px;
+            height: 45vh;
         }
-
         .page-hero h1 {
             font-size: 2rem;
         }
-
         .destinasi-section {
             padding: 40px 0;
         }
-
         .destinasi-grid {
-            grid-template-columns: 1fr;
-            gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
         }
-
         .card-image {
-            height: 200px;
+            height: 180px;
         }
+        .card-title { font-size: 1.1rem; }
+    }
+
+    @media (max-width: 480px) {
+        .page-hero h1 { font-size: 1.7rem; }
+        .page-hero { height: 40vh; min-height: 230px; }
+        .destinasi-grid { grid-template-columns: 1fr; gap: 14px; }
+        .card-image { height: 200px; }
+        .destinasi-section { padding: 30px 0; }
+        .container { padding: 0 14px; }
     }
 </style>
 

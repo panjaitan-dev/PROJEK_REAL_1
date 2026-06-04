@@ -433,27 +433,72 @@
     @media (max-width: 992px) {
         .hero-title { font-size: 2.8rem; }
         .destinasi-item, .destinasi-item.reverse { flex-direction: column; gap: 30px; }
-        .about-grid { flex-direction: column; text-align: center; }
+        .about-grid { flex-direction: column; text-align: center; gap: 40px; }
         .maps-container iframe { height: 350px; }
         .maps-info { flex-direction: column; text-align: center; }
         .maps-locations { justify-content: center; }
+        .stats-grid { gap: 20px; }
     }
     @media (max-width: 768px) {
         .hero-title { font-size: 2rem; }
         .hero-subtitle { font-size: 0.6rem; letter-spacing: 0.2em; }
         .hero-btn { padding: 10px 28px; font-size: 0.65rem; }
-        .section { padding: 60px 0; }
+        .hero-content { bottom: 15%; padding: 0 16px; }
+        .section { padding: 50px 0; }
+        .container { padding: 0 16px; }
+        .section-title { margin-bottom: 36px; }
         .section-title h2 { font-size: 1.6rem; }
-        .destinasi-content h3 { font-size: 1.6rem; }
-        .stats-grid { flex-direction: column; align-items: center; gap: 25px; }
+        .section-title p { font-size: 0.85rem; }
+        /* Stats: 2 kolom di tablet */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+        .stat-item { padding: 22px 14px; }
         .stat-number { font-size: 2rem; }
+        /* About */
         .about-content h3 { font-size: 1.6rem; }
-        .cta-content h3 { font-size: 1.6rem; }
+        .about-content p { font-size: 0.88rem; }
+        .about-grid { gap: 28px; }
+        /* Destinasi */
+        .destinasi-list { gap: 50px; }
+        .destinasi-content h3 { font-size: 1.6rem; }
+        .destinasi-desc { font-size: 0.88rem; }
+        .destinasi-image img { max-height: 280px; object-fit: cover; }
+        /* Maps */
         .maps-container iframe { height: 280px; }
+        .maps-info { padding: 20px 16px; gap: 16px; }
+        .maps-location-item { padding: 10px 16px; }
+        .maps-location-item span { font-size: 0.8rem; }
+        /* CTA */
+        .cta-section { padding: 60px 0; }
+        .cta-content h3 { font-size: 1.6rem; }
+        .cta-content p { font-size: 0.88rem; margin-bottom: 28px; }
+        .cta-btn { padding: 13px 36px; font-size: 0.72rem; }
     }
     @media (max-width: 480px) {
         .hero-title { font-size: 1.6rem; }
+        .hero-section { height: 100svh; } /* safe for notch phones */
+        /* Stats: 1 kolom di HP kecil */
+        .stats-grid { grid-template-columns: 1fr; gap: 10px; }
+        .stat-item { padding: 18px 14px; }
+        .stat-number { font-size: 1.8rem; }
+        /* Destinasi */
+        .destinasi-list { gap: 36px; }
+        .destinasi-content h3 { font-size: 1.4rem; }
+        .destinasi-link { padding: 10px 24px; font-size: 0.68rem; }
+        /* Maps */
         .maps-container iframe { height: 220px; }
+        .maps-locations { flex-direction: column; gap: 8px; width: 100%; }
+        .maps-location-item { justify-content: center; width: 100%; }
+        /* Section */
+        .section { padding: 40px 0; }
+    }
+    @media (max-width: 360px) {
+        .hero-title { font-size: 1.4rem; }
+        .stats-grid { grid-template-columns: 1fr; }
+        .container { padding: 0 12px; }
     }
 </style>
 

@@ -309,12 +309,29 @@
     @media (max-width: 1100px) { .kontak-cards { grid-template-columns: repeat(3, 1fr); } }
     @media (max-width: 900px)  { .kontak-cards { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 768px)  {
-        .kontak-cards { grid-template-columns: repeat(2,1fr); gap: 18px; }
-        .kontak-info-row { grid-template-columns: 1fr; }
-        .kontak-map iframe { height: 300px; }
-        .kontak-section { padding: 60px 0 72px; }
+        .kontak-section { padding: 50px 0 60px; }
+        .kontak-container { padding: 0 14px; }
+        .kontak-header { margin-bottom: 36px; }
+        .kontak-cards { grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 50px; }
+        .kontak-card { padding: 26px 16px 22px; }
+        .kontak-card-icon { width: 56px; height: 56px; }
+        .kontak-card-icon i { font-size: 1.3rem; }
+        .kontak-info-row { grid-template-columns: 1fr; gap: 20px; }
+        .kontak-map iframe { height: 280px; }
+        .kontak-map { margin-bottom: 50px; }
+        .page-hero { height: 45vh; min-height: 260px; }
+        .page-hero h1 { font-size: 2rem; }
+        .wa-float a { width: 50px; height: 50px; font-size: 1.3rem; }
+        .wa-float { bottom: 18px; right: 18px; }
     }
-    @media (max-width: 480px)  { .kontak-cards { grid-template-columns: 1fr; } }
+    @media (max-width: 480px) {
+        .kontak-cards { grid-template-columns: 1fr; gap: 12px; }
+        .page-hero h1 { font-size: 1.7rem; }
+        .page-hero { height: 40vh; min-height: 230px; }
+        .kontak-cta { padding: 50px 0; }
+        .dest-item { gap: 12px; padding: 14px; }
+        .dest-icon { width: 40px; height: 40px; }
+    }
     /* ── CONTACT FORM ── */
     .kontak-form-section {
         margin-bottom: 70px;
@@ -432,8 +449,14 @@
             gap: 0;
         }
         .kontak-form-card {
-            padding: 26px 20px;
+            padding: 22px 16px;
         }
+        .kontak-form-title { font-size: 1.3rem; }
+        .kontak-form-section { margin-bottom: 50px; }
+    }
+    @media (max-width: 480px) {
+        .kontak-form-card { padding: 18px 14px; }
+        .form-group input, .form-group textarea { padding: 10px 12px; font-size: 0.85rem; }
     }
     
 </style>

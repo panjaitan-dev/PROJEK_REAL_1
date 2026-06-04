@@ -275,11 +275,25 @@
 
     /* RESPONSIVE */
     @media (max-width: 1024px) { .news-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 640px) {
-        .news-grid { grid-template-columns: 1fr; gap: 16px; }
+    @media (max-width: 768px) {
+        .news-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+        .page-content { padding: 40px 0 70px; }
+        .page-container { max-width: 100%; padding: 0 14px; }
+        .page-hero { height: 45vh; min-height: 280px; }
         .page-hero h1 { font-size: 2rem; }
-        .fr-wrap { padding: 28px 20px 50px; }
-        .fr-title { font-size: 1.8rem; }
+        .nc-img { height: 170px; }
+        .nc-body { padding: 14px 14px 16px; }
+        .nc-title { font-size: 0.88rem; }
+        .sec-header h2 { font-size: 1.1rem; }
+    }
+    @media (max-width: 480px) {
+        .news-grid { grid-template-columns: 1fr; gap: 14px; }
+        .page-hero h1 { font-size: 1.7rem; }
+        .page-hero { height: 40vh; min-height: 240px; }
+        .nc-img { height: 200px; }
+        .fr-wrap { padding: 22px 14px 50px; }
+        .fr-title { font-size: 1.5rem; }
+        .fr-nav { padding: 12px 14px; }
     }
 </style>
 @endpush
