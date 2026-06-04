@@ -439,7 +439,7 @@
                     <h5>Kontak</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2"><i class="fas fa-map-marker-alt me-2" style="color: #c6a43b;"></i> Danau Toba, Sumatera Utara</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2" style="color: #c6a43b;"></i> +62 812 3456 7890</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2" style="color: #c6a43b;"></i> +62 853 6225 9937</li>
                         <li class="mb-2"><i class="fas fa-envelope me-2" style="color: #c6a43b;"></i> info@geotoba.com</li>
                     </ul>
                 </div>
