@@ -470,8 +470,8 @@
             <div class="kontak-card">
                 <div class="kontak-card-icon"><i class="fas fa-phone-alt"></i></div>
                 <h3>Telepon</h3>
-                <a href="tel:+6281234567890">+62 812 3456 7890</a>
-                <a href="tel:+6281398765432">+62 813 9876 5432</a>
+                <a href="tel:+6281234567890">+62 853 6225 9937</a>
+                <a href="tel:+6281398765432">62 813 9876 5432</a>
                 <a href="tel:062212345">(0622) 12345</a>
             </div>
             <div class="kontak-card">

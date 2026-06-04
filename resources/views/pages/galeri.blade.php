@@ -279,6 +279,7 @@
         animation: modalPop 0.4s cubic-bezier(0.34,1.56,0.64,1);
         box-shadow: 0 40px 80px rgba(0,0,0,0.5);
         border: 1px solid rgba(198,164,59,0.25);
+        position: relative;
     }
     @keyframes modalPop {
         from { opacity: 0; transform: scale(0.92); }
@@ -288,6 +289,7 @@
         background: #050505;
         display: flex; align-items: center; justify-content: center;
         padding: 20px; min-height: 280px;
+        position: relative;
     }
     .pm-img img {
         max-width: 100%; max-height: 70vh; object-fit: contain;
@@ -303,16 +305,28 @@
         width: 3px; background: linear-gradient(180deg, #c6a43b, transparent);
     }
     .pm-close {
-        position: absolute; top: 16px; right: 16px;
-        width: 42px; height: 42px; border-radius: 50%;
-        background: rgba(0,0,0,0.6); border: 1px solid rgba(198,164,59,0.3);
-        display: flex; align-items: center; justify-content: center;
-        color: #fff; font-size: 1.1rem; cursor: pointer; z-index: 10;
+        position: absolute;
+        top: -54px;
+        right: 0;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(0,0,0,0.6);
+        border: 1px solid rgba(198,164,59,0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 1.1rem;
+        cursor: pointer;
+        z-index: 30;
         transition: all 0.3s ease;
     }
     .pm-close:hover {
-        background: linear-gradient(135deg, #c6a43b, #d4a947);
-        color: #003366; transform: rotate(90deg) scale(1.1);
+        background: #c6a43b;
+        color: #003366;
+        transform: rotate(90deg) scale(1.1);
+        border-color: transparent;
     }
     .pm-tag {
         display: inline-block; background: linear-gradient(135deg, #c6a43b, #d4a947);
@@ -338,6 +352,34 @@
     .pm-meta-row i { color: #c6a43b; min-width: 16px; }
     .pm-meta-row .label { color: #94a3b8; }
     .pm-meta-row .val { color: #e2e8f0; font-weight: 600; }
+
+    /* Modal navigation arrows */
+    .pm-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 20;
+        width: 48px; height: 48px; border-radius: 50%;
+        background: rgba(198,164,59,0.85);
+        border: none; color: #003366;
+        font-size: 1.1rem; cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    .pm-nav:hover { background: #c6a43b; color: #003366; transform: translateY(-50%) scale(1.1); }
+    .pm-nav-l { left: -72px; }
+    .pm-nav-r { right: -72px; }
+
+    @media (max-width: 1100px) {
+        .pm-nav-l { left: 15px; }
+        .pm-nav-r { right: 15px; }
+        .pm-close { top: 15px; right: 15px; }
+    }
+    @media (max-width: 768px) {
+        .pm-box { grid-template-columns: 1fr; max-height: 90vh; overflow-y: auto; }
+        .pm-img img { max-height: 45vh; }
+    }
 
     /* ==============================
        MUSIK LATAR
@@ -488,23 +530,32 @@
 
 <!-- MODAL -->
 <div class="photo-modal" id="pModal">
-    <div class="pm-close" id="pmClose"><i class="fas fa-times"></i></div>
-    <div class="pm-box" onclick="event.stopPropagation()">
-        <div class="pm-img"><img src="" id="pmImg" alt="Foto"></div>
-        <div class="pm-text">
-            <span class="pm-tag" id="pmTag"></span>
-            <h2 id="pmTitle"></h2>
-            <p class="pm-desc" id="pmDesc"></p>
-            <div class="pm-meta">
-                <div class="pm-meta-row">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span class="label">Lokasi:</span>
-                    <span class="val" id="pmLoc"></span>
-                </div>
-                <div class="pm-meta-row">
-                    <i class="fas fa-globe-asia"></i>
-                    <span class="label">Kawasan:</span>
-                    <span class="val">Geopark Kaldera Toba</span>
+    <div class="pm-wrapper" style="position:relative; width: 100%; max-width: 960px; margin: 0 auto; display: flex; justify-content: center; align-items: center;">
+        <div class="pm-close" id="pmClose"><i class="fas fa-times"></i></div>
+        <!-- Tombol navigasi kiri -->
+        <button class="pm-nav pm-nav-l" id="pmPrev"><i class="fas fa-chevron-left"></i></button>
+        <!-- Tombol navigasi kanan -->
+        <button class="pm-nav pm-nav-r" id="pmNext"><i class="fas fa-chevron-right"></i></button>
+        
+        <div class="pm-box" onclick="event.stopPropagation()">
+            <div class="pm-img" style="position:relative;">
+                <img src="" id="pmImg" alt="Foto">
+                <div id="pmCounter" style="position:absolute;bottom:12px;right:14px;background:rgba(0,0,0,0.55);color:#fff;font-size:0.65rem;font-weight:700;padding:3px 10px;border-radius:12px;">1 / 1</div>
+            </div>
+            <div class="pm-text">
+                <span class="pm-tag" id="pmTag"></span>
+                <h2 id="pmTitle"></h2>
+                <p class="pm-desc" id="pmDesc"></p>
+                <div class="pm-meta">
+                    <div class="pm-meta-row">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span class="label">Lokasi:</span>
+                        <span class="val" id="pmLoc"></span>
+                    </div>
+                    <div class="pm-meta-row">
+                        <span class="label">Kawasan:</span>
+                        <span class="val">Geopark Kaldera Toba</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -530,18 +581,42 @@
     var photos = @json($allPhotos);
     var total = photos.length;
     var cur = 0;
+    // -- MODAL DETAILS --
+    var modalCur = 0;
 
-    // -- MODAL --
     function openModal(idx) {
         var p = photos[idx];
         if (!p) return;
-        document.getElementById('pmImg').src = p.src;
+        modalCur = idx;
+        updateModalContent(idx);
+        document.getElementById('pModal').classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+    function updateModalContent(idx) {
+        var p = photos[idx];
+        if (!p) return;
+        var img = document.getElementById('pmImg');
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.4s ease';
+        setTimeout(function() {
+            img.src = p.src;
+            img.onload = function() { img.style.opacity = '1'; };
+            img.style.opacity = '1';
+        }, 180);
         document.getElementById('pmTitle').textContent = p.judul;
         document.getElementById('pmTag').textContent = p.kategori;
         document.getElementById('pmDesc').textContent = p.deskripsi || 'Pemandangan indah di Geopark Kaldera Toba.';
         document.getElementById('pmLoc').textContent = p.lokasi || 'Danau Toba';
-        document.getElementById('pModal').classList.add('show');
-        document.body.style.overflow = 'hidden';
+        var counter = document.getElementById('pmCounter');
+        if (counter) counter.textContent = (idx + 1) + ' / ' + total;
+    }
+    function modalNext() {
+        modalCur = (modalCur + 1) % total;
+        updateModalContent(modalCur);
+    }
+    function modalPrev() {
+        modalCur = ((modalCur - 1) + total) % total;
+        updateModalContent(modalCur);
     }
     function closeModal() {
         document.getElementById('pModal').classList.remove('show');
@@ -549,8 +624,16 @@
     }
 
     document.getElementById('pModal').addEventListener('click', closeModal);
-    document.getElementById('pmClose').addEventListener('click', closeModal);
-    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+    document.getElementById('pmClose').addEventListener('click', function(e) { e.stopPropagation(); closeModal(); });
+    document.getElementById('pmPrev').addEventListener('click', function(e) { e.stopPropagation(); modalPrev(); });
+    document.getElementById('pmNext').addEventListener('click', function(e) { e.stopPropagation(); modalNext(); });
+    document.addEventListener('keydown', function(e) {
+        if (document.getElementById('pModal').classList.contains('show')) {
+            if (e.key === 'Escape') closeModal();
+            if (e.key === 'ArrowRight') { modalNext(); }
+            if (e.key === 'ArrowLeft') { modalPrev(); }
+        }
+    });
 
     // Klik slide carousel
     document.querySelectorAll('.carousel-slide').forEach(function(el) {
@@ -604,7 +687,7 @@
     if (total > 0) goSlide(0);
 
     // -- MUSIK --
-    var audio = new Audio("{{ asset('audio/musik-galeri.mp3') }}");
+    var audio = new Audio("{{ asset('audio/D-Bambo.mp3') }}");
     audio.loop = true; audio.volume = 0.4;
     var playing = false;
     var disc = document.getElementById('mfDisc');

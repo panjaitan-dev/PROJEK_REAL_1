@@ -59,12 +59,22 @@
         inset: 0;
         background: linear-gradient(135deg, rgba(0,51,102,0.5) 0%, rgba(0,102,153,0.3) 100%);
     }
-    .slide-1 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/BatuHoda.webp'); }
-    .slide-2 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/sejarah.webp'); }
+    .slide-1 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/BatuHoda.webp'); background-position: center center; }
+    .slide-2 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/hodaa.webp'); }
     .slide-3 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/BatuHoda2.webp'); }
     .slide-4 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/Simanindo.webp'); }
-    .slide-5 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/BatuPasa.webp'); }
-    .slide-6 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/penginapan.webp'); }
+    .slide-5 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/payung_baru.jpg'); background-position: center top; }
+    .slide-6 { background-image: linear-gradient(rgba(0,51,102,0.5), rgba(0,102,153,0.3)), url('/image/SBH/batupasa_baru.jpg'); background-position: center center; }
+
+    /* Desktop alignment overrides for vertical (portrait) photos */
+    @media (min-width: 992px) {
+        .slide-5 {
+            background-position: center bottom !important; /* Focus on the pathway/people at the bottom */
+        }
+        .slide-6 {
+            background-position: center center !important; /* Landscape photo, center is perfect */
+        }
+    }
     .hero-content {
         position: absolute;
         z-index: 10;
@@ -465,7 +475,6 @@
         <div class="dot" data-slide="3"></div>
         <div class="dot" data-slide="4"></div>
         <div class="dot" data-slide="5"></div>
-        <div class="dot" data-slide="6"></div>
     </div>
 
     <div class="hero-content">
@@ -661,11 +670,12 @@
 </section>
 
 <script>
-    // ==================== HERO SLIDER (SCROLL CONTROLLED) ====================
+    // ==================== HERO SLIDER (AUTOMATIC & DOTS) ====================
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
     const slideCount = slides.length;
+    let slideInterval;
 
     function showSlide(index) {
         slides.forEach((slide, i) => {
@@ -677,26 +687,25 @@
         currentSlide = index;
     }
 
-    function handleScrollImage() {
-        if (window.scrollY > 80) {
-            if (currentSlide !== 1) {
-                showSlide(1);
-            }
-        } else {
-            if (currentSlide !== 0) {
-                showSlide(0);
-            }
-        }
+    function nextSlide() {
+        let next = (currentSlide + 1) % slideCount;
+        showSlide(next);
     }
 
-    window.addEventListener('scroll', handleScrollImage, { passive: true });
-    handleScrollImage(); // run once on load
+    function startSlider() {
+        if (slideInterval) clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 3000); // Ganti slide setiap 3 detik
+    }
 
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
             showSlide(index);
+            startSlider(); // Reset interval saat diklik manual
         });
     });
+
+    // Jalankan auto slide pertama kali
+    startSlider();
 
     // ==================== SMOOTH SCROLL ====================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

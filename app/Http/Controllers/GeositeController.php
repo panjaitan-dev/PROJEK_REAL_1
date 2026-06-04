@@ -7,6 +7,8 @@ use App\Models\Penginapan;
 use App\Models\Fasilitas;
 use App\Models\GaleriGeosite;
 use App\Models\NavbarItem;
+use App\Models\DetailGeosite;
+use App\Models\InformasiGeosite;
 
 class GeositeController extends Controller
 {
@@ -21,8 +23,13 @@ class GeositeController extends Controller
             ->orderBy('urutan')
             ->get();
         $kategoriGaleri = $galeriGeosite->pluck('kategori')->unique()->values();
+        $detailGeosite = DetailGeosite::where('geosite', 'batu_hoda_beach')->first();
+        $informasiGeosite = InformasiGeosite::where('geosite', 'batu_hoda_beach')
+            ->where('status', true)
+            ->orderBy('urutan')
+            ->get();
 
-        return view('geosite.batu_hoda_beach', compact('umkm', 'penginapan', 'fasilitas', 'galeriGeosite', 'kategoriGaleri', 'navbarItems'));
+        return view('geosite.batu_hoda_beach', compact('umkm', 'penginapan', 'fasilitas', 'galeriGeosite', 'kategoriGaleri', 'navbarItems', 'detailGeosite', 'informasiGeosite'));
     }
     
     public function museum_huta_bolon()
@@ -32,8 +39,13 @@ class GeositeController extends Controller
         $fasilitas = Fasilitas::where('geosite', 'museum_huta_bolon')->where('status', true)->get();
         $galeriGeosite = GaleriGeosite::where('geosite', 'museum_huta_bolon')->where('status', true)->get();
         $kategoriGaleri = $galeriGeosite->pluck('kategori')->unique()->values();
+        $detailGeosite = DetailGeosite::where('geosite', 'museum_huta_bolon')->first();
+        $informasiGeosite = InformasiGeosite::where('geosite', 'museum_huta_bolon')
+            ->where('status', true)
+            ->orderBy('urutan')
+            ->get();
 
-        return view('geosite.museum_huta_bolon', compact('umkm', 'penginapan', 'fasilitas', 'galeriGeosite', 'kategoriGaleri'));
+        return view('geosite.museum_huta_bolon', compact('umkm', 'penginapan', 'fasilitas', 'galeriGeosite', 'kategoriGaleri', 'detailGeosite', 'informasiGeosite'));
     }
     
     public function batu_pasa_pantai()
@@ -43,7 +55,12 @@ class GeositeController extends Controller
         $fasilitas = Fasilitas::where('geosite', 'batu_pasa_pantai')->where('status', true)->get();
         $galeriGeosite = GaleriGeosite::where('geosite', 'batu_pasa_pantai')->where('status', true)->get();
         $kategoriGaleri = $galeriGeosite->pluck('kategori')->unique()->values();
+        $detailGeosite = DetailGeosite::where('geosite', 'batu_pasa_pantai')->first();
+        $informasiGeosite = InformasiGeosite::where('geosite', 'batu_pasa_pantai')
+            ->where('status', true)
+            ->orderBy('urutan')
+            ->get();
 
-        return view('geosite.batu_pasa_pantai', compact('umkm', 'penginapan', 'fasilitas', 'galeriGeosite', 'kategoriGaleri'));
+        return view('geosite.batu_pasa_pantai', compact('umkm', 'penginapan', 'fasilitas', 'galeriGeosite', 'kategoriGaleri', 'detailGeosite', 'informasiGeosite'));
     }
 }

@@ -1,11 +1,26 @@
 @extends('layouts.admin')
 
-@section('title', 'Manajemen Sejarah Caldera Toba')
+@section('title', 'Manajemen Informasi')
 
 @section('content')
+
+{{-- TABS NAVIGASI --}}
+<div style="display:flex;gap:0;margin-bottom:24px;border-bottom:2px solid #e5e7eb;">
+    <a href="{{ route('admin.informasi.index') }}"
+       style="padding:12px 24px;text-decoration:none;font-size:0.9rem;font-weight:600;
+              border-bottom:3px solid #003366;color:#003366;margin-bottom:-2px;">
+        📜 Sejarah Caldera Toba
+    </a>
+    <a href="{{ route('admin.informasi-geosite.index') }}"
+       style="padding:12px 24px;text-decoration:none;font-size:0.9rem;font-weight:600;
+              border-bottom:3px solid transparent;color:#6b7280;margin-bottom:-2px;">
+        🏔️ Informasi Geosite
+    </a>
+</div>
+
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h5 class="mb-0">📜 Sejarah Caldera Toba</h5>
-    <a href="{{ route('admin.informasi.create') }}" class="btn btn-primary">
+    <a href="{{ route('admin.informasi.create') }}" class="btn btn-primary btn-add-pill">
         <i class="fas fa-plus"></i> Tambah Data
     </a>
 </div>

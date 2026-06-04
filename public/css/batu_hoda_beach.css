@@ -272,13 +272,16 @@ body {
 /* ========== CARD (UMKM & PENGINAPAN) ========== */
 .grid-3 {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
     gap: 30px;
+    justify-content: center;
 }
 .grid-2 {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 450px));
     gap: 25px;
+    justify-content: center;
 }
 .card {
     background: white;
@@ -791,7 +794,8 @@ body {
         padding: 35px 0;
     }
     .grid-3, .grid-2 {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        justify-content: center;
     }
     .galeri-grid {
         grid-template-columns: repeat(2, 1fr);

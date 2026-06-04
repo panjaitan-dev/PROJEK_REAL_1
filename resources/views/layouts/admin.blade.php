@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Admin - GeoToba</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/favicon.svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -1330,7 +1334,7 @@
 <div class="sidebar" id="sidebar">
     <div class="sidebar-header">
         <div class="sidebar-brand" style="display:flex; align-items:center; gap: 10px;">
-            <i class="fas fa-globe-asia" style="font-size: 2.2rem; color: #003366;"></i>
+            <img src="/image/logo/geotoba-globe.svg" alt="GeoToba Logo" style="width:44px;height:44px;border-radius:50%;object-fit:contain;flex-shrink:0;">
             <div>
                 <h3 style="font-size: 1.45rem; font-weight: 800; color: #003366; font-family: 'Inter', sans-serif; letter-spacing: -0.5px; margin:0;">Geo<span style="color: #c6a43b;">Toba</span></h3>
                 <p style="font-size: 0.65rem; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; margin-bottom: 0;">Administrator</p>
@@ -1353,7 +1357,7 @@
         <a href="{{ route('admin.berita.index') }}" class="{{ request()->routeIs('admin.berita.*') ? 'active' : '' }}">
             <i class="fas fa-newspaper"></i> Berita
         </a>
-        <a href="{{ route('admin.informasi.index') }}" class="{{ request()->routeIs('admin.informasi.*') ? 'active' : '' }}">
+        <a href="{{ route('admin.informasi.index') }}" class="{{ request()->routeIs('admin.informasi.*') || request()->routeIs('admin.informasi-geosite.*') ? 'active' : '' }}">
             <i class="fas fa-info-circle"></i> Informasi
         </a>
         <a href="{{ route('admin.destinasi.index') }}" class="{{ request()->routeIs('admin.destinasi.*') ? 'active' : '' }}">
@@ -1361,6 +1365,9 @@
         </a>
         
         <div class="menu-title">Detail Tambahan</div>
+        <a href="{{ route('admin.detail-geosite.index') }}" class="{{ request()->routeIs('admin.detail-geosite.*') ? 'active' : '' }}">
+            <i class="fas fa-map-marker-alt"></i> Lokasi & Detail
+        </a>
         <a href="{{ route('admin.umkm.index') }}" class="{{ request()->routeIs('admin.umkm.*') ? 'active' : '' }}">
             <i class="fas fa-store"></i> UMKM
         </a>

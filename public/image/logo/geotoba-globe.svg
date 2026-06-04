@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Outer circle background - navy blue -->
+  <circle cx="60" cy="60" r="60" fill="#003D7A"/>
+  
+  <!-- Globe circle -->
+  <circle cx="60" cy="60" r="36" fill="none" stroke="white" stroke-width="2.5"/>
+  
+  <!-- Equator line -->
+  <line x1="24" y1="60" x2="96" y2="60" stroke="white" stroke-width="1.8"/>
+  
+  <!-- Vertical meridian -->
+  <line x1="60" y1="24" x2="60" y2="96" stroke="white" stroke-width="1.8"/>
+  
+  <!-- Upper latitude curve -->
+  <path d="M28,46 Q60,40 92,46" fill="none" stroke="white" stroke-width="1.5"/>
+  
+  <!-- Lower latitude curve -->
+  <path d="M28,74 Q60,80 92,74" fill="none" stroke="white" stroke-width="1.5"/>
+
+  <!-- Left longitude curve -->
+  <path d="M60,24 Q48,60 60,96" fill="none" stroke="white" stroke-width="1.5"/>
+  
+  <!-- Right longitude curve -->
+  <path d="M60,24 Q72,60 60,96" fill="none" stroke="white" stroke-width="1.5"/>
+
+  <!-- Continent 1 - large landmass (left) -->
+  <path d="M38,48 Q34,52 36,58 Q40,64 46,62 Q52,60 50,54 Q48,48 42,46 Z" fill="white" opacity="0.95"/>
+  
+  <!-- Continent 2 - smaller landmass (right-upper) -->
+  <path d="M66,50 Q64,54 68,58 Q72,56 74,52 Q72,48 68,48 Z" fill="white" opacity="0.95"/>
+  
+  <!-- Continent 3 - small (lower-right) -->
+  <path d="M68,66 Q66,70 70,72 Q74,70 74,66 Q72,64 68,64 Z" fill="white" opacity="0.9"/>
+
+  <!-- Small dot highlight at top-right of circle -->
+  <circle cx="94" cy="26" r="5" fill="white"/>
+</svg>

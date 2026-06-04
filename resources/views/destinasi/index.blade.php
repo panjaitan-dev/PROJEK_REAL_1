@@ -13,7 +13,7 @@
         text-align: center; color: #fff;
         margin-top: 0; overflow: hidden;
         background: linear-gradient(135deg, rgba(0,51,102,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,51,102,0.7) 100%),
-                    url('{{ !empty($hs["destinasi_hero_gambar"]) ? asset("storage/" . $hs["destinasi_hero_gambar"]) : "/image/SBH/Simanindo.webp" }}') center/cover no-repeat;
+                    url('{{ !empty($hs["destinasi_hero_gambar"]) ? asset("storage/" . $hs["destinasi_hero_gambar"]) : "/image/SBH/BatuPasa.webp" }}') center/cover no-repeat;
     }
     .page-hero::before {
         content: ''; position: absolute; inset: 0;
@@ -306,7 +306,7 @@
             <!-- Destinasi Buatan -->
             <a href="{{ url('/destinasi/buatan') }}" class="category-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="card-image">
-                    <img src="{{ asset('image/SBH/Rumahkaca.webp') }}" alt="Destinasi Buatan">
+                    <img src="{{ asset('image/SBH/payung.webp') }}" alt="Destinasi Buatan">
                     <div class="card-overlay"></div>
                 </div>
 

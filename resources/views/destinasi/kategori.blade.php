@@ -10,7 +10,7 @@
     if (strtolower($kategori) === 'alam') {
         $heroImage = 'image/SBH/BatuHoda.webp';
     } elseif (strtolower($kategori) === 'buatan') {
-        $heroImage = 'image/SBH/Rumahkaca.webp';
+        $heroImage = 'image/SBH/payung.webp';
     } elseif (strtolower($kategori) === 'budaya') {
         $heroImage = 'image/SBH/HutaBolon.webp';
     }

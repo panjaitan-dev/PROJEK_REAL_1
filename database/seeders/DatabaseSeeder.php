@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             PenginapanSeeder::class,
             FasilitasSeeder::class,
             GaleriGeositeSeeder::class,
+            InformasiGeositeSeeder::class,
         ]);
     }
 }

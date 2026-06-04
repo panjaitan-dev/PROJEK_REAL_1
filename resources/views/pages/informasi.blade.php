@@ -16,7 +16,13 @@
         text-align: center; color: #fff;
         margin-top: 0; overflow: hidden;
         background: linear-gradient(160deg, rgba(0,30,70,0.85) 0%, rgba(0,51,102,0.6) 55%, rgba(0,80,130,0.5) 100%),
-                    url('{{ !empty($hs["informasi_hero_gambar"]) ? asset("storage/" . $hs["informasi_hero_gambar"]) : "/image/SBH/sejarah.webp" }}') center/cover no-repeat;
+                    url('{{ !empty($hs["informasi_hero_gambar"]) ? asset("storage/" . $hs["informasi_hero_gambar"]) : "/image/SBH/payung_baru.jpg" }}') center/cover no-repeat;
+    }
+
+    @media (min-width: 992px) {
+        .page-hero {
+            background-position: center bottom !important; /* Focus on the pathway/people/balls at the bottom for desktop */
+        }
     }
     .page-hero::before {
         content: ''; position: absolute; inset: 0;
@@ -333,7 +339,7 @@
         @php
             $icons = [
                 'fas fa-mountain','fas fa-water','fas fa-fire','fas fa-leaf',
-                'fas fa-globe-asia','fas fa-landmark','fas fa-binoculars','fas fa-compass',
+                'fas fa-globe','fas fa-landmark','fas fa-binoculars','fas fa-compass',
                 'fas fa-map-marked-alt','fas fa-star','fas fa-book-open','fas fa-camera',
             ];
         @endphp

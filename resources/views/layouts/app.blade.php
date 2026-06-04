@@ -6,6 +6,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Geosite Simanindo – Batu Hoda, Danau Toba')</title>
     <meta name="description" content="Jelajahi keindahan Geosite Simanindo dan Batu Hoda di kawasan UNESCO Global Geopark Danau Toba. Wisata alam, budaya Batak, dan geologi kelas dunia.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/favicon.svg">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -32,6 +36,7 @@
             --white:       #ffffff;
             --nav-height:  80px;
         }
+
 
         /* ===== SMOOTH SCROLL ===== */
         html { scroll-behavior: smooth; }
@@ -366,7 +371,6 @@
                 <img src="{{ asset('image/Logo/logobankindonesia.jpg') }}" alt="Bank Indonesia" class="logo-img" loading="lazy">
                 <div class="logo-divider"></div>
                 <img src="{{ asset('image/Logo/del.jpg') }}" alt="Logo Del" class="logo-img" loading="lazy">
-                <div class="logo-divider"></div>
                 <a class="navbar-brand" href="{{ url('/') }}">Geo<span>Toba</span></a>
             </div>
             
