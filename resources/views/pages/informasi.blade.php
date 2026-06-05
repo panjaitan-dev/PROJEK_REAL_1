@@ -107,10 +107,16 @@
         background: radial-gradient(circle at 80% 20%, rgba(198,164,59,0.18), transparent 65%);
     }
     .ic-thumb {
-        width: 100%; height: 180px;
-        background-position: center top;
-        background-size: cover;
-        background-repeat: no-repeat;
+        width: 100%;
+        height: 180px;
+        overflow: hidden;
+    }
+    .ic-img-full {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
     }
     .do-image-wrap {
         margin-bottom: 18px;
@@ -292,7 +298,7 @@
         font-size: 1.6rem; font-weight: 700;
         margin-bottom: 12px; position: relative; z-index: 1;
     }
-    .page-cta em { color: #c6a43b; font-style: italic; }php
+    .page-cta em { color: #c6a43b; font-style: italic; }
     .page-cta p {
         max-width: 550px; margin: 0 auto 24px;
         font-size: 0.85rem; opacity: 0.8; line-height: 1.7;
@@ -335,8 +341,6 @@
         .info-grid { grid-template-columns: 1fr; gap: 14px; }
         .page-hero h1 { font-size: 1.7rem; }
         .page-hero { height: 40vh; min-height: 240px; }
-        .ic-thumb { height: 160px; }
-        .do-box { margin: 10px; width: calc(100% - 20px); }
     }
 </style>
 @endpush
@@ -380,7 +384,9 @@
                     <div class="ic-icon"><i class="{{ $icons[$i % count($icons)] }}"></i></div>
                     <span class="ic-badge">Informasi</span>
                 </div>
-                <div class="ic-thumb" style="background-image: url('{{ $item->gambar_url }}')"></div>
+                <div class="ic-thumb">
+                    <img src="{{ $item->gambar_url }}" alt="{{ $item->judul }}" class="ic-img-full">
+                </div>
                 <div class="ic-body">
                     <div class="ic-title">{{ $item->judul }}</div>
                     <div class="ic-excerpt">{{ Str::limit(strip_tags($item->konten), 120) }}</div>
