@@ -73,13 +73,13 @@
                         <td>
                             <div class="btn-group" role="group">
                                 <a href="{{ route('admin.informasi.edit', $item->id) }}" class="btn btn-sm btn-warning">
-                                    <i class="fas fa-edit"></i>
+                                  Ubah  
                                 </a>
                                 <form action="{{ route('admin.informasi.destroy', $item->id) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')">
-                                        <i class="fas fa-trash"></i>
+                                        Hapus
                                     </button>
                                 </form>
                             </div>
