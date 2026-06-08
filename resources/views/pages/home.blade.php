@@ -151,7 +151,7 @@
         padding: 12px 38px;
         font-size: 0.72rem;
         letter-spacing: 0.2em;
-        text-transform: uppercase;
+        text-transform: none;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         text-decoration: none;
         font-weight: 700;
@@ -216,49 +216,7 @@
     .dot.active { background: #c6a43b; width: 24px; border-radius: 8px; border-color: #c6a43b; }
     .dot:hover  { background: #c6a43b; }
 
-    .scroll-indicator {
-        position: absolute;
-        bottom: 50px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 15;
-        cursor: pointer;
-        color: rgba(255, 255, 255, 0.85);
-        font-size: 0.55rem;
-        letter-spacing: 0.25em;
-        text-transform: uppercase;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 6px;
-        transition: all 0.3s ease;
-    }
-    .scroll-indicator:hover {
-        color: #c6a43b;
-    }
-    .scroll-mouse {
-        width: 20px;
-        height: 32px;
-        border: 2px solid currentColor;
-        border-radius: 10px;
-        position: relative;
-        margin-top: 4px;
-    }
-    .scroll-wheel {
-        width: 4px;
-        height: 8px;
-        background: currentColor;
-        border-radius: 2px;
-        position: absolute;
-        top: 6px;
-        left: 50%;
-        transform: translateX(-50%);
-        animation: scrollAnim 1.6s infinite;
-    }
-    @keyframes scrollAnim {
-        0% { opacity: 1; transform: translateX(-50%) translateY(0); }
-        100% { opacity: 0; transform: translateX(-50%) translateY(6px); }
-    }
+    /* scroll-indicator dihapus */
     /* Swipe hint — hanya tampil di mobile */
     .swipe-hint {
         display: none;
@@ -443,7 +401,7 @@
         padding: 12px 32px;
         font-size: 0.75rem;
         letter-spacing: 0.2em;
-        text-transform: uppercase;
+        text-transform: none;
         text-decoration: none;
         transition: all 0.4s ease;
         border-radius: 50px;
@@ -530,7 +488,7 @@
         padding: 16px 50px;
         font-size: 0.8rem;
         letter-spacing: 0.25em;
-        text-transform: uppercase;
+        text-transform: none;
         transition: all 0.4s ease;
         text-decoration: none;
         border-radius: 50px;
@@ -557,7 +515,7 @@
         .hero-subtitle { font-size: 0.6rem; letter-spacing: 0.2em; }
         .hero-btn { padding: 12px 30px; font-size: 0.68rem; }
         .hero-content { padding: 0 20px; }
-        .scroll-indicator { display: none; }  /* tutupi dots — sembunyi di mobile */
+        /* scroll-indicator dihapus */
         .swipe-hint { display: flex; }         /* tampil di mobile */
         .hero-stats { display: flex; }         /* tampil di mobile */
         .section { padding: 50px 0; }
@@ -649,12 +607,7 @@
         </div>
     </div>
 
-    <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
-        <span>SCROLL</span>
-        <div class="scroll-mouse">
-            <div class="scroll-wheel"></div>
-        </div>
-    </div>
+    {{-- scroll-indicator dihapus --}}
 </section>
 
 <!-- ==================== STATISTICS ==================== -->

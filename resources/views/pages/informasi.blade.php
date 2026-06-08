@@ -94,30 +94,30 @@
         box-shadow: 0 18px 45px rgba(0,51,102,0.16), 0 0 0 1.5px rgba(198,164,59,0.25);
     }
 
-    /* Header gelap dengan ikon */
+    /* Header dengan gambar penuh sebagai background */
     .ic-header {
-        background: linear-gradient(135deg, #0a1628, #0f2548);
-        padding: 32px 24px 24px;
         position: relative; overflow: hidden;
-        min-height: 150px;
+        height: 220px;
         display: flex; flex-direction: column; justify-content: space-between;
+        padding: 16px 18px 16px;
     }
     .ic-header::before {
         content: ''; position: absolute; inset: 0;
-        background: radial-gradient(circle at 80% 20%, rgba(198,164,59,0.18), transparent 65%);
-    }
-    .ic-thumb {
-        width: 100%;
-        height: 180px;
-        overflow: hidden;
+        background: linear-gradient(180deg,
+            rgba(0,0,0,0.45) 0%,
+            rgba(0,0,0,0.15) 50%,
+            rgba(0,0,0,0.55) 100%);
+        z-index: 1;
     }
     .ic-img-full {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        object-position: center top !important;
-        display: block !important;
+        position: absolute; inset: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+        transition: transform 0.5s ease;
     }
+    .info-card:hover .ic-img-full { transform: scale(1.06); }
     .do-image-wrap {
         margin-bottom: 18px;
     }
@@ -127,29 +127,14 @@
         object-fit: cover;
         object-position: center top;
     }
-    .ic-num {
-        position: absolute; top: 14px; right: 14px;
-        color: rgba(198,164,59,0.5); font-size: 0.6rem;
-        font-weight: 700; font-family: monospace;
-        letter-spacing: 1px;
-    }
-    .ic-icon {
-        width: 56px; height: 56px; border-radius: 14px;
-        background: linear-gradient(135deg, rgba(198,164,59,0.2), rgba(0,51,102,0.3));
-        border: 1.5px solid rgba(198,164,59,0.4);
-        display: flex; align-items: center; justify-content: center;
-        position: relative; z-index: 1;
-        transition: transform 0.3s ease;
-    }
-    .info-card:hover .ic-icon { transform: scale(1.1) rotate(-5deg); }
-    .ic-icon i { color: #c6a43b; font-size: 1.4rem; }
     .ic-badge {
         display: inline-block; align-self: flex-start;
         background: linear-gradient(135deg, #c6a43b, #d4a947);
         color: #003366; font-size: 0.5rem; font-weight: 800;
         text-transform: uppercase; letter-spacing: 1.2px;
         padding: 3px 10px; border-radius: 12px;
-        margin-top: 14px; position: relative; z-index: 1;
+        position: relative; z-index: 2;
+        margin-top: auto;
     }
 
     /* Body: judul & kutipan */
@@ -203,86 +188,123 @@
     .empty-box p { color: #64748b; font-weight: 600; }
 
     /* ==============================
-       DETAIL OVERLAY
+       DETAIL OVERLAY — Gambar Kiri + Teks Kanan
     ============================== */
     .detail-overlay {
         position: fixed; inset: 0;
-        background: rgba(0,0,0,0.94);
+        background: rgba(0,10,30,0.92);
         z-index: 9999; display: none;
         align-items: center; justify-content: center;
-        backdrop-filter: blur(15px); padding: 20px;
+        backdrop-filter: blur(18px); padding: 20px;
     }
     .detail-overlay.show { display: flex; }
-    .do-box {
-        background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
-        width: 100%; max-width: 900px; max-height: 90vh;
-        display: grid; grid-template-columns: auto 1fr;
-        border-radius: 20px; overflow: hidden;
-        animation: modalPop 0.4s cubic-bezier(0.34,1.56,0.64,1);
-        box-shadow: 0 40px 80px rgba(0,0,0,0.5);
-        border: 1px solid rgba(198,164,59,0.25);
-    }
-    @keyframes modalPop {
-        from { opacity: 0; transform: scale(0.92); }
-        to   { opacity: 1; transform: scale(1); }
-    }
-    .do-icon-side {
-        background: linear-gradient(180deg, #0a1628, #0d1e3a);
-        display: flex; flex-direction: column;
-        align-items: center; justify-content: center;
-        padding: 40px 36px; gap: 16px;
-        min-width: 140px;
-    }
-    .do-icon-big {
-        width: 80px; height: 80px; border-radius: 20px;
-        background: linear-gradient(135deg, rgba(198,164,59,0.2), rgba(0,51,102,0.3));
-        border: 2px solid rgba(198,164,59,0.4);
-        display: flex; align-items: center; justify-content: center;
-    }
-    .do-icon-big i { color: #c6a43b; font-size: 2rem; }
-    .do-num { color: rgba(198,164,59,0.6); font-size: 0.7rem; font-weight: 700; font-family: monospace; }
 
-    .do-text {
-        padding: 36px 32px; color: #fff;
-        display: flex; flex-direction: column;
-        position: relative; overflow-y: auto;
+    @keyframes modalPop {
+        from { opacity: 0; transform: scale(0.93) translateY(20px); }
+        to   { opacity: 1; transform: scale(1) translateY(0); }
     }
-    .do-text::before {
-        content: ''; position: absolute; left: 0; top: 0; bottom: 0;
-        width: 3px; background: linear-gradient(180deg, #c6a43b, transparent);
+
+    /* Wrapper utama: 2 kolom */
+    .do-box {
+        width: 100%; max-width: 940px;
+        height: 88vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        border-radius: 22px; overflow: hidden;
+        animation: modalPop 0.4s cubic-bezier(0.34,1.56,0.64,1);
+        box-shadow: 0 50px 100px rgba(0,0,0,0.7), 0 0 0 1px rgba(198,164,59,0.2);
+    }
+
+    /* Panel KIRI: gambar penuh */
+    .do-img-panel {
+        position: relative; overflow: hidden;
+        min-height: 0;
+    }
+    .do-img-panel img {
+        position: absolute; inset: 0;
+        width: 100%; height: 100%;
+        object-fit: cover; object-position: center;
+        display: block;
+        transition: transform 0.6s ease;
+    }
+    .do-img-panel:hover img { transform: scale(1.04); }
+    .do-img-overlay {
+        position: absolute; inset: 0;
+        background: linear-gradient(160deg,
+            rgba(0,20,60,0.75) 0%,
+            rgba(0,40,90,0.4) 50%,
+            rgba(0,0,0,0.65) 100%);
+        display: flex; flex-direction: column;
+        justify-content: flex-end;
+        padding: 28px 26px;
+    }
+    .do-img-eyebrow {
+        font-size: 0.6rem; letter-spacing: 0.35em;
+        text-transform: uppercase; color: #c6a43b;
+        font-weight: 700; margin-bottom: 8px;
+    }
+    .do-img-title {
+        color: #fff; font-size: 1.55rem; font-weight: 800;
+        line-height: 1.25; letter-spacing: 0.5px;
+        text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+        margin-bottom: 14px;
+    }
+    .do-img-divider {
+        width: 42px; height: 2.5px; border-radius: 2px;
+        background: linear-gradient(90deg, #c6a43b, rgba(198,164,59,0.2));
+    }
+
+    /* Panel KANAN: teks */
+    .do-text-panel {
+        background: linear-gradient(160deg, #0d1e3a 0%, #0a1525 100%);
+        padding: 36px 32px 32px;
+        display: flex; flex-direction: column;
+        position: relative;
+        overflow-y: auto;
+        min-height: 0;
+        box-sizing: border-box;
+    }
+    .do-text-panel::before {
+        content: ''; position: absolute; top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #c6a43b, transparent);
     }
     .do-close {
         position: absolute; top: 16px; right: 16px;
-        width: 42px; height: 42px; border-radius: 50%;
-        background: rgba(0,0,0,0.6); border: 1px solid rgba(198,164,59,0.3);
+        width: 40px; height: 40px; border-radius: 50%;
+        background: rgba(255,255,255,0.07);
+        border: 1px solid rgba(198,164,59,0.3);
         display: flex; align-items: center; justify-content: center;
-        color: #fff; font-size: 1.1rem; cursor: pointer;
-        transition: all 0.3s ease;
+        color: #fff; font-size: 1rem; cursor: pointer;
+        transition: all 0.3s ease; z-index: 10;
     }
     .do-close:hover {
         background: linear-gradient(135deg, #c6a43b, #d4a947);
         color: #003366; transform: rotate(90deg) scale(1.1);
     }
     .do-tag {
-        display: inline-block; background: linear-gradient(135deg, #c6a43b, #d4a947);
-        color: #003366; font-size: 0.58rem; font-weight: 800;
+        display: inline-block;
+        background: linear-gradient(135deg, #c6a43b, #d4a947);
+        color: #003366; font-size: 0.56rem; font-weight: 800;
         text-transform: uppercase; letter-spacing: 1.5px;
-        padding: 4px 12px; border-radius: 16px; margin-bottom: 14px;
-        align-self: flex-start;
+        padding: 4px 12px; border-radius: 16px;
+        margin-bottom: 14px; align-self: flex-start;
     }
-    .do-text h2 {
-        font-size: 1.4rem; font-weight: 700; color: #fff;
-        line-height: 1.35; margin: 0 0 8px;
+    .do-text-panel h2 {
+        font-size: 1.3rem; font-weight: 700; color: #fff;
+        line-height: 1.35; margin: 0 0 6px;
     }
     .do-divider {
-        width: 50px; height: 3px; border-radius: 2px;
+        width: 40px; height: 2.5px; border-radius: 2px;
         background: linear-gradient(90deg, #c6a43b, transparent);
-        margin-bottom: 20px;
+        margin-bottom: 18px;
     }
     .do-content {
-        color: #c0c9d8; line-height: 1.9; font-size: 0.88rem;
+        color: #b0bdd0; line-height: 1.9; font-size: 0.84rem;
+        flex: 1;
     }
-    .do-content p { margin-bottom: 16px; }
+    .do-content p { margin-bottom: 14px; }
 
     /* CTA */
     .page-cta {
@@ -328,12 +350,13 @@
         .info-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
         .page-hero { height: 45vh; min-height: 280px; }
         .page-hero h1 { font-size: 2rem; }
-        .do-box { grid-template-columns: 1fr; max-height: 90vh; overflow-y: auto; border-radius: 16px; }
-        .do-icon-side { flex-direction: row; padding: 20px 16px; min-width: auto; gap: 14px; }
-        .do-text { padding: 20px 18px 28px; }
-        .do-text h2 { font-size: 1.15rem; }
+        .do-box { grid-template-columns: 1fr; height: auto; max-height: 92vh; overflow-y: auto; border-radius: 18px; }
+        .do-img-panel { height: 260px; min-height: unset; }
+        .do-img-title { font-size: 1.15rem; }
+        .do-text-panel { padding: 24px 18px 28px; height: auto; overflow-y: visible; }
+        .do-text-panel h2 { font-size: 1.05rem; }
         .do-close { top: 12px; right: 12px; }
-        .ic-header { padding: 24px 18px 18px; min-height: 120px; }
+        .ic-header { height: 180px; padding: 14px 14px; }
         .ic-body { padding: 14px 16px 18px; }
         .sec-header h2 { font-size: 1.1rem; }
     }
@@ -378,14 +401,10 @@
 
         <div class="info-grid">
             @forelse($sejarahList as $i => $item)
-            <div class="info-card" data-idx="{{ $i }}" data-icon="{{ $icons[$i % count($icons)] }}">
+            <div class="info-card" data-idx="{{ $i }}">
                 <div class="ic-header">
-                    <span class="ic-num">#{{ str_pad($i+1, 3, '0', STR_PAD_LEFT) }}</span>
-                    <div class="ic-icon"><i class="{{ $icons[$i % count($icons)] }}"></i></div>
-                    <span class="ic-badge">Informasi</span>
-                </div>
-                <div class="ic-thumb">
                     <img src="{{ $item->gambar_url }}" alt="{{ $item->judul }}" class="ic-img-full">
+                    <span class="ic-badge">Informasi</span>
                 </div>
                 <div class="ic-body">
                     <div class="ic-title">{{ $item->judul }}</div>
@@ -405,14 +424,22 @@
     </div>
 </section>
 
-<!-- DETAIL OVERLAY -->
+<!-- DETAIL OVERLAY —— Gambar Kiri + Teks Kanan -->
 <div class="detail-overlay" id="detailOverlay">
     <div class="do-box" onclick="event.stopPropagation()">
-        <div class="do-icon-side">
-            <div class="do-icon-big"><i id="doIcon" class="fas fa-mountain"></i></div>
-            <div class="do-num" id="doNum">#001</div>
+
+        <!-- Panel Kiri: Gambar Penuh -->
+        <div class="do-img-panel">
+            <img id="doImage" src="" alt="">
+            <div class="do-img-overlay">
+                <div class="do-img-eyebrow">Global Geopark</div>
+                <div class="do-img-title" id="doImgTitle"></div>
+                <div class="do-img-divider"></div>
+            </div>
         </div>
-        <div class="do-text">
+
+        <!-- Panel Kanan: Teks -->
+        <div class="do-text-panel">
             <div class="do-close" id="doClose"><i class="fas fa-times"></i></div>
             <span class="do-tag">Informasi</span>
             <h2 id="doTitle"></h2>
@@ -436,19 +463,27 @@
 (function() {
     var infoData = @json($sejarahList);
 
-    var infoIcons = [];
-    document.querySelectorAll('.info-card[data-icon]').forEach(function(el) {
-        infoIcons.push(el.getAttribute('data-icon'));
-    });
-
     function openDetail(idx) {
         var item = infoData[idx];
         if (!item) return;
-        document.getElementById('doIcon').className = infoIcons[idx % infoIcons.length] || 'fas fa-info-circle';
-        document.getElementById('doNum').textContent = '#' + String(idx + 1).padStart(3, '0');
-        document.getElementById('doTitle').textContent = item.judul;
-        var imageBlock = item.gambar_url ? '<div class="do-image-wrap"><img src="' + item.gambar_url + '" alt="' + (item.judul || '') + '"></div>' : '';
-        document.getElementById('doContent').innerHTML = imageBlock + (item.konten || '<p>Tidak ada konten.</p>');
+
+        /* Panel kiri — gambar */
+        var imgEl = document.getElementById('doImage');
+        if (item.gambar_url) {
+            imgEl.src = item.gambar_url;
+            imgEl.alt = item.judul || '';
+        } else {
+            imgEl.src = '/image/SBH/DanauToba.webp';
+            imgEl.alt = item.judul || '';
+        }
+
+        /* Judul di atas gambar */
+        document.getElementById('doImgTitle').textContent = item.judul || '';
+
+        /* Panel kanan — teks */
+        document.getElementById('doTitle').textContent = item.judul || '';
+        document.getElementById('doContent').innerHTML = item.konten || '<p>Tidak ada konten.</p>';
+
         document.getElementById('detailOverlay').classList.add('show');
         document.body.style.overflow = 'hidden';
     }
