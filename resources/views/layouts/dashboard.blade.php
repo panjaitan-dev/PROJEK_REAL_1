@@ -51,16 +51,5 @@
             </table>
         </div>
     </div>
-    <div class="col-md-5">
-        <div class="card-table">
-            <h5>Aksi Cepat</h5>
-            <div class="row g-2">
-                <div class="col-6"><a href="{{ route('admin.galeri.create') }}" class="btn btn-primary w-100"><i class="fas fa-plus"></i> Galeri</a></div>
-                <div class="col-6"><a href="{{ route('admin.berita.create') }}" class="btn btn-primary w-100"><i class="fas fa-plus"></i> Berita</a></div>
-                <div class="col-6"><a href="{{ route('admin.informasi.create') }}" class="btn btn-primary w-100"><i class="fas fa-plus"></i> Informasi</a></div>
-                <div class="col-6"><a href="{{ url('/') }}" target="_blank" class="btn btn-secondary w-100"><i class="fas fa-globe"></i> Website</a></div>
-            </div>
-        </div>
-    </div>
-</div>
+    
 @endsection
