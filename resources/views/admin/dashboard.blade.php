@@ -117,23 +117,4 @@
 
 </div>
 
-
-{{-- ===== QUICK ACTIONS ===== --}}
-<div class="card-table">
-    <div class="card-header-custom">
-        <h5><i class="fas fa-bolt"></i> Aksi Cepat</h5>
-    </div>
-    <div class="action-buttons" style="gap: 10px; flex-wrap: wrap;">
-        <a href="{{ route('admin.galeri.index') }}" class="btn-add-pill"><i class="fas fa-images"></i> Galeri</a>
-        <a href="{{ route('admin.berita.index') }}" class="btn-add-pill"><i class="fas fa-newspaper"></i> Berita</a>
-        <a href="{{ route('admin.informasi.index') }}" class="btn-add-pill"><i class="fas fa-info-circle"></i> Informasi</a>
-        <a href="{{ route('admin.umkm.index') }}" class="btn-add-pill"><i class="fas fa-store"></i> UMKM</a>
-        <a href="{{ route('admin.fasilitas.index') }}" class="btn-add-pill"><i class="fas fa-tools"></i> Fasilitas</a>
-        <a href="{{ route('admin.penginapan.index') }}" class="btn-add-pill"><i class="fas fa-hotel"></i> Penginapan</a>
-        <a href="{{ route('admin.kontak.index') }}" class="btn-add-pill"><i class="fas fa-address-book"></i> Kontak</a>
-        <a href="{{ route('admin.galeri-geosite.index') }}" class="btn-add-pill"><i class="fas fa-mountain"></i> Galeri Geosite</a>
-        <a href="{{ route('admin.destinasi.index') }}" class="btn-add-pill"><i class="fas fa-map-marked-alt"></i> Destinasi</a>
-    </div>
-</div>
-
 @endsection
