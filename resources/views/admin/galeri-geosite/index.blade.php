@@ -65,13 +65,13 @@
                         <td>
                             <div class="btn-group">
                                 <a href="{{ route('admin.galeri-geosite.edit', $item->id) }}"
-                                   class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
+                                   class="btn btn-sm btn-warning">Ubah</a>
                                 <form action="{{ route('admin.galeri-geosite.destroy', $item->id) }}"
                                       method="POST" class="d-inline">
                                     @csrf @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-danger"
                                             onclick="return confirm('Yakin hapus foto ini?')">
-                                        <i class="fas fa-trash"></i>
+                                        Hapus
                                     </button>
                                 </form>
                             </div>
