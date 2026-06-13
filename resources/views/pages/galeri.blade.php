@@ -590,7 +590,7 @@
 <div class="music-float" id="musicFloat">
     <img class="mf-disc" id="mfDisc" src="{{ asset('image/musik/horbo_paung.jpg') }}"
          alt="disc" onerror="this.src='https://placehold.co/40x40/003366/c6a43b?text=%E2%99%AA'">
-    <div class="mf-info">
+g    <div class="mf-info">
         <div class="mf-title">Horbo Paung</div>
         <div class="mf-artist">D' Bambo Official</div>
     </div>
