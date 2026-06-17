@@ -41,7 +41,7 @@
                 <input type="checkbox" name="status" value="1" {{ $berita->status ? 'checked' : '' }}> Aktifkan
             </div>
             
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit" class="btn btn-primary">Simpan</button>
             <a href="{{ route('admin.berita.index') }}" class="btn btn-secondary">Batal</a>
         </form>
     </div>
