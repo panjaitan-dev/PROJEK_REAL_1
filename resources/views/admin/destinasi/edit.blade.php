@@ -303,7 +303,7 @@
                             class="btn btn-primary">
 
                         <i class="fas fa-save"></i>
-                        Update
+                        Simpan
                     </button>
 
                     <a href="{{ route('admin.destinasi.index') }}"

@@ -287,7 +287,7 @@
         <i class="fas fa-eye"></i> Lihat Website
     </a>
     <button type="submit" class="btn-submit" style="display:inline-flex;align-items:center;gap:8px;font-size:.9rem;padding:12px 28px">
-        <i class="fas fa-save"></i> Simpan Semua Perubahan
+        <i class="fas fa-save"></i> Simpan
     </button>
 </div>
 

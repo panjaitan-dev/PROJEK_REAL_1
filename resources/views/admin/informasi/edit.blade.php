@@ -83,7 +83,7 @@
             
             <div class="d-flex gap-2">
                 <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-save me-2"></i> Update
+                    <i class="fas fa-save me-2"></i> Simpan
                 </button>
                 <a href="{{ route('admin.informasi.index') }}" class="btn btn-secondary">
                     <i class="fas fa-arrow-left me-2"></i> Batal

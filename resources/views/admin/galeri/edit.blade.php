@@ -78,7 +78,7 @@
                 </div>
             </div>
 
-            <button class="btn btn-warning">Update</button>
+            <button class="btn btn-warning">Simpan</button>
             <a href="{{ route('admin.galeri.index') }}" class="btn btn-secondary">Kembali</a>
         </form>
     </div>

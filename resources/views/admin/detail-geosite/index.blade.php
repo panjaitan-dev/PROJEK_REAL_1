@@ -44,7 +44,7 @@
                         </td>
                         <td style="padding:14px 16px;text-align:center;">
                             <a href="{{ route('admin.detail-geosite.edit', $key) }}" class="btn-edit" style="background:#003366;color:white;padding:6px 16px;border-radius:6px;text-decoration:none;font-size:0.85rem;">
-                                Ubah
+                                Edit
                             </a>
                         </td>
                     </tr>

@@ -73,7 +73,7 @@
                         <td>
                             <div class="btn-group" role="group">
                                 <a href="{{ route('admin.informasi.edit', $item->id) }}" class="btn btn-sm btn-warning">
-                                  Ubah  
+                                  Edit
                                 </a>
                                 <form action="{{ route('admin.informasi.destroy', $item->id) }}" method="POST" class="d-inline">
                                     @csrf

@@ -3,7 +3,7 @@
 @section('content')
 <div class="content-header">
     <h1>Edit Detail: {{ $namaGeosite }}</h1>
-    <p>Ubah Google Maps, Jam Buka, dan Harga Tiket untuk {{ $namaGeosite }}</p>
+    <p>Edit Google Maps, Jam Buka, dan Harga Tiket untuk {{ $namaGeosite }}</p>
 </div>
 
 <div class="card">
@@ -64,7 +64,7 @@
 
             <div style="display:flex;gap:12px;">
                 <button type="submit" style="background:#003366;color:white;padding:10px 24px;border:none;border-radius:8px;font-weight:600;cursor:pointer;font-size:0.95rem;">
-                    <i class="fas fa-save"></i> Simpan Perubahan
+                    <i class="fas fa-save"></i> Simpan 
                 </button>
                 <a href="{{ route('admin.detail-geosite.index') }}" style="background:#f1f5f9;color:#374151;padding:10px 24px;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.95rem;">
                     Batal

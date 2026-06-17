@@ -68,7 +68,7 @@
 
             <div class="d-flex gap-2">
                 <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-save"></i> Update
+                    <i class="fas fa-save"></i> simpan
                 </button>
                 <a href="{{ route('admin.galeri-geosite.index') }}" class="btn btn-secondary">Batal</a>
             </div>

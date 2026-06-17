@@ -65,7 +65,7 @@
                         <td>
                             <div class="btn-group">
                                 <a href="{{ route('admin.galeri-geosite.edit', $item->id) }}"
-                                   class="btn btn-sm btn-warning">Ubah</a>
+                                   class="btn btn-sm btn-warning">Edit</a>
                                 <form action="{{ route('admin.galeri-geosite.destroy', $item->id) }}"
                                       method="POST" class="d-inline">
                                     @csrf @method('DELETE')

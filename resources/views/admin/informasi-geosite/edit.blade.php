@@ -73,7 +73,7 @@
 
             <div class="form-actions">
                 <button type="submit" class="btn btn-primary" style="background:#003366;color:white;padding:10px 24px;border:none;border-radius:8px;font-weight:600;cursor:pointer;">
-                    <i class="fas fa-save"></i> Simpan Perubahan
+                    <i class="fas fa-save"></i> Simpan
                 </button>
                 <a href="{{ route('admin.informasi-geosite.index') }}" style="background:#f1f5f9;color:#374151;padding:10px 24px;border-radius:8px;text-decoration:none;font-weight:600;">
                     Batal
