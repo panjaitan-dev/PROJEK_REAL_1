@@ -15,11 +15,17 @@ class DetailGeositeController extends Controller
     ];
 
     public function index()
-    {
-        $geositeList = $this->geositeList;
-        $details = DetailGeosite::all()->keyBy('geosite');
-        return view('admin.detail-geosite.index', compact('geositeList', 'details'));
-    }
+{
+    $geositeList = $this->geositeList;
+    $details = DetailGeosite::all()->keyBy('geosite');
+
+    return view('admin.detail-geosite.index', compact('geositeList', 'details'));
+}
+
+public function create()
+{
+    return view('admin.detail-geosite.create');
+}
 
     public function edit($geosite)
     {
@@ -56,4 +62,29 @@ class DetailGeositeController extends Controller
             ->route('admin.detail-geosite.index')
             ->with('success', 'Detail geosite berhasil diperbarui!');
     }
+    public function store(Request $request)
+{
+    $request->validate(
+    [
+        'geosite' => 'required',
+        'maps_url' => 'nullable|string',
+        'jam_buka' => 'nullable|string|max:255',
+        'harga_tiket' => 'nullable|string|max:255',
+    ],
+    [
+        'geosite.required' => 'Nama geosite wajib diisi.',
+    ]
+);
+
+    DetailGeosite::create([
+        'geosite' => $request->geosite,
+        'maps_url' => $request->maps_url,
+        'jam_buka' => $request->jam_buka,
+        'harga_tiket' => $request->harga_tiket,
+    ]);
+
+    return redirect()
+        ->route('admin.detail-geosite.index')
+        ->with('success', 'Data berhasil ditambahkan');
+}
 }

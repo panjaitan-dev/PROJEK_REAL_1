@@ -12,6 +12,13 @@
     </div>
 @endif
 
+<div style="display:flex;justify-content:flex-end;margin-bottom:20px;">
+    <a href="{{ route('admin.detail-geosite.create') }}"
+       style="background:#1d4ed8;color:white;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600;">
+        <i class="fas fa-plus"></i> Tambah Data
+    </a>
+</div>
+
 <div class="card">
     <div class="card-header">
         <i class="fas fa-map-marker-alt"></i> Daftar Geosite

@@ -132,8 +132,10 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::put('home-settings', [HomeSettingController::class, 'update'])->name('admin.home-settings.update');
 
     // Detail Geosite (Lokasi, Jam Buka, Harga Tiket)
-    Route::get('detail-geosite', [DetailGeositeController::class, 'index'])->name('admin.detail-geosite.index');
-    Route::get('detail-geosite/{geosite}/edit', [DetailGeositeController::class, 'edit'])->name('admin.detail-geosite.edit');
-    Route::put('detail-geosite/{geosite}', [DetailGeositeController::class, 'update'])->name('admin.detail-geosite.update');
+Route::get('detail-geosite', [DetailGeositeController::class, 'index'])->name('admin.detail-geosite.index');
+Route::get('detail-geosite/create', [DetailGeositeController::class, 'create'])->name('admin.detail-geosite.create');
+Route::post('detail-geosite/store', [DetailGeositeController::class, 'store'])->name('admin.detail-geosite.store');
+Route::get('detail-geosite/{geosite}/edit', [DetailGeositeController::class, 'edit'])->name('admin.detail-geosite.edit');
+Route::put('detail-geosite/{geosite}', [DetailGeositeController::class, 'update']) ->name('admin.detail-geosite.update');
     
 });
