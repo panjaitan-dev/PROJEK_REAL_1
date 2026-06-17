@@ -20,6 +20,7 @@
                 <th>Gambar</th>
                 <th>Judul</th>
                 <th>Kategori</th>
+                <th>Geosite</th>
                 <th>Aksi</th>
             </tr>
 
@@ -37,6 +38,21 @@
                 </td>
                 <td>{{ $g->judul }}</td>
                 <td>{{ $g->kategori }}</td>
+                <td>
+                    @if($g->geosite)
+                        @php
+                            $geositeName = match($g->geosite) {
+                                'batu_hoda_beach'   => '🏖️ Batu Hoda',
+                                'batu_pasa_pantai'  => '🌊 Batu Pasa',
+                                'museum_huta_bolon' => '🏛️ Museum Huta Bolon',
+                                default => ucwords(str_replace('_', ' ', $g->geosite)),
+                            };
+                        @endphp
+                        <span class="badge bg-info">{{ $geositeName }}</span>
+                    @else
+                        <span class="badge bg-secondary">Umum</span>
+                    @endif
+                </td>
                 <td>
                     <a href="{{ route('admin.galeri.edit', $g->id) }}" class="btn btn-warning btn-sm">Edit</a>
 

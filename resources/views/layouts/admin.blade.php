@@ -1380,9 +1380,6 @@
         <a href="{{ route('admin.kontak.index') }}" class="{{ request()->routeIs('admin.kontak.*') ? 'active' : '' }}">
             <i class="fas fa-address-book"></i> Kontak
         </a>
-        <a href="{{ route('admin.galeri-geosite.index') }}" class="{{ request()->routeIs('admin.galeri-geosite.*') ? 'active' : '' }}">
-            <i class="fas fa-mountain"></i> Galeri Geosite
-        </a>
         <a href="{{ url('/') }}" target="_blank">
             <i class="fas fa-globe"></i> Lihat Website
         </a>

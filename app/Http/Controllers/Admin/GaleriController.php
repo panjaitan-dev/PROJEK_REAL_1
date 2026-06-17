@@ -29,14 +29,21 @@ class GaleriController extends Controller
             'gambar'       => 'nullable|image|mimes:jpeg,png,jpg,webp|max:6144',
             'tanggal_foto' => 'nullable|date_format:Y-m-d|before:2100-01-01|after:1900-01-01',
             'lokasi'       => 'nullable|string|max:255',
+            'geosite'      => 'nullable|string|max:100',
         ]);
+
+        $lokasi = $request->lokasi;
+        if (empty($lokasi) && $request->geosite) {
+            $lokasi = ucwords(str_replace('_', ' ', $request->geosite));
+        }
 
         $data = [
             'judul'        => $request->judul,
             'kategori'     => $request->kategori,
             'deskripsi'    => $request->deskripsi,
-            'lokasi'       => $request->lokasi,
+            'lokasi'       => $lokasi,
             'tanggal_foto' => $request->tanggal_foto,
+            'geosite'      => $request->geosite,
             'status'       => $request->has('status') ? 1 : 0,
         ];
 
@@ -69,16 +76,23 @@ class GaleriController extends Controller
             'gambar'       => 'nullable|image|mimes:jpeg,png,jpg,webp|max:6144',
             'tanggal_foto' => 'nullable|date_format:Y-m-d|before:2100-01-01|after:1900-01-01',
             'lokasi'       => 'nullable|string|max:255',
+            'geosite'      => 'nullable|string|max:100',
         ]);
 
         $galeri = Galeri::findOrFail($id);
+
+        $lokasi = $request->lokasi;
+        if (empty($lokasi) && $request->geosite) {
+            $lokasi = ucwords(str_replace('_', ' ', $request->geosite));
+        }
 
         $data = [
             'judul'        => $request->judul,
             'kategori'     => $request->kategori,
             'deskripsi'    => $request->deskripsi,
-            'lokasi'       => $request->lokasi,
+            'lokasi'       => $lokasi,
             'tanggal_foto' => $request->tanggal_foto,
+            'geosite'      => $request->geosite,
             'status'       => $request->has('status') ? 1 : 0,
         ];
 

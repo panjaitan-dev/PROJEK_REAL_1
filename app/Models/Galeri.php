@@ -21,6 +21,7 @@ class Galeri extends Model
         'status',
         'admin_id',
         'galeri_geosite_id',  // penghubung ke tabel galeri_geosite
+        'geosite',
     ];
 
     /**

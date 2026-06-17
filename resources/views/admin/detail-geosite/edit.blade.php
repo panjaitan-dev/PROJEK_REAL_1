@@ -19,7 +19,7 @@
             </div>
         @endif
 
-        <form action="{{ route('admin.detail-geosite.update', $geosite) }}" method="POST">
+        <form action="{{ route('admin.detail-geosite.update', $detail->id) }}" method="POST">
             @csrf
             @method('PUT')
 

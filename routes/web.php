@@ -9,7 +9,6 @@ use App\Http\Controllers\Admin\DestinasiController as AdminDestinasiController;
 use App\Http\Controllers\Admin\UmkmController;
 use App\Http\Controllers\Admin\PenginapanController;
 use App\Http\Controllers\Admin\FasilitasController;
-use App\Http\Controllers\Admin\GaleriGeositeController;
 use App\Http\Controllers\Admin\HomeSettingController;
 use App\Http\Controllers\Admin\DetailGeositeController;
 use App\Http\Controllers\Admin\InformasiGeositeController;
@@ -95,14 +94,14 @@ Route::post('/reset-password', [AuthController::class, 'resetPassword'])->name('
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     
     Route::get('/', function () {
-        $totalGaleri    = DB::table('galeri')->count();
+        $totalGaleri    = DB::table('galeri')->whereNull('geosite')->count();
         $totalBerita    = DB::table('berita')->count();
         $totalInformasi = DB::table('informasi')->count();
         $totalDestinasi = DB::table('destinasis')->count();
         $totalUmkm      = DB::table('umkm')->count();
         $totalPenginapan = DB::table('penginapan')->count();
         $totalFasilitas  = DB::table('fasilitas')->count();
-        $totalGaleriGeosite = DB::table('galeri_geosite')->count();
+        $totalGaleriGeosite = DB::table('galeri')->whereNotNull('geosite')->count();
         $totalKontak     = DB::table('kontak')->count();
         
         return view('admin.dashboard', compact(
@@ -122,7 +121,6 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('umkm', UmkmController::class)->names('admin.umkm');
     Route::resource('penginapan', PenginapanController::class)->names('admin.penginapan');
     Route::resource('fasilitas', FasilitasController::class)->names('admin.fasilitas');
-    Route::resource('galeri-geosite', GaleriGeositeController::class)->names('admin.galeri-geosite');
     Route::resource('informasi-geosite', InformasiGeositeController::class)->names('admin.informasi-geosite');
     Route::resource('kontak', KontakController::class)->names('admin.kontak');
     Route::post('galeri/toggle-status/{id}', [GaleriController::class, 'toggleStatus'])->name('admin.galeri.toggle-status');

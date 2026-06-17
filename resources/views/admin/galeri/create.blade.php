@@ -45,10 +45,28 @@
                     <label class="form-label required">Kategori</label>
                     <select name="kategori" class="form-control @error('kategori') is-invalid @enderror" required>
                         <option value="">-- Pilih Kategori --</option>
-                        <option value="Balige" {{ old('kategori') == 'Simanindo' ? 'selected' : '' }}> Simanindo</option>
-                         </select>
-                    <small class="text-muted">Pilih kategori untuk menentukan folder penyimpanan gambar</small>
+                        <option value="Landscape" {{ old('kategori') == 'Landscape' ? 'selected' : '' }}>Landscape</option>
+                        <option value="Budaya" {{ old('kategori') == 'Budaya' ? 'selected' : '' }}>Budaya</option>
+                        <option value="Wisata" {{ old('kategori') == 'Wisata' ? 'selected' : '' }}>Wisata</option>
+                        <option value="Kuliner" {{ old('kategori') == 'Kuliner' ? 'selected' : '' }}>Kuliner</option>
+                        <option value="Heritage" {{ old('kategori') == 'Heritage' ? 'selected' : '' }}>Heritage</option>
+                        <option value="Aktivitas" {{ old('kategori') == 'Aktivitas' ? 'selected' : '' }}>Aktivitas</option>
+                    </select>
                     @error('kategori')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Geosite (Opsional)</label>
+                    <select name="geosite" class="form-control @error('geosite') is-invalid @enderror">
+                        <option value="">-- Umum / Halaman Depan --</option>
+                        <option value="batu_hoda_beach" {{ old('geosite') == 'batu_hoda_beach' ? 'selected' : '' }}>🏖️ Batu Hoda Beach</option>
+                        <option value="batu_pasa_pantai" {{ old('geosite') == 'batu_pasa_pantai' ? 'selected' : '' }}>🌊 Batu Pasa Pantai</option>
+                        <option value="museum_huta_bolon" {{ old('geosite') == 'museum_huta_bolon' ? 'selected' : '' }}>🏛️ Museum Huta Bolon</option>
+                    </select>
+                    <small class="text-muted">Pilih jika foto ini merupakan bagian dari galeri geosite tertentu</small>
+                    @error('geosite')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>

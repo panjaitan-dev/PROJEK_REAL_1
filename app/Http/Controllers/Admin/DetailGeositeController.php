@@ -24,7 +24,8 @@ class DetailGeositeController extends Controller
     public function edit($id)
     {
         $detail = DetailGeosite::findOrFail($id);
-        return view('admin.detail-geosite.edit', compact('detail'));
+        $namaGeosite = ucwords(str_replace('_', ' ', $detail->geosite));
+        return view('admin.detail-geosite.edit', compact('detail', 'namaGeosite'));
     }
 
     public function update(Request $request, $id)
