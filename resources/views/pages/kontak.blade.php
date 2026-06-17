@@ -656,4 +656,3 @@
         <a href="{{ url('/') }}" class="kontak-cta-btn">Kembali ke Beranda</a>
     </div>
 </section>
-@endsection

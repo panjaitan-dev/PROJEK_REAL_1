@@ -444,16 +444,6 @@
                     </ul>
                 </div>
             </div>
-            <div class="social-row">
-                    @forelse($contacts->where('tipe', 'sosmed') as $sosmed)
-                        <a href="{{ $sosmed->tautan }}" aria-label="{{ $sosmed->judul }}" target="_blank">
-                            <i class="{{ $sosmed->icon ?? 'fas fa-share-alt' }}"></i>
-                        </a>
-                    @empty
-                        <a href="https://www.facebook.com/share/1EGJyH9J1T/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/batuhodabeachofficial?igsh=dG02YW0wNnNweDJ5" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    @endforelse
-                </div>
             <div class="copyright"><p>&copy; 2026 GeoToba - Geopark Danau Toba. All rights reserved.</p></div>
         </div>
     </footer>
