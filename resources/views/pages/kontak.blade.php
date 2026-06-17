@@ -656,16 +656,4 @@
         <a href="{{ url('/') }}" class="kontak-cta-btn">Kembali ke Beranda</a>
     </div>
 </section>
-
-@php
-    $whatsappContact = $contacts->where('tipe', 'telepon')->where('judul', 'WhatsApp')->first();
-    $waLink = $whatsappContact ? $whatsappContact->tautan : 'https://wa.me/6285362259937';
-@endphp
-{{-- WhatsApp Float --}}
-<div class="wa-float">
-    <a href="{{ $waLink }}" target="_blank" rel="noopener" aria-label="Hubungi via WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-</div>
-
 @endsection
