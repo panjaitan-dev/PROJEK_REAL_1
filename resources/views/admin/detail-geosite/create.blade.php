@@ -12,7 +12,7 @@
         <i class="fas fa-map-marker-alt"></i> Form Tambah Detail Geosite
     </div>
 
-```
+
 <div class="card-body">
 
     @if($errors->any())

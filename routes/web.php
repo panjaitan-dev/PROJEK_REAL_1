@@ -137,5 +137,5 @@ Route::get('detail-geosite/create', [DetailGeositeController::class, 'create'])-
 Route::post('detail-geosite/store', [DetailGeositeController::class, 'store'])->name('admin.detail-geosite.store');
 Route::get('detail-geosite/{geosite}/edit', [DetailGeositeController::class, 'edit'])->name('admin.detail-geosite.edit');
 Route::put('detail-geosite/{geosite}', [DetailGeositeController::class, 'update']) ->name('admin.detail-geosite.update');
-    
+Route::delete('/admin/detail-geosite/{id}', [App\Http\Controllers\Admin\DetailGeositeController::class, 'destroy'])->name('admin.detail-geosite.destroy');
 });

@@ -8,83 +8,78 @@ use Illuminate\Http\Request;
 
 class DetailGeositeController extends Controller
 {
-    private array $geositeList = [
-        'batu_hoda_beach'   => 'Batu Hoda Beach',
-        'museum_huta_bolon' => 'Museum Huta Bolon',
-        'batu_pasa_pantai'  => 'Batu Pasa Pantai',
-    ];
-
+    // FIX: Index sekarang langsung mengambil APAPUN yang ada di database tabel detail_geosites
     public function index()
-{
-    $geositeList = $this->geositeList;
-    $details = DetailGeosite::all()->keyBy('geosite');
-
-    return view('admin.detail-geosite.index', compact('geositeList', 'details'));
-}
-
-public function create()
-{
-    return view('admin.detail-geosite.create');
-}
-
-    public function edit($geosite)
     {
-        if (!array_key_exists($geosite, $this->geositeList)) {
-            abort(404);
-        }
-        $namaGeosite = $this->geositeList[$geosite];
-        $detail = DetailGeosite::firstOrNew(['geosite' => $geosite]);
-        return view('admin.detail-geosite.edit', compact('geosite', 'namaGeosite', 'detail'));
+        $details = DetailGeosite::all();
+        return view('admin.detail-geosite.index', compact('details'));
     }
 
-    public function update(Request $request, $geosite)
+    public function create()
     {
-        if (!array_key_exists($geosite, $this->geositeList)) {
-            abort(404);
-        }
+        return view('admin.detail-geosite.create');
+    }
+
+    // FIX: Edit menggunakan ID database agar aman dan fleksibel untuk nama buatan baru
+    public function edit($id)
+    {
+        $detail = DetailGeosite::findOrFail($id);
+        return view('admin.detail-geosite.edit', compact('detail'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $detail = DetailGeosite::findOrFail($id);
 
         $request->validate([
+            'geosite'     => 'required|string|max:255|unique:detail_geosites,geosite,' . $id,
             'maps_url'    => 'nullable|string',
             'jam_buka'    => 'nullable|string|max:255',
             'harga_tiket' => 'nullable|string|max:255',
         ]);
 
-        DetailGeosite::updateOrCreate(
-            ['geosite' => $geosite],
-            [
-                'maps_url'    => $request->maps_url,
-                'jam_buka'    => $request->jam_buka,
-                'harga_tiket' => $request->harga_tiket,
-            ]
-        );
+        $detail->update([
+            'geosite'     => $request->geosite,
+            'maps_url'    => $request->maps_url,
+            'jam_buka'    => $request->jam_buka,
+            'harga_tiket' => $request->harga_tiket,
+        ]);
 
         return redirect()
             ->route('admin.detail-geosite.index')
             ->with('success', 'Detail geosite berhasil diperbarui!');
     }
-    public function store(Request $request)
-{
-    $request->validate(
-    [
-        'geosite' => 'required',
-        'maps_url' => 'nullable|string',
-        'jam_buka' => 'nullable|string|max:255',
-        'harga_tiket' => 'nullable|string|max:255',
-    ],
-    [
-        'geosite.required' => 'Nama geosite wajib diisi.',
-    ]
-);
 
-    DetailGeosite::create([
-        'geosite' => $request->geosite,
-        'maps_url' => $request->maps_url,
-        'jam_buka' => $request->jam_buka,
-        'harga_tiket' => $request->harga_tiket,
-    ]);
+    public function store(Request $request)
+    {
+        $request->validate([
+            'geosite'     => 'required|string|max:255|unique:detail_geosites,geosite',
+            'maps_url'    => 'nullable|string',
+            'jam_buka'    => 'nullable|string|max:255',
+            'harga_tiket' => 'nullable|string|max:255',
+        ], [
+            'geosite.required' => 'Nama geosite wajib diisi.',
+            'geosite.unique'   => 'Nama geosite ini sudah ada di tabel, silakan gunakan tombol edit.',
+        ]);
+
+        DetailGeosite::create([
+            'geosite'     => $request->geosite,
+            'maps_url'    => $request->maps_url,
+            'jam_buka'    => $request->jam_buka,
+            'harga_tiket' => $request->harga_tiket,
+        ]);
+
+        return redirect()
+            ->route('admin.detail-geosite.index')
+            ->with('success', 'Data berhasil ditambahkan');
+    }
+    public function destroy($id)
+{
+    $detail = DetailGeosite::findOrFail($id);
+    $detail->delete();
 
     return redirect()
         ->route('admin.detail-geosite.index')
-        ->with('success', 'Data berhasil ditambahkan');
+        ->with('success', 'Data geosite berhasil dihapus!');
 }
 }

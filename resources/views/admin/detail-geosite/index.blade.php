@@ -35,28 +35,43 @@
                         <th style="padding:12px 16px;text-align:center;font-weight:600;color:#374151;border-bottom:2px solid #e5e7eb;">Aksi</th>
                     </tr>
                 </thead>
-                <tbody>
-                    @foreach($geositeList as $key => $nama)
-                    @php $d = $details[$key] ?? null; @endphp
-                    <tr style="border-bottom:1px solid #f1f5f9;">
-                        <td style="padding:14px 16px;"><strong>{{ $nama }}</strong></td>
-                        <td style="padding:14px 16px;color:#6b7280;">{{ $d?->jam_buka ?? '<span style="color:#ef4444;">Belum diisi</span>' }}</td>
-                        <td style="padding:14px 16px;color:#6b7280;">{{ $d?->harga_tiket ?? '<span style="color:#ef4444;">Belum diisi</span>' }}</td>
-                        <td style="padding:14px 16px;">
-                            @if($d?->maps_url)
-                                <span style="color:#10b981;"><i class="fas fa-check-circle"></i> Sudah diset</span>
-                            @else
-                                <span style="color:#ef4444;"><i class="fas fa-times-circle"></i> Belum diisi</span>
-                            @endif
-                        </td>
-                        <td style="padding:14px 16px;text-align:center;">
-                            <a href="{{ route('admin.detail-geosite.edit', $key) }}" class="btn-edit" style="background:#003366;color:white;padding:6px 16px;border-radius:6px;text-decoration:none;font-size:0.85rem;">
-                                Edit
-                            </a>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
+               <tbody>
+    @foreach($details as $item)
+    <tr style="border-bottom:1px solid #f1f5f9;">
+        <td style="padding:14px 16px;"><strong>{{ $item->geosite }}</strong></td>
+        
+        <td style="padding:14px 16px;color:#6b7280;">
+            {!! $item->jam_buka ?? '<span style="color:#ef4444;">Belum diisi</span>' !!}
+        </td>
+        
+        <td style="padding:14px 16px;color:#6b7280;">
+            {!! $item->harga_tiket ?? '<span style="color:#ef4444;">Belum diisi</span>' !!}
+        </td>
+        
+        <td style="padding:14px 16px;">
+            @if($item->maps_url)
+                <span style="color:#10b981;"><i class="fas fa-check-circle"></i> Sudah diset</span>
+            @else
+                <span style="color:#ef4444;"><i class="fas fa-times-circle"></i> Belum diisi</span>
+            @endif
+        </td>
+       <td style="padding:14px 16px;text-align:center; display:flex; gap:8px; justify-content:center;">
+    <a href="{{ route('admin.detail-geosite.edit', $item->id) }}" class="btn-edit" style="background:#003366;color:white;padding:6px 16px;border-radius:6px;text-decoration:none;font-size:0.85rem;">
+        Edit
+    </a>
+
+    <form action="{{ route('admin.detail-geosite.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');" style="margin:0;">
+        @csrf
+        @method('DELETE')
+        <button type="submit" style="background:#ef4444;color:white;padding:6px 16px;border-radius:6px;border:none;font-size:0.85rem;cursor:pointer;">
+            Hapus
+        </button>
+    </form>
+</td>
+        </td>
+    </tr>
+    @endforeach
+</tbody>
             </table>
         </div>
     </div>
