@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\GaleriController;
 use App\Http\Controllers\Admin\BeritaController;
-use App\Http\Controllers\Admin\InformasiController;
+use App\Http\Controllers\Admin\SejarahController as AdminSejarahController;
 use App\Http\Controllers\Admin\DestinasiController as AdminDestinasiController;
 use App\Http\Controllers\Admin\UmkmController;
 use App\Http\Controllers\Admin\PenginapanController;
@@ -17,7 +17,7 @@ use App\Http\Controllers\DestinasiController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GaleriController as PublicGaleriController;
 use App\Http\Controllers\GeositeController;
-use App\Http\Controllers\InformasiController as PublicInformasiController;
+use App\Http\Controllers\SejarahController as PublicSejarahController;
 use Illuminate\Support\Facades\DB;
 
 // ==================== FRONTEND ROUTES ====================
@@ -33,7 +33,7 @@ Route::get('/destinasi/budaya', [DestinasiController::class, 'budaya'])->name('d
 Route::get('/destinasi/{slug}', [DestinasiController::class, 'detail'])->name('destinasi.detail');
 
 // Informasi (Halaman Sejarah Caldera Toba)
-Route::get('/informasi', [PublicInformasiController::class, 'index'])->name('informasi');
+Route::get('/informasi', [PublicSejarahController::class, 'index'])->name('informasi');
 
 // Galeri Publik
 Route::get('/galeri', [PublicGaleriController::class, 'index'])->name('galeri');
@@ -116,7 +116,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     
     Route::resource('galeri', GaleriController::class)->names('admin.galeri');
     Route::resource('berita', BeritaController::class)->names('admin.berita');
-    Route::resource('informasi', InformasiController::class)->names('admin.informasi');
+    Route::resource('informasi', AdminSejarahController::class)->names('admin.informasi');
     Route::resource('destinasi', AdminDestinasiController::class)->names('admin.destinasi');
     Route::resource('umkm', UmkmController::class)->names('admin.umkm');
     Route::resource('penginapan', PenginapanController::class)->names('admin.penginapan');

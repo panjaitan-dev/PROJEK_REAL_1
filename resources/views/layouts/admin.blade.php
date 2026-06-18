@@ -1358,7 +1358,7 @@
             <i class="fas fa-newspaper"></i> Berita
         </a>
         <a href="{{ route('admin.informasi.index') }}" class="{{ request()->routeIs('admin.informasi.*') || request()->routeIs('admin.informasi-geosite.*') ? 'active' : '' }}">
-            <i class="fas fa-info-circle"></i> Informasi
+            <i class="fas fa-info-circle"></i> Sejarah
         </a>
         <a href="{{ route('admin.destinasi.index') }}" class="{{ request()->routeIs('admin.destinasi.*') ? 'active' : '' }}">
             <i class="fas fa-map-marked-alt"></i> Destinasi

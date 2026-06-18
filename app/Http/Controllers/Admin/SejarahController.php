@@ -3,17 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Informasi;
+use App\Models\Sejarah;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
-class InformasiController extends Controller
+class SejarahController extends Controller
 {
     public function index()
     {
-        $informasi = Informasi::orderBy('urutan', 'asc')->paginate(10);
-        return view('admin.informasi.index', compact('informasi'));
+        $sejarah = Sejarah::orderBy('urutan', 'asc')->paginate(10);
+        return view('admin.informasi.index', compact('sejarah'));
     }
 
     public function create()
@@ -26,8 +25,8 @@ class InformasiController extends Controller
         $request->validate([
             'judul' => 'required|string|max:255',
             'konten' => 'required|string',
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:6144', // Max 6MB
-            'urutan' => 'required|integer|unique:informasi,urutan',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:6144',
+            'urutan' => 'required|integer|unique:sejarah,urutan',
             'status' => 'nullable|boolean'
         ]);
 
@@ -39,10 +38,10 @@ class InformasiController extends Controller
         ];
 
         if ($request->hasFile('gambar')) {
-            $data['gambar'] = $request->file('gambar')->store('informasi', 'public');
+            $data['gambar'] = $request->file('gambar')->store('sejarah', 'public');
         }
 
-        Informasi::create($data);
+        Sejarah::create($data);
 
         return redirect()->route('admin.informasi.index')
             ->with('success', 'Data berhasil ditambahkan!');
@@ -50,19 +49,19 @@ class InformasiController extends Controller
 
     public function edit($id)
     {
-        $informasi = Informasi::findOrFail($id);
-        return view('admin.informasi.edit', compact('informasi'));
+        $sejarah = Sejarah::findOrFail($id);
+        return view('admin.informasi.edit', compact('sejarah'));
     }
 
     public function update(Request $request, $id)
     {
-        $informasi = Informasi::findOrFail($id);
+        $sejarah = Sejarah::findOrFail($id);
 
         $request->validate([
             'judul' => 'required|string|max:255',
             'konten' => 'required|string',
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:6144', // Max 6MB
-            'urutan' => 'required|integer|unique:informasi,urutan,' . $id,
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:6144',
+            'urutan' => 'required|integer|unique:sejarah,urutan,' . $id,
             'status' => 'nullable|boolean'
         ]);
 
@@ -74,14 +73,13 @@ class InformasiController extends Controller
         ];
 
         if ($request->hasFile('gambar')) {
-            // Hapus gambar lama jika ada
-            if ($informasi->gambar) {
-                Storage::disk('public')->delete($informasi->gambar);
+            if ($sejarah->gambar) {
+                Storage::disk('public')->delete($sejarah->gambar);
             }
-            $data['gambar'] = $request->file('gambar')->store('informasi', 'public');
+            $data['gambar'] = $request->file('gambar')->store('sejarah', 'public');
         }
 
-        $informasi->update($data);
+        $sejarah->update($data);
 
         return redirect()->route('admin.informasi.index')
             ->with('success', 'Data berhasil diupdate!');
@@ -89,14 +87,13 @@ class InformasiController extends Controller
 
     public function destroy($id)
     {
-        $informasi = Informasi::findOrFail($id);
+        $sejarah = Sejarah::findOrFail($id);
 
-        // Hapus gambar dari storage jika ada
-        if ($informasi->gambar) {
-            Storage::disk('public')->delete($informasi->gambar);
+        if ($sejarah->gambar) {
+            Storage::disk('public')->delete($sejarah->gambar);
         }
 
-        $informasi->delete();
+        $sejarah->delete();
 
         return redirect()->route('admin.informasi.index')
             ->with('success', 'Data berhasil dihapus!');
@@ -104,10 +101,10 @@ class InformasiController extends Controller
 
     public function toggleStatus($id)
     {
-        $informasi = Informasi::findOrFail($id);
-        $informasi->status = !$informasi->status;
-        $informasi->save();
+        $sejarah = Sejarah::findOrFail($id);
+        $sejarah->status = !$sejarah->status;
+        $sejarah->save();
 
-        return response()->json(['success' => true, 'status' => $informasi->status]);
+        return response()->json(['success' => true, 'status' => $sejarah->status]);
     }
 }
