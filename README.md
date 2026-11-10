@@ -1,27 +1,3 @@
-**Belum cukup Fer.** Di screenshot, isi `README.md` kamu terpotong baru sampai langkah 1, dan ada **format Markdown yang rusak** pada perintah `git clone`:
-
-* **Error Format di Langkah 1:**
-Terdapat tautan ganda `git clone [https://...](https://...)` yang membuat perintah bash di GitHub menjadi rusak/tidak bisa di-copy langsung.
-
-
-* **Konten Belum Lengkap:**
-Langkah 2 sampai selesai (setup `.env`, migrasi, kredensial login, dan fitur) belum masuk.
-
-
-
----
-
-### Solusi Lengkap (Tinggal Copy-Paste)
-
-Buka tombol edit (ikon pensil ✏️) di GitHub, hapus seluruh isinya, lalu paste kode Markdown utuh di bawah ini:
-
-```markdown
-# 🏔️ GeoToba — Geopark Danau Toba Admin System
-
-Sistem informasi dan manajemen konten Geosite Danau Toba berbasis Laravel 12.
-
----
-
 ## 🚀 Cara Setup Setelah `git pull` / `git clone`
 
 ### 1. Clone atau Pull Kode dari GitHub
